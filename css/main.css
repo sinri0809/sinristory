@@ -1,0 +1,289 @@
+@charset 'utf-8';
+/* only for index.html */
+
+/* section welcome */
+.welcome{
+  padding-top: 0;
+  height: calc(100vh - 12rem);
+}
+.welcome .container{
+  display: grid;
+  grid-template-rows: 10.5rem 24rem;
+  row-gap: 7rem;
+  /* height: 100%; */
+  padding-top: 15rem;
+}
+hgroup{
+  position: relative;
+}
+.welcome h1, h2{
+  position: relative;
+  display: inline-block;
+  font-family: consolas;
+  font-size: 9.5rem;
+  line-height: 1.2;
+  text-shadow: .7rem 0 0px rgba(149, 59, 217, 1);
+}
+h1::before,
+h2::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(240, 235, 243, 1);
+  background: rgba(149, 59, 217, 1);
+  transform-origin: right;
+  transform: translateX(-100%) scaleX(100%);
+  animation-name: welcome-ani;
+  animation-duration: 1s;
+  animation-delay: .3s;
+  animation-fill-mode: forwards;
+  transition: transform 1s;
+}
+h2::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -5rem;
+  display: block;
+  width: 2rem;
+  height: 100%;
+  background: rgba(149, 59, 217, 0);
+  animation-name: twinkle-ani;
+  animation-delay: 1.3s;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+/* main */
+main{
+  position: relative;
+  min-width: 192rem;
+  padding-top: 6rem;
+  border-radius: 5rem 5rem 0 0;
+  background: linear-gradient(45deg, rgb(9, 3, 9), rgb(29, 12, 42));
+}
+/* //story-box common */
+.story-box h4{
+  padding-bottom: 7rem;
+  font-size: 4rem;
+  color: rgba(149, 59, 217, 1);
+}
+.story-box p{
+  display: block;
+  padding-bottom: 4rem;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+.story-box p em{
+  font-weight: 700;
+  color: rgba(149, 59, 217, 1);
+}
+/* //story-box common */
+/* aside */
+aside{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 19rem;
+  padding: 26rem 0;
+  text-align: right;
+  font-size: 1.2rem;
+}
+aside ul{
+  position: relative;
+}
+aside ul li{
+  position: relative;
+  line-height: 1.4;
+  font-weight: 100;
+  color: rgba(240, 235, 243, .3);
+}
+/* 나중에 javascript로 위치 지정해 놓기 */
+/* 일단 지금은 수동으로 잡고 */
+/* rod box */
+aside ul li::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -2.5rem;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background: rgb(96, 96, 96);
+  z-index: 9;
+}
+/* 사각형 위치 잡기 */
+/* 추후 자바스크립트로 변경 예정. */
+aside .main-road-top li:nth-child(2){
+  transform: translateY(17rem);
+}
+aside .main-road-top li:nth-child(3){
+  transform: translateY(25.5rem);
+}
+aside .main-road-top li:nth-child(4){
+  transform: translateY(42rem);
+}
+
+aside .main-road-bottom li:nth-child(1){
+  transform: translateY(16.5rem);
+}
+aside .main-road-bottom li:nth-child(2){
+  transform: translateY(42rem);
+}
+aside .main-road-bottom li:nth-child(3){
+  transform: translateY(53rem);
+}
+
+/* rod */
+.main-road-top{
+  height: calc(100vh - 18rem);
+}
+.main-road-bottom{
+  /* height: calc(100vh - 30rem); */
+  height: 60rem;
+}
+/* 더 좋은 방법이 있을거 같다. */
+.main-road-top::after,
+.main-road-bottom::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -2rem;
+  display: block;
+  width: 1px;
+  height: 100%;
+  background: rgba(114, 114, 114, 0.3);
+  z-index: 0;
+}
+
+
+/* story-top */
+main > section{
+  /* padding-top: 18rem; */
+  background: linear-gradient(45deg, rgb(9, 3, 9), rgb(29, 12, 42));
+}
+.story-top .container{
+  height: calc(100vh - 18rem);
+}
+.story-top-imgs{
+  margin-bottom: 3rem;
+}
+.story-top .story-box p:last-child{
+  padding-top: 6rem;
+}
+.story-top-imgs img{
+  width: 80rem;
+  height: 28rem;
+  object-fit: cover;
+}
+.story-top-imgs span{
+  font-size: 1.2rem;
+  color: rgba(125, 119, 129, 1);
+}
+.story-top-imgs span{
+  display: inline-block;
+  padding-top: 1rem;
+}
+/* story-bottom */
+.story-bottom .story-box h3{
+  padding: 6rem 0 7rem 0;
+  font-size: 4rem;
+  color: rgba(149, 59, 217, 1);
+}
+.story-bottom-imgs{
+  width: 80rem;
+  height: 70rem;
+  background: url('../images/home/img-sec2-visual.png') no-repeat top;
+  background-size: 105%;
+}
+
+/* contact */
+.contact .container{
+  height: auto;
+
+}
+/* contact form */
+.contact-form{
+  position: relative;
+  display: grid;
+  grid-template:'g-1 g-1 g-1'
+                'g-2 g-3 g-3'
+                'g-4 g-4 g-4'
+                'g-5 g-5 g-6';
+  gap: 1.5rem;
+  grid-template-rows: 4rem 4rem auto 4rem;
+  padding: 3.5rem 2.5rem;
+  color: rgba(240, 235, 243, .5);
+  background: rgba(34, 27, 39, 1);
+}
+
+.contact-form::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -7rem;
+  display: block;
+  width: 10rem;
+  height: 20rem;
+  background: url('../images/icons/icon-mail.png') no-repeat center;
+}
+.contact-form 
+> h5{
+  grid-area: g-1;
+  font-size: 3rem;
+  color: rgba(149, 59, 217, 1);
+}
+.contact-form 
+> label{
+  grid-area: g-2;
+  padding: 1em 0 0 1em;
+  background: rgba(11, 4, 12, .5);
+}
+.contact-form 
+> input{
+  grid-area: g-3;
+  padding: 0 0 0 1em;
+  background: rgba(11, 4, 12, .5);
+}
+.contact-form 
+> input{
+  color: rgba(240, 235, 243, .5);
+  color: rgba(149, 59, 217, .5);
+}
+.contact-form 
+> input:focus{
+  color: white;
+}
+.contact-form 
+> textarea{
+  grid-area: g-4;
+  resize: vertical;
+  padding: 1em 1em;
+  background: rgba(11, 4, 12, .5);
+}
+.contact-form 
+> textarea:enabled{
+  color: white;
+}
+.where-from{
+  grid-area: g-5;
+  display: flex;
+  padding: 1em 0 0 1em;
+  background: rgba(11, 4, 12, .5);
+}
+.where-from li input[type="checkbox"]{
+  color: red;
+  background-color: rgba(11, 4, 12, .5);
+}
+.where-from li input[type="checkbox"]:checked{
+  color: red;
+  background-color: red;
+}
+
+.contact-img{
+  height: 70rem;
+  background: url('../images/home/img-sec3-visual.png') no-repeat top;
+}

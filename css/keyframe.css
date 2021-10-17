@@ -1,0 +1,23 @@
+@charset 'utf-8';
+
+@keyframes welcome-ani {
+  0%{
+    transform: translateX(-100%) scaleX(100%);
+  }
+  80%{
+    opacity: 1;
+    transform: translateX(10%) scaleX(5%);
+  }
+  100%{
+    /* transition: all .3s; */
+    opacity: 0;
+    transform: translateX(10%) scaleX(0%);
+  }
+}
+@keyframes twinkle-ani {
+  from{
+    background: rgba(149, 59, 217, 1);
+  }to{
+    background: rgba(149, 59, 217, 0);
+  }
+}
