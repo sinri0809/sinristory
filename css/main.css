@@ -1,10 +1,11 @@
 @charset 'utf-8';
+@import url('../css/common.css');
 /* only for index.html */
 
 /* section welcome */
 .welcome{
   padding-top: 0;
-  height: calc(100vh - 12rem);
+  height: calc(100vh - 6rem);
 }
 .welcome .container{
   display: grid;
@@ -22,7 +23,7 @@ hgroup{
   font-family: consolas;
   font-size: 9.5rem;
   line-height: 1.2;
-  text-shadow: .7rem 0 0px rgba(149, 59, 217, 1);
+  text-shadow: .7rem 0 0px rgba(129, 80, 212, 1);
 }
 h1::before,
 h2::before{
@@ -34,7 +35,7 @@ h2::before{
   width: 100%;
   height: 100%;
   background: rgba(240, 235, 243, 1);
-  background: rgba(149, 59, 217, 1);
+  background: rgba(129, 80, 212, 1);
   transform-origin: right;
   transform: translateX(-100%) scaleX(100%);
   animation-name: welcome-ani;
@@ -51,7 +52,7 @@ h2::after{
   display: block;
   width: 2rem;
   height: 100%;
-  background: rgba(149, 59, 217, 0);
+  background: rgba(129, 80, 212, 0);
   animation-name: twinkle-ani;
   animation-delay: 1.3s;
   animation-duration: 1s;
@@ -65,11 +66,18 @@ main{
   border-radius: 5rem 5rem 0 0;
   background: linear-gradient(45deg, rgb(9, 3, 9), rgb(29, 12, 42));
 }
+main .container{
+  display: grid;
+  grid-template-columns: 82rem 53rem;
+  gap: 3rem;
+  height: calc(100vh - 6rem);
+  color: rgba(200, 200, 200, 1);
+}
 /* //story-box common */
 .story-box h4{
   padding-bottom: 7rem;
   font-size: 4rem;
-  color: rgba(149, 59, 217, 1);
+  color: rgba(129, 80, 212, 1);
 }
 .story-box p{
   display: block;
@@ -79,7 +87,7 @@ main{
 }
 .story-box p em{
   font-weight: 700;
-  color: rgba(149, 59, 217, 1);
+  color: rgba(129, 80, 212, 1);
 }
 /* //story-box common */
 /* aside */
@@ -88,7 +96,7 @@ aside{
   top: 0;
   left: 0;
   width: 19rem;
-  padding: 26rem 0;
+  padding: 30rem 0;
   text-align: right;
   font-size: 1.2rem;
 }
@@ -118,23 +126,23 @@ aside ul li::after{
 /* 사각형 위치 잡기 */
 /* 추후 자바스크립트로 변경 예정. */
 aside .main-road-top li:nth-child(2){
-  transform: translateY(17rem);
+  transform: translateY(10rem);
 }
 aside .main-road-top li:nth-child(3){
-  transform: translateY(25.5rem);
+  transform: translateY(23rem);
 }
 aside .main-road-top li:nth-child(4){
-  transform: translateY(42rem);
+  transform: translateY(37rem);
 }
 
 aside .main-road-bottom li:nth-child(1){
-  transform: translateY(16.5rem);
+  transform: translateY(6.5rem);
 }
 aside .main-road-bottom li:nth-child(2){
-  transform: translateY(42rem);
+  transform: translateY(48.5rem);
 }
 aside .main-road-bottom li:nth-child(3){
-  transform: translateY(53rem);
+  transform: translateY(54rem);
 }
 
 /* rod */
@@ -143,7 +151,7 @@ aside .main-road-bottom li:nth-child(3){
 }
 .main-road-bottom{
   /* height: calc(100vh - 30rem); */
-  height: 60rem;
+  height: 62rem;
 }
 /* 더 좋은 방법이 있을거 같다. */
 .main-road-top::after,
@@ -188,10 +196,13 @@ main > section{
   padding-top: 1rem;
 }
 /* story-bottom */
+.story-bottom .story-box p:first-child{
+  opacity: .5;
+}
 .story-bottom .story-box h3{
   padding: 6rem 0 7rem 0;
   font-size: 4rem;
-  color: rgba(149, 59, 217, 1);
+  color: rgba(129, 80, 212, 1);
 }
 .story-bottom-imgs{
   width: 80rem;
@@ -234,7 +245,7 @@ main > section{
 > h5{
   grid-area: g-1;
   font-size: 3rem;
-  color: rgba(149, 59, 217, 1);
+  color: rgba(129, 80, 212, 1);
 }
 .contact-form 
 > label{
@@ -251,7 +262,7 @@ main > section{
 .contact-form 
 > input{
   color: rgba(240, 235, 243, .5);
-  color: rgba(149, 59, 217, .5);
+  color: rgba(129, 80, 212, .5);
 }
 .contact-form 
 > input:focus{

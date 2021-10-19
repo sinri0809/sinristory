@@ -1,4 +1,12 @@
 @charset 'utf-8';
+@import url('../css/font/nanumsqure.css');
+
+/* 
+  common css here
+  - normalize default css
+  - especially header
+  - common layout
+*/
 
 ::-webkit-scrollbar {
   width: 0;
@@ -17,7 +25,8 @@ a{
 mark{
   background-color: rgba(0, 0, 0, 0);
 }
-em{
+em,
+address{
   font-style: normal;
 }
 img{
@@ -33,6 +42,7 @@ button{
 ul,li{
   list-style: none;
 }
+
 html{
   font-size: 10px;
   scroll-behavior: smooth;
@@ -44,43 +54,28 @@ body{
   line-height: 1;
   letter-spacing: 0;
   color: #221b27;
-  user-select: none;
+  /* user-select: none; */
 }
-section{
-  padding-top: 18rem;
-  height: 100vh;
-  min-height: 50rem;
-}
+/* layout */
 
 .wrap{
   position: relative;
   width: 100%;
+  transition: transform .3s;
 }
 .container{
   position: relative;
   width: 144rem;
   margin: 0 auto;
 }
-main .container{
-  display: grid;
-  grid-template-columns: 82rem 53rem;
-  gap: 3rem;
-  height: calc(100vh - 18rem);
-  color: rgba(200, 200, 200, 1);
-}
-.identity-box{
-  width: 10rem;
-  height: 10.5rem;
-  margin-left: 1rem;
-}
-/* icon set */
-.icon-identity{
-  display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
-}
+
 /* header */
-header.container{
+header{
+  position: absolute;
+  width: 100%;
+  z-index: 9;
+}
+header .container{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -117,7 +112,6 @@ header.container{
   transform-origin: left;
   transform: scaleX(70%);
 }
-
 .trigger-toggle:hover
 .toggle-rod{
   transition: transform .3s;
@@ -135,14 +129,13 @@ nav:hover
 nav:hover{
   display: block;
 } */
-
 nav{
   display: none;
   position: absolute;
   top: 6rem;
   right: 0;
   width: 22rem;
-  height: 36rem;
+  height: 30rem;
   text-align: right;
   background: rgba(240, 235, 243, 1);
 }
@@ -156,7 +149,42 @@ nav > ul{
 nav > ul > li:nth-child(4){
   margin: 1em 0;
 }
-nav > ul a{
-  display: block;
+nav > ul > li a{
+  position: relative;
+  display: inline-block;
   padding: .5em 0;
+  color: rgba(15, 6, 16, 1);
+}
+nav > ul li a::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 1em;
+  background: rgba(129, 80, 212, .5);
+  transform-origin: right;
+  transform: scaleX(0);
+}
+nav > ul li a:hover::after{
+  animation: nav-ani .3s ease; 
+  /* animation-duration: .3s; */
+  animation-fill-mode: forwards;
+}
+/* main visual */
+
+section{
+  padding-top: 12rem;
+  height: 100vh;
+  min-height: 50rem;
+}
+.identity-box{
+  width: 10rem;
+  height: 10.5rem;
+  margin-left: 1rem;
+}
+/* icon set */
+.icon-identity{
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
 }

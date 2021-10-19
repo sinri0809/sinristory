@@ -14,6 +14,13 @@
     transform: translateX(10%) scaleX(0%);
   }
 }
+@keyframes nav-ani{
+  from{
+    transform: scaleX(10%);
+  }to{
+    transform: scaleX(100%);
+  }
+}
 @keyframes twinkle-ani {
   from{
     background: rgba(149, 59, 217, 1);

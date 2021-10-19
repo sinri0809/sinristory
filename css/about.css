@@ -1,0 +1,90 @@
+@charset 'utf-8';
+@import url('../css/common.css');
+/* only for about.html */
+
+/* header */
+mark span{
+  color: rgba(240, 235, 243, 1);
+}
+/* main */
+main{
+  position: relative;
+  min-width: 192rem;
+  background: linear-gradient(45deg, rgb(9, 3, 9), rgb(29, 12, 42));
+}
+main .container{
+  display: grid;
+  grid-template:'g-p g-1 g-2 g-2'
+                'g-p g-1 g-3 g-4';
+  grid-template-columns: 32rem 47rem 53rem;
+  column-gap: 3rem;
+  height: 73rem;
+  color: rgba(200, 200, 200, 1);
+  z-index: 0;
+}
+/* main profile */
+.profile-visual{
+  grid-area: g-p;
+  padding-top: 3rem;
+}
+.profile-img{
+  position: relative;
+  width: 25rem;
+  height: 25rem;
+  background: rosybrown;
+  border-radius: 50%;
+}
+.profile-img::before{
+  content: '';
+  position: absolute;
+  top: 1em;
+  left: -1em;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255, 154, 52, 1);
+  /* container z-index = 0 */
+  z-index: -1;
+}
+.profile-basic{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 35.5rem);
+  padding: 2em 0 0 0;
+}
+.profile-basic h3{
+  padding: 1rem 0;
+  font-size: 2.2rem;
+  color: rgba(255, 154, 52, 1);
+}
+.profile-basic p, address{
+  line-height: 1.5;
+  opacity: .5;
+}
+.profile-basic > strong{
+  display: inline-block;
+  padding: 2rem 0 .5em 0;
+  font-size: 1.8rem;
+}
+.profile-visual .job >li{
+  padding: .5rem 0;
+  font-size: 1.8rem;
+}
+.photographer{
+  font-size: 1.2rem;
+  opacity: .5;
+}
+.profile-skills{
+  grid-area: g-1;
+}
+.profile-edu{
+  grid-area: g-2;
+}
+.profile-study{
+  grid-area: g-3;
+}
+.profile-stats{
+  grid-area: g-4;
+}
