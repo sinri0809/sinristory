@@ -1,0 +1,73 @@
+@charset 'utf-8';
+@import url('common.css');
+@import url('keyframe.css');
+
+.welcome{
+  padding-top: 0;
+  height: calc(100vh - 6rem);
+  height: 100vh;
+  background: linear-gradient(45deg, rgb(9, 3, 9), rgb(29, 12, 42));
+}
+.welcome .container{
+  display: grid;
+  grid-template-rows: 10.5rem 12rem;
+  row-gap: 7rem;
+  padding-top: 15rem;
+  color: white;
+}
+mark span{
+  color: rgba(240, 235, 243, 1);
+}
+.welcome h1{
+  position: relative;
+  display: inline-block;
+  font-size: 9.5rem;
+  line-height: 1.2;
+  text-shadow: .7rem 0 0px rgba(255, 154, 52, 1);
+  color: rgba(108, 71, 199, 1);
+}
+h1::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 154, 52, 1);
+  transform-origin: right;
+  transform: translateX(-100%) scaleX(100%);
+  animation-name: welcome-ani;
+  animation-duration: 1s;
+  animation-delay: .3s;
+  animation-fill-mode: forwards;
+  transition: transform 1s;
+}
+.summary > *{
+  padding-bottom: 1rem;
+}
+.summary h5{
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.summary p{
+  font-weight: 100;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, .5);
+}
+/* main */
+main{
+  position: relative;
+  min-width: 192rem;
+  padding-top: 6rem;
+}
+main section{
+  position: absolute;
+  top: -6rem;
+  width: 100%;
+  height: 100vh;
+  height: calc(100vh + 6rem);
+  background: white;
+  border-radius: 5rem 5rem 0 0;
+  z-index: 9;
+}

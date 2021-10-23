@@ -23,8 +23,8 @@
 }
 @keyframes twinkle-ani {
   from{
-    background: rgba(149, 59, 217, 1);
+    background: rgba(108, 71, 199, 1);
   }to{
-    background: rgba(149, 59, 217, 0);
+    background: rgba(108, 71, 199, 0);
   }
 }

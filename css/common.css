@@ -54,6 +54,9 @@ body{
   line-height: 1;
   letter-spacing: 0;
   color: #221b27;
+
+  min-width: 192rem;
+
   /* user-select: none; */
 }
 /* layout */
@@ -65,7 +68,7 @@ body{
 }
 .container{
   position: relative;
-  width: 144rem;
+  width: 138rem;
   margin: 0 auto;
 }
 
