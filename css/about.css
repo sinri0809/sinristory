@@ -18,6 +18,7 @@ main section{
   width: 100%;
   height: 100vh;
   height: calc(100vh + 6rem);
+  padding-top: 21rem;
   background: white;
   border-radius: 5rem 5rem 0 0;
   z-index: 9;
@@ -36,7 +37,7 @@ main section{
   grid-template-columns: 32rem 47rem 27rem 23rem;
   column-gap: 3rem;
   row-gap: 2.5rem;
-  height: 73rem;
+  /* height: 73rem; */
   color: rgba(200, 200, 200, 1);
   z-index: 0;
 }
@@ -68,29 +69,33 @@ main section{
 .profile-basic{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: calc(100% - 35.5rem);
   padding: 2em 0 0 0;
 }
 .profile-basic h3{
   padding: 1rem 0;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   color: rgba(255, 154, 52, 1);
 }
 .profile-basic p, address{
+  font-size: 1.2rem;
   line-height: 1.5;
   opacity: .5;
 }
 .profile-basic > strong{
   display: inline-block;
   padding: 2rem 0 .5em 0;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 .profile-visual .job >li{
   padding: .5rem 0;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  font-weight: 300;
+  font-style: italic;
 }
 .photographer{
+  padding-top: 2em;
   font-size: 1.2rem;
   opacity: .5;
 }

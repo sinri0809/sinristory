@@ -65,9 +65,89 @@ main section{
   position: absolute;
   top: -6rem;
   width: 100%;
-  height: 100vh;
   height: calc(100vh + 6rem);
+  padding-top: 18rem;
   background: white;
   border-radius: 5rem 5rem 0 0;
   z-index: 9;
+}
+/* portfolios */
+.portfolios .container{
+  display: grid;
+  grid-template:'g-p g-1 g-3'
+                'g-p g-2 g-3';
+  grid-template-columns: 32rem 47rem 53rem;
+  grid-template-rows: 37.5rem 41.5rem;
+  column-gap: 3rem;
+  row-gap: 3rem;
+  height: 82rem;
+}
+
+
+.portfolios-link{
+  grid-area: g-p;
+}
+.portfolios-link > div h4{
+  padding-bottom: 4rem;
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: rgba(34, 27, 39, 1);
+}
+.portfolios-link > div a{
+  font-size: 1.8rem;
+  line-height: 1.6;
+  color: rgba(125, 119, 129, 1);
+}
+.portfolios-link > div a:hover{
+  text-decoration: underline;
+  transition: all .3s;
+}
+.portfolios-link > div span{
+  
+}
+.protfolios-list{
+  padding-bottom: 6rem;
+}
+.portfolios-explain{
+  grid-area: g-1;
+  height: 34rem;
+  padding: 3rem 3rem;
+  background: rgba(125, 119, 129, .8);
+}
+.portfolios-explain span{
+  font-size: 1.4rem;
+  font-weight: 100;
+  color: rgba(240, 235, 243, .8);
+}
+.portfolios-explain h5{
+  padding: 1em 0;
+  font-size: 2.4rem;
+  color: rgba(108, 71, 199, 1);
+  text-shadow: 3px 0 0 rgba(255, 154, 52, 1);
+}
+.portfolios-explain p{
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: rgba(240, 235, 243, .8);
+}
+.skill-set{
+  padding-bottom: 1em;
+}
+.skill-set li{
+  display: inline-block;
+  font-weight: 300;
+  color: rgba(240, 235, 243, 1);
+}
+.portfolios-feedback{
+  grid-area: g-2;
+}
+.portfolios-visual{
+  grid-area: g-3;
+  
+}
+.portfolios-visual img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: opacity(1) brightness(.5);
 }
