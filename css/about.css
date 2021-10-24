@@ -35,9 +35,12 @@ main section{
   grid-template:'g-p g-1 g-2 g-2'
                 'g-p g-1 g-3 g-4';
   grid-template-columns: 32rem 47rem 27rem 23rem;
+  grid-template-rows: 33rem 33rem;
   column-gap: 3rem;
   row-gap: 2.5rem;
   /* height: 73rem; */
+  line-height: 1.6;
+
   color: rgba(200, 200, 200, 1);
   z-index: 0;
 }
@@ -50,7 +53,7 @@ main section{
   position: relative;
   width: 25rem;
   height: 25rem;
-  background: rosybrown;
+  background: aliceblue;
   border-radius: 50%;
 }
 .profile-img::before{
@@ -69,9 +72,9 @@ main section{
 .profile-basic{
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   height: calc(100% - 35.5rem);
-  padding: 2em 0 0 0;
+  padding: 1.5em 0 0 0;
 }
 .profile-basic h3{
   padding: 1rem 0;
@@ -85,14 +88,15 @@ main section{
 }
 .profile-basic > strong{
   display: inline-block;
-  padding: 2rem 0 .5em 0;
+  padding: 1.5rem 0 .5em 0;
   font-size: 1.6rem;
 }
 .profile-visual .job >li{
-  padding: .5rem 0;
+  padding-top: .5rem;
   font-size: 1.6rem;
   font-weight: 300;
   font-style: italic;
+  line-height: 1;
 }
 .photographer{
   padding-top: 2em;
@@ -103,7 +107,7 @@ main section{
 
 .profile > .container 
 > .profile-visual~div h4{
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: rgba(108, 71, 199, 1);
 }
 .profile > .container 
@@ -112,9 +116,9 @@ main section{
   background: rgba(34, 27, 39, 1);
 }
 /* -------------- */
-.profile > .container 
-> .profile-visual~div  *{
-  line-height: 1.8;
+.profile > .container > .profile-visual~div p{
+  font-size: 1.4rem;
+  line-height: 1.6;
 }
 .profile-skills{
   grid-area: g-1;
@@ -123,7 +127,7 @@ main section{
 .skill-detail{
   height: 15rem;
   padding: 1.5em 1em ;
-  margin-bottom: 2rem;
+  margin: 2rem 0 2rem 0;
   background: rosybrown;
 }
 .profile-skills h5{
@@ -139,6 +143,29 @@ main section{
   font-size: 1.2rem;
   color: rgba(255, 255, 255, .2);
 }
+
+.skill-design li,
+.skill-develope li{
+  width: 50%;
+  padding: .5em 1em;
+  margin: 5px 0;
+  line-height: 1;
+  background: rgba(0, 0, 0, 1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .profile-edu{
   grid-area: g-2;
 }
@@ -203,6 +230,45 @@ main section{
 }
 .persoanl-visual{
   grid-area: g-p;
+  background: url('../images/temp_visual.png')no-repeat bottom;
+  background-size: 150%;
+}
+.persoanl-visual h3~h4{
+  padding: 1em 0;
+  color: rgba(108, 71, 199, 1);
+}
+.persoanl-visual p{
+  line-height: 1.4;
+}
+.persoanl-visual strong{
+  display: inline-block;
+  padding-top: 1em;
+  color: rgba(255, 154, 52, 1);
+}
+.sinrilab{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50rem;
+  background: url('../images/temp_profile.png') no-repeat center;
+  background-size: 150%;
+}
+.link-another{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 5rem;
+  padding: 1em 1em;
+  margin: .5em 0;
+  background: rgba(235, 232, 238, 1);
+}
+.link-another p{
+  font-size: 1.2rem;
+  color: rgba(125, 119, 129, 1);
+}
+.personal-contents > a:hover{
+  filter: brightness(.8);
+  transition: filter .3s;
 }
 .personal-contents .--left{
   grid-area: g-1;

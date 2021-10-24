@@ -78,6 +78,8 @@ main section{
                 'g-p g-2 g-3';
   grid-template-columns: 32rem 47rem 53rem;
   grid-template-rows: 37.5rem 41.5rem;
+  grid-template-rows: 33rem 33rem;
+
   column-gap: 3rem;
   row-gap: 3rem;
   height: 82rem;
