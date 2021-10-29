@@ -1,3 +1,7 @@
+/* 
+  NanumSquare
+  free font, from naver
+*/
 @font-face {
   font-family: 'NanumSquare';
   font-weight: 100;
@@ -21,4 +25,31 @@
   font-weight: 300;
   src: url(NanumSquareB.otf) format('otf'),
       url(NanumSquareB.ttf) format('truetype');
+}
+
+/* 
+  consolas
+  for mac and i pad
+ */
+@font-face {
+  font-family: 'consolasD';
+  font-weight: 400;
+  src: url(consola.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'consolasD';
+  font-weight: 400;
+  font-style: italic;
+  src: url(consolai.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'consolasD';
+  font-weight: 900;
+  src: url(consolab.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'consolasD';
+  font-weight: 900;
+  font-style: italic;
+  src: url(consolaz.ttf) format('truetype');
 }

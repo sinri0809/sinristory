@@ -9,7 +9,6 @@ mark span{
 }
 main{
   position: relative;
-  min-width: 192rem;
   padding-top: 6rem;
 }
 main section{
@@ -43,6 +42,7 @@ main section{
 
   color: rgba(200, 200, 200, 1);
   z-index: 0;
+  transition: all .3s;
 }
 /* main profile */
 .profile-visual{
@@ -107,7 +107,7 @@ main section{
 
 .profile > .container 
 > .profile-visual~div h4{
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: rgba(108, 71, 199, 1);
 }
 .profile > .container 
@@ -118,17 +118,11 @@ main section{
 /* -------------- */
 .profile > .container > .profile-visual~div p{
   font-size: 1.4rem;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 .profile-skills{
+  position: relative;
   grid-area: g-1;
-}
-.profile-skills
-.skill-detail{
-  height: 15rem;
-  padding: 1.5em 1em ;
-  margin: 2rem 0 2rem 0;
-  background: rosybrown;
 }
 .profile-skills h5{
   font-size: 1.6rem;
@@ -139,24 +133,80 @@ main section{
 .profile-skills ul li{
   font-weight: 100;
 }
+.skill-detail{
+  width: 90%;
+  height: 25%;
+  height: auto;
+  padding: 1.5em 1em 1em 1em;
+  margin: 2rem 0 1rem 0;
+  /* background: rgba(255, 255, 255, .2); */
+  background: rgba(108, 71, 199, 1);
+  background: rgba(200, 200, 200, 1);
+}
+.skill-detail h5{
+  font-weight: 700;
+  color: rgba(255, 154, 52, 1);
+  color: rgba(34, 27, 39, .5);
+}
+.skill-detail p{
+  font-weight: 600;
+  color: rgba(34, 27, 39, 1);
+}
+
 .skill-develope p{
   font-size: 1.2rem;
   color: rgba(255, 255, 255, .2);
 }
-
 .skill-design li,
 .skill-develope li{
-  width: 50%;
+  width: 90%;
   padding: .5em 1em;
   margin: 5px 0;
   line-height: 1;
-  background: rgba(0, 0, 0, 1);
+  font-weight: 600;
+  color: black;
+  opacity: .9;
+  /* background: rgba(0, 0, 0, 1); */
+}
+.skill-design li:hover,
+.skill-develope li:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 3px 3px black;
+  transition: transform .3s;
+  opacity: 1;
+
+}
+/* skill design */
+.skill-design li:nth-child(1){
+  background: linear-gradient(to left, #FF9A00 30%, #300 30%);
+  background: #FF9A00;
+}
+.skill-design li:nth-child(2){
+  background: linear-gradient(to left, #FD61F4 35%, #4E0039 35%);
+  background: #FD61F4;
+
+}
+.skill-design li:nth-child(3){
+  background: linear-gradient(to left, #31A8FF 35%, #001E36 35%);
+  background: #31A8FF;
 }
 
-
-
-
-
+/* skill develope */
+.skill-develope li:nth-child(1){
+  background: linear-gradient(135deg, #F1662B 35%, #34A9DC 35%);
+}
+.skill-develope li:nth-child(2){
+  background: #FFD93A;
+}
+.skill-develope li:nth-child(3){
+  background: linear-gradient(135deg, #376F9F 35%, #FFD343 35%);
+}
+.skill-develope li:nth-child(5){
+  background: linear-gradient(135deg, #61DBFB 35%, #FFF 35%);
+}
+.skill-develope li:nth-child(4){
+  background: #2C638F;
+}
 
 
 
@@ -249,7 +299,7 @@ main section{
   top: 0;
   left: 0;
   width: 100%;
-  height: 50rem;
+  height: 80%;
   background: url('../images/temp_profile.png') no-repeat center;
   background-size: 150%;
 }

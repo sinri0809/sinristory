@@ -1,5 +1,6 @@
 @charset 'utf-8';
 @import url('../css/common.css');
+@import url('../css/keyframe.css');
 /* only for index.html */
 
 /* section welcome */
@@ -11,7 +12,6 @@
   display: grid;
   grid-template-rows: 10.5rem 24rem;
   row-gap: 7rem;
-  /* height: 100%; */
   padding-top: 15rem;
 }
 hgroup{
@@ -23,7 +23,7 @@ hgroup{
   font-family: consolas;
   font-size: 9.5rem;
   line-height: 1.2;
-  text-shadow: .7rem 0 0px rgba(108, 71, 199, 1);
+  text-shadow: 6px 0 0px rgba(108, 71, 199, 1);
 }
 h1::before,
 h2::before{
@@ -34,7 +34,6 @@ h2::before{
   display: block;
   width: 100%;
   height: 100%;
-  background: rgba(240, 235, 243, 1);
   background: rgba(108, 71, 199, 1);
   transform-origin: right;
   transform: translateX(-100%) scaleX(100%);
@@ -60,9 +59,6 @@ h2::after{
 }
 /* main */
 main{
-  position: relative;
-  min-width: 192rem;
-  padding-top: 6rem;
   border-radius: 5rem 5rem 0 0;
   background: linear-gradient(45deg, rgb(9, 3, 9), rgb(29, 12, 42));
 }
@@ -211,10 +207,22 @@ p:last-child{
   background-size: 80%;
 }
 
+.button-more{
+  position: relative;
+  display: inline-block;
+  padding: 2em 1em;
+  text-decoration: underline;
+  color: rgba(200, 200, 200, 1);
+}
+.button-more:hover{
+  color: rgba(108, 71, 199, 1);
+}
+
+
+
 /* contact */
 .contact .container{
   height: auto;
-
 }
 /* contact form */
 .contact-form{

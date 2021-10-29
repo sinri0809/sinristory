@@ -7,19 +7,24 @@ window.onload = function(){
 
   const screen = document.querySelector('.wrap');
 
-  gnb_trigger.addEventListener('mouseenter', (e) =>{
-    gnb.style.display = 'block';
-  });
   gnb_trigger.addEventListener('mouseleave', () =>{
     timer = setTimeout(() => {
       gnb.style.display = 'none';
     }, 1000);
   });
+  gnb_trigger.addEventListener('mouseenter', (e) =>{
+    // e.preventDefault();
+    clearTimeout(timer);
+    gnb.style.display = 'block';
+  });
+
   gnb.addEventListener('mouseenter', () => {
     clearTimeout(timer);
   });
   gnb.addEventListener('mouseleave', () => {
-    gnb.style.display = 'none';
+    timer = setTimeout(() => {
+      gnb.style.display = 'none';
+    }, 100);
   });
 
 
@@ -42,14 +47,14 @@ window.onload = function(){
   
   let temp_arr = [false, false, false, false];
   
-  sendButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    paths.forEach((item, index) => {
-      // console.log(`${index} ${item.checked}`);
-      temp_arr[index] = item.checked;
-    });
+  // sendButton.addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   paths.forEach((item, index) => {
+  //     // console.log(`${index} ${item.checked}`);
+  //     temp_arr[index] = item.checked;
+  //   });
     // let mail = new MailContainer(usermail.value, message.value, [...temp_arr]);
 
 
-  });
+  // });
 }

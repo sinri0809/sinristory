@@ -48,16 +48,14 @@ html{
   scroll-behavior: smooth;
 }
 body{
-  font-family: consolas, 'NanumSquare';
+  font-family: consolas, 'consolasD', 'NanumSquare';
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0;
   color: #221b27;
-
-  min-width: 192rem;
-
-  /* user-select: none; */
+  /* min-width: 192rem; */
+  user-select: none;
 }
 /* layout */
 
@@ -71,7 +69,14 @@ body{
   width: 138rem;
   margin: 0 auto;
 }
-
+main{
+  position: relative;
+  padding-top: 6rem;
+}
+section{
+  padding-top: 12rem;
+  min-height: 92rem;
+}
 /* header */
 header{
   position: absolute;
@@ -98,7 +103,8 @@ header .container{
   display: block;
   width: 100%;
   height: .5em;
-  background: rgba(240, 235, 243, 1);
+  background: rgba(108, 71 , 199, 1);
+  transition: all .3s;
 }
 .trigger-toggle
 .toggle-rod:nth-child(1){
@@ -119,19 +125,8 @@ header .container{
 .toggle-rod{
   transition: transform .3s;
   transform: scaleX(100%);
+  background: rgba(240, 235, 243, 1);
 }
-/* .trigger-toggle:hover
-~nav{
-  display: block;
-}
-nav:hover
-~.trigger-toggle
-.toggle-rod{
-  transform: scaleX(100%);
-}
-nav:hover{
-  display: block;
-} */
 nav{
   display: none;
   position: absolute;
@@ -158,28 +153,41 @@ nav > ul > li a{
   padding: .5em 0;
   color: rgba(15, 6, 16, 1);
 }
-nav > ul li a::after{
+.button-eff::after{
   content: '';
   position: absolute;
   right: 0;
   width: 100%;
   height: 1em;
   background: rgba(129, 80, 212, .5);
+  background-blend-mode: darken;
+  
   transform-origin: right;
   transform: scaleX(0);
 }
-nav > ul li a:hover::after{
+.button-eff:hover::after{
   animation: nav-ani .3s ease; 
-  /* animation-duration: .3s; */
+  animation-fill-mode: forwards;
+}
+.button-eff-2::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 1em;
+  background: rgba(255, 154, 52, .5);
+  background-blend-mode: darken;
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: -1;
+}
+.button-eff-2:hover::after{
+  animation: nav-ani .3s ease; 
   animation-fill-mode: forwards;
 }
 /* main visual */
 
-section{
-  padding-top: 12rem;
-  height: 100vh;
-  min-height: 50rem;
-}
+
 .identity-box{
   width: 10rem;
   height: 10.5rem;

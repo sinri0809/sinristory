@@ -28,3 +28,13 @@
     background: rgba(108, 71, 199, 0);
   }
 }
+@keyframes slide-up {
+  from{
+    transform: translateY(1rem);
+    opacity: 0.5;
+  }to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+}
