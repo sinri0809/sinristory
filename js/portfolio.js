@@ -16,7 +16,6 @@ async function fetchAPI(){
     .then((pending, fulfilled) => {
       portfolioData = pending["portfolios"];
 
-
       // 이거 수정해야함...
       // 이렇게 코딩하면 안돼요 ㅠㅠㅠㅠ
       writeHTML(portfolioData);
@@ -31,18 +30,15 @@ async function fetchAPI(){
 // 초기에는 sony <== index 0 을 먼저 띄운다.
 async function writeHTML(list, index=0){
   // console.warn('writeHTML called')
-
-  // 디자인 같은 경우에 demo page를 만들것인지? 
-  // 아니면 여기서 처리할 것인지??
   document.querySelector('.portfolios-explain').innerHTML = `
           <span>${list[index].date}</span>
           <h5>${list[index].portfolio}</h5>
           <h4 class="skill-set">${list[index].tech}</h4>
-          <a target="__blank" class="button-eff-2" href="${list[index].gitlink}">GitHub</a>
+          <a target="__blank" class="button-eff-2" href="${list[index].link}">${list[index].linktype}</a>
           <a target="__blank" class="button-eff-2" href="${list[index].demolink}">PageOverview</a>
           `;
   document.querySelector('.portfolios-visual').innerHTML = `
-          <img src="/images/portfolios/img${index}.jpg" alt="img${index}">`;
+          <img src="images/portfolios/img${index}.jpg" alt="img${index}">`;
 }
 
 function fetchAfter(){
@@ -55,12 +51,12 @@ function fetchAfter(){
   })
 }
 
+
 (async function(){
   await fetchAPI();
   fetchAfter();
   // await writeHTML(portfolioData, 0)
 })();
-
 
 /*
   1. 먼저 데이터 가져오고 await해야뎀

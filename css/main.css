@@ -23,6 +23,7 @@ hgroup{
   font-family: consolas;
   font-size: 9.5rem;
   line-height: 1.2;
+  word-break: keep-all;
   text-shadow: 6px 0 0px rgba(108, 71, 199, 1);
 }
 h1::before,
@@ -146,7 +147,6 @@ aside .main-road-bottom li:nth-child(3){
   height: calc(100vh - 18rem);
 }
 .main-road-bottom{
-  /* height: calc(100vh - 30rem); */
   height: 62rem;
 }
 /* 더 좋은 방법이 있을거 같다. */
@@ -192,6 +192,9 @@ p:last-child{
   padding-top: 1rem;
 }
 /* story-bottom */
+.story-bottom{
+  position: relative;
+}
 .story-bottom .story-box p:first-child{
   opacity: .5;
 }
@@ -319,8 +322,6 @@ p:last-child{
   color: rgba(255, 255, 255, 1);
   background: rgba(108, 71, 199, 1);
 }
-
-
 
 .contact-img{
   height: 70rem;

@@ -68,6 +68,7 @@ main section{
 }
 /* portfolios */
 .portfolios .container{
+  position: relative;
   display: grid;
   grid-template:'g-p g-1 g-3'
                 'g-p g-2 g-3';
@@ -95,6 +96,7 @@ main section{
   font-size: 1.8rem;
   font-weight: 100;
   padding-bottom: .5em;
+  text-align: left;
   color: rgba(125, 119, 129, 1);
   cursor: pointer;
   text-decoration: underline;
@@ -109,7 +111,7 @@ main section{
 /* portfolios explain */
 .portfolios-explain{
   grid-area: g-1;
-  height: 25rem;
+  /* height: 25rem; */
   padding: 3rem 3rem;
   background: rgba(125, 119, 129, .1);
   animation: slide-up .3s ease-in; 

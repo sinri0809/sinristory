@@ -1,10 +1,11 @@
 'use strict';
 
-import { createTransport } from 'nodemailer';
+import { createTransport } from './nodemailer';
 /* 
   i made mail server 
-  Mailtrap
+  on Mailtrap
 */
+// 메일을 보내려면 SMTP 서버 정보가 있어야 한다. 
 const email = {
   host: "smtp.mailtrap.io",
   port: 2525,
@@ -15,7 +16,9 @@ const email = {
 }
 
 const send = async (option) => {
+  // 콜백함수
   createTransport(email).sendMail(option, (error, info) => {
+    // 에러를 잡아야 겠죰.
     if(error){
       console.log(`error : ${error}`);
     }else{
@@ -23,8 +26,17 @@ const send = async (option) => {
       return info.response;
     }
   });
-
 }
+
+let test_mail = {
+  from : '1lliodqb@gmail.com',
+  to : '1lliodqb@gmail.com',
+  subject : 'hello',
+  text : "I'm following nodejs youtube again"
+}
+
+
+send(test_mail);
 
 class MailContainer{
   constructor(usermail, message, path){
