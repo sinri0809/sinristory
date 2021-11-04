@@ -96,6 +96,7 @@ aside{
   padding: 30rem 0;
   text-align: right;
   font-size: 1.2rem;
+  z-index: 9;
 }
 aside ul{
   position: relative;
@@ -292,14 +293,24 @@ p:last-child{
   color: white;
 }
 /* collect information */
+.where-from::before{
+  content: 'found me from';
+  position: absolute;
+  left: 2.5em;
+}
 .where-from{
   grid-area: g-5;
   display: flex;
-  padding: 1em 0 0 1em;
+  flex-wrap: wrap;
+  padding-left: 8em;
+  padding-top: 1em;
   background: rgba(11, 4, 12, .5);
 }
 .where-from > li{
-  padding: 0 1em;
+  width: 11rem;
+  padding: 0 0 1em 1em;
+  /* line-height: 1.6; */
+  font-size: 1.2rem;
 }
 /* .where-from li input[type="checkbox"]{
   color: red;

@@ -37,6 +37,9 @@
   .contact .container{
     display: flex;
   }
+  .where-from{
+    overflow: scroll;
+  }
   main .container{
     grid-template-columns: 100%;
     /* grid-template-rows: 50% 50%; */
@@ -82,6 +85,10 @@
     position: absolute;
     mix-blend-mode: hard-light;
   }
+  .contact-form{
+    grid-template-rows: 10% 15% 55% 10%;
+    grid-template-columns: 30% 40% 25%;
+  }
    /*profile  */
   .profile > .container 
   > .profile-visual~div{
@@ -108,6 +115,7 @@
   .persoanl-visual {
     background-size: 100%;
   }
+
   /* profile */
   .profile .container{
     grid-template:'g-p g-p'
@@ -139,15 +147,13 @@
     position: absolute;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 130%;
     object-fit: cover;
     object-position: top;
     filter: opacity(1) contrast(.1) brightness(1.8);
     animation: slide-up .3s ease-in; 
-    z-index: -1;
-  
+    z-index: -2;
   }
 }
 @media screen and (max-width: 325px) {

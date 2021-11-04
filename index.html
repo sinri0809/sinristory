@@ -18,12 +18,12 @@
       goal2 : start react project 
   -->
 
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/response.css">
-  <!-- <script defer src="js/mail.js"></script> -->
-  <script defer src="js/script.js"></script>
+  <!-- css에 version 정보를 추가하는 방법 -->
+  <link rel="stylesheet" href="css/main.css?ver=202111041030">
+  <link rel="stylesheet" href="css/response.css?ver=202111041030">
 
-  <script type="module" src="js/mail.js"></script>
+  <script defer src="js/script.js"></script>
+  <!-- <script defer type="module" src="mail.js"></script> -->
 </head>
 
 <body>
@@ -315,10 +315,9 @@
             <form class="contact-form" action="">
               <h5>Contact</h5>
               <label for="">to.sinri</label>
-              <input id="usermail" type="email" placeholder="youtemail@email.com">
+              <input id="usermail" type="email" placeholder="your email @email.com">
               <textarea name="message" id="message" cols="30" rows="10" placeholder="I love your portfolio site"></textarea>
               <ul class="where-from">
-                <span>found me from</span>
                 <li>
                   <input class="path" type="checkbox" name="jop potal" id="jop-potal">
                   <label for="jop-potal">jop potal</label>
