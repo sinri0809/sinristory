@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,11 +13,31 @@
   <meta name="theme-color" content="#ffffff">
   <title>sinristory</title>
 
+  <!-- seo -->
+  <meta name="title" content="신리의 포트폴리오">
+  <meta name="description" content="sinri(정수진) front-end developer portfolio page">
+  <meta name="author" content="sinri">
+  <meta name="keyword" content="front-end, WEB, developer, portfolio, sinri, 정수진">
+
+  <meta name="robots" content="ALL">
+  <meta name="Yeti" content="index, follow">
+  <meta name="Yeti" content="ALL">
+  <meta name="googlebot" content="index, follow">
+  <meta name="googlebot" content="ALL">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site" content="website">
+  <meta property="og:title" content="sinri portfolio">
+  <meta property="og:description" content="sinri의 portfolio 사이트 입니다">
+  <meta property="og:image" content="images/about/me_img.jpg">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/response.css">
 
-  <script defer src="js/script.js"></script>
-  <script defer src="js/about.js"></script>
+  <script defer type="module" src="js/script.js"></script>
+  <!-- <script defer src="js/about.js"></script> -->
 
 </head>
 <body>
@@ -25,14 +45,18 @@
     <!-- header -->
     <header>
       <div class="container">
+        <!-- now page -->
         <mark>
           <span>About me</span>
         </mark>
+
+        <!-- nav effect -->
         <div class="trigger-toggle">
           <span class="toggle-rod"></span>
           <span class="toggle-rod"></span>
           <span class="toggle-rod"></span>
         </div>
+
         <nav>
           <ul>
             <li><a class="button-eff" href="index.html">
@@ -82,12 +106,14 @@
             <li><a class="button-eff" href="about.html">About me</a></li>
             <li><a class="button-eff" href="portfolios.html">Portfolios</a></li>
             <li><a class="button-eff" href="index.html#contact" name="contact"><strong>contact</strong></a></li>
-            <li><a class="button-eff" href="#">en</a></li>
+            <li><a id="language" class="button-eff" href="#">en</a></li>
           </ul>
         </nav>
+
       </div>
     </header>
     <!-- /header -->
+
     <!-- profile -->
     <section class="profile">
       <div class="container">
@@ -140,7 +166,7 @@
           <div class="profile-basic">
             <h3>sinri</h3>
             <p>
-              신리는 새로운 동네라는 뜻입니다. <br>
+              신리 <b>(新里)</b>는 새로운 동네라는 뜻입니다. <br>
               제가 사는 마을 이름 <strong>곡신리</strong>에서 따왔습니다.
             </p>
 
@@ -157,11 +183,10 @@
           </div>
 
         </div>
+
         <!-- skills -->
-        <!-- grid-1 first -->
         <div class="profile-skills">
           <h4>Skills</h4>
-
 
           <div class="skill-design">
             <h5>design & communication</h5>
@@ -185,16 +210,12 @@
             <p>currently : React</p>
             <p>plan : Typescript, Firebase, nodejs</p>
           </div>
+
           <div class="skill-detail">
-            <!-- temp text -->
-            <p>
-              HTML5 기본 구조와 동작 원리를 이해하고 
-              semantic tag를 활용하여
-              SEO에 적합한 페이지를 만들 수 있습니다.
-            </p>
           </div>
         </div>
 
+        <!-- education -->
         <div class="profile-edu">
           <h4>Education</h4>
           <p>경북대학교, 전자공학부, 학사</p>
@@ -210,6 +231,7 @@
           <p>Toeic Speacking Lv6</p>
         </div>
 
+        <!-- study note -->
         <div class="profile-study">
           <h4>Study Note(wikidocs)</h4>
           <p>제가 기록하는 공간입니다</p>
@@ -265,6 +287,8 @@
             </a></li>
           </ul>
         </div>
+
+        <!-- stats -->
         <div class="profile-stats">
           <h4>Stats</h4>
           <ul>
@@ -287,7 +311,7 @@
             <p>
               doodle <br>
               camera <br>
-              bartender <br>
+              🍹bartender <br>
               run <br>
               custom t-shirts <br>
             </p>
@@ -299,11 +323,11 @@
             <a class="sinrilab" target="__blank" href="https://sinri0809.github.io/sinri_lab/"></a>
             <a class="link-another" target="__blank" href="https://www.pinterest.co.kr/sinriproject0809/-work/">
               <strong>🎨Pinterest</strong>
-              <p>그림으로 표현합니다</p>
+              <p>draw as I want</p>
             </a>
             <a class="link-another" target="__blank" href="https://unsplash.com/@sinri">
               <strong>📷unsplash</strong>
-              <p>not professional though</p>
+              <p>not professional though  </p>
             </a>
           </div>
           <div class="personal-contents --right">

@@ -156,13 +156,12 @@
     z-index: -2;
   }
 }
-@media screen and (max-width: 325px) {
+@media screen and (max-width: 425px) {
   .welcome h1, h2{
-    font-size: 5.5rem;
+    font-size: 4.5rem;
+    text-shadow: 3px 0 0px rgb(108 71 199);
   }
 
 }
-@media (max-height: 900px), screen{
 
-}
 

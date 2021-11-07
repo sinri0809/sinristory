@@ -24,8 +24,7 @@ main section{
 /* main */
 .profile{
   position: relative;
-  /* height: calc(100vh - 6rem); */
-  /* height: 100vh; */
+  height: 100vh;
   background: linear-gradient(45deg, rgb(9, 3, 9), rgb(29, 12, 42));
 }
 .profile .container{
@@ -36,6 +35,7 @@ main section{
   grid-template-rows: 33rem 33rem;
   column-gap: 3rem;
   row-gap: 2.5rem;
+
   line-height: 1.6;
   color: rgba(200, 200, 200, 1);
   z-index: 0;
@@ -51,6 +51,8 @@ main section{
   width: 25rem;
   height: 25rem;
   background: aliceblue;
+  background: url('/images/about/me_img.jpg') no-repeat center;
+  background-size: 110%;
   border-radius: 50%;
 }
 .profile-img::before{
@@ -101,7 +103,6 @@ main section{
   opacity: .5;
 }
 /* basic information */
-
 .profile > .container 
 > .profile-visual~div h4{
   font-size: 1.8rem;
@@ -181,7 +182,6 @@ main section{
 .skill-design li:nth-child(2){
   background: linear-gradient(to left, #FD61F4 35%, #4E0039 35%);
   background: #FD61F4;
-
 }
 .skill-design li:nth-child(3){
   background: linear-gradient(to left, #31A8FF 35%, #001E36 35%);
@@ -204,14 +204,6 @@ main section{
 .skill-develope li:nth-child(4){
   background: #2C638F;
 }
-
-
-
-
-
-
-
-
 
 .profile-edu{
   grid-area: g-2;

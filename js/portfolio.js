@@ -4,14 +4,16 @@
   
   // 이 함수는 최초에 한번만 실행하면 되는 함수
 let portfolioData = Array();
+
 async function fetchAPI(){
   try{
     console.log('loaded json')
     let response = fetch('https://sinri0809.github.io/tempdata.github.io/data.json');
     // console.log((await response).json())
     if(!(await response).ok){
-      throw new Error("failed to get API");
+      throw new Error("failed to get json");
     }
+
     let portfolios = (await response).json()
     .then((pending, fulfilled) => {
       portfolioData = pending["portfolios"];
@@ -43,6 +45,7 @@ async function writeHTML(list, index=0){
 
 function fetchAfter(){
   console.log('HTML start');
+  
   let portfolios = document.querySelectorAll('.portfolios-list > li');
   portfolios.forEach((item, index) => {
     item.addEventListener('click', (e) => {

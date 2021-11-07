@@ -54,15 +54,14 @@ body{
   line-height: 1;
   letter-spacing: 0;
   color: #221b27;
-  /* min-width: 192rem; */
+
   user-select: none;
 }
-/* layout */
 
+/* layout */
 .wrap{
   position: relative;
   width: 100%;
-  transition: transform .3s;
 }
 .container{
   position: relative;
@@ -77,6 +76,7 @@ section{
   padding-top: 12rem;
   min-height: 92rem;
 }
+
 /* header */
 header{
   position: absolute;
@@ -89,6 +89,7 @@ header .container{
   align-items: center;
   height: 6rem;
 }
+/* nav animation */
 .trigger-toggle{
   position: relative;
   display: flex;
@@ -153,6 +154,7 @@ nav > ul > li a{
   padding: .5em 0;
   color: rgba(15, 6, 16, 1);
 }
+
 .button-eff::after{
   content: '';
   position: absolute;
@@ -185,9 +187,8 @@ nav > ul > li a{
   animation: nav-ani .3s ease; 
   animation-fill-mode: forwards;
 }
+
 /* main visual */
-
-
 .identity-box{
   width: 10rem;
   height: 10.5rem;
