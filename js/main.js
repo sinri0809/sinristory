@@ -1,6 +1,9 @@
 'use strict';
-/* only for index.html */
-
+/*
+  only for index.html
+  1. cookie 값에 맞게 언어 렌더링 하기
+  2. mamil 내용 받아서 mail 보내기 기능 만들기 
+*/
 let main_lang_ko = new Array();
 let main_lang_en = new Array();
 
@@ -9,7 +12,51 @@ const why = document.querySelectorAll('article > p');
 const remark = document.querySelectorAll('.story-top-imgs > span');
 const main_arr = [...heading, ...why, ...remark];
 
-async function renderLang(main_lang){
+// 이거는 딱 한번만 하면됨.
+// fetch로 english.json 파일 가져오기 
+async function getEn(){
+  try{
+    const response = fetch('https://sinri0809.github.io/tempdata.github.io/lang_en.json');
+    if(!(await response).ok){
+      throw new Error("failed to get json file");
+    }
+    (await response).json()
+    .then((pending, fullfilled) => {
+      // console.log('getEnglish');
+      // console.log(typeof(pending["hgroup"]))
+      // 얘가 Array가 아니라 Object라서 foreach나 spread 문법은 사용할 수 없다. 
+      for (let i in pending["hgroup"]){
+        main_lang_en.push(pending["hgroup"][i]);
+      }
+      for (let i in pending["why"]){
+        main_lang_en.push(pending["why"][i]);
+      }
+      setLocal("main_en", main_lang_en);
+    });
+  }
+  catch{
+    throw new Error("something's wrong");
+  }
+}
+// 현재 페이지 한글 파일을 배열로 만들 거임.
+function getKo(){
+  main_arr.forEach((item) => {
+    if(item.innerHTML !== ''){
+      main_lang_ko.push(item.innerHTML);
+    }
+  })
+}
+function setLocal(main_lang="main_ko", main_lang_list){
+  localStorage.setItem(main_lang, JSON.stringify(main_lang_list));
+}
+(function setInitial(){
+  console.log("initializing")
+  getEn();
+  getKo();
+})();
+
+
+function renderLang(main_lang){
   console.warn('rendering');
   let i = 0;
   main_arr.forEach((item) => {
@@ -20,46 +67,23 @@ async function renderLang(main_lang){
     }
   })
 }
-// fetch로 english.json 파일 가져오기 
-// 이거는 딱 한번만 하면됨.
-async function getEnglish(state){
-  try{
-    const response = fetch('https://sinri0809.github.io/tempdata.github.io/lang_en.json');
-    if(!(await response).ok){
-      throw new Error("failed to get json file");
-    }
-    (await response).json()
-    .then((pending, fullfilled) => {
-      console.warn('succeed to get file');
-      // console.log(typeof(pending["hgroup"]))
-      // 얘가 Array가 아니라 Object라서 foreach나 spread 문법은 사용할 수 없다. 
-      for (let i in pending["hgroup"]){
-        main_lang_en.push(pending["hgroup"][i]);
-      }
-      for (let i in pending["why"]){
-        main_lang_en.push(pending["why"][i]);
-      }
-      changeLanguage(state);
-      return fullfilled;
-      // renderLang(main_lang_en);
-    });
-    
-  }
-  catch{
-    throw new Error("something's wrong");
+function setLang(state){
+  if(state){
+    // 영어를 보여줘야함.
+    renderLang(main_lang_en);
+  }else{
+    renderLang(main_lang_ko);
   }
 }
 
-function makeArr(main_lang){
-  main_arr.forEach((item) => {
-    if(item.innerHTML !== ''){
-      main_lang.push(item.innerHTML);
-    }
-  })
+async function Main(state){
+  // 호출하는 순간 영어 파일부터 load 함.(한번만 해도 됨)
+  setLang(state);
 }
-async function setLocal(main_lang="main_ko"){
-  localStorage.setItem(main_lang, JSON.stringify(main_lang_ko));
-}
+
+export default Main;
+
+
 // localstorage 에서 ko/en 파일 가져오기 
 // function getLocal(main_lang="main_ko"){
 //   try{
@@ -72,35 +96,47 @@ async function setLocal(main_lang="main_ko"){
 //   }
 // }
 
-async function changeLanguage(state){
-  if(state == "true"){
-    // 영어를 보여줘야함.
-    await renderLang(main_lang_en);
-  }else{
-    await renderLang(main_lang_ko);
-  }
-}
 
 
-async function Main(state){
-  // 호출하는 순간 영어 파일부터 load 함.
-  makeArr(main_lang_ko);
-  await setLocal("main_ko");
-  // switch 값에 따라서 판별하는 거임.
 
-  // 이거 한번만 실행하면 되는뎅....
-  getEnglish(state);
+// mail 내용 만들거임
+// window.onload = function(){
+//   test();
+ 
+//  // 여기서 입력받아서 mail.js로 넘겨주기 
+//   // 이거 어땜
+//   function emailContents(usermail, message, paths = [false, false, false, false]){
+//     this.usermail = usermail;
+//     this.message = message;
+//     this.paths = paths;
+//   }
 
-  // changeLanguage(state);
+//   // email function data가져가기
+//   const usermail = document.querySelector('#usermail');
+//   const message = document.querySelector('#message');
 
-}
 
-export default Main;
+//   // checked된 array가져가기
+//   const paths = document.querySelectorAll('.path');
+//   let paths_arr = [false, false, false, false];
+//   paths.forEach((item, index) => {
+//     item.addEventListener('click', () => {
+//       // paths_arr[index] = true;
+//       if(paths_arr[index]){
+//         paths_arr[index] = false;
+//       }else{
+//         paths_arr[index] = true;
+//       }
+//     });
+//   });
 
-  //filter로  변경할 때는
-  // let result = main_arr.filter((item) => {
-  //   if(item.innerHTML !== ''){
-  //     return item.innerHTML;
-  //   }
-  //   return false
-  // })
+//   const sendButton = document.querySelector('.button-send');
+
+//   sendButton.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     // let mail = new MailContainer(usermail.value, message.value, [...temp_arr]);
+    
+//   });
+// }
+
+

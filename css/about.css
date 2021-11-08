@@ -51,7 +51,7 @@ main section{
   width: 25rem;
   height: 25rem;
   background: aliceblue;
-  background: url('/images/about/me_img.jpg') no-repeat center;
+  background: url('../images/about/me_img.jpg') no-repeat center;
   background-size: 110%;
   border-radius: 50%;
 }
@@ -84,6 +84,9 @@ main section{
   font-size: 1.2rem;
   line-height: 1.5;
   opacity: .5;
+}
+.profile-basic p b{
+  font-family: none;
 }
 .profile-basic > strong{
   display: inline-block;

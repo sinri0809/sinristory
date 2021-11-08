@@ -73,8 +73,9 @@ main{
   padding-top: 6rem;
 }
 section{
+  height: calc(100vh);
   padding-top: 12rem;
-  min-height: 92rem;
+  min-height: 80rem;
 }
 
 /* header */
@@ -122,8 +123,9 @@ header .container{
   transform-origin: left;
   transform: scaleX(70%);
 }
-.trigger-toggle:hover
-.toggle-rod{
+
+.trigger-toggle-active
+.toggle-rod:nth-child(n){
   transition: transform .3s;
   transform: scaleX(100%);
   background: rgba(240, 235, 243, 1);

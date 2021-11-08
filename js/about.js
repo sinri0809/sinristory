@@ -18,13 +18,7 @@ let temp_arr = [...profile_sinri, ...profile_nation, ...edu, ...study_note];
 let about_arr = new Array();
 about_arr = about_arr.concat(temp_arr.slice(0, 5), temp_arr.slice(7))
 
-async function renderLang(about_lang){
-  console.log("rendering");
-  about_arr.forEach((item, index) => {
-    item.innerHTML = `${about_lang[index]}`;
-  })
-}
-async function getEnglish(){
+async function getEn(){
   try{
     let response = fetch('https://sinri0809.github.io/tempdata.github.io/lang_en.json');
     if(!(await response).ok){
@@ -32,6 +26,7 @@ async function getEnglish(){
     }
     (await response).json()
     .then((pending) => {
+      // console.warn('loading')
       for(let i in pending["profile"]){
         about_lang_en.push(pending["profile"][i])
       }
@@ -41,34 +36,26 @@ async function getEnglish(){
       for(let i in pending["study_note"]){
         about_lang_en.push(pending["study_note"][i])
       }
-
-      return 0;
     })
   }
   catch{
     throw new Error("something's wrong");
   }
 }
-
-async function changeLanguage(state){
-  if(state == "true"){
-    //영어
-    await renderLang(about_lang_en);
-  }else{
-    await renderLang(about_lang_ko);
-  }
-}
-
-function makeArr(about_lang){
+function getKo(about_lang){
   about_arr.forEach((item)=> {
-    about_lang.push(item.innerHTML);
+    about_lang_ko.push(item.innerHTML);
   })
 }
+(function setInitial(){
+  getEn();
+  getKo();
+})();
 
 async function fetchSkills(state){
   let url = 'https://sinri0809.github.io/tempdata.github.io/data.json';
   let list = "skills";
-  if(state == "true"){
+  if(state){
     // 영어 버전을 가져와야함
     url = 'https://sinri0809.github.io/tempdata.github.io/lang_en.json';
     list = "skills_en";
@@ -78,7 +65,6 @@ async function fetchSkills(state){
     if(!(await response).ok) {
       console.warn("failed to get data");
     }
-    console.log("loaded json file");
     (await response).json()
     .then((pending) => {
       skillsData = pending[list];
@@ -88,9 +74,9 @@ async function fetchSkills(state){
   catch{
     throw new Error("something's wrong");
   }
-
   return skillsData;
 }
+
 // 처음엔 HTML & CSS를 먼저 띄우기
 async function writeHTML(list, index=3){
   document.querySelector('.skill-detail').innerHTML = `
@@ -100,22 +86,32 @@ async function writeHTML(list, index=3){
 }
 function changeHTML(){
   let skill_list = document.querySelectorAll('.skill-list > li');
-  // console.log(skill_list);
   skill_list.forEach((item, index) => {
     item.addEventListener("click", (e) => {
       writeHTML(skillsData, index);
     })
   })
 }
+function setLang(state){
+  if(state){
+    renderLang(about_lang_en);
+  }else{
+    renderLang(about_lang_ko);
+  }
+}
+function renderLang(about_lang){
+  console.log("rendering");
+  about_arr.forEach((item, index) => {
+    item.innerHTML = `${about_lang[index]}`;
+  })
+}
 
-
-function About(state){
+// await getEnglish();
+async function About(state){
   // 한번만 좀 하게 해야하는데.. 
-  getEnglish();
-  fetchSkills(state);
+  await fetchSkills(state);
   changeHTML();
-  makeArr(about_lang_ko);
-  changeLanguage(state);
+  setLang(state);
 }
 
 export default About;

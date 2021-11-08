@@ -1,9 +1,5 @@
 @charset 'utf-8';
-@media screen and (max-width:1850px) {
-  aside{
-    display: none;
-  }
-}
+
 @media screen and (max-width:1695px) {
   body{
     min-width: 100%;
@@ -42,7 +38,6 @@
   }
   main .container{
     grid-template-columns: 100%;
-    /* grid-template-rows: 50% 50%; */
   }
   .story-top-imgs img{
     width: 100%;
@@ -74,7 +69,12 @@
 @media screen and (max-width: 890px) {
   /* main  */
   .welcome h1, h2{
-    font-size: 6.5rem;
+    font-size: 10vw;
+    text-shadow: .7vw 0 0px rgba(255, 154, 52, 1);
+
+  }
+  #home .welcome h1, h2{
+    text-shadow: 5px 0 0px rgb(108 71 199);
   }
   .story-bottom-imgs{
     width: 100%;
@@ -157,8 +157,8 @@
   }
 }
 @media screen and (max-width: 425px) {
-  .welcome h1, h2{
-    font-size: 4.5rem;
+  #home .welcome h1, h2{
+    font-size: 10vw;
     text-shadow: 3px 0 0px rgb(108 71 199);
   }
 
