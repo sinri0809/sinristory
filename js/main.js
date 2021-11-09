@@ -25,13 +25,20 @@ async function getEn(){
       // console.log('getEnglish');
       // console.log(typeof(pending["hgroup"]))
       // 얘가 Array가 아니라 Object라서 foreach나 spread 문법은 사용할 수 없다. 
-      for (let i in pending["hgroup"]){
-        main_lang_en.push(pending["hgroup"][i]);
+      let temp = "hgroup,why";
+      for(let i of temp.split(',')){
+        for(let j in pending[i]){
+          main_lang_en.push(pending[i][j])
+        }
       }
-      for (let i in pending["why"]){
-        main_lang_en.push(pending["why"][i]);
-      }
-      setLocal("main_en", main_lang_en);
+      
+      // for (let i in pending["hgroup"]){
+      //   main_lang_en.push(pending["hgroup"][i]);
+      // }
+      // for (let i in pending["why"]){
+      //   main_lang_en.push(pending["why"][i]);
+      // }
+      // setLocal("main_en", main_lang_en);
     });
   }
   catch{
@@ -46,9 +53,9 @@ function getKo(){
     }
   })
 }
-function setLocal(main_lang="main_ko", main_lang_list){
-  localStorage.setItem(main_lang, JSON.stringify(main_lang_list));
-}
+// function setLocal(main_lang="main_ko", main_lang_list){
+//   localStorage.setItem(main_lang, JSON.stringify(main_lang_list));
+// }
 
 function renderLang(main_lang){
   console.warn('rendering');

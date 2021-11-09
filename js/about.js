@@ -93,7 +93,7 @@ function setLang(state){
   }
 }
 function renderLang(about_lang){
-  console.log(`rendering : ${about_lang}`);
+  console.log(`rendering : ${typeof(about_lang)}`);
   about_arr.forEach((item, index) => {
     item.innerHTML = `${about_lang[index]}`;
   })

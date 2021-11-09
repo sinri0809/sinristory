@@ -107,8 +107,6 @@ aside ul li{
   font-weight: 100;
   color: rgba(240, 235, 243, .3);
 }
-/* 나중에 javascript로 위치 지정해 놓기 */
-/* 일단 지금은 수동으로 잡고 */
 /* rod box */
 aside ul li::after{
   content: '';
@@ -151,7 +149,7 @@ aside .main-road-bottom li:nth-child(3){
   height: 62rem;
 }
 /* 더 좋은 방법이 있을거 같다. */
-.main-road-top::after,
+/* .main-road-top::after,
 .main-road-bottom::after{
   content: '';
   position: absolute;
@@ -162,7 +160,7 @@ aside .main-road-bottom li:nth-child(3){
   height: 100%;
   background: rgba(114, 114, 114, 0.3);
   z-index: 0;
-}
+} */
 
 
 /* story-top */

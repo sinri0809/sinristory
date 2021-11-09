@@ -134,7 +134,21 @@ main section{
   color: rgba(255, 255, 255, .2);
 }
 .profile-skills ul li{
+  width: 80%;
+  padding: .5em 1em;
+  margin: 5px 0;
+  line-height: 1;
   font-weight: 100;
+  color: black;
+  opacity: .6;
+
+  cursor: pointer;
+}
+.profile-skills ul li:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 3px 3px black;
+  transition: transform .3s;
+  opacity: 1;
 }
 .skill-detail{
   width: 90%;
@@ -143,42 +157,21 @@ main section{
   padding: 1.5em 1em 1em 1em;
   margin: 2rem 0 1rem 0;
   /* background: rgba(255, 255, 255, .2); */
-  background: rgba(108, 71, 199, 1);
   background: rgba(200, 200, 200, 1);
 }
 .skill-detail h5{
   font-weight: 700;
-  color: rgba(255, 154, 52, 1);
   color: rgba(34, 27, 39, .5);
 }
 .skill-detail p{
   font-weight: 600;
   color: rgba(34, 27, 39, 1);
 }
-
 .skill-develope p{
   font-size: 1.2rem;
   color: rgba(255, 255, 255, .2);
 }
-.skill-design li,
-.skill-develope li{
-  width: 90%;
-  padding: .5em 1em;
-  margin: 5px 0;
-  line-height: 1;
-  font-weight: 600;
-  color: black;
-  opacity: .9;
-  /* background: rgba(0, 0, 0, 1); */
-}
-.skill-design li:hover,
-.skill-develope li:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 3px 3px black;
-  transition: transform .3s;
-  opacity: 1;
 
-}
 /* skill design */
 .skill-design li:nth-child(1){
   background: linear-gradient(to left, #FF9A00 30%, #300 30%);
