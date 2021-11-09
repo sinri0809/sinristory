@@ -139,6 +139,10 @@ main section{
   margin-right: 1em;
 }
 
+.not-yet{
+  pointer-events: none;
+}
+
 .skill-set{
   padding-bottom: 1em;
 }
@@ -152,7 +156,6 @@ main section{
 }
 .portfolios-visual{
   grid-area: g-3;
-  
 }
 .portfolios-visual img{
   width: 100%;

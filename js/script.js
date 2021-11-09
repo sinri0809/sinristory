@@ -56,7 +56,6 @@ window.onload = function(){
     toggle();
   })
 
-  // 언어 팩 만들기 changing language 
   /*
     0. 페이지 처음 들어오면 cookie로 언어 체크 상태 확인하기 
     1. 영어 버튼 선택하면
@@ -66,8 +65,7 @@ window.onload = function(){
         쿠키말고 로컬 스토리지(WEB API)로 저장하여 다른 사이트에서도 이용하기
   */
   // cookie만들기 
-  // lang_en : false(한국어) true(영어)
-  // value = boolean
+  // lang_en : false(한국어) true(영어) /  value = boolean
   const lang_cookie = (value=false) => {
     let date = new Date();
     // 1 day is enough
@@ -77,7 +75,6 @@ window.onload = function(){
     cookie += `Expires=${date.toUTCString()};`;
     document.cookie = cookie;
   } 
-
   let lang_en_switch = () => {
     let state = false;
     document.cookie.split(';')
@@ -89,7 +86,6 @@ window.onload = function(){
     state = JSON.parse(state);
     return state;
   }
-
 
   const lang_button = document.querySelector('#language');
   lang_button.addEventListener('click', function(){
@@ -112,10 +108,7 @@ window.onload = function(){
   // 최초에 한번만 실행하면 됨.
   switch (lang_en_switch()){
     case true :
-      // 이게 겁나 헷갈리는데 
-      // lang_en 이 true면 en상태란 뜻이고
-      // 바꿀 버튼을 렌더링 해야하니까
-      // ko가 나와야 하는 것. 
+      // lang_en = true이면, 바꿀 버튼 상태인 ko를 렌더링
       lang_button.innerHTML="ko";
       pageSearch(lang_en_switch());
       break;

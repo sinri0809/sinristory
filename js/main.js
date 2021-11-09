@@ -49,12 +49,6 @@ function getKo(){
 function setLocal(main_lang="main_ko", main_lang_list){
   localStorage.setItem(main_lang, JSON.stringify(main_lang_list));
 }
-(function setInitial(){
-  console.log("initializing")
-  getEn();
-  getKo();
-})();
-
 
 function renderLang(main_lang){
   console.warn('rendering');
@@ -75,6 +69,12 @@ function setLang(state){
     renderLang(main_lang_ko);
   }
 }
+
+(function setInitial(){
+  console.log("initializing main.js")
+  getEn();
+  getKo();
+})();
 
 async function Main(state){
   // 호출하는 순간 영어 파일부터 load 함.(한번만 해도 됨)
