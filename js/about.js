@@ -1,4 +1,5 @@
 'use strict';
+// ver = 2021.11.11 
 // i made temp db storage
 // https://sinri0809.github.io/tempdata.github.io/data.json
 
@@ -55,7 +56,7 @@ async function fetchSkills(state){
   try{
     let response = fetch(url);
     if(!(await response).ok) {
-      console.warn("failed to get data");
+      // console.warn("failed to get data");
     }
     (await response).json()
     .then((pending) => {
@@ -93,7 +94,7 @@ function setLang(state){
   }
 }
 function renderLang(about_lang){
-  console.log(`rendering : ${typeof(about_lang)}`);
+  // console.log(`rendering : ${typeof(about_lang)}`);
   about_arr.forEach((item, index) => {
     item.innerHTML = `${about_lang[index]}`;
   })

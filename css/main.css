@@ -21,7 +21,7 @@ hgroup{
   position: relative;
   display: inline-block;
   font-family: consolas;
-  font-size: 9.5rem;
+  font-size: 8.5rem;
   line-height: 1.2;
   word-break: keep-all;
   text-shadow: 6px 0 0px rgba(108, 71, 199, 1);
@@ -87,82 +87,6 @@ main .container{
   color: rgba(108, 71, 199, 1);
 }
 /* //story-box common */
-/* aside */
-aside{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 19rem;
-  padding: 30rem 0;
-  text-align: right;
-  font-size: 1.2rem;
-  z-index: 9;
-}
-aside ul{
-  position: relative;
-}
-aside ul li{
-  position: relative;
-  line-height: 1.4;
-  font-weight: 100;
-  color: rgba(240, 235, 243, .3);
-}
-/* rod box */
-aside ul li::after{
-  content: '';
-  position: absolute;
-  top: 0;
-  right: -2.5rem;
-  display: block;
-  width: 1rem;
-  height: 1rem;
-  background: rgb(96, 96, 96);
-  z-index: 9;
-}
-/* 사각형 위치 잡기 */
-/* 추후 자바스크립트로 변경 예정. */
-aside .main-road-top li:nth-child(2){
-  transform: translateY(10rem);
-}
-aside .main-road-top li:nth-child(3){
-  transform: translateY(23rem);
-}
-aside .main-road-top li:nth-child(4){
-  transform: translateY(37rem);
-}
-
-aside .main-road-bottom li:nth-child(1){
-  transform: translateY(6.5rem);
-}
-aside .main-road-bottom li:nth-child(2){
-  transform: translateY(48.5rem);
-}
-aside .main-road-bottom li:nth-child(3){
-  transform: translateY(54rem);
-}
-
-/* rod */
-.main-road-top{
-  height: calc(100vh - 18rem);
-}
-.main-road-bottom{
-  height: 62rem;
-}
-/* 더 좋은 방법이 있을거 같다. */
-/* .main-road-top::after,
-.main-road-bottom::after{
-  content: '';
-  position: absolute;
-  top: 0;
-  right: -2rem;
-  display: block;
-  width: 1px;
-  height: 100%;
-  background: rgba(114, 114, 114, 0.3);
-  z-index: 0;
-} */
-
-
 /* story-top */
 main > section{
   background: linear-gradient(45deg, rgb(9, 3, 9), rgb(29, 12, 42));
@@ -219,9 +143,6 @@ p:last-child{
 .button-more:hover{
   color: rgba(108, 71, 199, 1);
 }
-
-
-
 /* contact */
 .contact .container{
   height: auto;
@@ -241,7 +162,6 @@ p:last-child{
   color: rgba(240, 235, 243, .5);
   background: rgba(34, 27, 39, 1);
 }
-
 .contact-form::after{
   content: '';
   position: absolute;
@@ -318,7 +238,7 @@ p:last-child{
   color: red;
   background-color: red;
 } */
-.contact-form button[type='submit']{
+/* .contact-form button[type='submit']{
   grid-area: g-6;
   font-family: consolas;
   font-style: italic;
@@ -335,4 +255,4 @@ p:last-child{
 .contact-img{
   height: 70rem;
   background: url('../images/home/img-sec3-visual.png') no-repeat top;
-}
+} */

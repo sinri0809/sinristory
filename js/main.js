@@ -1,4 +1,5 @@
 'use strict';
+// ver = 2021.11.11 
 /*
   only for index.html
   1. cookie 값에 맞게 언어 렌더링 하기
@@ -13,16 +14,16 @@ const remark = document.querySelectorAll('.story-top-imgs > span');
 const main_arr = [...heading, ...why, ...remark];
 
 // 이거는 딱 한번만 하면됨.
-// fetch로 english.json 파일 가져오기 
 async function getEn(){
   try{
+    // fetch로 english.json 파일 가져오기 
     const response = fetch('https://sinri0809.github.io/tempdata.github.io/lang_en.json');
     if(!(await response).ok){
       throw new Error("failed to get json file");
     }
     (await response).json()
-    .then((pending, fullfilled) => {
-      // console.log('getEnglish');
+    .then((pending) => {
+      // console.log("2 get en")
       // console.log(typeof(pending["hgroup"]))
       // 얘가 Array가 아니라 Object라서 foreach나 spread 문법은 사용할 수 없다. 
       let temp = "hgroup,why";
@@ -31,14 +32,6 @@ async function getEn(){
           main_lang_en.push(pending[i][j])
         }
       }
-      
-      // for (let i in pending["hgroup"]){
-      //   main_lang_en.push(pending["hgroup"][i]);
-      // }
-      // for (let i in pending["why"]){
-      //   main_lang_en.push(pending["why"][i]);
-      // }
-      // setLocal("main_en", main_lang_en);
     });
   }
   catch{
@@ -53,32 +46,27 @@ function getKo(){
     }
   })
 }
-// function setLocal(main_lang="main_ko", main_lang_list){
-//   localStorage.setItem(main_lang, JSON.stringify(main_lang_list));
-// }
+
+function setLang(state){
+  state
+  ? renderLang(main_lang_en)
+  : renderLang(main_lang_ko);
+}
 
 function renderLang(main_lang){
-  console.warn('rendering');
+  // console.log('3 rendering main');
+  //index가져오면 안맞아서 i를 사용
   let i = 0;
   main_arr.forEach((item) => {
     if(item.innerHTML !== ''){
-      //index가져오면 안맞음
       item.innerHTML = `${main_lang[i]}`;
       i++;
     }
   })
 }
-function setLang(state){
-  if(state){
-    // 영어를 보여줘야함.
-    renderLang(main_lang_en);
-  }else{
-    renderLang(main_lang_ko);
-  }
-}
 
 (function setInitial(){
-  console.log("initializing main.js")
+  // console.log("1 initializing main.js")
   getEn();
   getKo();
 })();
@@ -89,7 +77,6 @@ async function Main(state){
 }
 
 export default Main;
-
 
 // localstorage 에서 ko/en 파일 가져오기 
 // function getLocal(main_lang="main_ko"){
@@ -104,14 +91,11 @@ export default Main;
 // }
 
 
-
-
 // mail 내용 만들거임
 // window.onload = function(){
 //   test();
  
 //  // 여기서 입력받아서 mail.js로 넘겨주기 
-//   // 이거 어땜
 //   function emailContents(usermail, message, paths = [false, false, false, false]){
 //     this.usermail = usermail;
 //     this.message = message;
@@ -145,5 +129,3 @@ export default Main;
     
 //   });
 // }
-
-

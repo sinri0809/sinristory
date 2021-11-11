@@ -136,11 +136,11 @@ main section{
   padding: 1em 0 1em 0;
   margin-right: 1em;
 }
+/* for not completed projects */
 .not-yet{
   pointer-events: none;
   display: none;
 }
-
 .skill-set{
   padding-bottom: 1em;
   line-height: 1.2;

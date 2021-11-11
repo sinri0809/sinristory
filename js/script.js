@@ -1,5 +1,5 @@
 'use strict';
-
+// ver = 2021.11.11 
 import Main from './main.js';
 import About from './about.js';
 
@@ -7,9 +7,11 @@ import About from './about.js';
 function pageSearch(lang_switch){
   switch (document.querySelector('mark > span').innerHTML){
     case 'sinri story' :
+      // console.log("here is Main");
       Main(lang_switch);
       break;
     case 'About me' : 
+      // console.log("here is About me");
       About(lang_switch);
       break;
   }
@@ -21,7 +23,6 @@ window.onload = function(){
   let timer;
   let flag;
   // const screen = document.querySelector('.wrap');
-
   let toggle = () => {
     if (!flag){
       gnb.style.display = 'none';
@@ -33,7 +34,6 @@ window.onload = function(){
       flag = 0;
     }
   }
-
   gnb_trigger.addEventListener('mouseleave', () => {
     timer = setTimeout(() => {
       flag = 0;

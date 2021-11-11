@@ -1,4 +1,5 @@
 'use strict';
+// ver = 2021.11.11 
 // i made temp db storage
 // https://sinri0809.github.io/tempdata.github.io/data.json
   
@@ -7,7 +8,7 @@ let portfolioData = Array();
 
 async function fetchAPI(){
   try{
-    console.log('loaded json')
+    // console.log('loaded json')
     let response = fetch('https://sinri0809.github.io/tempdata.github.io/data.json');
     // console.log((await response).json())
     if(!(await response).ok){
@@ -44,7 +45,7 @@ async function writeHTML(list, index=0){
 }
 
 function fetchAfter(){
-  console.log('HTML start');
+  // console.log('HTML start');
   
   let portfolios = document.querySelectorAll('.portfolios-list > li');
   portfolios.forEach((item, index) => {

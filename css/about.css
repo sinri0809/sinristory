@@ -93,7 +93,6 @@ main section{
   padding: 1.5rem 0 .5em 0;
   font-size: 1.6rem;
   letter-spacing: 1.5px;
-
 }
 .profile-visual .job >li{
   padding-top: .5rem;
@@ -156,7 +155,6 @@ main section{
   height: auto;
   padding: 1.5em 1em 1em 1em;
   margin: 2rem 0 1rem 0;
-  /* background: rgba(255, 255, 255, .2); */
   background: rgba(200, 200, 200, 1);
 }
 .skill-detail h5{
@@ -171,21 +169,16 @@ main section{
   font-size: 1.2rem;
   color: rgba(255, 255, 255, .2);
 }
-
 /* skill design */
 .skill-design li:nth-child(1){
-  background: linear-gradient(to left, #FF9A00 30%, #300 30%);
   background: #FF9A00;
 }
 .skill-design li:nth-child(2){
-  background: linear-gradient(to left, #FD61F4 35%, #4E0039 35%);
   background: #FD61F4;
 }
 .skill-design li:nth-child(3){
-  background: linear-gradient(to left, #31A8FF 35%, #001E36 35%);
   background: #31A8FF;
 }
-
 /* skill develope */
 .skill-develope li:nth-child(1){
   background: linear-gradient(135deg, #F1662B 35%, #34A9DC 35%);
@@ -233,30 +226,18 @@ main section{
 .study-sites a:hover::after{
   background: rgba(200, 200, 200, 1);
 }
-
 .study-sites li:last-child a::after{
   display: none;
 }
 .study-sites li:last-child a{
   display: inline-block;
   margin-top: 1em;
-
   color: rgba(108, 71, 199, 1);
 }
-
-
 .profile-stats{
   grid-area: g-4;
 }
 /* ----------------------------------------------- */
-.personal{
-  /* width: 100%;
-  height: 100vh;
-  height: calc(100vh + 6rem);
-  background: white;
-  border-radius: 5rem 5rem 0 0;
-  z-index: 9999999; */
-}
 .personal .container{
   display: grid;
   grid-template:'g-p g-1 g-2';
