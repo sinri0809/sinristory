@@ -60,9 +60,8 @@
   .personal .container{
     grid-template:'g-p g-1'
                   'g-p g-2';
-    grid-template-columns: 30% 60%;
-    grid-template-rows: 75% 40%;
-    height: auto;
+    grid-template-columns: 30% 50%;
+    grid-template-rows: 100% 100%;
   }
 }
 
@@ -106,16 +105,16 @@
     grid-template-columns: 40% 60%;
   }
   .personal .container{
-    grid-template-rows: 80% 40%;
+    grid-template-rows: 90% 80%;
+    grid-template-columns: 30% 60%;
+
   }
 }
 
 @media screen and (max-width: 545px) {
-
   .persoanl-visual {
     background-size: 100%;
   }
-
   /* profile */
   .profile .container{
     grid-template:'g-p g-p'
@@ -129,15 +128,13 @@
     grid-template:'g-p'
                   'g-1'
                   'g-2';
-    grid-template-rows: 75% 75% 40%;
-    height: auto;
+    grid-template-rows: 100% 85% 90%;
   }
   .profile > .container 
   > .profile-visual~div{
     padding: 1.5rem 0 1.5rem 1.5rem ;
     background: rgba(34, 27, 39, 1);
   }
-
   /* portfolio */
   .portfolios .container{
     grid-template:'g-1 g-1'

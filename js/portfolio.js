@@ -37,8 +37,8 @@ async function writeHTML(list, index=0){
           <span>${list[index].date}</span>
           <h5>${list[index].portfolio}</h5>
           <h4 class="skill-set">${list[index].tech}</h4>
-          <a target="__blank" class="button-eff-2" href="${list[index].link}">${list[index].linktype}</a>
-          <a target="__blank" class="button-eff-2" href="${list[index].demolink}">PageOverview</a>
+          <a target="_blank" class="button-eff-2" href="${list[index].link}">${list[index].linktype}</a>
+          <a target="_blank" class="button-eff-2" href="${list[index].demolink}">PageOverview</a>
           `;
   document.querySelector('.portfolios-visual').innerHTML = `
           <img src="images/portfolios/img${index}.jpg" alt="img${index}">`;

@@ -5,6 +5,7 @@
   1. cookie 값에 맞게 언어 렌더링 하기
   2. mamil 내용 받아서 mail 보내기 기능 만들기 
 */
+
 let main_lang_ko = new Array();
 let main_lang_en = new Array();
 

@@ -21,7 +21,7 @@ main section{
   border-radius: 5rem 5rem 0 0;
   z-index: 9;
 }
-/* main */
+/* profile */
 .profile{
   position: relative;
   height: 100vh;
@@ -41,7 +41,6 @@ main section{
   z-index: 0;
   transition: all .3s;
 }
-/* main profile */
 .profile-visual{
   grid-area: g-p;
   padding-top: 3rem;
@@ -65,7 +64,6 @@ main section{
   height: 100%;
   border-radius: 50%;
   background: rgba(255, 154, 52, 1);
-  /* container z-index = 0 */
   z-index: -1;
 }
 .profile-basic{
@@ -83,7 +81,7 @@ main section{
 .profile-basic p, address{
   font-size: 1.2rem;
   line-height: 1.5;
-  opacity: .5;
+  opacity: .7;
 }
 .profile-basic p b{
   font-family: none;
@@ -130,7 +128,7 @@ main section{
   font-size: 1.6rem;
   font-weight: 300;
   letter-spacing: 1px;
-  color: rgba(255, 255, 255, .2);
+  color: rgba(255, 255, 255, .7);
 }
 .profile-skills ul li{
   width: 80%;
@@ -139,7 +137,7 @@ main section{
   line-height: 1;
   font-weight: 100;
   color: black;
-  opacity: .6;
+  opacity: .8;
 
   cursor: pointer;
 }
@@ -167,7 +165,7 @@ main section{
 }
 .skill-develope p{
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, .2);
+  color: rgba(255, 255, 255, .5);
 }
 /* skill design */
 .skill-design li:nth-child(1){
@@ -226,10 +224,10 @@ main section{
 .study-sites a:hover::after{
   background: rgba(200, 200, 200, 1);
 }
-.study-sites li:last-child a::after{
+.study-sites.--second li:last-child a::after{
   display: none;
 }
-.study-sites li:last-child a{
+.study-sites.--second li:last-child a{
   display: inline-block;
   margin-top: 1em;
   color: rgba(108, 71, 199, 1);
@@ -238,6 +236,7 @@ main section{
   grid-area: g-4;
 }
 /* ----------------------------------------------- */
+/* second section : personal  */
 .personal .container{
   display: grid;
   grid-template:'g-p g-1 g-2';
@@ -263,11 +262,12 @@ main section{
   padding-top: 1em;
   color: rgba(255, 154, 52, 1);
 }
-.sinrilab{
+.sinri-lab{
   top: 0;
   left: 0;
   width: 100%;
   height: 80%;
+  font-size: 0;
   background: url('../images/temp_profile.png') no-repeat center;
   background-size: 150%;
 }
@@ -284,21 +284,33 @@ main section{
   font-size: 1.2rem;
   color: rgba(125, 119, 129, 1);
 }
-.personal-contents > a:hover{
-  filter: brightness(.8);
-  transition: filter .3s;
-}
-.personal-contents .--left{
-  grid-area: g-1;
-}
-.personal-contents .--right{
-  grid-area: g-2;
-}
 .personal-contents{
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
 }
+.personal-contents > a:hover{
+  filter: brightness(.8);
+  transition: filter .3s;
+}
+.personal-contents.--left{
+  grid-area: g-1;
+}
+.personal-contents.--right{
+  grid-area: g-2;
+}
+.personal-contents.--right img[alt="shirts"]{
+  margin-bottom: .5em;
+  width: 50%;
+  height: 50%;
+  height: 30rem;
+}
+.personal-contents.--right img[alt="camera"]{
+  margin-top: .5em;
+  width: 100%;
+  height: 50%;
+  height: 30rem;
+}
 .personal-contents img{
-  object-fit: contain;
+  object-fit: cover;
 }
