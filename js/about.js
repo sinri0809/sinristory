@@ -62,7 +62,6 @@ async function fetchSkills(state){
     .then((pending) => {
       skillsData = pending[list];
       renderSkills(skillsData);
-
     })
   }
   catch{

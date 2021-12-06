@@ -4,7 +4,8 @@
   수정 내용
   1. 동기적 실행
   2. local storage 활용
-  */
+  3. 전역 변수 -> 매개 변수로 활용
+*/
 
 const urlEnData = 'https://sinri0809.github.io/tempdata.github.io/lang_en.json';
 

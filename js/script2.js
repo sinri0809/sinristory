@@ -2,6 +2,7 @@
 
 // import Main from "./main.js";
 import Main2 from "./main2.js";
+// import About2 from "./about2.js";
 import About from "./about.js";
 /* 
   ver = 2021.12.03

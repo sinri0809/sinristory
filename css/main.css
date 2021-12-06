@@ -86,6 +86,13 @@ main .container{
   font-weight: 700;
   color: rgba(108, 71, 199, 1);
 }
+.story-box p a{
+  color: aliceblue;
+  font-style: italic;
+}
+.story-box p a:hover{
+  text-decoration: underline;
+}
 /* //story-box common */
 /* story-top */
 main > section{
@@ -132,7 +139,7 @@ p:last-child{
   background: url('../images/home/img-sec2-visual.png') no-repeat top;
   background-size: 80%;
 }
-
+/* contact */
 .button-more{
   position: relative;
   display: inline-block;
@@ -143,11 +150,13 @@ p:last-child{
 .button-more:hover{
   color: rgba(108, 71, 199, 1);
 }
-/* contact */
+.button-mail:hover{
+  text-decoration: underline;
+}
+/* contact form */
 .contact .container{
   height: auto;
 }
-/* contact form */
 .contact-form{
   position: relative;
   display: grid;

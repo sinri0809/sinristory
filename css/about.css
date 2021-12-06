@@ -130,7 +130,8 @@ main section{
   letter-spacing: 1px;
   color: rgba(255, 255, 255, .7);
 }
-.profile-skills ul li{
+.skill-list li{
+  position: relative;
   width: 80%;
   padding: .5em 1em;
   margin: 5px 0;
@@ -138,30 +139,22 @@ main section{
   font-weight: 100;
   color: black;
   opacity: .8;
-
   cursor: pointer;
 }
-.profile-skills ul li:hover{
+.skill-list li:hover{
   transform: translateY(-3px);
   box-shadow: 0 3px 3px black;
   transition: transform .3s;
   opacity: 1;
 }
-.skill-detail{
-  width: 90%;
-  height: 25%;
-  height: auto;
-  padding: 1.5em 1em 1em 1em;
-  margin: 2rem 0 1rem 0;
-  background: rgba(200, 200, 200, 1);
-}
-.skill-detail h5{
-  font-weight: 700;
-  color: rgba(34, 27, 39, .5);
-}
-.skill-detail p{
-  font-weight: 600;
-  color: rgba(34, 27, 39, 1);
+.skill-list li:hover:after{
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  content: '< click';
+  font-size: 1rem;
+  padding: 1em;
+  color: black;
 }
 .skill-develope p{
   font-size: 1.2rem;
@@ -193,7 +186,23 @@ main section{
 .skill-develope li:nth-child(4){
   background: #2C638F;
 }
-
+.skill-detail{
+  width: 90%;
+  height: 25%;
+  height: auto;
+  padding: 1.5em 1em 1em 1em;
+  margin: 2rem 0 1rem 0;
+  background: rgba(200, 200, 200, 1);
+}
+.skill-detail h5{
+  font-weight: 700;
+  color: rgba(34, 27, 39, .5);
+}
+.skill-detail p{
+  font-weight: 600;
+  color: rgba(34, 27, 39, 1);
+}
+/* education */
 .profile-edu{
   grid-area: g-2;
 }
