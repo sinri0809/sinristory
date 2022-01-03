@@ -1,16 +1,15 @@
 'use strict';
-
-// import Main from "./main.js";
 import Main2 from "./main2.js";
-// import About2 from "./about2.js";
-import About from "./about.js";
-/* 
-  ver = 2021.12.03
-    수정 내용
-    1. 전역 변수 삭제 (메모리 누수 우려)
-    2. 비동기 함수 재 작성
-  database url = 
+// import About from "./about.js";
+import About2 from "./about2.js";
+/** 
+  * * ver = 2021.12.03
+  * ? 수정 내용 ?
+  *  1. 전역 변수 삭제 (메모리 누수 우려)
+  *  2. 비동기 함수 재 작성
+  * database url = 
   https://sinri0809.github.io/tempdata.github.io/data.json
+  * @navAnimation : nav bar 애니메이션 동작
 */
 window.onload = function () {
   const gnbTrigger = document.querySelector('.trigger-toggle');
@@ -66,7 +65,7 @@ window.onload = function () {
     .find((name) => {
       name.startsWith('langEn')
       ? state = name.split('=')[1]
-      : langCookie(false);
+      : langCookie();
     });
     state = JSON.parse(state);
     return state;
@@ -78,11 +77,10 @@ window.onload = function () {
         Main2(lang_switch);
         break;
       case 'About me':
-        About(lang_switch);
+        About2(lang_switch);
         break;
     }
   }
-
   // button 누르면 상태 변환하기 
   const langButton = document.querySelector('#language');
   langButton.addEventListener('click', function(){
@@ -97,7 +95,6 @@ window.onload = function () {
     }
   });
 
-  // 최초에 한번만 실행하는 함수 
   (function pageRender(lang = langEnSwitch()){
     pageSearch(lang);
     switch(lang){

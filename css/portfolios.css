@@ -1,33 +1,33 @@
 @charset 'utf-8';
-@import url('common.css');
-@import url('keyframe.css');
+@import url("common.css");
+@import url("keyframe.css");
 
-.welcome{
+.welcome {
   padding-top: 0;
   height: calc(100vh - 6rem);
   height: 100vh;
   background: linear-gradient(45deg, rgb(9, 3, 9), rgb(29, 12, 42));
 }
-.welcome .container{
+.welcome .container {
   display: grid;
   grid-template-rows: 10.5rem 12rem;
   row-gap: 7rem;
   padding-top: 15rem;
   color: white;
 }
-mark span{
+mark span {
   color: rgba(240, 235, 243, 1);
 }
-.welcome h1{
+.welcome h1 {
   position: relative;
   display: inline-block;
   font-size: 9.5rem;
   line-height: 1.2;
-  text-shadow: .7rem 0 0px rgba(255, 154, 52, 1);
+  text-shadow: 0.7rem 0 0px rgba(255, 154, 52, 1);
   color: rgba(108, 71, 199, 1);
 }
-h1::before{
-  content: '';
+h1::before {
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -39,24 +39,24 @@ h1::before{
   transform: translateX(-100%) scaleX(100%);
   animation-name: welcome-ani;
   animation-duration: 1s;
-  animation-delay: .3s;
+  animation-delay: 0.3s;
   animation-fill-mode: forwards;
   transition: transform 1s;
 }
-.summary > *{
+.summary > * {
   padding-bottom: 1rem;
 }
-.summary h5{
+.summary h5 {
   font-size: 1.8rem;
   font-weight: 600;
 }
-.summary p{
+.summary p {
   font-weight: 100;
   line-height: 1.4;
-  color: rgba(255, 255, 255, .5);
+  color: rgba(255, 255, 255, 0.5);
 }
 /* main */
-main section{
+main section {
   position: absolute;
   top: -6rem;
   width: 100%;
@@ -67,11 +67,12 @@ main section{
   z-index: 9;
 }
 /* portfolios */
-.portfolios .container{
+.portfolios .container {
   position: relative;
   display: grid;
-  grid-template:'g-p g-1 g-3'
-                'g-p g-2 g-3';
+  grid-template:
+    "g-p g-1 g-3"
+    "g-p g-2 g-3";
   grid-template-columns: 32rem 47rem 53rem;
   grid-template-rows: 37.5rem 41.5rem;
   grid-template-rows: 33rem 33rem;
@@ -81,54 +82,56 @@ main section{
   height: 82rem;
 }
 /* portfolio links */
-.portfolios-link{
+.portfolios-link {
   grid-area: g-p;
 }
-.portfolios-link > div h4{
+.portfolios-link > div h4 {
   padding-bottom: 4rem;
   font-size: 2.6rem;
   font-weight: bold;
   color: rgba(34, 27, 39, 1);
 }
-.portfolios-link > div button{
+.portfolios-link > div button {
   position: relative;
-  font-family: consolas, 'consolasD';
+  font-family: consolas, "consolasD";
   font-size: 1.8rem;
   font-weight: 100;
-  padding-bottom: .5em;
+  margin-bottom: 0.5em;
   text-align: left;
   color: rgba(125, 119, 129, 1);
   cursor: pointer;
   text-decoration: underline;
 }
-.portfolios-link > div button:hover{
-  transition: all .3s;
+.portfolios-link > div button:hover {
+  transition: all 0.3s;
 }
-
-.portfolios-list{
-  padding-bottom: 6rem;
+.portfolios-link > div button:focus {
+  background: rgba(255, 154, 52, 0.6);
+}
+.portfolios-list {
+  margin-bottom: 6rem;
 }
 /* portfolios explain */
-.portfolios-explain{
+.portfolios-explain {
   grid-area: g-1;
   padding: 3rem 3rem;
-  background: rgba(125, 119, 129, .1);
-  animation: slide-up .3s ease-in; 
+  background: rgba(125, 119, 129, 0.1);
+  animation: slide-up 0.3s ease-in;
 }
-.portfolios-explain span{
+.portfolios-explain span {
   font-size: 1.4rem;
   font-weight: 100;
 }
-.portfolios-explain h5{
+.portfolios-explain h5 {
   padding: 1em 0;
   font-size: 2.6rem;
   color: rgba(108, 71, 199, 1);
   text-shadow: 3px 0 0 rgba(255, 154, 52, 1);
 }
-.portfolios-explain h4{
-  font-size: 2.0rem;
+.portfolios-explain h4 {
+  font-size: 2rem;
 }
-.portfolios-explain a{
+.portfolios-explain a {
   position: relative;
   display: inline-block;
   font-size: 1.8rem;
@@ -136,31 +139,23 @@ main section{
   padding: 1em 0 1em 0;
   margin-right: 1em;
 }
-/* for not completed projects */
-.not-yet{
-  pointer-events: none;
-  display: none;
-}
-.skill-set{
+.skill-set {
   padding-bottom: 1em;
   line-height: 1.2;
 }
-.skill-set li{
+.skill-set li {
   display: inline-block;
   font-weight: 300;
   color: rgba(240, 235, 243, 1);
 }
-.portfolios-feedback{
-  grid-area: g-2;
-}
-.portfolios-visual{
+.portfolios-visual {
   grid-area: g-3;
 }
-.portfolios-visual img{
+.portfolios-visual img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: left top;
-  filter: opacity(1) brightness(.9);
-  animation: slide-up .3s ease-in; 
+  filter: opacity(1) brightness(0.9);
+  animation: slide-up 0.3s ease-in;
 }
