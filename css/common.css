@@ -1,52 +1,55 @@
 @charset 'utf-8';
-@import url('../css/font/nanumsqure.css');
+@import url("../css/font/nanumsqure.css");
 /* 
   common css here
   - normalize default css
   - especially header
   - common layout
+  - keyframes
 */
+
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   outline-style: none;
 }
-a{
+a {
   text-decoration: none;
   color: blueviolet;
 }
-mark{
+mark {
   background-color: rgba(0, 0, 0, 0);
 }
 em,
-address{
+address {
   font-style: normal;
 }
-img{
+img {
   vertical-align: middle;
   border: 0;
 }
 input,
 textarea,
-button{
+button {
   border: none;
   background: none;
 }
-ul,li{
+ul,
+li {
   list-style: none;
 }
 
-html{
+html {
   font-size: 10px;
   scroll-behavior: smooth;
 }
-body{
-  font-family: consolas, 'consolasD', 'NanumSquare';
+body {
+  font-family: consolas, "consolasD", "NanumSquare";
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 1;
@@ -57,39 +60,39 @@ body{
 }
 
 /* layout */
-.wrap{
+.wrap {
   position: relative;
   width: 100%;
 }
-.container{
+.container {
   position: relative;
   width: 138rem;
   margin: 0 auto;
 }
-main{
+main {
   position: relative;
   padding-top: 6rem;
 }
-section{
+section {
   height: calc(100vh);
   padding-top: 12rem;
   min-height: 80rem;
 }
 
 /* header */
-header{
+header {
   position: absolute;
   width: 100%;
   z-index: 9;
 }
-header .container{
+header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 6rem;
 }
 /* nav animation */
-.trigger-toggle{
+.trigger-toggle {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -98,37 +101,32 @@ header .container{
   height: 40px;
   cursor: pointer;
 }
-.trigger-toggle
-.toggle-rod{
+.trigger-toggle .toggle-rod {
   display: block;
   width: 100%;
-  height: .5em;
-  background: rgba(108, 71 , 199, 1);
-  transition: all .3s;
+  height: 0.5em;
+  background: rgba(108, 71, 199, 1);
+  transition: all 0.3s;
 }
-.trigger-toggle
-.toggle-rod:nth-child(1){
+.trigger-toggle .toggle-rod:nth-child(1) {
   align-self: flex-end;
   transform-origin: right;
   transform: scaleX(70%);
 }
-.trigger-toggle
-.toggle-rod:nth-child(2){
+.trigger-toggle .toggle-rod:nth-child(2) {
   transform: scaleX(80%);
 }
-.trigger-toggle
-.toggle-rod:nth-child(3){
+.trigger-toggle .toggle-rod:nth-child(3) {
   transform-origin: left;
   transform: scaleX(70%);
 }
 
-.trigger-toggle-active
-.toggle-rod:nth-child(n){
-  transition: transform .3s;
+.trigger-toggle-active .toggle-rod:nth-child(n) {
+  transition: transform 0.3s;
   transform: scaleX(100%);
   background: rgba(240, 235, 243, 1);
 }
-nav{
+nav {
   display: none;
   position: absolute;
   top: 6rem;
@@ -138,64 +136,105 @@ nav{
   text-align: right;
   background: rgba(240, 235, 243, 1);
 }
-nav > ul{
+nav > ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
   padding: 2em 1em;
 }
-nav > ul > li:nth-child(4){
+nav > ul > li:nth-child(4) {
   margin: 1em 0;
 }
-nav > ul > li a{
+nav > ul > li a {
   position: relative;
   display: inline-block;
-  padding: .5em 0;
+  padding: 0.5em 0;
   color: rgba(15, 6, 16, 1);
 }
-.button-eff::after{
-  content: '';
+.button-eff::after {
+  content: "";
   position: absolute;
   right: 0;
   width: 100%;
   height: 1em;
-  background: rgba(129, 80, 212, .5);
+  background: rgba(129, 80, 212, 0.5);
   background-blend-mode: darken;
-  
+
   transform-origin: right;
   transform: scaleX(0);
 }
-.button-eff:hover::after{
-  animation: nav-ani .3s ease; 
+.button-eff:hover::after {
+  animation: nav-ani 0.3s ease;
   animation-fill-mode: forwards;
 }
-.button-eff-2::after{
-  content: '';
+.button-eff-2::after {
+  content: "";
   position: absolute;
   right: 0;
   width: 100%;
   height: 1em;
-  background: rgba(255, 154, 52, .5);
+  background: rgba(255, 154, 52, 0.5);
   background-blend-mode: darken;
   transform-origin: left;
   transform: scaleX(0);
   z-index: -1;
 }
-.button-eff-2:hover::after{
-  animation: nav-ani .3s ease; 
+.button-eff-2:hover::after {
+  animation: nav-ani 0.3s ease;
   animation-fill-mode: forwards;
 }
 
 /* main visual */
-.identity-box{
+.identity-box {
   width: 10rem;
   height: 10.5rem;
   margin-left: 1rem;
 }
 /* icon set */
-.icon-identity{
+.icon-identity {
   display: inline-block;
   width: 1.5rem;
   height: 1.5rem;
+}
+
+/* keyframes */
+@keyframes welcome-ani {
+  0% {
+    transform: translateX(-100%) scaleX(100%);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(10%) scaleX(5%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(10%) scaleX(0%);
+  }
+}
+@keyframes nav-ani {
+  from {
+    transform: scaleX(10%);
+  }
+  to {
+    transform: scaleX(100%);
+  }
+}
+@keyframes twinkle-ani {
+  from {
+    background: rgba(108, 71, 199, 1);
+  }
+  to {
+    background: rgba(108, 71, 199, 0);
+  }
+}
+@keyframes slide-up {
+  from {
+    transform: translateY(1rem);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

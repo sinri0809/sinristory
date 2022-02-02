@@ -1,64 +1,113 @@
 'use strict';
-// ver = 2021.12.03
-/*
-  수정 내용
-  1. 동기적 실행
-  2. local storage 활용
-  3. 전역 변수 -> 매개 변수로 활용
-*/
+/**
+ * *ver = 2022.02.02
+ * 1. 동기적 실행
+ * 2. local storage 활용
+ * 3. 전역 변수 -> 매개 변수로 활용
+ * 
+ * @classSelector : HTML에서 element의 selector 배열을 반환하는 메소드 
+ * 
+ * @getKo : 한글 언어 배열을 반환하는 메소드
+ * @getEn : 영어 언어 배열을 fetch해서 반환하는 메소드
+ * 
+ * @render : 선택자와 배열을 토대로 렌더링하는 메소드
+ * 
+ * ! Main2 : 두 번째 실행 -> loacalstorage에서 값 가져오기
+ */
 
-const urlEnData = 'https://sinri0809.github.io/tempdata.github.io/lang_en.json';
 
-const heading = document.querySelectorAll('hgroup > *');
-const why = document.querySelectorAll('article > p');
-const remark = document.querySelectorAll('.story-top-imgs > span');
-const mainArr = [...heading, ...why, ...remark];
+const classSelector = () => {
+  const heading = document.querySelectorAll('hgroup > *');
+  const why = document.querySelectorAll('article > p');
+  const remark = document.querySelectorAll('.story-top-imgs > span');
+  const arrs = [...heading, ...why, ...remark];   
 
-const renderLang = async (main_lang) => {
-  console.log("2 renderLang")
-  // index를 가져오면 안맞기 때문에 
-  let i = 0; 
-  mainArr.forEach((item) => {
-    if(item.innerHTML !== ''){
-      item.innerHTML = `${main_lang[i]}`;
-      i ++;
+  // br tag에는 아무 값도 못들어가니까...
+  const arr = arrs.filter((ele) => ele.tagName !== "BR");
+  
+  return arr
+}
+
+const getKo = () => {
+  console.log("getKo called");
+  let koLang = [];
+  
+  const koArr = classSelector();
+  koArr.forEach((item)=> {
+    if(item.innerHTML){
+      // innerHTML innerText ...
+      koLang.push(item.innerHTML);
     }
   });
+
+  localStorage.setItem('mainKo', JSON.stringify(koLang))
+
+  return koLang
 }
 
-// 기존 한글 파일을 배열로 가져오기 
-const getKo = async (main_arr) => {
-  let mainLangKo = new Array();
-  main_arr.forEach((item) => {
-    item.innerHTML !== ''
-    ? mainLangKo.push(item.innerHTML)
-    : null
+
+const getEn = async () => {
+  console.log("getEn called");
+  
+  try{
+    const url = 'https://sinri0809.github.io/tempdata.github.io/lang_en.json';
+    
+    const response = await fetch(url);
+    const obj  = await response.json();
+
+    let enArr = [];
+    
+    for(let key in obj){
+      // main 에는 hgroup과 why 배열만 있으면 됨.
+      if(key === "hgroup" || key === "why"){
+        enArr = [...enArr, ...Object.values(obj[key])];
+      }
+    }
+
+    localStorage.setItem('mainEn', JSON.stringify(enArr))
+
+    return enArr;
+    
+  }catch{
+    throw new Error("Failed to fetch!!!");
+  }
+}
+
+
+const render = (arr) => {
+  const selector = classSelector();
+  
+  selector.forEach((ele, idx)=> {
+    ele.innerHTML = arr[idx];
   });
-  return mainLangKo;
 }
-const arrKo = await getKo(mainArr);
 
-// 초기 로드시 & 클릭 시 실행하는 함수.
+
 async function Main2(state){
   if(state){
-    let mainLangEn = new Array();
-    const response = fetch(urlEnData);
-    (await response).json()
-    .then((pending) => {
-      // Array아니고 Object라서 spread문법 쓸 수 없어가지고.
-      const temp = "hgroup,why";
-      for(let i of temp.split(',')){
-        for(let j in pending[i]){
-          // console.log(pending[i][j]);
-          mainLangEn.push(pending[i][j]);
-        }
-      }
-      renderLang(mainLangEn);
-    });
+    // 영어
+    const finder = localStorage.getItem('mainEn');
+    
+    if(finder){
+      render([...JSON.parse(finder)])
+    }else{
+      getEn().then((en) => {
+        render(en)
+      });
+    }
+
+  }else{
+    // 한국어
+    const finder = localStorage.getItem('mainKo');
+
+    if(finder){
+      render([...JSON.parse(finder)])
+    }else{
+      render(getKo());
+    }
   }
-  else{
-    await renderLang(arrKo)
-  }
+
 }
+
 
 export default Main2;

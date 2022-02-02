@@ -1,23 +1,23 @@
 @charset 'utf-8';
-@import url('../css/common.css');
-@import url('../css/keyframe.css');
+@import url("common.css");
 /* only for index.html */
 
 /* section welcome */
-.welcome{
+.welcome {
   padding-top: 0;
   height: calc(100vh - 6rem);
 }
-.welcome .container{
+.welcome .container {
   display: grid;
   grid-template-rows: 10.5rem 24rem;
   row-gap: 7rem;
   padding-top: 15rem;
 }
-hgroup{
+hgroup {
   position: relative;
 }
-.welcome h1, h2{
+.welcome h1,
+h2 {
   position: relative;
   display: inline-block;
   font-family: consolas;
@@ -27,8 +27,8 @@ hgroup{
   text-shadow: 6px 0 0px rgba(108, 71, 199, 1);
 }
 h1::before,
-h2::before{
-  content: '';
+h2::before {
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -40,12 +40,12 @@ h2::before{
   transform: translateX(-100%) scaleX(100%);
   animation-name: welcome-ani;
   animation-duration: 1s;
-  animation-delay: .3s;
+  animation-delay: 0.3s;
   animation-fill-mode: forwards;
   transition: transform 1s;
 }
-h2::after{
-  content: '';
+h2::after {
+  content: "";
   position: absolute;
   top: 0;
   right: -5rem;
@@ -59,11 +59,11 @@ h2::after{
   animation-iteration-count: infinite;
 }
 /* main */
-main{
+main {
   border-radius: 5rem 5rem 0 0;
   background: linear-gradient(45deg, rgb(9, 3, 9), rgb(29, 12, 42));
 }
-main .container{
+main .container {
   display: grid;
   grid-template-columns: 82rem 53rem;
   gap: 3rem;
@@ -71,169 +71,162 @@ main .container{
   color: rgba(200, 200, 200, 1);
 }
 /* //story-box common */
-.story-box h4{
+.story-box h4 {
   padding-bottom: 7rem;
   font-size: 4rem;
   color: rgba(108, 71, 199, 1);
 }
-.story-box p{
+.story-box p {
   display: block;
   padding-bottom: 4rem;
   line-height: 1.6;
   word-break: keep-all;
 }
-.story-box p em{
+.story-box p em {
   font-weight: 700;
   color: rgba(108, 71, 199, 1);
 }
-.story-box p a{
+.story-box p a {
   color: aliceblue;
   font-style: italic;
 }
-.story-box p a:hover{
+.story-box p a:hover {
   text-decoration: underline;
 }
 /* //story-box common */
 /* story-top */
-main > section{
+main > section {
   background: linear-gradient(45deg, rgb(9, 3, 9), rgb(29, 12, 42));
 }
-.story-top .container{
+.story-top .container {
   height: calc(100vh - 18rem);
 }
-.story-top-imgs{
+.story-top-imgs {
   margin-bottom: 3rem;
 }
-.story-top .story-box 
-p:last-child{
+.story-top .story-box p:last-child {
   padding-top: 6rem;
 }
-.story-top-imgs img{
+.story-top-imgs img {
   width: 80rem;
   height: 28rem;
   object-fit: cover;
 }
-.story-top-imgs span{
+.story-top-imgs span {
   font-size: 1.2rem;
   color: rgba(125, 119, 129, 1);
 }
-.story-top-imgs span{
+.story-top-imgs span {
   display: inline-block;
   padding-top: 1rem;
 }
 /* story-bottom */
-.story-bottom{
+.story-bottom {
   position: relative;
 }
-.story-bottom .story-box p:first-child{
-  opacity: .5;
+.story-bottom .story-box p:first-child {
+  opacity: 0.5;
 }
-.story-bottom .story-box h3{
+.story-bottom .story-box h3 {
   padding: 6rem 0 7rem 0;
   font-size: 4rem;
   color: rgba(108, 71, 199, 1);
 }
-.story-bottom-imgs{
+.story-bottom-imgs {
   width: 80rem;
   height: 70rem;
-  background: url('../images/home/img-sec2-visual.png') no-repeat top;
+  background: url("../images/home/img-sec2-visual.png") no-repeat top;
   background-size: 80%;
 }
 /* contact */
-.button-more{
+.button-more {
   position: relative;
   display: inline-block;
   padding: 2em 1em;
   text-decoration: underline;
   color: rgba(200, 200, 200, 1);
 }
-.button-more:hover{
+.button-more:hover {
   color: rgba(108, 71, 199, 1);
 }
-.button-mail:hover{
+.button-mail:hover {
   text-decoration: underline;
 }
 /* contact form */
-.contact .container{
+.contact .container {
   height: auto;
 }
-.contact-form{
+.contact-form {
   position: relative;
   display: grid;
-  grid-template:'g-1 g-1 g-1'
-                'g-2 g-3 g-3'
-                'g-4 g-4 g-4'
-                'g-5 g-5 g-6';
+  grid-template:
+    "g-1 g-1 g-1"
+    "g-2 g-3 g-3"
+    "g-4 g-4 g-4"
+    "g-5 g-5 g-6";
   gap: 1.5rem;
   grid-template-rows: 4rem 4rem auto 4rem;
   grid-template-columns: 18.5rem auto 15rem;
   padding: 3.5rem 2.5rem;
-  color: rgba(240, 235, 243, .5);
+  color: rgba(240, 235, 243, 0.5);
   background: rgba(34, 27, 39, 1);
 }
-.contact-form::after{
-  content: '';
+.contact-form::after {
+  content: "";
   position: absolute;
   right: 0;
   top: -7rem;
   display: block;
   width: 10rem;
   height: 20rem;
-  background: url('../images/icons/icon-mail.png') no-repeat center;
+  background: url("../images/icons/icon-mail.png") no-repeat center;
 }
-.contact-form 
-> h5{
+.contact-form > h5 {
   grid-area: g-1;
   font-size: 3rem;
   color: rgba(108, 71, 199, 1);
 }
-.contact-form 
-> label{
+.contact-form > label {
   grid-area: g-2;
   padding: 1em 0 0 1em;
-  background: rgba(11, 4, 12, .5);
+  background: rgba(11, 4, 12, 0.5);
 }
-.contact-form 
-> input{
+.contact-form > input {
   grid-area: g-3;
   padding: 0 0 0 1em;
-  background: rgba(11, 4, 12, .5);
+  background: rgba(11, 4, 12, 0.5);
 }
-.contact-form 
-> input{
-  color: rgba(240, 235, 243, .5);
-  color: rgba(129, 80, 212, .5);
+.contact-form > input {
+  color: rgba(240, 235, 243, 0.5);
+  color: rgba(129, 80, 212, 0.5);
 }
-.contact-form 
-> input:focus{
+.contact-form > input:focus {
   color: white;
 }
-.contact-form 
-> textarea{
+.contact-form > textarea {
   grid-area: g-4;
   resize: vertical;
   padding: 1em 1em;
-  background: rgba(11, 4, 12, .5);
+  background: rgba(11, 4, 12, 0.5);
 }
-.contact-form 
-> textarea:enabled{
+.contact-form > textarea:enabled {
   color: white;
 }
 /* collect information */
-.where-from::before{
-  content: 'found me from';
+.where-from::before {
+  content: "found me from";
   position: absolute;
   left: 2.5em;
 }
-.where-from{
+.where-from {
   grid-area: g-5;
   display: flex;
   flex-wrap: wrap;
   padding-left: 8em;
   padding-top: 1em;
-  background: rgba(11, 4, 12, .5);
+  background: rgba(11, 4, 12, 0.5);
 }
-.where-from > li{
+.where-from > li {
   width: 11rem;
   padding: 0 0 1em 1em;
   /* line-height: 1.6; */

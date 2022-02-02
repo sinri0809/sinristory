@@ -53,12 +53,15 @@ window.onload = function () {
   // 언어 상태 쿠키에 저장
   const langCookie = (value=false) => {
     const date = new Date();
-    date.setDate(date.getDate() + 1);
+    date.setDate(date.getDate() + 1); // 하루만 상태 저장
+    
     let cookie = '';
     cookie += `langEn=${value};`;
     cookie += `Expires=${date.toUTCString()};`;
+
     document.cookie = cookie;
   }
+
   // 언어 상태 스위치
   const langEnSwitch = (state = false) => {
     document.cookie.split(';')
@@ -67,9 +70,11 @@ window.onload = function () {
       ? state = name.split('=')[1]
       : langCookie();
     });
-    state = JSON.parse(state);
+
+    state = JSON.parse(state); // 이렇게 안하면 문자열로 boolean값이 들어감
     return state;
   }
+  
   // 현재 페이지 파악하고 각 모듈 실행하기 
   const pageSearch = (lang_switch) => {
     switch(document.querySelector('mark > span').innerHTML){
@@ -81,8 +86,10 @@ window.onload = function () {
         break;
     }
   }
+
   // button 누르면 상태 변환하기 
   const langButton = document.querySelector('#language');
+  
   langButton.addEventListener('click', function(){
     if(langEnSwitch()){
       this.innerHTML = "en";
