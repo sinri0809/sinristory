@@ -1,0 +1,35 @@
+// * responsive
+// $desktop-max: ;
+// $desktop-mid: ;
+// $desktop-min: ;
+// $mobile-max: ;
+
+@mixin mobile {
+  @media screen and (min-width: #{$mobile-min}) and (max-width: #{$mobile-max}) {
+    @content;
+  }
+}
+
+@mixin desktop-max {
+  @media screen and (max-width: #{$desk-min}) {
+    @content;
+  }
+}
+
+@mixin tablet-min {
+  @media (max-width: #{$tablet-min}) {
+    @content;
+  }
+}
+
+@mixin mobile-max {
+  @media (max-width: #{$mobile-max}) {
+    @content;
+  }
+}
+
+@mixin mobile-min {
+  @media (max-width: #{$mobile-min}) {
+    @content;
+  }
+}

@@ -1,0 +1,25 @@
+// stroke-dashoffset
+
+@keyframes example-animation-svg-line {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dashoffset: 1850;
+  }
+
+  100% {
+    stroke-dashoffset: 3700;
+  }
+}
+
+// svg mask
+.example-wrapper {
+  mask: url(shape.svg);
+}
+
+#example-bg {
+  background: white url(shape.svg) no-repeat center;
+  mix-blend-mode: screen;
+}

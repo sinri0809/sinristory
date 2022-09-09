@@ -1,0 +1,71 @@
+@import './modules';
+
+:root{
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline-style: none;
+}
+
+body {
+  font-size: 1.4rem;
+  line-height: 1;
+  letter-spacing: 0;
+  color: $black1;
+
+  input {
+    border: 0;
+    background-color: transparent;
+
+    &::placeholder {
+      font-size: inherit;
+      font-weight: inherit;
+      color: inherit;
+    }
+
+    &[type="checkbox"] {
+      appearance: none;
+      border-radius: 3px;
+      // border: 1px solid #D8D8D8;
+      // background-color: white;
+      transition: all 0.3s;
+
+      &:hover {
+      }
+
+      &:checked {
+      }
+    }
+  }
+
+  svg path {
+    transition: fill 0.12s;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  button{
+    border: none;
+    background: none;
+  }
+
+  ul, li{
+    list-style: none;
+  }
+}

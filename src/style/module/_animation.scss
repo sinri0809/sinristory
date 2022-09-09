@@ -1,0 +1,20 @@
+@mixin animation (
+    $keyframeName, 
+    $duration, 
+    $delay: 0s, 
+    $timefn: initial, 
+    $fill: forwards
+  ){
+  animation-fill-mode: $fill;
+  animation-name: $keyframeName;
+
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-timing-function: $timefn;
+}
+
+@mixin keyframe ($animation_name) {
+  @keyframes #{$animation_name} {
+    @content;
+  }
+}

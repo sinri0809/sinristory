@@ -1,0 +1,24 @@
+@import './modules';
+@import './reset';
+
+// tools
+@import './tools/btn';
+
+// theme
+@import './theme/theme';
+
+// pages
+@import './pages/home';
+
+
+.App{
+  width: 100vw;
+  height: 100vh;
+
+  overflow-y: scroll;
+
+  *::selection {
+    background-color: $pink1;
+    color: $gray1;
+  }
+}
