@@ -1,12 +1,13 @@
 import React from 'react';
+import Header from 'components/layout/Header';
+import MainRouter from 'routes/Router';
 import 'style/index.scss';
 
 function App() {
   return (
     <div className="App">
-      <header>
-        <h1>reference typescript cra</h1>
-      </header>
+      <Header />
+      <MainRouter />
     </div>
   );
 }
