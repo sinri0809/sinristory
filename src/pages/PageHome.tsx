@@ -1,6 +1,8 @@
+import Header from "components/layout/Header";
+
 const PageHome = () => {
   return <>
-    Home
+    <Header />
   </>
 };
 
