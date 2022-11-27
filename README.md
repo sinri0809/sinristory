@@ -5,7 +5,9 @@
 ```
 # yarn -v : 1.22.19
 yarn
+# test web server
 ```
+[check express work](https://github.com/sinri0809/express)
 ### develop
 ```
 yarn start
