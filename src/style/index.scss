@@ -4,19 +4,21 @@
 // tools
 @import './tools/btn';
 
+// components
+@import './components/.sea';
+
 // theme
 @import './theme/theme';
 
 // pages
 @import './pages/home';
-@import './pages/sea';
-
+@import './pages/porfolio';
 
 .App {
-  // width: 100vw;
-  // height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 
-  // overflow-y: scroll;
 
   *::selection {
     background-color: $pink1;

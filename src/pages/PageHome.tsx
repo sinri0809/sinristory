@@ -1,21 +1,14 @@
 import React from "react";
-
-// import Header from "components/layout/Header";
-import PageNav from "components/common/PageNav";
+import { Link } from "react-router-dom";
+import { links } from "routes/links";
 
 const PageHome = () => {
 
-  const onScrollHome = (e: React.UIEvent) => {
-  }
-
   return (
-    <div 
-      className="home__wrapper"
-      onScroll={(e) => onScrollHome(e)}
-    >
-      <section className="home">
-        {/* <Header /> */}
-        <div className="area--top">
+    <section className="home">
+      <Link to={links.portfolio}>to porfolio</Link>
+      {/* <Header /> */}
+      {/* <div className="area--top">
           <div className="area--top-left" id="home">
             <PageNav x={0} y={0} />
           </div>
@@ -31,9 +24,8 @@ const PageHome = () => {
           <div className="area--down-right" id="test3">
             <PageNav x={1} y={1} />
           </div>
-        </div>
-      </section>
-    </div>
+        </div> */}
+    </section>
   );
 }
 

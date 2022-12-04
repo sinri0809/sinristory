@@ -1,70 +1,10 @@
-@import "./../modules";
-
-@mixin size($width, $height){
+@mixin size($width, $height) {
   width: $width;
   height: $height;
 }
 
-.home__wrapper{
-  width: 100vw;
-  height: 100vh;
-
-  overflow: scroll; // onscroll event default condition
-}
-
-.home{
-  position: relative;
-  // background: linear-gradient(gainsboro, gray);
-  background-image: url('../../assets/test.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  width: 200vw;
-  height: 200vh;
-
-  // width: 2000px;
-  // height: 2000px;
-}
-
-.btn-page-scroll{
-  margin-right: 10px;
-  width: 100px;
-  height: 100px;
-  background-color: red;
-}
-
-.area--top,
-.area--down{
+.home {
   width: 100%;
-  height: 50%;
-
-  display: flex;
-}
-
-.area--top-left{
-  background-color: rgba($color: #000000, $alpha: 0.2);
-
-  width: 50%;
   height: 100%;
-}
-
-.area--top-right{
-  background-color: rgba($color: #8f2f00, $alpha: 0.2);
-
-  width: 50%;
-  height: 100%;
-}
-
-.area--down-left{
-  background-color: rgba($color: #0000f0, $alpha: 0.2);
-
-  width: 50%;
-  height: 100%;
-}
-
-.area--down-right{
-  background-color: rgba($color: #7f00f0, $alpha: 0.2);
-
-  width: 50%;
-  height: 100%;
+  background-color: rgba(red, $alpha: 0.2);
 }
