@@ -1,0 +1,36 @@
+.header {
+  position: relative;
+  width: 100%;
+  height: var(--header-height);
+
+  height: 8rem;
+  // background-color: red;
+}
+
+.header-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: inherit;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-drawer {
+  position: relative;
+}
+
+.drawer-container {
+  position: relative;
+
+  display: none;
+}
+
+.drawer-wrap {
+  position: absolute;
+  right: 0;
+}
