@@ -1,0 +1,36 @@
+// font file is in public/
+@import './../../assets/font/font.scss';
+
+// todo: consider @use 'module' with (); 
+// ref: https://sass-lang.com/documentation/variables
+
+// follow in font.scss
+$font-weights: (
+  "thin": 100,
+  "light": 200,
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
+  "black": 900,
+);
+
+@each $weight,
+$value in $font-weights {
+  .font-#{$weight} {
+    font-weight: $value;
+  }
+}
+
+$font-style: (
+  normal: normal,
+  italic: italic
+);
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1;
+}

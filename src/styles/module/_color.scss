@@ -1,0 +1,22 @@
+#root {
+  --day: #FF736F;
+  --night: #10233E;
+  
+  --black: #111214;
+  --white: #F4F8FF;
+  --blue: #2F78E3; 
+  --orange: #FF9929;
+  --red: #FF0700;
+}
+
+// $success: 
+// $warning:
+
+$day: var(--day);
+$night: var(--night);
+
+$black: var(--black);
+$white: var(--white);
+$blue: var(--blue);
+$orange: var(--orange);
+$red: var(--red);

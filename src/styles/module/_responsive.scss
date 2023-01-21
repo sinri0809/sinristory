@@ -1,0 +1,12 @@
+// * responsive example
+@mixin mobile {
+  @media screen and (min-width: #{$mobile-min}) and (max-width: #{$mobile-max}) {
+    @content;
+  }
+}
+
+@mixin mobile-horizontal {
+  @media screen and (portrait: landscape) {
+    @content;
+  }
+}

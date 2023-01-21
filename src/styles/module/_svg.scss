@@ -1,3 +1,7 @@
+svg path {
+  transition: fill 0.12s;
+}
+
 // stroke-dashoffset
 
 @keyframes example-animation-svg-line {
@@ -16,10 +20,10 @@
 
 // svg mask
 .example-wrapper {
-  mask: url(shape.svg);
+  // mask: url(shape.svg);
 }
 
 #example-bg {
-  background: white url(shape.svg) no-repeat center;
-  mix-blend-mode: screen;
+  // background: white url(shape.svg) no-repeat center;
+  // mix-blend-mode: screen;
 }

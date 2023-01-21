@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import MainRouter from 'routes/Router';
-import Sea from 'components/Sea';
 
-import 'style/index.scss';
+import Header from 'components/layout/Header';
+
+import './styles/index.scss';
 
 function App() {
+  useEffect(() => {
+    document.body.classList.add('light');
+  }, [])
+
   return (
-    <div className="App">
+    <>
+      <Header />
       <MainRouter />
-      <Sea />
-    </div>
+    </>
   );
 }
 
