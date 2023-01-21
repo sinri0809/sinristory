@@ -15,3 +15,8 @@ $level_max: 9999;
 
 $level-1: -9;
 $level0: 0;
+
+// * responsive rule
+:root {
+  --header-height: 8rem; // max
+}
