@@ -19,4 +19,12 @@ $level0: 0;
 // * responsive rule
 :root {
   --header-height: 8rem; // max
+
+  --fontsize20: 2rem;
+  --fontsize16: 1.6rem;
+  --fontsize14: 1.4rem;
 }
+
+$fontsize20: var(--fontsize20);
+$fontsize16: var(--fontsize16);
+$fontsize14: var(--fontsize14);

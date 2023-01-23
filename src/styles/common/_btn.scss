@@ -1,0 +1,53 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-drawer-trigger {
+  background-color: rgba($color: $whiten, $alpha: 0);
+  border-radius: 1rem;
+
+  transition: background-color 0.2s;
+  &:hover{
+    background-color: rgba($color: $whiten, $alpha: 0.24);
+  }
+  &:active{
+    background-color: rgba($color: $whiten, $alpha: 0.36);
+    outline: solid 1px rgba($color: $whiten, $alpha: 0.36);
+  }
+  &.focus{
+    background-color: rgba($color: $whiten, $alpha: 0);
+    .icon-drawer {
+      .rect00{
+        transform: translate(-2px, -2px);
+      }
+      .rect10{
+        transform: translate(-2px, 0px);
+      }
+      .rect20{
+        transform: translate(-2px, 2px);
+      }
+      .rect01{
+        transform: translate(0, -2px);
+      }
+      .rect11{
+        transform: translate(0, 0px);
+      }
+      .rect21{
+        transform: translate(0, 2px);
+      }
+      .rect02{
+        transform: translate(2px, -2px);
+      }
+      .rect12{
+        transform: translate(2px, 0);
+      }
+      .rect22{
+        transform: translate(2px, 2px);
+      }
+    }
+  }
+}

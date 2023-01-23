@@ -1,0 +1,10 @@
+.icon {
+  display: inline-flex;
+  user-select: none;
+}
+
+.icon-drawer {
+  rect{
+    transition: all 0.3s;
+  }
+}

@@ -1,6 +1,6 @@
-svg path {
-  transition: fill 0.12s;
-}
+// svg * {
+//   transition: all 0.12s;
+// }
 
 // stroke-dashoffset
 
@@ -8,11 +8,9 @@ svg path {
   0% {
     stroke-dashoffset: 0;
   }
-
   50% {
     stroke-dashoffset: 1850;
   }
-
   100% {
     stroke-dashoffset: 3700;
   }
