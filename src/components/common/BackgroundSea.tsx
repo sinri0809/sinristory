@@ -1,4 +1,6 @@
-const Test = () => {
+import React from "react";
+
+const BackgroundSea = () => {
   return (
     <svg
       className="sea"
@@ -229,4 +231,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default BackgroundSea;

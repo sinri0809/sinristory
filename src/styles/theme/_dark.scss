@@ -1,32 +1,37 @@
-@media (prefers-color-scheme: dark) {
-  .day.dark-scheme {
-    background: #333;
-    color: white;
+.svg-day-night {
+  *{
+    transition: all 0.6s;
   }
-
-  .night.dark-scheme {
-    background: black;
-    color: #ddd;
+  .eclipse {
+    // mask: url(#eclipse);
   }
-}
-
-@media (prefers-color-scheme: light) {
-  .day.light-scheme {
-    background: white;
-    color: #555;
+  .sun-light{
+    // transform: scale(0);
+    transform-origin: center;
+    transition: all 0.4s;
   }
-
-  .night.light-scheme {
-    background: #eee;
-    color: black;
+  .bg-light{
+    stroke: $white;
+    stroke-opacity: 0;
   }
 }
 
-.day,
-.night {
-  display: inline-block;
-  padding: 1em;
-  width: 7em;
-  height: 2em;
-  vertical-align: middle;
+.dark {
+  svg.sea {
+    .theme-sea {
+      fill: url(#theme_night);
+    }
+  }
+
+  .svg-day-night {
+    .eclipse {
+      mask: url(#eclipse);
+    }
+    .sun-light{
+      transform: scale(0);
+    }
+    .bg-light{
+      stroke-opacity: 0.2;
+    }
+  }
 }
