@@ -1,18 +1,33 @@
-svg.sea {
+.background-sea{
   position: fixed;
   top: 0;
-  z-index: -1;
+  left: 0;
   width: 100vw;
-  height: 100%;
-
-  .theme-sea {
-    transition: fill 0.6s;
-  }
+  height: 100vh;
+  display: flex;
+  background: $day_sunrise;
+  
+  overflow: hidden;
+  z-index: -1;
 }
+
+svg.sea {
+  position: relative;
+  display: inline-block;
+  width: 100vw;
+  height: 100vh;
+  
+  min-width: 1920px;
+  min-height: 1100px;
+
+  max-width: 100%;
+  max-height: 50vw;
+}
+
 
 $sea_delay: 2s;
 // ! on in Production mode
-$sea_animation: 0s;
+$sea_animation: 6s;
 
 @keyframes move_wave_1 {
   0% {

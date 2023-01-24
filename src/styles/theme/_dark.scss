@@ -16,10 +16,25 @@
   }
 }
 
+@keyframes twinkle {
+  from{
+    opacity: 0.5;
+  }50%{
+    opacity: 1;
+  }to{
+    opacity: 0.5;
+  }
+}
 .dark {
-  svg.sea {
-    .theme-sea {
-      fill: url(#theme_night);
+  .background-sea{
+    background: $night_sunset;
+    svg.sea{
+      .stars{
+        visibility: visible;
+        animation-name: twinkle;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+      }
     }
   }
 
