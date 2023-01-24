@@ -1,6 +1,8 @@
 :root {
   --day: #FF736F;
+  --day-sunrise: linear-gradient(112.68deg, #FF9929 0%, #FF7270 59.9%, #FF517C 100%);
   --night: #10233E;
+  --night-sunset: linear-gradient(112.68deg, #F74772 0.01%, #762544 16.67%, #15253E 35.94%, #0E223F 67.71%, #002966 100%);
   
   --black: #111214;
   --white: #F4F8FF;
@@ -14,7 +16,9 @@
 // $warning:
 
 $day: var(--day);
+$day_sunrise: var(--day-sunrise);
 $night: var(--night);
+$night_sunset: var(--night-sunset);
 
 $black: var(--black);
 $white: var(--white);
