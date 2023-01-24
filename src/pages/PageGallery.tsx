@@ -1,7 +1,9 @@
 
 const PageGallery = () => {
   return <main className="gallery">
-    쉬는 페이지
+    <section className="rest">
+      <span className="img-whale" />
+    </section>
   </main>
 }
 

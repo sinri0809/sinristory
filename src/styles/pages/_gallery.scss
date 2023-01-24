@@ -1,0 +1,31 @@
+.rest{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes swimming {
+  0%{
+    transform: translate(0px, 0px) scale(1);
+  }50%{
+    transform: translate(-55px, -15px) scale(0.95);
+  }100%{
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.img-whale {
+  display: block;
+  width: 50%;
+  height: 300px;
+  background-image: url(./../../assets/imgs/img-reset-whale.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  transition: transform 0.2s;
+  animation-name: swimming;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
