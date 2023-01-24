@@ -16,8 +16,9 @@
 @import './common/btn';
 @import './common/icon';
 @import './common/wave';
-// @import './components/'
 
-@import './layout/header';
+@import './components/popop';
 
-// @import './pages/.';
+@import './components/layout/header';
+
+@import './pages/home';
