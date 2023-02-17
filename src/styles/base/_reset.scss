@@ -1,20 +1,9 @@
-*::selection {
-  // background-color: $blue1;
-  // color: $white;
-}
-
+/* reset user agent style */
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
 
-:root {
-  font-size: 10px;
-  scroll-behavior: smooth;
-  // scroll-behavior: unset;
-}
-
-/* reset user agent style */
 * {
   margin: 0;
   padding: 0;
@@ -131,7 +120,6 @@ input {
     }
   }
 }
-
 
 /* HTML5 display-role reset for older browsers */
 article,

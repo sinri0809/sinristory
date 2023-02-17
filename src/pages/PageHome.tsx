@@ -1,8 +1,12 @@
 import React from "react";
 
+import Button from "components/common/Button";
 import Popup from "components/layout/Popup";
 
 const PageHome = () => {
+  const onClickAccetp = () => {
+    console.log("click accept")
+  }
   return (
     <main className="home">
       <Popup>
@@ -16,7 +20,7 @@ const PageHome = () => {
             </p>
           </Popup.Content>
           <Popup.Controller>
-            버튼
+            <Button onClick={onClickAccetp} text="accept" />
           </Popup.Controller>
         </div>
       </Popup>

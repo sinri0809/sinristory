@@ -1,3 +1,8 @@
+
+@import './base/reset';
+@import './base/font';
+@import './base/base';
+
 @import './module/crossbrowse';
 @import './module/responsive';
 @import './module/svg';
@@ -5,10 +10,6 @@
 @import './module/variables';
 @import './module/color';
 @import './module/theme';
-
-@import './base/reset';
-@import './base/font';
-@import './base/base';
 
 @import './theme/light';
 @import './theme/dark';

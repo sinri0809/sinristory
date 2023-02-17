@@ -8,6 +8,13 @@ $mobile_max: 0px;
 // $icons_path: 'assets/icons';
 
 // * zIndex
+:root {
+  --zIndex-layer: 0;
+  --zIndex-float: 9;
+  --zIndex-back: -1;
+}
+
+
 $level_0: 0;
 $level_1: 9;
 
@@ -20,11 +27,26 @@ $level0: 0;
 :root {
   --header-height: 8rem; // max
 
+  --emoji-h1: 54px;
+
+  --fontsize-h1: 36px;
+
   --fontsize20: 2rem;
   --fontsize16: 1.6rem;
   --fontsize14: 1.4rem;
+
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
 }
+
+$emojiH1: var(--emoji-h1);
+
+
+$fontsizeH1: var(--fontsize-h1);
 
 $fontsize20: var(--fontsize20);
 $fontsize16: var(--fontsize16);
 $fontsize14: var(--fontsize14);
+
+$fontRegular: var(--font-weight-regular);
+$fontBold: var(--font-weight-bold);

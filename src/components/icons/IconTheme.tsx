@@ -8,7 +8,7 @@ const IconDayNight = () => {
     <circle
       className="sun-light"
       name="sun-light"
-      cx="21" cy="21" r="18" stroke="white" strokeWidth="6" stroke-dasharray="2 12" />
+      cx="21" cy="21" r="18" stroke="white" strokeWidth="6" strokeDasharray="2 12" />
     <circle
       className="bg-light"
       name="bg-light"

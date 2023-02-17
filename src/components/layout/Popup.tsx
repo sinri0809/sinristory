@@ -25,7 +25,7 @@ Popup.Content = ({ children }: Props) => {
 }
 
 Popup.Controller = ({ children }: Props) => {
-  return <div className="popup-content">
+  return <div className="popup-footer">
     {children}
   </div>
 }
