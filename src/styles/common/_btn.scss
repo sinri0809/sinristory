@@ -4,6 +4,10 @@
   justify-content: center;
   cursor: pointer;
   text-decoration: none;
+
+  &> .btn-text {
+    pointer-events: none;
+  }
 }
 
 .btn-drawer-trigger {
@@ -56,6 +60,7 @@
   }
 }
 
+
 .btn-fill { 
   height: 5rem;
   padding: 0 30px;
@@ -66,11 +71,9 @@
   transition: border-color,background-color 0.14s;
 
   &> .btn-text {
-    color: $day;
+    color: $button_text;
     font-weight: $fontRegular;
-    font-size: $fontsize20;
-
-    pointer-events: none;
+    font-size: $fontSize-20;
   }
 
   &:hover { 

@@ -11,42 +11,47 @@ $mobile_max: 0px;
 :root {
   --zIndex-layer: 0;
   --zIndex-float: 9;
+  --zIndex-fix: 999;
+  --zIndex-max: 9999;
   --zIndex-back: -1;
 }
 
 
-$level_0: 0;
-$level_1: 9;
+$layerPlain: var(--zIndex-layer);
+$layerFloating: var(--zIndex-float);
+$layerTop: var(--zIndex-max);
+$layerFix: var(--zIndex-fix);
 
-$level_max: 9999;
-
-$level-1: -9;
-$level0: 0;
+$layerBackground: var(--zIndex-back);
 
 // * responsive rule
 :root {
   --header-height: 8rem; // max
 
-  --emoji-h1: 54px;
+  --emoji-size-h1: 54px;
 
-  --fontsize-h1: 36px;
+  --font-size-h1: 36px;
 
-  --fontsize20: 2rem;
-  --fontsize16: 1.6rem;
-  --fontsize14: 1.4rem;
+  --font-size-20: 2rem;
+  --font-height-20: 2.4rem;
+  --font-size-16: 1.6rem;
+  --font-size-14: 1.4rem;
 
   --font-weight-regular: 400;
+  --font-weight-medium: 500;
   --font-weight-bold: 700;
 }
 
-$emojiH1: var(--emoji-h1);
+$emojiH1: var(--emoji-size-h1);
 
 
-$fontsizeH1: var(--fontsize-h1);
+$fontSizeH1: var(--font-size-h1);
 
-$fontsize20: var(--fontsize20);
-$fontsize16: var(--fontsize16);
-$fontsize14: var(--fontsize14);
+$fontSize-20: var(--font-size-20);
+$fontHeight-20: var(--font-height-20);
+$fontSize-16: var(--font-size-16);
+$fontSize-14: var(--font-size-14);
 
 $fontRegular: var(--font-weight-regular);
+$fontMedium: var(--font-weight-medium);
 $fontBold: var(--font-weight-bold);

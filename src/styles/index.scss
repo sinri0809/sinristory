@@ -1,7 +1,6 @@
 
 @import './base/reset';
 @import './base/font';
-@import './base/base';
 
 @import './module/crossbrowse';
 @import './module/responsive';
@@ -11,6 +10,8 @@
 @import './module/color';
 @import './module/theme';
 
+@import './base/base';
+
 @import './theme/light';
 @import './theme/dark';
 
@@ -19,6 +20,7 @@
 @import './common/wave';
 
 @import './components/popop';
+@import './components/box';
 
 @import './components/layout/header';
 

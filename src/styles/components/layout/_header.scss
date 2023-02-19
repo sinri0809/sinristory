@@ -2,8 +2,6 @@
   position: relative;
   width: 100%;
   height: var(--header-height);
-
-  height: 8rem;
 }
 
 .header-wrap {
@@ -17,7 +15,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  column-gap: auto;
+  z-index: $layerFix;
 
   padding-left: 3.6rem;
   padding-right: 3.6rem;
@@ -28,7 +26,7 @@
  
     .title{
       font-family:'Courier New', Courier, monospace;
-      font-size: $fontsize20;
+      font-size: $fontSize-20;
       color: $white;
     }
   }
@@ -87,13 +85,13 @@
 
   h3{
     font-weight: 700;
-    font-size: $fontsize16;
+    font-size: $fontSize-16;
     color: $white;
   }
 
   .pages-list{
 
-    font-size: $fontsize14;
+    font-size: $fontSize-14;
     text-decoration: underline;
 
     color: $white;
