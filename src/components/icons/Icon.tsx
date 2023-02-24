@@ -10,14 +10,16 @@ const IconList = {
   'icon-dropdown': <IconDropdown />
 }
 
-interface Props {
+type IconProps = {
   data: keyof typeof IconList;
 }
 
-const Icon = ({ data }: Props) => {
+const Icon = ({ data }: IconProps) => {
   return <i className={`icon ${data}`}>
     {IconList[data]}
   </i>
 }
+
+export type { IconProps };
 
 export default Icon;

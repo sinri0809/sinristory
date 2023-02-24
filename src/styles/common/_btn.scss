@@ -21,7 +21,7 @@
     background-color: rgba($color: $whiten, $alpha: 0.24);
   }
 
-  &.focus{
+  &[focus]{
     background-color: rgba($color: $whiten, $alpha: 0);
     .icon-drawer {
       .rect00{

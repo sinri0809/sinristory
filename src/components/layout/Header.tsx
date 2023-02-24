@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from "react-router-dom";
 
 import { links } from "routes/links";
@@ -19,12 +19,22 @@ const Header = () => {
   };
 
   const onClickButtonDrawer = (event: React.MouseEvent<HTMLButtonElement>) => {
-    if (event.currentTarget.classList.contains('focus')) {
-      event.currentTarget.classList.remove('focus')
-    } else if (!event.currentTarget.classList.contains('focus')) {
-      event.currentTarget.classList.add('focus')
+    if (event.currentTarget.hasAttribute("focus")) {
+      event.currentTarget.toggleAttribute("focus")
+    } else if (!event.currentTarget.hasAttribute("focus")) {
+      event.currentTarget.toggleAttribute("focus")
     }
   }
+
+  useEffect(()=> {
+    // document.addEventListener('click', (event: React.MouseEvent<HTMLButtonElement>) => {
+    //   event.currentTarget.contains
+    // })
+
+    return () => {
+      // document.removeEventListener('click')
+    }
+  })
 
   return (
     <header className="header">
