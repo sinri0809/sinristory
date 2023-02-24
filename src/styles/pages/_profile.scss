@@ -1,0 +1,51 @@
+.profile {
+  // FIXME: this property is same with home
+  height: calc(100% - 80px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-container {
+  width: 1320px;
+  margin: 0 auto;
+
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.dashboard-wrap {
+  color: $white;
+
+  background: linear-gradient(180deg, rgba(244, 248, 255, 0.4) 0%, rgba(244, 248, 255, 0) 100%);
+  backdrop-filter: blur(6px);
+  filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.08));
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-wrap {
+  padding: 24px;
+  display: grid;
+  grid-template-areas: 
+    "R00 R01"
+    "R10 R01"
+    "R10 R11"
+  ;
+  gap: 24px;
+
+  .dashboard-content[dashboard-index='0']{
+    grid-area: R00;
+  }
+  .dashboard-content[dashboard-index='1']{
+    grid-area: R01;
+  }
+  .dashboard-content[dashboard-index='2']{
+    grid-area: R10;
+  }
+  .dashboard-content[dashboard-index='3']{
+    grid-area: R11;
+  }
+}
