@@ -10,6 +10,16 @@
   --blue: #2F78E3; 
   --orange: #FF9929;
   --red: #FF0700;
+
+  .light {
+    --ui-presenter-bg: var(--white);
+    --btn-active: var(--day);
+  }
+
+  .dark {
+    --ui-presenter-bg: var(--night);
+    --btn-active: var(--night);
+  }
 }
 
 // $success: 
@@ -29,3 +39,5 @@ $red: var(--red);
 
 // button color 
 $button_text: var(--day);
+$btn_active: var(--btn-active);
+$ui_presenter_background: var(--ui-presenter-bg);

@@ -60,7 +60,6 @@
   }
 }
 
-
 .btn-fill { 
   height: 5rem;
   padding: 0 30px;
@@ -85,4 +84,34 @@
     background-color: rgba($whiten, $alpha: 0.7);
     border-color: rgba($whiten, $alpha: 1);
   }
-} 
+}
+
+.btn-sort {
+  height: 30px;
+  padding: 0 18px;
+  border-radius: 20px;
+  background-color: rgba(244, 248, 255, 0.5);
+  border: 1px solid transparent;
+
+  color: $btn_active;
+
+  font-size: $fontSize-16;
+  font-weight: $fontRegular;
+
+  transition: background-color 0.2s,  border-color 0.2s;
+
+  &:hover {
+    background-color: $white;
+  }
+
+  &:active {
+    border-color: $white;
+    background-color: rgba(244, 248, 255, 0.7);
+  }
+
+  &.selected {
+    color: $white;
+    border-color: transparent;
+    background-color: $btn_active;
+  }
+}

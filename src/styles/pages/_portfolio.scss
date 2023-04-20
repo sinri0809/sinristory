@@ -1,0 +1,121 @@
+
+.portfolio {
+
+  .sort-list-wrap {
+    margin-top: 6rem;
+    margin-bottom: 7.8rem;
+  }
+
+}
+
+// component 이름 만들기
+.name-component {
+  &::before {
+    content: '\003C';
+  }
+  &::after {
+    content: '\002F \003E';
+  }
+}
+
+// ----------------------------------------------------------------------------------------
+
+.sort-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sort-list-wrap {
+  display: flex;
+  column-gap: 18px;
+  align-items: center;
+  width: $PCContentMaxWidth;
+}
+.sort-list {
+  display: flex;
+  column-gap: 12px;
+  padding: 20px 0;
+}
+
+// ----------------------------------------------------------------------------------------
+
+.portfolio-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-wrap {
+  width: $PCContentMaxWidth;
+}
+
+.ui-presenter-wrap {
+  position: relative;
+  width: 500px;
+  height: 200px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  background-color: rgba(244, 248, 255, 0.26);
+  border: 1px solid rgba(255, 255, 255, 0.51);
+
+  border-radius: 12px;
+  transition: all 0.2s;
+}
+
+.ui-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  // text-align: left;
+  // width: 100%;
+  padding: 0.6em ;
+  align-self: flex-start;
+
+  font-weight: $fontBold;
+  font-size: $fontSizeH1;
+  color: $white;
+
+  text-shadow: 1px 1px 0px #10233E05;
+  transition: all 0.2s;
+
+}
+
+.ui-component {
+  // flex: 1 1 auto;
+  // width: 100%;
+  padding: 1em;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
+  transition: background-color 0.2s;
+}
+
+.ui-presenter-wrap {
+  &:hover {
+    backdrop-filter: blur(2px);
+    background-color: rgba(244, 248, 255, 0.36);
+
+    .ui-title {
+      text-shadow: 4px 2px 0px #10233E;
+    }
+
+    .ui-component {
+      // day
+      background-color: $ui_presenter_background;
+      // background-color: $night;
+    }
+  }
+
+  &:active {
+    background-color: rgba(244, 248, 255, 0.26);
+  }
+}

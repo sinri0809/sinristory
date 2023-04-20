@@ -2,6 +2,7 @@
 @import './base/reset';
 @import './base/font';
 
+@import './module/mixin';
 @import './module/crossbrowse';
 @import './module/responsive';
 @import './module/svg';
@@ -21,9 +22,11 @@
 
 @import './components/popop';
 @import './components/box';
+@import './components/switch';
 
 @import './components/layout/header';
 
 @import './pages/home';
 @import './pages/gallery';
 @import './pages/profile';
+@import './pages/portfolio';

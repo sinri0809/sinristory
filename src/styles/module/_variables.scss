@@ -3,6 +3,10 @@ $header_height: 100 * 1px;
 
 // * responsive
 $mobile_max: 0px;
+:root {
+  --pc-max-content-width: 1320px;
+}
+$PCContentMaxWidth: var(--pc-max-content-width);
 
 // $img_path: 'assets/iamges';
 // $icons_path: 'assets/icons';

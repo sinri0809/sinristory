@@ -61,7 +61,7 @@
     position: relative;
     flex: 1 1 auto;
     width: 100%;
-    max-width: 1320px;
+    max-width: $PCContentMaxWidth;
     height: 45rem;
     
     &> .btn {

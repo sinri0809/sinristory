@@ -16,10 +16,6 @@
   }
 }
 
-body {
-  user-select: text;
-}
-
 ul,
 ol {
   list-style: none;
@@ -112,17 +108,17 @@ input {
 
     transition: all 0.3s;
 
-    &:hover {
-      border: 1px solid red;
-    }
+    // &:hover {
+    //   border: 1px solid red;
+    // }
 
-    &:checked {
-      border: 1px solid red;
-    }
+    // &:checked {
+    //   border: 1px solid red;
+    // }
 
-    &:focus {
-      outline: none;
-    }
+    // &:focus {
+    //   outline: none;
+    // }
   }
 }
 

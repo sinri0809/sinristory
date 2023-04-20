@@ -12,10 +12,11 @@ const IconList = {
 
 type IconProps = {
   data: keyof typeof IconList;
+  name?: string;
 }
 
-const Icon = ({ data }: IconProps) => {
-  return <i className={`icon ${data}`}>
+const Icon = ({ data, name }: IconProps) => {
+  return <i aria-label={name} className={`icon ${data}`}>
     {IconList[data]}
   </i>
 }

@@ -8,26 +8,31 @@
   background: $day_sunrise;
   
   overflow: hidden;
-  z-index: -1;
+  z-index: $layerBackground;
+
+  @include prevent-event;
 }
 
 svg.sea {
-  position: relative;
-  display: inline-block;
-  width: 100vw;
-  height: 100vh;
-  
-  min-width: 1920px;
-  min-height: 1100px;
+  position: absolute;
 
-  max-width: 100%;
-  max-height: 50vw;
+  // min-width: 1920px;
+  // min-height: 1100px;
+  object-fit: cover;
+  // max-width: 100%;
+  // max-height: 50vw;
+}
+
+.background-sea.test {
+  // background-image: url(./../../assets/imgs/Background.svg);
+  // background-repeat: no-repeat;
+  // background-size: cover;
 }
 
 
-$sea_delay: 2s;
+$sea_delay: 0s;
 // ! on in Production mode
-$sea_animation: 6s;
+$sea_animation: 0s;
 
 @keyframes move_wave_1 {
   0% {
