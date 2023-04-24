@@ -9,13 +9,12 @@
   --black: #111214;
   --white: #F4F8FF;
   --gray: #DFE2E5;
+  --darkgray100: rgba(46, 50, 56, 1);
+  --darkgray107: rgba(46, 50, 56, 0.7);
   --white-rgb: 255, 255, 255;
   --blue: #2F78E3; 
   --orange: #FF9929;
   --red: #FF0700;
-
-  --test: #FF0700;
-  --test2: calc(var(--test) + 00);
 
   .light {
     --ui-presenter-bg: var(--white);
@@ -40,6 +39,8 @@ $night_sunset: var(--night-sunset);
 $black: var(--black);
 $white: var(--white);
 $gray: var(--gray);
+$darkgray100: var(--darkgray100);
+$darkgray107: var(--darkgray107);
 $whiten: var(--white-rgb);
 $blue: var(--blue);
 $orange: var(--orange);

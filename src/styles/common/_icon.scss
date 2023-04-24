@@ -1,6 +1,12 @@
 .icon {
   display: inline-flex;
   user-select: none;
+  
+  svg {
+    width: inherit;
+    height: inherit;
+  }
+
   path {
     transition: fill 0.1s;
   }

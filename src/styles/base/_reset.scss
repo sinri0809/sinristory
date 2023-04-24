@@ -84,6 +84,11 @@ input {
   border: 0;
   background-color: transparent;
 
+  &:focus {
+    outline: none;
+    border: none;
+  }
+
   &::placeholder {
     font-size: inherit;
     font-weight: inherit;
@@ -114,10 +119,6 @@ input {
 
     // &:checked {
     //   border: 1px solid red;
-    // }
-
-    // &:focus {
-    //   outline: none;
     // }
   }
 }

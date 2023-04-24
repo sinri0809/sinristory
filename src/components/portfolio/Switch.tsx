@@ -1,5 +1,5 @@
 
-interface Props{
+interface Props {
   size?: string;
   checked: boolean;
   tabIndex?: number;

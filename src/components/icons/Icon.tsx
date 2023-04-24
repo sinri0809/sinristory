@@ -1,10 +1,12 @@
 import React from 'react';
 
+import IconClose from './IconClose';
 import IconTheme from './IconTheme';
 import IconDrawer from './IconDrawer';
 import IconArrowDown from './IconArrowDown';
 
 const IconList = {
+  'icon-close': <IconClose />,
   'icon-theme': <IconTheme />,
   'icon-drawer': <IconDrawer />,
   'icon-arrow-down': <IconArrowDown />

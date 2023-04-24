@@ -14,7 +14,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
       type="button"
       value={props.value}
       onClick={props.onClick}
-      className={`btn-icon`}
+      className={`btn-icon ${props.className}`}
     >
       <Icon data={props.data} name={props.name} />
     </button>
