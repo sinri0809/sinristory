@@ -9,7 +9,14 @@ interface AnimationProps {
   duration: string;
 }
 
-const Animation = ({ attr, delay, duration, type = 'linear', from, to }: AnimationProps) => {
+const Animation = ({
+  attr,
+  delay,
+  duration,
+  type = 'linear',
+  from,
+  to,
+}: AnimationProps) => {
   return (
     <animate
       attributeName={attr}

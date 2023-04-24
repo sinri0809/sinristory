@@ -2,4 +2,19 @@
   -webkit-user-select: none;
   user-select: none;
   pointer-events: none;
+  cursor: initial;
+}
+
+@mixin webkit-scrollbar ($thick, $color_scroll: $gray){
+  padding-right: $thick;
+
+  ::-webkit-scrollbar{
+    width: $thick;
+    height: $thick;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-color: $color_scroll;
+  }
 }

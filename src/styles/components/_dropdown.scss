@@ -1,0 +1,124 @@
+// <UI /> dropdown 
+.dropdown-container {
+  position: relative;
+  display: inline-flex;
+  max-width: 260px;
+
+  // state
+  &[aria-disabled=true] {
+    &>.btn-dropdown {
+      opacity: 0.4;
+      @include prevent-event;
+    }
+
+    &>.dropdown-list-wrap{
+      display: none;
+    }
+  }
+
+  // interaction
+  &:hover,
+  &:active {
+    .btn-dropdown {
+      border-color: $day;
+    }
+  }
+
+  &[aria-expanded] {
+    .dropdown-list-wrap{
+      visibility: visible;
+    }
+
+    .btn-dropdown {
+      border-color: $day;
+      color: $day;
+    }
+
+    .icon svg path {
+      fill: $day;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------------------
+
+.btn-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 12px;
+
+  position: relative;
+  padding: 0 10px;
+  width: 100%;
+  height: 100%;
+
+  background-color: $white;
+  border: 1px solid $gray;
+  border-radius: 5px;
+
+  transition: border-color 0.1s, background-color 0.1s ;
+
+  &>.label-dropdown {
+    @include text-ellipsis;
+    @include prevent-event;
+    width: 100%;
+    max-width: 210px;
+
+    font-size: $fontSize-14;
+    text-align: left;
+    color: $black;
+  }
+}
+
+// ----------------------------------------------------------------------------------------
+
+.dropdown-list-wrap {
+  visibility: hidden;
+
+  position: absolute;
+  top: calc(100% + 6px);
+
+  width: 100%;
+  background-color: $white;
+  border-radius: 5px;
+  border: 1px solid $gray;
+  z-index: $layerFloating;
+
+  @include webkit-scrollbar(4px);
+}
+
+.dropdown-list {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+
+  max-height: 120px;
+  overflow-y: scroll;
+
+  .dropdown-item {
+    position: relative;
+    width: 100%;
+  }
+}
+
+.btn-dropdown-item {
+  @include text-ellipsis;
+  padding: 0 8px;
+  height: 32px;
+  width: 100%;
+  // height: 100%;
+
+  font-weight: $fontRegular;
+  font-size: $fontSize-14;
+  line-height: $fontHeight-14;
+  text-align: left;
+
+  border-radius: 5px;
+  transition: background-color 0.2s;
+  color: $black;
+
+  &:hover {
+    background-color: $day200;
+  }
+}

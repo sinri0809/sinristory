@@ -2,12 +2,12 @@ import React from 'react';
 
 import IconTheme from './IconTheme';
 import IconDrawer from './IconDrawer';
-import IconDropdown from './IconDropdown';
+import IconArrowDown from './IconArrowDown';
 
 const IconList = {
   'icon-theme': <IconTheme />,
   'icon-drawer': <IconDrawer />,
-  'icon-dropdown': <IconDropdown />
+  'icon-arrow-down': <IconArrowDown />
 }
 
 type IconProps = {

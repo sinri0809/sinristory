@@ -71,7 +71,7 @@ const Header = () => {
               <div className="more-links-container">
                 <button className="btn btn-more-list">
                   <h3>more</h3>
-                  <Icon data='icon-dropdown' />
+                  <Icon data='icon-arrow-down' />
                 </button>
                 <ul className="more-links-lists">
                   <li>velog</li>

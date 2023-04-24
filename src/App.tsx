@@ -12,8 +12,8 @@ import './styles/index.scss';
 function App() {
   useEffect(() => {
     document.body.classList.add('light');
-    console.log(`isPhone? ${isPhone}`)
-  }, [])
+    console.log(`isPhone? ${isPhone}`);
+  }, []);
 
   return (
     <>
