@@ -6,6 +6,7 @@ import Button from 'components/portfolio/Button';
 import TextField from 'components/portfolio/TextField';
 import Dialog from 'components/portfolio/Dialog';
 import Popup from 'components/portfolio/Popup';
+import Progress, {ProgressBar, ProgressInformation} from 'components/portfolio/Progress';
 
 interface ItemUIComponentProps {
   title: string;
@@ -35,6 +36,9 @@ const PagePortfolio = () => {
 
   const [dialog, setDialog] = useState(false);
   const [popup, setPopup] = useState(false);
+
+  const progressTotal = 100;
+  const [progress, setProgress] = useState(0);
 
   const onChangeSwitch = () => {
     setChecked(!checked);
@@ -78,6 +82,20 @@ const PagePortfolio = () => {
       <div className="portfolio-container">
         <div className="portfolio-wrap">
           <ul className="portfolio-list">
+            <ItemUIComponent title='Progressbar'>
+              <Progress>
+                <Button text='progress up' onClick={() => {
+                  // FIXME: split code
+                  setInterval(() => {
+                    setProgress((prevProgress) =>
+                      prevProgress >= 100 ? 100 : prevProgress + 1
+                    );
+                  }, 10);
+                }}/>
+                <ProgressBar value={progress} total={progressTotal} />
+                <ProgressInformation value={progress} total={progressTotal} />
+              </Progress>
+            </ItemUIComponent>
             <ItemUIComponent title='Switch'>
               <Switch
                 size="large"
@@ -181,9 +199,6 @@ const PagePortfolio = () => {
             </ItemUIComponent>
             <ItemUIComponent title='ImageSlider'>
               ImageSlider component
-            </ItemUIComponent>
-            <ItemUIComponent title='Progressbar'>
-              Progressbar component
             </ItemUIComponent>
             <ItemUIComponent title='DnDPage'>
               DnDPage component

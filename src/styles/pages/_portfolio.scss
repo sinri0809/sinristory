@@ -8,8 +8,8 @@
   }
 }
 
-// component 이름 만들기
 .name-component {
+  // < component />
   &::before {
     content: '\003C';
   }
