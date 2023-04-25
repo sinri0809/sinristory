@@ -1,15 +1,19 @@
 import React from 'react';
 
-import IconClose from './IconClose';
-import IconTheme from './IconTheme';
-import IconDrawer from './IconDrawer';
-import IconArrowDown from './IconArrowDown';
+import { 
+  IconClose,
+  IconDayNight,
+  IconDrawer,
+  IconArrowDown,
+  IconLike
+ } from './IconList';
 
 const IconList = {
   'icon-close': <IconClose />,
-  'icon-theme': <IconTheme />,
+  'icon-theme': <IconDayNight />,
   'icon-drawer': <IconDrawer />,
-  'icon-arrow-down': <IconArrowDown />
+  'icon-arrow-down': <IconArrowDown />,
+  'icon-like': <IconLike />
 }
 
 type IconProps = {

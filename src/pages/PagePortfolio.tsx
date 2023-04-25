@@ -7,6 +7,8 @@ import TextField from 'components/portfolio/TextField';
 import Dialog from 'components/portfolio/Dialog';
 import Popup from 'components/portfolio/Popup';
 import Progress, {ProgressBar, ProgressInformation} from 'components/portfolio/Progress';
+import Icon from 'components/icons/Icon';
+import IconButton from 'components/portfolio/IconButton';
 
 interface ItemUIComponentProps {
   title: string;
@@ -39,6 +41,8 @@ const PagePortfolio = () => {
 
   const progressTotal = 100;
   const [progress, setProgress] = useState(0);
+
+  const [buttonFocus, setButtonFocus] = useState(false);
 
   const onChangeSwitch = () => {
     setChecked(!checked);
@@ -82,16 +86,19 @@ const PagePortfolio = () => {
       <div className="portfolio-container">
         <div className="portfolio-wrap">
           <ul className="portfolio-list">
+            <ItemUIComponent title='Icon'>
+              <IconButton toggle={buttonFocus} data='icon-like' name='like' onClick={() => setButtonFocus(!buttonFocus)} />
+            </ItemUIComponent>
             <ItemUIComponent title='Progressbar'>
+              <Button text='progress up' onClick={() => {
+                // FIXME: split code
+                setInterval(() => {
+                  setProgress((prevProgress) =>
+                    prevProgress >= 100 ? 100 : prevProgress + 1
+                  );
+                }, 10);
+              }}/>
               <Progress>
-                <Button text='progress up' onClick={() => {
-                  // FIXME: split code
-                  setInterval(() => {
-                    setProgress((prevProgress) =>
-                      prevProgress >= 100 ? 100 : prevProgress + 1
-                    );
-                  }, 10);
-                }}/>
                 <ProgressBar value={progress} total={progressTotal} />
                 <ProgressInformation value={progress} total={progressTotal} />
               </Progress>
@@ -202,10 +209,6 @@ const PagePortfolio = () => {
             </ItemUIComponent>
             <ItemUIComponent title='DnDPage'>
               DnDPage component
-            </ItemUIComponent>
-            <ItemUIComponent title='Icon'>
-              Icon component
-              좋아요/하트 인터렉션
             </ItemUIComponent>
           </ul>
         </div>

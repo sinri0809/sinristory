@@ -1,6 +1,7 @@
 .icon {
   display: inline-flex;
   user-select: none;
+  transition: all 0.2s;
   
   svg {
     width: inherit;
@@ -8,12 +9,111 @@
   }
 
   path {
-    transition: fill 0.1s;
+    transition: fill 0.2s;
+  }
+}
+
+
+@mixin btn-hover {
+  @at-root &:hover {
+    @content;
+  }
+}
+
+@mixin btn-active {
+  @at-root &:active {
+    @content;
+  }
+}
+
+@mixin btn-state ($state) {
+  @at-root [#{$state}] {
+    @content;
   }
 }
 
 .icon-drawer {
+  background-color: rgba($color: $whiten, $alpha: 0);
+  border-radius: 1rem;
+  border: solid 1px rgba($color: $whiten, $alpha: 0);
+
   rect{
     transition: all 0.3s;
+  }
+
+  @include btn-hover{
+    background-color: rgba($color: $whiten, $alpha: 0.24);
+  }
+
+  @include btn-active{
+    background-color: rgba($color: $whiten, $alpha: 0.36);
+    border-color: rgba($color: $whiten, $alpha: 0.36);
+  }
+
+  @include btn-state ('focus'){
+    background-color: rgba($color: $whiten, $alpha: 0);
+    .icon-drawer {
+      .rect00{
+        transform: translate(-2px, -2px);
+      }
+      .rect10{
+        transform: translate(-2px, 0px);
+      }
+      .rect20{
+        transform: translate(-2px, 2px);
+      }
+      .rect01{
+        transform: translate(0, -2px);
+      }
+      .rect11{
+        transform: translate(0, 0px);
+      }
+      .rect21{
+        transform: translate(0, 2px);
+      }
+      .rect02{
+        transform: translate(2px, -2px);
+      }
+      .rect12{
+        transform: translate(2px, 0);
+      }
+      .rect22{
+        transform: translate(2px, 2px);
+      }
+    }
+  }
+}
+
+.icon-like {
+  path {
+    fill: transparent;
+  }
+
+  @include btn-hover {
+    // path {
+    //   fill: $white108;
+    // }
+  }
+
+  @include btn-active {
+    transform: scale(0.9);
+    path {
+      fill: $white108;
+    }
+  }
+
+  @include btn-state ('data-toggle=true'){
+
+    path {
+      fill: $day;
+      stroke: $day;
+    }
+
+    // transform: translateX(-1px);
+    animation-name: tada, shaking;
+    animation-duration: 0.1s, 0.1s;
+    animation-delay: 0s, 0.2s;
+    animation-timing-function: ease-out, ease-in-out;
+    animation-iteration-count: 1, 3;
   }
 }
