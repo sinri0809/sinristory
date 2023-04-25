@@ -1,11 +1,11 @@
 
 .portfolio {
+  height: calc(100% - 80px);
 
   .sort-list-wrap {
     margin-top: 6rem;
     margin-bottom: 7.8rem;
   }
-
 }
 
 // component 이름 만들기
@@ -32,6 +32,7 @@
   align-items: center;
   width: $PCContentMaxWidth;
 }
+
 .sort-list {
   display: flex;
   column-gap: 12px;
@@ -48,6 +49,12 @@
 
 .portfolio-wrap {
   width: $PCContentMaxWidth;
+  height: 60rem;
+
+  overflow: scroll;
+  background-color: $white101;
+  border-radius: 12px;
+  // border: 1px solid $white105;
 }
 
 .portfolio-list {
@@ -58,13 +65,12 @@
 }
 
 .portfolio-item {
-  flex: 1 1 auto;
+  flex: 1 1 40rem;
 }
 
 // ----------------------------------------------------------------------------------------
 
 .ui-presenter-wrap {
-  position: relative;
   height: auto;
   
   display: flex;

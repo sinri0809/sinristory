@@ -3,14 +3,19 @@ import React from "react";
 import GlobalPortal from "components/container/Portals";
 
 interface Props {
+  width?: number;
+  height?: number; 
   children: React.ReactNode;
 }
 
-const Popup = ({ children }: Props) => {
+const Popup = (props: Props) => {
   return <GlobalPortal>
     <div className="popup-container">
-      <div className="popup-wrap">
-        {children}
+      <div 
+        style={{width: props.width, height: props.height}}
+        className="popup-wrap"
+      >
+        {props.children}
       </div>
     </div>
   </GlobalPortal>
@@ -18,13 +23,19 @@ const Popup = ({ children }: Props) => {
 
 export default Popup;
 
+Popup.defaultProps = {
+  width: 400,
+  height: 300,
+  onClose: () => {}
+}
+
 Popup.Content = ({ children }: Props) => {
   return <div className="popup-content">
     {children}
   </div>
 }
 
-Popup.Controller = ({ children }: Props) => {
+Popup.Footer = ({ children }: Props) => {
   return <div className="popup-footer">
     {children}
   </div>

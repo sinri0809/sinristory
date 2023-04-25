@@ -3,12 +3,22 @@
   --day105: rgba(255, 115, 111, 0.5);
   --day200: #F8ABA9;
   --day-sunrise: linear-gradient(112.68deg, #FF9929 0%, #FF7270 59.9%, #FF517C 100%);
-  --night: #10233E;
+  
+  --night100: #10233E;
+  --night105: rgba(16, 35, 62, 0.5);
+  --night200: rgba(68, 94, 132, 1);
+
   --night-sunset: linear-gradient(112.68deg, #F74772 0.01%, #762544 16.67%, #15253E 35.94%, #0E223F 67.71%, #002966 100%);
   
   --black: #111214;
-  --white: #F4F8FF;
+  --white100: #F4F8FF;
+  --white101: rgba(244, 248, 255, 0.1);
+  --white105: rgba(244, 248, 255, 0.5);
+  --white108: rgba(244, 248, 255, 0.8);
   --gray: #DFE2E5;
+  --gray200: rgba(121, 121, 121, 1);
+  --gray205: rgba(121, 121, 121, 0.5);
+
   --darkgray100: rgba(46, 50, 56, 1);
   --darkgray107: rgba(46, 50, 56, 0.7);
   --white-rgb: 255, 255, 255;
@@ -17,13 +27,16 @@
   --red: #FF0700;
 
   .light {
-    --ui-presenter-bg: var(--white);
-    --btn-active: var(--day100);
+    --ui-presenter-bg: var(--white100);
   }
 
   .dark {
-    --ui-presenter-bg: var(--night);
-    --btn-active: var(--night);
+    --ui-presenter-bg: var(--night100);
+
+    // accent colors
+    --day100: var(--night100);
+    --day105: var(--night105);
+    --day200: var(--night200);
   }
 }
 
@@ -31,14 +44,20 @@
 // $warning:
 
 $day: var(--day100);
+$day105: var(--day105);
 $day200: var(--day200);
 $day_sunrise: var(--day-sunrise);
-$night: var(--night);
+$night: var(--night100);
 $night_sunset: var(--night-sunset);
 
 $black: var(--black);
-$white: var(--white);
+$white: var(--white100);
+$white101: var(--white101);
+$white105: var(--white105);
+$white108: var(--white108);
 $gray: var(--gray);
+$gray200: var(--gray200);
+$gray205: var(--gray205);
 $darkgray100: var(--darkgray100);
 $darkgray107: var(--darkgray107);
 $whiten: var(--white-rgb);
@@ -47,6 +66,4 @@ $orange: var(--orange);
 $red: var(--red);
 
 // button color 
-$button_text: var(--day100);
-$btn_active: var(--btn-active);
 $ui_presenter_background: var(--ui-presenter-bg); // not used now

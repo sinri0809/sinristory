@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { links } from 'routes/links';
 
 import Button from 'components/common/Button';
-import Popup from 'components/layout/Popup';
+import Popup from 'components/portfolio/Popup';
 import Box from 'components/layout/Box';
 
 import IMG_MAIN_PROFILE from 'assets/imgs/img_page-profile.png';
@@ -67,9 +67,9 @@ const PageHome = () => {
                 Let&#39;s surfing
               </p>
             </Popup.Content>
-            <Popup.Controller>
+            <Popup.Footer>
               <Button onClick={onClickAccetp} text="accept" />
-            </Popup.Controller>
+            </Popup.Footer>
           </div>
         </Popup>
       )}

@@ -10,6 +10,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 
 const TextField = forwardRef((props: Props, forwardedRef: Ref<HTMLInputElement>) => {
   const { requiredMessage="", invalidMessage="입력해주세요", categoryTitle="" } = props;
+  
   const handleClearInput = () => {
     if (props.onChange) {
       // props.onChange("");

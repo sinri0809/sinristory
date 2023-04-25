@@ -15,6 +15,7 @@ $PCContentMaxWidth: var(--pc-max-content-width);
 :root {
   --zIndex-layer: 0;
   --zIndex-float: 9;
+  --zIndex-dialog: 99;
   --zIndex-fix: 999;
   --zIndex-max: 9999;
   --zIndex-back: -1;
@@ -23,8 +24,9 @@ $PCContentMaxWidth: var(--pc-max-content-width);
 
 $layerPlain: var(--zIndex-layer);
 $layerFloating: var(--zIndex-float);
-$layerTop: var(--zIndex-max);
+$layerDialog: var(--zIndex-dialog);
 $layerFix: var(--zIndex-fix);
+$layerTop: var(--zIndex-max);
 
 $layerBackground: var(--zIndex-back);
 
@@ -36,9 +38,11 @@ $layerBackground: var(--zIndex-back);
 
   --font-size-h1: 36px;
   --font-size-h2: 28px;
+  --font-size-h3: 24px;
 
   --font-size-20: 2rem;
   --font-height-20: 2.4rem;
+  --font-size-18: 1.8rem;
   --font-size-16: 1.6rem;
   --font-size-14: 1.4rem;
   --font-height-14: 2rem;
@@ -47,6 +51,7 @@ $layerBackground: var(--zIndex-back);
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
+  --font-weight-black: 900;
 }
 
 $emojiH1: var(--emoji-size-h1);
@@ -54,9 +59,11 @@ $emojiH1: var(--emoji-size-h1);
 
 $fontSizeH1: var(--font-size-h1);
 $fontSizeH2: var(--font-size-h2);
+$fontSizeH3: var(--font-size-h3);
 
 $fontSize-20: var(--font-size-20);
 $fontHeight-20: var(--font-height-20);
+$fontSize-18: var(--font-size-18);
 $fontSize-16: var(--font-size-16);
 $fontSize-14: var(--font-size-14);
 $fontHeight-14: var(--font-height-14);
@@ -65,3 +72,4 @@ $fontSize-12: var(--font-size-12);
 $fontRegular: var(--font-weight-regular);
 $fontMedium: var(--font-weight-medium);
 $fontBold: var(--font-weight-bold);
+$fontBlack: var(--font-weight-black);

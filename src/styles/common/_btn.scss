@@ -6,6 +6,8 @@
   cursor: pointer;
   text-decoration: none;
 
+  transition: border-color 0.14s, background-color 0.14s;
+
   &> .btn-text {
     pointer-events: none;
   }
@@ -61,30 +63,86 @@
   }
 }
 
-.btn-fill { 
-  // height: 5rem;
+@mixin btn-common {
   height: 4rem;
-  padding: 0 30px;
+  padding: 0 3rem;
   border-radius: 24px;
-  background-color: rgba($whiten, $alpha: 0.5);
-  border: 1px solid rgba($whiten, $alpha: 0.5);
 
-  transition: border-color,background-color 0.14s;
+  .btn-text {
+    font-size: $fontSize-18;
+  }
+}
 
-  &> .btn-text {
-    color: $button_text;
+.btn-fill { 
+  @include btn-common;
+
+  .btn-text {
     font-weight: $fontRegular;
-    font-size: $fontSize-20;
   }
 
-  &:hover { 
-    background-color: rgba($whiten, $alpha: 0.8);
-    border-color: rgba($whiten, $alpha: 0.5);
+  &[aria-label="basic"]{
+    background-color: $white105;
+    border: 1px solid $white105;
+    
+    .btn-text {
+      color: $day;
+    }
+
+    &:hover { 
+      background-color: $white108;
+      border-color: $white105;
+    }
+  
+    &:active {
+      background-color: $white108;
+      border-color: $white;
+    }
+  }
+
+  &[aria-label="accent"]{
+    background-color: $day;
+    border: 1px solid $day200;
+    
+    .btn-text {
+      color: $white;
+    }
+
+    &:hover { 
+      
+      // background-color: $white108;
+      border-color: $day105;
+    }
+  
+    &:active {
+
+      .btn-text {
+        color: $white105;
+      }
+      // background-color: $day105;
+      border-color: $day;
+    }
+  }
+}
+
+.btn-line {
+  @include btn-common;
+  border: 1px solid $white108;
+  background-color: $white101;
+
+  &> .btn-text {
+    color: $white108;
+  }
+
+  &:hover {
+    background-color: transparent;
   }
 
   &:active {
-    background-color: rgba($whiten, $alpha: 0.7);
-    border-color: rgba($whiten, $alpha: 1);
+    border-color: $white;
+
+    &> .btn-text {
+      color: $white;
+    }
   }
 }
 
@@ -95,7 +153,7 @@
   background-color: rgba(244, 248, 255, 0.5);
   border: 1px solid transparent;
 
-  color: $btn_active;
+  color: $day;
 
   font-size: $fontSize-16;
   font-weight: $fontRegular;
@@ -114,6 +172,6 @@
   &.selected {
     color: $white;
     border-color: transparent;
-    background-color: $btn_active;
+    background-color: $day;
   }
 }

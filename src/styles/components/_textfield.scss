@@ -8,7 +8,7 @@
 .textfield-title {
   font-weight: $fontBold;
   font-size: $fontSize-12;
-  padding: 4px 0;
+  padding: 8px 0;
   color: $darkgray107;
 }
 
@@ -36,6 +36,8 @@
   
   &:focus-within{
     outline-color: $day;
+    outline-width: 2px;
+    background-color: $white108;
   }
 
   &:focus-within,
@@ -59,20 +61,6 @@
     .invalid-message {
       visibility: visible;
       transform: translateY(-0rem);
-    }
-  }
-
-  // state
-  &.focused {
-    outline: 2px solid $day;
-
-    .label-placeholder {
-      font-size: 1.2rem;
-      transform: translateY(0rem);
-    }
-
-    .value {
-      padding: 3.1rem 2rem 1.1rem 2rem;
     }
   }
 }

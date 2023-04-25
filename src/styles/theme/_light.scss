@@ -1,9 +1,9 @@
-*::selection {
-  background-color: $day;
-  color: $black;
-}
-
 @include theme-light{
+  *::selection {
+    background-color: $day;
+    color: $black;
+  }
+
   svg.sea {
     .stars {
       visibility: hidden;

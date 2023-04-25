@@ -2,14 +2,15 @@ import React, {ButtonHTMLAttributes} from "react";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
+  color?: "accent" | "basic" | "";
   className?: "fill" | "line" | "";
-  // onClick: () => void;
 }
 
-const Button = ({text, className, onClick}: Props ) => {
-  
+const Button = ({text, color, className, onClick}: Props ) => {
   return <button 
     type="button" 
+    aria-label={color}
+    
     className={`btn btn-${className}`} 
     onClick={onClick}>
     <span className="btn-text">{text}</span>
@@ -17,9 +18,8 @@ const Button = ({text, className, onClick}: Props ) => {
 }
 
 Button.defaultProps = {
-  test: "",
-  className: 'fill'
+  color: "basic",
+  className: 'fill',
 }
-
 
 export default Button;
