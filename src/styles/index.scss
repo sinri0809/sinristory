@@ -10,24 +10,31 @@
 @import './module/variables';
 @import './module/color';
 @import './module/theme';
+@import './module/keyframes';
+@import './module/animation';
 
 @import './base/base';
 
 @import './theme/light';
 @import './theme/dark';
 
+// atomic
 @import './common/btn';
 @import './common/icon';
 @import './common/wave';
 
+// ui
 @import './components/popop';
 @import './components/box';
 @import './components/switch';
 @import './components/dropdown';
 @import './components/textfield';
+@import './components/dialog';
 
-@import './components/layout/header';
+// layout
+@import './layout/header';
 
+// page
 @import './pages/home';
 @import './pages/gallery';
 @import './pages/profile';

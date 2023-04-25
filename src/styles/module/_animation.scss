@@ -1,0 +1,21 @@
+// TODO: 제작 중 (애니메이션 여러 개일 경우 고려)
+@mixin animation(
+  $keyframeName,
+  $duration,
+  $delay: 0s,
+  $timeFunction: initial,
+  $fill: forwards,
+  $count: 1
+) {
+  animation-fill-mode: $fill;
+  animation-name: $keyframeName;
+
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-timing-function: $timeFunction;
+  animation-iteration-count: $count;
+  animation-direction: alternate;
+
+  // animation: $duration $timeFunction $delay $count $;
+}
+

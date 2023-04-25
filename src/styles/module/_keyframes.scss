@@ -1,0 +1,10 @@
+// dialog fade in 
+@keyframes dialog-fade-in {
+  from {
+    background-color: $white101;
+    transform: translateY(1rem);
+  } to {
+    background-color: $white108;
+    transform: translateY(0rem);
+  }
+}
