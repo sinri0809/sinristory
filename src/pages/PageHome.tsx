@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { links } from 'routes/links';
 
@@ -14,14 +14,12 @@ import IMG_MAIN_PROFILE from 'assets/imgs/img_page-profile.png';
  */
 
 const PageHome = () => {
-  const testRef = useRef<HTMLSpanElement>(null);
   const [popupOpen, setPopupOpen] = useState(false);
 
   const onClickAccetp = () => {
     console.log('click accept');
     setPopupOpen(false);
   };
-  const test = 0;
 
   if (0) {
     console.log(true);
@@ -29,33 +27,6 @@ const PageHome = () => {
 
   return (
     <main className="home">
-      {test && <div>test</div>}
-      <div
-        className="video"
-        // onMouseOver={(e) => {
-        //   console.log("mouse on")
-        // }}
-        // onMouseLeave={(e)=> {
-        //   console.log("mouse leave")
-        // }}
-        onMouseMove={(e: React.MouseEvent) => {
-          // console.log(e.currentTarget) // .video
-          console.log((e.target as HTMLElement).parentElement);
-          // console.log((e.target as HTMLElement).contains(testRef.current))
-          console.log(testRef.current?.contains(e.target as HTMLElement));
-          // console.log(e)
-        }}
-      >
-        <span ref={testRef} id="this">
-          <button>button example</button>
-          <strong>dd</strong>
-          <p>acac</p>
-          dd d
-        </span>
-        <span id="not-this" style={{ color: 'red' }}>
-          not this
-        </span>
-      </div>
       {popupOpen && (
         <Popup>
           <div className="popup-home-welcome">

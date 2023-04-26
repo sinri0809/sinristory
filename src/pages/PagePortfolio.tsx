@@ -9,6 +9,7 @@ import Popup from 'components/portfolio/Popup';
 import Progress, {ProgressBar, ProgressInformation} from 'components/portfolio/Progress';
 import IconButton from 'components/portfolio/IconButton';
 import Tab, {TabList, TabContent} from 'components/portfolio/Tab';
+import Tooltip, {TooltipDefault, TooltipMouse} from 'components/portfolio/Tooltip';
 
 interface ItemUIComponentProps {
   title: string;
@@ -45,7 +46,7 @@ const PagePortfolio = () => {
   const [buttonFocus, setButtonFocus] = useState(false);
 
   const [tabFocus, setTabFocus] = useState(0);
-  const tabList = ['tab1', 'tab2', 'tab3'];
+  const tabList = Array.from([1, 2, 3], x => `tab${x}`);
 
   const onChangeSwitch = () => {
     setChecked(!checked);
@@ -88,6 +89,24 @@ const PagePortfolio = () => {
       <div className="portfolio-container">
         <div className="portfolio-wrap">
           <ul className="portfolio-list">
+            <ItemUIComponent title='DrawerBox'>
+              <details>
+                <summary>Details</summary>
+                hihi
+              </details>
+            </ItemUIComponent>
+            <ItemUIComponent title='Tooltip'>
+              <Tooltip index={0}>
+                <TooltipDefault index={0} tooltipMessage='tooltip is here'>
+                  <Button text='default tooltip' />
+                </TooltipDefault>
+              </Tooltip>
+              <Tooltip index={1}>
+                <TooltipMouse index={1} tooltipMessage='following mouse'>
+                  <Button color="accent" text='mouse tooltip' />
+                </TooltipMouse>
+              </Tooltip>
+            </ItemUIComponent>
             <ItemUIComponent title='Tabs'>
               <Tab selected={tabFocus}>
                 <TabList>
@@ -211,9 +230,6 @@ const PagePortfolio = () => {
             </ItemUIComponent>
             <ItemUIComponent title='Radio'>
               Radio component
-            </ItemUIComponent>
-            <ItemUIComponent title='Tooltip'>
-              Tooltip component
             </ItemUIComponent>
             <ItemUIComponent title='Date'>
               Tooltip component

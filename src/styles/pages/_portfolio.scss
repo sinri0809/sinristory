@@ -116,7 +116,8 @@
 
 .ui-presenter-wrap {
   &:hover {
-    backdrop-filter: blur(2px);
+    // filter: blur(2px);
+    // backdrop-filter: blur(2px);
     background-color: rgba(244, 248, 255, 0.36);
 
     .ui-title {

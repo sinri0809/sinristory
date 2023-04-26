@@ -1,0 +1,64 @@
+// <UI /> tooltip
+.tooltip-container {
+  position: relative;
+  margin: 24px;
+  // width: 100%;
+}
+
+.tooltip-target {
+  width: 100%;
+}
+
+.tooltip-wrap {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+.tooltip-message {
+  width: max-content;
+  padding: 0.4em 1em;
+  height: 20px;
+  border-radius: 12px;
+  white-space: nowrap;
+
+  color: $white;
+
+  font-size: $fontSize-12;
+  background-color: $day;
+
+  visibility: hidden;
+}
+
+.tooltip-target:hover + .tooltip-wrap {
+  .tooltip-message {
+    visibility: visible;
+
+    animation-name: tooltip-fade-in;
+    animation-duration: 0.2s;
+  }
+}
+
+// ----------------------------------------------------------------------------------------
+
+.tooltip-wrap[itemtype='default']{
+  padding-top: 4px;
+  top: 100%;
+}
+
+// ----------------------------------------------------------------------------------------
+
+.tooltip-wrap[itemtype='mouse'] {
+  bottom: calc(100% + 4px);
+  left: -50%;
+
+  .tooltip-message {
+    background-color: $day105;
+    backdrop-filter: blur(2px);
+  }
+}
