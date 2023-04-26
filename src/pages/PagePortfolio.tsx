@@ -7,8 +7,8 @@ import TextField from 'components/portfolio/TextField';
 import Dialog from 'components/portfolio/Dialog';
 import Popup from 'components/portfolio/Popup';
 import Progress, {ProgressBar, ProgressInformation} from 'components/portfolio/Progress';
-import Icon from 'components/icons/Icon';
 import IconButton from 'components/portfolio/IconButton';
+import Tab, {TabList, TabContent} from 'components/portfolio/Tab';
 
 interface ItemUIComponentProps {
   title: string;
@@ -44,12 +44,14 @@ const PagePortfolio = () => {
 
   const [buttonFocus, setButtonFocus] = useState(false);
 
+  const [tabFocus, setTabFocus] = useState(0);
+  const tabList = ['tab1', 'tab2', 'tab3'];
+
   const onChangeSwitch = () => {
     setChecked(!checked);
   };
 
   const handleDropdownSelect = (index: number) => {
-    console.log('clicked');
     setDropdown(index);
   };
 
@@ -86,6 +88,27 @@ const PagePortfolio = () => {
       <div className="portfolio-container">
         <div className="portfolio-wrap">
           <ul className="portfolio-list">
+            <ItemUIComponent title='Tabs'>
+              <Tab selected={tabFocus}>
+                <TabList>
+                  <Tab.Item selected={tabFocus} index={0} tabName={tabList[0]} onClick={()=>setTabFocus(0)} />
+                  <Tab.Item selected={tabFocus} index={1} tabName={tabList[1]} onClick={()=>setTabFocus(1)} />
+                  <Tab.Item selected={tabFocus} index={2} tabName={tabList[2]} onClick={()=>setTabFocus(2)} />
+                </TabList>
+                <Tab.Bar selected={tabFocus} total={tabList.length} />
+                <TabContent>
+                  <TabContent.Item index={0} selected={tabFocus}>
+                    tab1 content
+                  </TabContent.Item>
+                  <TabContent.Item index={1} selected={tabFocus}>
+                    tab2 content
+                  </TabContent.Item>
+                  <TabContent.Item index={2} selected={tabFocus}>
+                    tab3 content
+                  </TabContent.Item>
+                </TabContent>
+              </Tab>
+            </ItemUIComponent>
             <ItemUIComponent title='Icon'>
               <IconButton toggle={buttonFocus} data='icon-like' name='like' onClick={() => setButtonFocus(!buttonFocus)} />
             </ItemUIComponent>
@@ -185,9 +208,6 @@ const PagePortfolio = () => {
             </ItemUIComponent>
             <ItemUIComponent title='Flag/Toast'>
               Flag/Toast component
-            </ItemUIComponent>
-            <ItemUIComponent title='Tabs'>
-              Tabs component
             </ItemUIComponent>
             <ItemUIComponent title='Radio'>
               Radio component
