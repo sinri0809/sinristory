@@ -41,9 +41,9 @@ const TooltipMouse = (props: Props) => {
     <div 
       className="tooltip-target"
       aria-describedby={`tooltip-${props.index}`}
-      onMouseLeave={(e:React.MouseEvent) => {
-        setTooltipCoordinate([0, 0])
-      }}
+      // onMouseLeave={(e:React.MouseEvent) => {
+      //   setTooltipCoordinate([0, 0])
+      // }}
       onMouseMove={(e:any) => {
         const { left, top, width, height } = e.target.getBoundingClientRect();
         const x = e.clientX - left;
@@ -64,7 +64,6 @@ const TooltipMouse = (props: Props) => {
       className="tooltip-wrap"
       style={{
         transform: `translate(${tooltipCoordinate[0]}%, ${tooltipCoordinate[1]}%)`
-
         // transform: `translate(${props.coordinateX}%, ${props.coordinateY}%)`
       }}
     >

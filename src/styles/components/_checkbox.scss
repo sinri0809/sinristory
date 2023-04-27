@@ -1,0 +1,105 @@
+// <UI /> checkbox 
+.checkbox-container {
+  width: 100%;
+}
+
+.checkbox-title {
+  font-weight: $fontBold;
+  font-size: $fontSize-14;
+  color: $darkgray100;
+  opacity: 0.8;
+  padding: 1em 0;
+}
+
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+// ----------------------------------------------------------------------------------------
+
+.checkbox-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+
+  input[type='checkbox']{
+    // 영역만 잡음
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  .icon-checkbox {
+    width: 20px;
+    height: 20px;
+  }
+
+  .checkbox-value {
+    margin-left: 1rem;
+    font-size: $fontSize-14;
+  }
+}
+
+// ----------------------------------------------------------------------------------------
+
+@keyframes check {
+  from {
+    stroke-dasharray: 4 100;
+  }
+  to {
+    stroke-dasharray: 16 100;
+  }
+}
+
+// ----------------------------------------------------------------------------------------
+
+.icon-checkbox {
+
+  .checkbox-bg {
+    fill: $white;
+    transition: fill 0.2s;
+  }
+
+  .checkbox-line {
+    opacity: 0;
+  }
+}
+
+input[type='checkbox']:not(:disabled):hover + .icon-checkbox {
+  .checkbox-bg {
+    fill: $blue200;
+  }
+}
+
+input[type='checkbox']:not(:disabled):active + .icon-checkbox {
+  .checkbox-bg {
+    fill: $blue;
+  }
+}
+
+input[type='checkbox']:not(:disabled):checked + .icon-checkbox {
+  .checkbox-bg {
+    fill: $blue;
+  }
+  .checkbox-line {
+    opacity: 1;
+    stroke-dashoffset: 0;
+    animation-name: check;
+    animation-duration: 0.1s;
+  }
+}
+
+input[type='checkbox']:disabled + .icon-checkbox {
+  .checkbox-bg {
+    fill: $gray;
+  }
+  .checkbox-line {
+    opacity: 1;
+  }
+
+  & + .checkbox-value {
+    opacity: 0.3;
+  }
+}

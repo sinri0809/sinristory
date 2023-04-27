@@ -63,10 +63,40 @@ const IconDayNight = () => {
   </svg>
 }
 
+const IconRadio = () => {
+  return <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle className="radio-area" opacity="0" cx="10" cy="10" r="10" fill="#F4F8FF"/>
+  <circle className="radio-stroke" cx="10" cy="10" r="7.5" stroke="#F4F8FF"/>
+  <circle className="radio-core" cx="10" cy="10" r="4" fill="#F4F8FF"/>
+  </svg>
+}
+
+const IconCheckbox = () => {
+  return <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect className="checkbox-bg" x="1" y="1" width="18" height="18" rx="2" fill="#2F78E3"/>
+    <path className="checkbox-line" d="M5 11L9 15L15 6" stroke="#F4F8FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+}
+
+
+const IconList = {
+  'icon-close': <IconClose />,
+  'icon-theme': <IconDayNight />,
+  'icon-drawer': <IconDrawer />,
+  'icon-arrow-down': <IconArrowDown />,
+  'icon-like': <IconLike />,
+  'icon-radio': <IconRadio />,
+  'icon-checkbox': <IconCheckbox />
+}
+
+export default IconList;
+
 export {
   IconArrowDown,
   IconClose,
   IconLike,
   IconDrawer,
   IconDayNight,
+  IconRadio,
+  IconCheckbox,
 };

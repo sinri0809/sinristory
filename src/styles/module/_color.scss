@@ -22,7 +22,10 @@
   --darkgray100: rgba(46, 50, 56, 1);
   --darkgray107: rgba(46, 50, 56, 0.7);
   --white-rgb: 255, 255, 255;
+  
   --blue: #2F78E3; 
+  --blue200: rgba(155, 196, 255, 1);
+
   --orange: #FF9929;
   --red: #FF0700;
 
@@ -61,7 +64,10 @@ $gray205: var(--gray205);
 $darkgray100: var(--darkgray100);
 $darkgray107: var(--darkgray107);
 $whiten: var(--white-rgb);
+
 $blue: var(--blue);
+$blue200: var(--blue200);
+
 $orange: var(--orange);
 $red: var(--red);
 

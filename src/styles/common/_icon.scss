@@ -1,5 +1,6 @@
 .icon {
   display: inline-flex;
+  pointer-events: none;
   user-select: none;
   transition: all 0.2s;
   
@@ -10,6 +11,10 @@
 
   path {
     transition: fill 0.2s;
+  }
+
+  svg * {
+    // transition: all 0.2s;
   }
 }
 
@@ -89,12 +94,6 @@
     fill: transparent;
   }
 
-  @include btn-hover {
-    // path {
-    //   fill: $white108;
-    // }
-  }
-
   @include btn-active {
     transform: scale(0.9);
     path {
@@ -103,13 +102,11 @@
   }
 
   @include btn-state ('data-toggle=true'){
-
     path {
       fill: $day;
       stroke: $day;
     }
 
-    // transform: translateX(-1px);
     animation-name: tada, shaking;
     animation-duration: 0.1s, 0.1s;
     animation-delay: 0s, 0.2s;

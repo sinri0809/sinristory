@@ -1,20 +1,6 @@
 import React from 'react';
 
-import { 
-  IconClose,
-  IconDayNight,
-  IconDrawer,
-  IconArrowDown,
-  IconLike
- } from './IconList';
-
-const IconList = {
-  'icon-close': <IconClose />,
-  'icon-theme': <IconDayNight />,
-  'icon-drawer': <IconDrawer />,
-  'icon-arrow-down': <IconArrowDown />,
-  'icon-like': <IconLike />
-}
+import IconList from './IconList';
 
 type IconProps = {
   data: keyof typeof IconList;

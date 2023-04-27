@@ -10,6 +10,8 @@ import Progress, {ProgressBar, ProgressInformation} from 'components/portfolio/P
 import IconButton from 'components/portfolio/IconButton';
 import Tab, {TabList, TabContent} from 'components/portfolio/Tab';
 import Tooltip, {TooltipDefault, TooltipMouse} from 'components/portfolio/Tooltip';
+import Radio from 'components/portfolio/Radio';
+import Checkbox from 'components/portfolio/Checkbox';
 
 interface ItemUIComponentProps {
   title: string;
@@ -47,6 +49,9 @@ const PagePortfolio = () => {
 
   const [tabFocus, setTabFocus] = useState(0);
   const tabList = Array.from([1, 2, 3], x => `tab${x}`);
+
+  // TODO: 보장하는 typescript
+  const radioCategory: string = 'radio-category';
 
   const onChangeSwitch = () => {
     setChecked(!checked);
@@ -89,7 +94,21 @@ const PagePortfolio = () => {
       <div className="portfolio-container">
         <div className="portfolio-wrap">
           <ul className="portfolio-list">
-            <ItemUIComponent title='DrawerBox'>
+            <ItemUIComponent title='Checkbox'>
+              <Checkbox title='해당하는 것을 선택해주세요' category={radioCategory}>
+                <Checkbox.Item name={radioCategory} value="탄탄멘" />
+                <Checkbox.Item name={radioCategory} value="마라탕" />
+                <Checkbox.Item name={radioCategory} value="비빔밥" />
+                <Checkbox.Item name={radioCategory} disabled value="마우스" />
+              </Checkbox>
+            </ItemUIComponent>
+            <ItemUIComponent title='Radio'>
+              <Radio title='하나만 선택해주세요' category={radioCategory}>
+                <Radio.Item name={radioCategory} value="value1" />
+                <Radio.Item name={radioCategory} value="value2" />
+              </Radio>
+            </ItemUIComponent>
+            <ItemUIComponent title='DetailBox'>
               <details>
                 <summary>Details</summary>
                 hihi
@@ -227,9 +246,6 @@ const PagePortfolio = () => {
             </ItemUIComponent>
             <ItemUIComponent title='Flag/Toast'>
               Flag/Toast component
-            </ItemUIComponent>
-            <ItemUIComponent title='Radio'>
-              Radio component
             </ItemUIComponent>
             <ItemUIComponent title='Date'>
               Tooltip component
