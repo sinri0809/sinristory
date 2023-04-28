@@ -13,6 +13,8 @@ import Tooltip, {TooltipDefault, TooltipMouse} from 'components/portfolio/Toolti
 import Radio from 'components/portfolio/Radio';
 import Checkbox from 'components/portfolio/Checkbox';
 
+import Sort, { SortList, SortItem } from 'components/layout/SortList';
+
 interface ItemUIComponentProps {
   title: string;
   children: React.ReactNode
@@ -63,39 +65,22 @@ const PagePortfolio = () => {
 
   return (
     <main className="portfolio">
-      <div className="sort-container">
-        <div className="sort-list-wrap">
-          <h2>️🏄‍♀️</h2>
-          <ul className="sort-list">
-            <li className="sort-item">
-              <button className="btn btn-sort name-component">Switch</button>
-            </li>
-            <li className="sort-item">
-              <button className="btn btn-sort name-component">Dropdown</button>
-            </li>
-            <li className="sort-item">
-              <button className="btn btn-sort name-component">Button</button>
-            </li>
-            <li className="sort-item">
-              <button className="btn btn-sort name-component">InputField</button>
-            </li>
-            <li className="sort-item">
-              <button className="btn btn-sort name-component">Icon</button>
-            </li>
-            <li className="sort-item">
-              <button className="btn btn-sort name-component selected">
-                selected
-              </button>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <Sort>
+        <h2>️🏄‍♀️</h2>
+        <SortList>
+          <SortItem>Switch</SortItem>
+          <SortItem>Dropdown</SortItem>
+          <SortItem>Button</SortItem>
+          <SortItem>InputField</SortItem>
+          <SortItem>Icon</SortItem>
+        </SortList>
+      </Sort>
 
       <div className="portfolio-container">
         <div className="portfolio-wrap">
           <ul className="portfolio-list">
             <ItemUIComponent title='Checkbox'>
-              <Checkbox title='해당하는 것을 선택해주세요' category={radioCategory}>
+              <Checkbox title='맛있는 것을 선택해주세요' category={radioCategory}>
                 <Checkbox.Item name={radioCategory} value="탄탄멘" />
                 <Checkbox.Item name={radioCategory} value="마라탕" />
                 <Checkbox.Item name={radioCategory} value="비빔밥" />

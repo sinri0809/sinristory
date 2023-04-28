@@ -1,5 +1,8 @@
 import React from 'react';
 
+import ProfileData from 'components/layout/ProfileData';
+import { SortList, SortItem } from 'components/layout/SortList';
+
 const PageProfile = () => {
   return (
     <main className="profile">
@@ -10,23 +13,13 @@ const PageProfile = () => {
             id="dashboard_category"
             className="dashboard-content"
           >
-            <ul className="category-btn-list">
-              <li className="category-btn-item">
-                <button className="btn btn-category">UI_develop</button>
-              </li>
-              <li className="category-btn-item">
-                <button className="btn btn-category">UI_test</button>
-              </li>
-              <li className="category-btn-item">
-                <button className="btn btn-category">communication</button>
-              </li>
-              <li className="category-btn-item">
-                <button className="btn btn-category">prototyping</button>
-              </li>
-              <li className="category-btn-item">
-                <button className="btn btn-category">UI_maintainence</button>
-              </li>
-            </ul>
+            <SortList>
+              <SortItem>UI_develop</SortItem>
+              <SortItem>UI_test</SortItem>
+              <SortItem>communication</SortItem>
+              <SortItem>prototyping</SortItem>
+              <SortItem>UI_maintainence</SortItem>
+            </SortList>
           </div>
 
           <div
@@ -52,7 +45,7 @@ const PageProfile = () => {
             id="dashboard_visualization"
             className="dashboard-content"
           >
-            데이터 시각화 장소
+            <ProfileData />
           </div>
 
           <div

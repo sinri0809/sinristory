@@ -2,7 +2,14 @@
 .portfolio {
   height: calc(100% - 80px);
 
+
+  .sort-container {
+    justify-content: center;
+    align-items: center;
+  }
+  
   .sort-list-wrap {
+    width: $PCContentMaxWidth;
     margin-top: 6rem;
     margin-bottom: 7.8rem;
   }
@@ -16,27 +23,6 @@
   &::after {
     content: '\002F \003E';
   }
-}
-
-// ----------------------------------------------------------------------------------------
-
-.sort-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sort-list-wrap {
-  display: flex;
-  column-gap: 18px;
-  align-items: center;
-  width: $PCContentMaxWidth;
-}
-
-.sort-list {
-  display: flex;
-  column-gap: 12px;
-  padding: 20px 0;
 }
 
 // ----------------------------------------------------------------------------------------

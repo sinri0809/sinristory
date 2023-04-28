@@ -49,3 +49,10 @@
     grid-area: R11;
   }
 }
+
+.dashboard-content {
+  padding: 0.4em;
+  background: rgba(244, 248, 255, 0.12);
+  border: 2px solid rgba(244, 248, 255, 0.2);
+  border-radius: 20px;
+}
