@@ -25,6 +25,7 @@ const TooltipDefault = (props: Props) => {
     {props.children}
   </div>
   <div 
+    role="tooltip"
     id={`tooltip-${props.index}`}
     itemType="default"
     className="tooltip-wrap"

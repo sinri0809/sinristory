@@ -1,0 +1,100 @@
+// <UI /> slider
+.slider-container {
+  width: 100%;
+}
+
+// ----------------------------------------------------------------------------------------
+
+.slider-title {
+}
+
+// ----------------------------------------------------------------------------------------
+
+.slider-output-wrap {
+  display: flex;
+  padding: 1em 0;
+}
+
+.slider-output {
+  display: inline-block;
+  font-weight: $fontMedium;
+  font-size: $fontSize-18;
+  color: $white;
+}
+
+// animation
+.blink {
+  animation: blink 1s linear;
+}
+
+// ----------------------------------------------------------------------------------------
+
+.slider-input-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 12px;
+
+  // background-color: black;
+}
+
+// ----------------------------------------------------------------------------------------
+
+.slider-input-value-wrap {
+  position: relative;
+  width: 100%;
+  padding: 4px;
+  background-color: $white102;
+}
+
+.slider-input-value {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background-color: $blue;
+
+  transition: width 0.2s;
+}
+
+.icon-thumb{
+  display: block;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  right: -4px;
+  top: -4px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.415);
+}
+
+.slider-input-thumb {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 100%;
+  
+  background-color: rgba(255, 0, 0, 0.512);
+  transition: left 0.2s;
+}
+
+// ----------------------------------------------------------------------------------------
+
+.slider-input {
+  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  width: 100%;
+  height: 12px;
+
+  // background-color: rgba(0, 255, 255, 0.335);
+}
+
+// ----------------------------------------------------------------------------------------

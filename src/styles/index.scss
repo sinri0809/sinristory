@@ -35,10 +35,12 @@
 @import './components/tooltip';
 @import './components/radio';
 @import './components/checkbox';
+@import './components/slider';
 
 // layout
 @import './layout/header';
 @import './layout/sort';
+@import './layout/slider.image';
 
 // page
 @import './pages/home';

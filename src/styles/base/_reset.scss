@@ -1,4 +1,8 @@
 /* reset user agent style */
+
+/* -webkit-appearance - Chrome, Safari, Opera */
+/* appearance - Modern Browsers */
+
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
@@ -115,7 +119,29 @@ input {
 
     transition: all 0.3s;
   }
+
+  &[type="range"] {
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    // background: #a32121;
+    
+    /* thumb */
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      // transition: background 0.2s;
+
+      // ::-webkit-slider-thumb:hover 
+      // ::-webkit-slider-thumb:active 
+      // :focus::-webkit-slider-thumb 
+    }
+  }
 }
+
+
 
 /* HTML5 display-role reset for older browsers */
 article,

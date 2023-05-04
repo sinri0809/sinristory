@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Switch from 'components/portfolio/Switch';
 import { Dropdown, DropdownItem } from 'components/portfolio/Dropdown';
@@ -52,6 +52,8 @@ const PagePortfolio = () => {
   const [tabFocus, setTabFocus] = useState(0);
   const tabList = Array.from([1, 2, 3], x => `tab${x}`);
 
+  const [sliderValue, setSliderValue] = useState(0);
+
   // TODO: 보장하는 typescript
   const radioCategory: string = 'radio-category';
 
@@ -62,6 +64,15 @@ const PagePortfolio = () => {
   const handleDropdownSelect = (index: number) => {
     setDropdown(index);
   };
+
+  useEffect(() => {
+    const temperatureValue = document.getElementById("temperature-value");
+    temperatureValue?.classList.add("blink");
+    setTimeout(() => {
+      temperatureValue?.classList.remove("blink");
+    }, 100);
+  }, [sliderValue]);
+
 
   return (
     <main className="portfolio">
@@ -75,10 +86,52 @@ const PagePortfolio = () => {
           <SortItem>Icon</SortItem>
         </SortList>
       </Sort>
-
       <div className="portfolio-container">
         <div className="portfolio-wrap">
           <ul className="portfolio-list">
+            <ItemUIComponent title='Slider'>
+              <div className='slider-container temperature'>
+                <label htmlFor="temperature" className='slider-title'>Temperature</label>
+                <div className="slider-output-wrap">
+                  <output id="temperature-value" className='slider-output'>{sliderValue}</output>
+                </div>
+                <div className='slider-input-container'>
+                  <div className="slider-input-value-wrap">
+                    <span className="slider-input-value" 
+                      style={{
+                        width: `${((sliderValue-15)/(25-15))*100}%`
+                      }}
+                    >
+                      <i className="icon-thumb"></i>
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    id="range-temperature"
+                    className='slider-input'
+                    aria-labelledby="temperatureLabel"
+                    aria-orientation="vertical"
+                    tabIndex={0}
+                    aria-valuetext="value sub text "
+                    aria-valuemin={15.0}
+                    aria-valuemax={25.0}
+                    aria-valuenow={sliderValue}
+                    min={15}
+                    max={25}
+                    value={sliderValue}
+                    
+                    step={0.5}
+                    onChange={(e) => {
+                      setSliderValue(Number(e.target.value))
+                      console.log(e.target.value)
+                    }}
+                  />
+                </div>
+              </div>
+            </ItemUIComponent>
+            <ItemUIComponent title='ImageSlider'>
+              ImageSlider component
+            </ItemUIComponent>
             <ItemUIComponent title='Checkbox'>
               <Checkbox title='맛있는 것을 선택해주세요' category={radioCategory}>
                 <Checkbox.Item name={radioCategory} value="탄탄멘" />
@@ -238,14 +291,8 @@ const PagePortfolio = () => {
             <ItemUIComponent title='Drawer'>
               Tooltip component
             </ItemUIComponent>
-            <ItemUIComponent title='Slider'>
-              Slider component
-            </ItemUIComponent>
-            <ItemUIComponent title='ImageSlider'>
-              ImageSlider component
-            </ItemUIComponent>
-            <ItemUIComponent title='DnDPage'>
-              DnDPage component
+            <ItemUIComponent title='BottomSheet'>
+              BottomSheet DnD component
             </ItemUIComponent>
           </ul>
         </div>

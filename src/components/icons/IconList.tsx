@@ -1,7 +1,19 @@
-const IconArrowDown = () => {
+const IconDropdownMore = () => {
   return <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
     <title>Icon/Arrow/DownSide</title>
     <path d="M9.22852 14.4932C9.6285 14.9782 10.3714 14.9782 10.7714 14.4933L14.8363 9.56487C15.3742 8.91263 14.9103 7.92859 14.0648 7.92859H5.93512C5.08965 7.92859 4.6257 8.91263 5.16366 9.56487L9.22852 14.4932Z" fill="#DFE2E5" />
+  </svg>
+}
+
+const IconArrowLeft = () => {
+  return <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fillRule="evenodd" clipRule="evenodd" d="M14.7105 6.70998C14.3205 6.31998 13.6905 6.31998 13.3005 6.70998L8.71047 11.3C8.32047 11.69 8.32047 12.32 8.71047 12.71L13.3005 17.3C13.6905 17.69 14.3205 17.69 14.7105 17.3C15.1005 16.91 15.1005 16.28 14.7105 15.89L10.8305 12L14.7105 8.11998C15.1005 7.72998 15.0905 7.08998 14.7105 6.70998Z" fill="#C0C0C0"/>
+  </svg>
+}
+
+const IconArrowRight = () => {
+  return <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fillRule="evenodd" clipRule="evenodd" d="M9.29246 17.2998C9.68246 17.6898 10.3125 17.6898 10.7025 17.2998L15.2925 12.7098C15.6825 12.3198 15.6825 11.6898 15.2925 11.2998L10.7025 6.70979C10.3125 6.31979 9.68246 6.31979 9.29246 6.70979C8.90246 7.09979 8.90246 7.72978 9.29246 8.11979L13.1725 12.0098L9.29246 15.8898C8.90246 16.2798 8.91246 16.9198 9.29246 17.2998Z" fill="#C0C0C0"/>
   </svg>
 }
 
@@ -83,7 +95,9 @@ const IconList = {
   'icon-close': <IconClose />,
   'icon-theme': <IconDayNight />,
   'icon-drawer': <IconDrawer />,
-  'icon-arrow-down': <IconArrowDown />,
+  'icon-arrow-down': <IconDropdownMore />,
+  'icon-arrow-left': <IconArrowLeft />,
+  'icon-arrow-right': <IconArrowRight />,
   'icon-like': <IconLike />,
   'icon-radio': <IconRadio />,
   'icon-checkbox': <IconCheckbox />
@@ -92,7 +106,7 @@ const IconList = {
 export default IconList;
 
 export {
-  IconArrowDown,
+  IconDropdownMore,
   IconClose,
   IconLike,
   IconDrawer,

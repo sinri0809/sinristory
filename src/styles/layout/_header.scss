@@ -84,8 +84,8 @@
   font-size: 4px;
   text-align: left;
 
-  background-color: rgba($color: $whiten, $alpha: 0.2);
-  border: 1px solid rgba($color: $whiten, $alpha: 0.4);
+  background-color: $white102;
+  border-color: $white103;
   border-radius: 1em;
 
   backdrop-filter: blur(1em);

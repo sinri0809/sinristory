@@ -22,20 +22,20 @@
 // ----------------------------------------------------------------------------------------
 
 .progress-bar {
-  // transition: width 0.2s;
-  // width: 100%;
   transition: width 0.2s linear;
   height: 1.2rem;
   
   &::-webkit-progress-bar {
     background-color: $white;
     border-radius: 6px;
+    box-shadow: inset 0px 2px 4px $black101;
   }
 
   &::-webkit-progress-value {
     background-color: $blue;
     border-radius: 6px;
     transition: width 0.2s;
+    box-shadow: inset 0px 2px 4px $black101;
   }
 }
 
