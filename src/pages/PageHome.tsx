@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { links } from 'routes/links';
 
-import Button from 'components/common/Button';
-import Popup from 'components/portfolio/Popup';
+import Button from 'components/ui/Button';
+import Popup from 'components/ui/Popup';
 import Box from 'components/layout/Box';
 
 import IMG_MAIN_PROFILE from 'assets/imgs/img_page-profile.png';

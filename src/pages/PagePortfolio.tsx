@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
-import Switch from 'components/portfolio/Switch';
-import { Dropdown, DropdownItem } from 'components/portfolio/Dropdown';
-import Button from 'components/portfolio/Button';
-import TextField from 'components/portfolio/TextField';
-import Dialog from 'components/portfolio/Dialog';
-import Popup from 'components/portfolio/Popup';
-import Progress, {ProgressBar, ProgressInformation} from 'components/portfolio/Progress';
-import IconButton from 'components/portfolio/IconButton';
-import Tab, {TabList, TabContent} from 'components/portfolio/Tab';
-import Tooltip, {TooltipDefault, TooltipMouse} from 'components/portfolio/Tooltip';
-import Radio from 'components/portfolio/Radio';
-import Checkbox from 'components/portfolio/Checkbox';
+import Switch from 'components/ui/Switch';
+import { Dropdown, DropdownItem } from 'components/ui/Dropdown';
+import Button from 'components/ui/Button';
+import TextField from 'components/ui/TextField';
+import Dialog from 'components/ui/Dialog';
+import Popup from 'components/ui/Popup';
+import Progress, { ProgressBar, ProgressInformation } from 'components/ui/Progress';
+import IconButton from 'components/ui/IconButton';
+import Tab, { TabList, TabContent } from 'components/ui/Tab';
+import Tooltip, { TooltipDefault, TooltipMouse } from 'components/ui/Tooltip';
+import Radio from 'components/ui/Radio';
+import Checkbox from 'components/ui/Checkbox';
 
 import Sort, { SortList, SortItem } from 'components/layout/SortList';
 
