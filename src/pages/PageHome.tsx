@@ -1,49 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { links } from 'routes/links';
 
-import Button from 'components/ui/Button';
-import Popup from 'components/ui/Popup';
 import Box from 'components/layout/Box';
+import PopupWelcome from 'view/home/popup_welcome';
 
 import IMG_MAIN_PROFILE from 'assets/imgs/img_page-profile.png';
 
-/**
- * TODO:
- * 1. popup은 cookie로 하루동안 안보기 설정하기
- */
-
 const PageHome = () => {
-  const [popupOpen, setPopupOpen] = useState(false);
-
-  const onClickAccetp = () => {
-    console.log('click accept');
-    setPopupOpen(false);
-  };
-
-  if (0) {
-    console.log(true);
-  }
-
   return (
     <main className="home">
-      {popupOpen && (
-        <Popup>
-          <div className="popup-home-welcome">
-            <Popup.Content>
-              <strong className="emoji">️🏄‍♀️</strong>
-              <h1>Welcome sinri&#39;s sea !</h1>
-              <p>
-                I hope you enjoy surfing my UX <br />
-                Let&#39;s surfing
-              </p>
-            </Popup.Content>
-            <Popup.Footer>
-              <Button onClick={onClickAccetp} text="accept" />
-            </Popup.Footer>
-          </div>
-        </Popup>
-      )}
+      <PopupWelcome />
+
       <section className="home-site-index">
         <ol className="site-index-list">
           <li className="site-index-item">
