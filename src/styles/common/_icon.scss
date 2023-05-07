@@ -55,7 +55,7 @@
     border-color: $white103;
   }
 
-  @include btn-state ('focus'){
+  @include btn-state ('aria-expanded'){
     background-color: transparent;
     .icon-drawer {
       .rect00{
