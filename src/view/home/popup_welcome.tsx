@@ -1,26 +1,30 @@
 import React, { useEffect, useState } from "react";
 
-/**
- * TODO:
- * 1. popup은 cookie로 하루동안 안보기 설정하기
- */
+import { hasCookie, setCookie } from "tools/cookie";
 
 import Popup from "components/ui/Popup";
 import Button from "components/ui/Button";
 
 const PopupWelcome = () => {
+  const popupCookieName = 'sinri_popup_welcome';
+
   const [popupOpen, setPopupOpen] = useState(false);
 
   const onClickAccept = () => {
+    setCookie(popupCookieName, 1);
     setPopupOpen(false);
   };
 
   useEffect(() => {
-
-  })
+    if(hasCookie(popupCookieName)) {
+      setPopupOpen(false);
+    } else {
+      setPopupOpen(true)
+    }
+  },[])
 
   if (popupOpen) {
-    return <Popup>
+    return <Popup width={800}>
       <div className="popup-home-welcome">
         <Popup.Content>
           <strong className="emoji">️🏄‍♀️</strong>
