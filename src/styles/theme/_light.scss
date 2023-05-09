@@ -1,4 +1,4 @@
-@include theme-light{
+@include theme-light {
   *::selection {
     background-color: $day;
     color: $black;
@@ -8,27 +8,9 @@
     .stars {
       visibility: hidden;
     }
-  
+
     .theme-sea {
       fill: url(#theme_light);
-    }
-  }
-  
-  .svg-day-night {
-    *{
-      transition: all 0.6s;
-    }
-    .eclipse {
-      // mask: url(#eclipse);
-    }
-    .sun-light{
-      // transform: scale(0);
-      transform-origin: center;
-      transition: all 0.4s;
-    }
-    .bg-light{
-      stroke: $white;
-      stroke-opacity: 0;
     }
   }
 }

@@ -5,7 +5,7 @@
   padding-top: 63px;
   padding-bottom: 28px;
   padding-right: 32px;
-  
+
   display: flex;
   flex-direction: column;
   row-gap: 16px;
@@ -16,23 +16,25 @@
     align-self: flex-end;
   }
 
-  .emoji{
+  .emoji {
     font-size: $emojiH1;
   }
 
-  h1{
+  h1 {
     font-size: $fontSizeH1;
     margin-top: 2rem;
     margin-bottom: 18px;
     font-weight: $fontBold;
   }
 
-  p{
+  p {
     font-size: $fontSize-20;
     line-height: $fontHeight-20;
     font-weight: $fontRegular;
   }
 }
+
+// ----------------------------------------------------------------------------------------
 
 .home {
   height: calc(100% - 80px);
@@ -54,17 +56,17 @@
   display: flex;
   flex-direction: column;
   row-gap: 3.2rem;
-  
+
   padding: 32.8rem 0;
 
-  &> .site-index-item {
+  & > .site-index-item {
     position: relative;
     flex: 1 1 auto;
     width: 100%;
     max-width: $PCContentMaxWidth;
     height: 45rem;
-    
-    &> .btn {
+
+    & > .btn {
       width: 100%;
       height: inherit;
     }
@@ -74,7 +76,7 @@
       justify-content: space-between;
       padding: 0 10.4rem 0 70px;
 
-      &> .box-content {
+      & > .box-content {
         @mixin box-common-text {
           font-size: $fontSize-20;
           line-height: $fontHeight-20;
@@ -87,7 +89,7 @@
         row-gap: 7rem;
         margin-right: 5rem;
 
-        &> .box-top { 
+        & > .box-top {
           h2 {
             position: relative;
             width: max-content;
@@ -97,17 +99,17 @@
             font-weight: $fontBold;
             font-size: $fontSizeH1;
 
-            .emoji { 
+            .emoji {
               margin-left: 1.6rem;
             }
           }
 
-          p{
+          p {
             @include box-common-text;
           }
         }
 
-        &> .box-bottom { 
+        & > .box-bottom {
           strong {
             @include box-common-text;
           }
@@ -123,7 +125,7 @@
 
               &::before {
                 content: '\25CF';
-                margin: 0 1.4rem 0 1rem ;
+                margin: 0 1.4rem 0 1rem;
                 display: inline-block;
                 font-size: 8px;
               }
@@ -132,7 +134,7 @@
         }
       }
 
-      &> .box-img {
+      & > .box-img {
         flex: 1 1 auto;
         max-width: 30rem;
         max-height: 30rem;
@@ -140,7 +142,7 @@
     }
   }
 
-  &> .site-index-item.disabled {
+  & > .site-index-item.disabled {
     opacity: 0.5;
     user-select: none;
     pointer-events: none;
@@ -284,7 +286,7 @@
 }
 .icon-portfolio-2 {
   position: absolute;
-  
+
   width: 120px;
   height: 100px;
 
@@ -332,7 +334,7 @@
 .icon-portfolio-3 {
   position: absolute;
   top: 15%;
-  
+
   width: 200px;
   height: 230px;
 

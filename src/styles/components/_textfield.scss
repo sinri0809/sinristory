@@ -2,7 +2,6 @@
 .textfield-container {
   position: relative;
   width: 260px;
-
 }
 
 .textfield-title {
@@ -23,7 +22,7 @@
   background-color: $white;
   border-radius: 5px;
   outline: 1px solid $gray;
-  
+
   display: inline-flex;
   padding: 0 1rem;
 
@@ -33,8 +32,8 @@
   &:hover {
     outline-color: $day;
   }
-  
-  &:focus-within{
+
+  &:focus-within {
     outline-color: $day;
     outline-width: 2px;
     background-color: $white108;
@@ -144,4 +143,3 @@
 
   visibility: hidden;
 }
-

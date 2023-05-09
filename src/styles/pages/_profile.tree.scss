@@ -1,0 +1,41 @@
+// #dashboard_tree
+.dashboard-tree {
+  padding: 0 1rem;
+}
+
+.tree-title {
+  margin-top: 2.4rem;
+  margin-bottom: 2.4rem;
+
+  font-size: $fontSizeH2;
+  font-weight: $fontMedium;
+  color: $white;
+  background-color: $day;
+}
+
+.tree-list {
+  &[data-depth='1'] {
+    // padding-left: 1em;
+  }
+
+  &[data-depth='2'] {
+    padding-left: 1.2em;
+  }
+}
+
+// ----------------------------------------------------------------------------------------
+
+.btn-toggle-tree {
+  font-size: $fontSize-16;
+  font-weight: $fontMedium;
+  color: $black;
+}
+
+// for example
+.btn-toggle-tree[aria-expanded='false'] + .tree-list {
+  display: none;
+}
+
+.btn-toggle-tree[aria-expanded='true'] + .tree-list {
+  display: block;
+}

@@ -1,4 +1,3 @@
-
 interface Props {
   size?: string;
   checked: boolean;
@@ -6,23 +5,20 @@ interface Props {
   onChange: () => void;
 }
 
-const Switch = ({size, checked, onChange, tabIndex }: Props) => {
-  
-  return <span data-size={size} className={"switch-wrap"}>
-    <label className={`switch`}>
-      <input 
-        type="checkbox"
-        onChange={onChange}
-        checked={checked}
-      />
-      <span className="slider" />
-    </label>
-  </span>
-}
+const Switch = ({ size, checked, onChange, tabIndex }: Props) => {
+  return (
+    <span data-size={size} className={'switch-wrap'}>
+      <label className={`switch`}>
+        <input type="checkbox" onChange={onChange} checked={checked} />
+        <span className="slider" />
+      </label>
+    </span>
+  );
+};
 
 Switch.defaultProps = {
   size: 'small',
-  tabIndex: 0 // tab focus
-}
+  tabIndex: 0, // tab focus
+};
 
 export default Switch;

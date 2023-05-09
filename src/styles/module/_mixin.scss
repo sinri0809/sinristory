@@ -5,11 +5,11 @@
   cursor: initial;
 }
 
-@mixin webkit-scrollbar ($thick: 4px, $color_scroll: $gray){
+@mixin webkit-scrollbar($thick: 4px, $color_scroll: $gray) {
   // look role="scrollbar"
   padding-right: $thick;
 
-  ::-webkit-scrollbar{
+  ::-webkit-scrollbar {
     width: $thick;
     height: $thick;
   }

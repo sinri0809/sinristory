@@ -6,7 +6,10 @@ import Button from 'components/ui/Button';
 import TextField from 'components/ui/TextField';
 import Dialog from 'components/ui/Dialog';
 import Popup from 'components/ui/Popup';
-import Progress, { ProgressBar, ProgressInformation } from 'components/ui/Progress';
+import Progress, {
+  ProgressBar,
+  ProgressInformation,
+} from 'components/ui/Progress';
 import IconButton from 'components/ui/IconButton';
 import Tab, { TabList, TabContent } from 'components/ui/Tab';
 import Tooltip, { TooltipDefault, TooltipMouse } from 'components/ui/Tooltip';
@@ -17,19 +20,19 @@ import Sort, { SortList, SortItem } from 'components/layout/SortList';
 
 interface ItemUIComponentProps {
   title: string;
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
-const ItemUIComponent = ({children, title}: ItemUIComponentProps) => {
-  return <li className="portfolio-item">
-  <div className="ui-presenter-wrap">
-    <h4 className="ui-title name-component">{title}</h4>
-    <div className="ui-component">
-      {children}
-    </div>
-  </div>
-</li>
-}
+const ItemUIComponent = ({ children, title }: ItemUIComponentProps) => {
+  return (
+    <li className="portfolio-item">
+      <div className="ui-presenter-wrap">
+        <h4 className="ui-title name-component">{title}</h4>
+        <div className="ui-component">{children}</div>
+      </div>
+    </li>
+  );
+};
 
 const PagePortfolio = () => {
   const [checked, setChecked] = useState(false);
@@ -37,9 +40,9 @@ const PagePortfolio = () => {
   const exampleList = Array.from([1, 2, 3, 4, 5], (x) => `item${x}`);
   const [dropdown, setDropdown] = useState(0);
 
-  const [inputValue1, setInputValue1] = useState("");
-  const [inputValue2, setInputValue2] = useState("");
-  const [inputValue3, setInputValue3] = useState("");
+  const [inputValue1, setInputValue1] = useState('');
+  const [inputValue2, setInputValue2] = useState('');
+  const [inputValue3, setInputValue3] = useState('');
 
   const [dialog, setDialog] = useState(false);
   const [popup, setPopup] = useState(false);
@@ -50,7 +53,7 @@ const PagePortfolio = () => {
   const [buttonFocus, setButtonFocus] = useState(false);
 
   const [tabFocus, setTabFocus] = useState(0);
-  const tabList = Array.from([1, 2, 3], x => `tab${x}`);
+  const tabList = Array.from([1, 2, 3], (x) => `tab${x}`);
 
   const [sliderValue, setSliderValue] = useState(0);
 
@@ -66,13 +69,12 @@ const PagePortfolio = () => {
   };
 
   useEffect(() => {
-    const temperatureValue = document.getElementById("temperature-value");
-    temperatureValue?.classList.add("blink");
+    const temperatureValue = document.getElementById('temperature-value');
+    temperatureValue?.classList.add('blink');
     setTimeout(() => {
-      temperatureValue?.classList.remove("blink");
+      temperatureValue?.classList.remove('blink');
     }, 100);
   }, [sliderValue]);
-
 
   return (
     <main className="portfolio">
@@ -86,20 +88,25 @@ const PagePortfolio = () => {
           <SortItem>Icon</SortItem>
         </SortList>
       </Sort>
-      <div className="portfolio-container">
+      <section className="portfolio-container">
         <div className="portfolio-wrap">
           <ul className="portfolio-list">
-            <ItemUIComponent title='Slider'>
-              <div className='slider-container temperature'>
-                <label htmlFor="temperature" className='slider-title'>Temperature</label>
+            <ItemUIComponent title="Slider">
+              <div className="slider-container temperature">
+                <label htmlFor="temperature" className="slider-title">
+                  Temperature
+                </label>
                 <div className="slider-output-wrap">
-                  <output id="temperature-value" className='slider-output'>{sliderValue}</output>
+                  <output id="temperature-value" className="slider-output">
+                    {sliderValue}
+                  </output>
                 </div>
-                <div className='slider-input-container'>
+                <div className="slider-input-container">
                   <div className="slider-input-value-wrap">
-                    <span className="slider-input-value" 
+                    <span
+                      className="slider-input-value"
                       style={{
-                        width: `${((sliderValue-15)/(25-15))*100}%`
+                        width: `${((sliderValue - 15) / (25 - 15)) * 100}%`,
                       }}
                     >
                       <i className="icon-thumb"></i>
@@ -108,7 +115,7 @@ const PagePortfolio = () => {
                   <input
                     type="range"
                     id="range-temperature"
-                    className='slider-input'
+                    className="slider-input"
                     aria-labelledby="temperatureLabel"
                     aria-orientation="vertical"
                     tabIndex={0}
@@ -119,57 +126,74 @@ const PagePortfolio = () => {
                     min={15}
                     max={25}
                     value={sliderValue}
-                    
                     step={0.5}
                     onChange={(e) => {
-                      setSliderValue(Number(e.target.value))
-                      console.log(e.target.value)
+                      setSliderValue(Number(e.target.value));
+                      console.log(e.target.value);
                     }}
                   />
                 </div>
               </div>
             </ItemUIComponent>
-            <ItemUIComponent title='ImageSlider'>
+            <ItemUIComponent title="ImageSlider">
               ImageSlider component
             </ItemUIComponent>
-            <ItemUIComponent title='Checkbox'>
-              <Checkbox title='맛있는 것을 선택해주세요' category={radioCategory}>
+            <ItemUIComponent title="Checkbox">
+              <Checkbox
+                title="맛있는 것을 선택해주세요"
+                category={radioCategory}
+              >
                 <Checkbox.Item name={radioCategory} value="탄탄멘" />
                 <Checkbox.Item name={radioCategory} value="마라탕" />
                 <Checkbox.Item name={radioCategory} value="비빔밥" />
                 <Checkbox.Item name={radioCategory} disabled value="마우스" />
               </Checkbox>
             </ItemUIComponent>
-            <ItemUIComponent title='Radio'>
-              <Radio title='하나만 선택해주세요' category={radioCategory}>
+            <ItemUIComponent title="Radio">
+              <Radio title="하나만 선택해주세요" category={radioCategory}>
                 <Radio.Item name={radioCategory} value="value1" />
                 <Radio.Item name={radioCategory} value="value2" />
               </Radio>
             </ItemUIComponent>
-            <ItemUIComponent title='DetailBox'>
+            <ItemUIComponent title="DetailBox">
               <details>
                 <summary>Details</summary>
                 hihi
               </details>
             </ItemUIComponent>
-            <ItemUIComponent title='Tooltip'>
+            <ItemUIComponent title="Tooltip">
               <Tooltip index={0}>
-                <TooltipDefault index={0} tooltipMessage='tooltip is here'>
-                  <Button text='default tooltip' />
+                <TooltipDefault index={0} tooltipMessage="tooltip is here">
+                  <Button text="default tooltip" />
                 </TooltipDefault>
               </Tooltip>
               <Tooltip index={1}>
-                <TooltipMouse index={1} tooltipMessage='following mouse'>
-                  <Button color="accent" text='mouse tooltip' />
+                <TooltipMouse index={1} tooltipMessage="following mouse">
+                  <Button color="accent" text="mouse tooltip" />
                 </TooltipMouse>
               </Tooltip>
             </ItemUIComponent>
-            <ItemUIComponent title='Tabs'>
+            <ItemUIComponent title="Tabs">
               <Tab selected={tabFocus}>
                 <TabList>
-                  <Tab.Item selected={tabFocus} index={0} tabName={tabList[0]} onClick={()=>setTabFocus(0)} />
-                  <Tab.Item selected={tabFocus} index={1} tabName={tabList[1]} onClick={()=>setTabFocus(1)} />
-                  <Tab.Item selected={tabFocus} index={2} tabName={tabList[2]} onClick={()=>setTabFocus(2)} />
+                  <Tab.Item
+                    selected={tabFocus}
+                    index={0}
+                    tabName={tabList[0]}
+                    onClick={() => setTabFocus(0)}
+                  />
+                  <Tab.Item
+                    selected={tabFocus}
+                    index={1}
+                    tabName={tabList[1]}
+                    onClick={() => setTabFocus(1)}
+                  />
+                  <Tab.Item
+                    selected={tabFocus}
+                    index={2}
+                    tabName={tabList[2]}
+                    onClick={() => setTabFocus(2)}
+                  />
                 </TabList>
                 <Tab.Bar selected={tabFocus} total={tabList.length} />
                 <TabContent>
@@ -185,31 +209,39 @@ const PagePortfolio = () => {
                 </TabContent>
               </Tab>
             </ItemUIComponent>
-            <ItemUIComponent title='Icon'>
-              <IconButton toggle={buttonFocus} data='icon-like' name='like' onClick={() => setButtonFocus(!buttonFocus)} />
+            <ItemUIComponent title="Icon">
+              <IconButton
+                toggle={buttonFocus}
+                data="icon-like"
+                name="like"
+                onClick={() => setButtonFocus(!buttonFocus)}
+              />
             </ItemUIComponent>
-            <ItemUIComponent title='Progressbar'>
-              <Button text='progress up' onClick={() => {
-                // FIXME: split code
-                setInterval(() => {
-                  setProgress((prevProgress) =>
-                    prevProgress >= 100 ? 100 : prevProgress + 1
-                  );
-                }, 10);
-              }}/>
+            <ItemUIComponent title="Progressbar">
+              <Button
+                text="progress up"
+                onClick={() => {
+                  // FIXME: split code
+                  setInterval(() => {
+                    setProgress((prevProgress) =>
+                      prevProgress >= 100 ? 100 : prevProgress + 1
+                    );
+                  }, 10);
+                }}
+              />
               <Progress>
                 <ProgressBar value={progress} total={progressTotal} />
                 <ProgressInformation value={progress} total={progressTotal} />
               </Progress>
             </ItemUIComponent>
-            <ItemUIComponent title='Switch'>
+            <ItemUIComponent title="Switch">
               <Switch
                 size="large"
                 checked={checked}
                 onChange={onChangeSwitch}
               />
             </ItemUIComponent>
-            <ItemUIComponent title='Dropdown'>
+            <ItemUIComponent title="Dropdown">
               <Dropdown selected={exampleList[dropdown]}>
                 {exampleList.map((index, itemIndex, item) => {
                   return (
@@ -225,78 +257,92 @@ const PagePortfolio = () => {
                 })}
               </Dropdown>
             </ItemUIComponent>
-            <ItemUIComponent title='Button'>
-              <Button text='button-fill' onClick={() => {}}/>
-              <Button color='accent' text='button-fill accent' onClick={() => {}}/>
-              <Button className='line' text='button-line' onClick={() => {}}/>
+            <ItemUIComponent title="Button">
+              <Button text="button-fill" onClick={() => {}} />
+              <Button
+                color="accent"
+                text="button-fill accent"
+                onClick={() => {}}
+              />
+              <Button className="line" text="button-line" onClick={() => {}} />
             </ItemUIComponent>
-            <ItemUIComponent title='TextField'>
+            <ItemUIComponent title="TextField">
               <TextField
                 value={inputValue1}
-                onChange={(e)=>{
-                  setInputValue1(e.target.value)
+                onChange={(e) => {
+                  setInputValue1(e.target.value);
                 }}
               />
               <TextField
-                requiredMessage='좋아하는 음식은 뭐에요?'
+                requiredMessage="좋아하는 음식은 뭐에요?"
                 value={inputValue2}
-                onChange={(e)=>{
-                  setInputValue2(e.target.value)
+                onChange={(e) => {
+                  setInputValue2(e.target.value);
                 }}
               />
               <TextField
                 required
-                categoryTitle='이름'
-                requiredMessage='이름을 알 수 있을까요?'
+                categoryTitle="이름"
+                requiredMessage="이름을 알 수 있을까요?"
                 value={inputValue3}
-                onChange={(e)=>{
-                  setInputValue3(e.target.value)
+                onChange={(e) => {
+                  setInputValue3(e.target.value);
                 }}
               />
             </ItemUIComponent>
-            <ItemUIComponent title='Dialog'>
-              <Button text='dialog' onClick={() => setDialog(!dialog)} />
-              {dialog && <Dialog title='타이틀입니다' onClose={() => setDialog(false)}>
-                <Dialog.Content>내용입니다</Dialog.Content>
-                <Dialog.Footer>
-                  <Button color='accent' text='확인' onClick={() => setPopup(true)} />
-                  <Button text='취소' onClick={() => setDialog(false)} />
-                </Dialog.Footer>
-              </Dialog>}
+            <ItemUIComponent title="Dialog">
+              <Button text="dialog" onClick={() => setDialog(!dialog)} />
+              {dialog && (
+                <Dialog title="타이틀입니다" onClose={() => setDialog(false)}>
+                  <Dialog.Content>내용입니다</Dialog.Content>
+                  <Dialog.Footer>
+                    <Button
+                      color="accent"
+                      text="확인"
+                      onClick={() => setPopup(true)}
+                    />
+                    <Button text="취소" onClick={() => setDialog(false)} />
+                  </Dialog.Footer>
+                </Dialog>
+              )}
             </ItemUIComponent>
-            <ItemUIComponent title='Popup'>
-              <Button className='line' text='popup' onClick={() => setPopup(!popup)} />
-              {popup && <Popup>
-                <Popup.Content>내용입니다</Popup.Content>
-                <Popup.Footer>
-                  <Button color='accent' text='확인' onClick={() => {
-                    setPopup(false);
-                    setDialog(false);
-                  }} />
-                </Popup.Footer>
-              </Popup>}
+            <ItemUIComponent title="Popup">
+              <Button
+                className="line"
+                text="popup"
+                onClick={() => setPopup(!popup)}
+              />
+              {popup && (
+                <Popup>
+                  <Popup.Content>내용입니다</Popup.Content>
+                  <Popup.Footer>
+                    <Button
+                      color="accent"
+                      text="확인"
+                      onClick={() => {
+                        setPopup(false);
+                        setDialog(false);
+                      }}
+                    />
+                  </Popup.Footer>
+                </Popup>
+              )}
             </ItemUIComponent>
-            <ItemUIComponent title='FullScreen'>
+            <ItemUIComponent title="FullScreen">
               FullScreen component
             </ItemUIComponent>
-            <ItemUIComponent title='Loading'>
-              Loading component
-            </ItemUIComponent>
-            <ItemUIComponent title='Flag/Toast'>
+            <ItemUIComponent title="Loading">Loading component</ItemUIComponent>
+            <ItemUIComponent title="Flag/Toast">
               Flag/Toast component
             </ItemUIComponent>
-            <ItemUIComponent title='Date'>
-              Tooltip component
-            </ItemUIComponent>
-            <ItemUIComponent title='Drawer'>
-              Tooltip component
-            </ItemUIComponent>
-            <ItemUIComponent title='BottomSheet'>
+            <ItemUIComponent title="Date">Tooltip component</ItemUIComponent>
+            <ItemUIComponent title="Drawer">Tooltip component</ItemUIComponent>
+            <ItemUIComponent title="BottomSheet">
               BottomSheet DnD component
             </ItemUIComponent>
           </ul>
         </div>
-      </div>
+      </section>
     </main>
   );
 };

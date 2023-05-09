@@ -12,8 +12,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "style:scss": "prettier --write src/styles",
-    "style:jsx": "prettier --write src/*.tsx"
+    "style": "prettier --write src/styles && prettier --write \"src/**/*.tsx\""
   },
   "eslintConfig": {
     "extends": [

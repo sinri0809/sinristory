@@ -20,11 +20,11 @@
 }
 
 // dialog, popup
-@mixin animation_fadein ($name) {
+@mixin animation_fadein($name) {
   animation-name: $name;
 
   animation-delay: 0s;
-  animation-duration: 0.2s; // 일관된 경험 제공용 
+  animation-duration: 0.2s; // 일관된 경험 제공용
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 }

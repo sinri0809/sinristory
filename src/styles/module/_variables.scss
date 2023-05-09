@@ -1,5 +1,5 @@
 // * fix layout
-$header_height: 100 * 1px;
+$header_height: 80 * 1px;
 
 // * responsive
 $mobile_max: 0px;
@@ -20,7 +20,6 @@ $PCContentMaxWidth: var(--pc-max-content-width);
   --zIndex-max: 9999;
   --zIndex-back: -1;
 }
-
 
 $layerPlain: var(--zIndex-layer);
 $layerFloating: var(--zIndex-float);
@@ -55,7 +54,6 @@ $layerBackground: var(--zIndex-back);
 }
 
 $emojiH1: var(--emoji-size-h1);
-
 
 $fontSizeH1: var(--font-size-h1);
 $fontSizeH2: var(--font-size-h2);

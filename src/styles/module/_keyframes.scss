@@ -1,19 +1,21 @@
-// dialog fade in 
+// dialog fade in
 @keyframes dialog-fade-in {
   from {
     background-color: $white101;
     transform: translateY(1rem);
-  } to {
+  }
+  to {
     background-color: $white108;
     transform: translateY(0rem);
   }
 }
 
-// popup fade in 
+// popup fade in
 @keyframes popup-fade-in {
   from {
     opacity: 0.4;
-  } to {
+  }
+  to {
     opacity: 1;
   }
 }
@@ -44,27 +46,30 @@
 
 // dark bg animation
 @keyframes twinkle {
-  from{
+  from {
     opacity: 0.5;
-  }50%{
+  }
+  50% {
     opacity: 1;
-  }to{
+  }
+  to {
     opacity: 0.5;
   }
 }
 
-// tooltip fade-in 
+// tooltip fade-in
 @keyframes tooltip-fade-in {
   from {
     transform: translateY(-2px);
     opacity: 0.8;
-  } to {
+  }
+  to {
     transform: translateY(0px);
     opacity: 1;
   }
 }
 
-// animation blink number 
+// animation blink number
 @keyframes blink {
   0% {
     opacity: 0.5;

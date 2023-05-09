@@ -11,6 +11,9 @@ build
 // assets
 *.svg
 
+// style
+src/styles/base/_reset.scss
+
 src/assets
 src/lang
 src/stories

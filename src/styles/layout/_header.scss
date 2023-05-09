@@ -25,16 +25,16 @@
 
 .header-title {
   width: 40%;
-  
-  .title{
-    font-family:'Courier New', Courier, monospace;
+
+  .title {
+    font-family: 'Courier New', Courier, monospace;
     font-size: $fontSize-20;
     color: $white;
   }
 }
 
 // ----------------------------------------------------------------------------------------
-// header theme 
+// header theme
 // icon
 // ----------------------------------------------------------------------------------------
 
@@ -53,11 +53,15 @@
     visibility: hidden;
   }
 
-  &[aria-expanded] {
+  &[aria-expanded='true'] {
     .drawer-container {
       visibility: visible;
     }
   }
+}
+
+.btn-drawer-trigger {
+  position: relative;
 }
 
 .drawer-wrap {
@@ -103,17 +107,17 @@
 
 // ----------------------------------------------------------------------------------------
 
-.nav-pages{
+.nav-pages {
   display: flex;
   flex-direction: column;
   row-gap: 2.4rem;
-  
+
   h3 {
     @include navCategoryStyle;
   }
 }
 
-.pages-list{
+.pages-list {
   padding-left: 1rem;
 
   display: flex;
@@ -130,7 +134,7 @@
 }
 // ----------------------------------------------------------------------------------------
 
-.btn-language {   
+.btn-language {
   @include navBtnStyle;
 }
 
@@ -148,7 +152,7 @@
       justify-content: space-between;
       @include navCategoryStyle;
     }
-  } 
+  }
 }
 
 .more-links-list {
@@ -161,7 +165,7 @@
   li {
     display: inline-flex;
   }
-  
+
   .btn {
     @include navBtnStyle;
   }

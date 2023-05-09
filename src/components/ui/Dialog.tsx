@@ -7,67 +7,67 @@ import IconButton from './IconButton';
 interface DialogProps {
   title?: string;
   width?: number;
-  height?: number; 
+  height?: number;
   children: React.ReactNode;
-  onClose?: () => void; 
+  onClose?: () => void;
 }
 
 const Dialog = (props: DialogProps) => {
   const dialogRef = useRef<HTMLDivElement>(null);
 
   const closeDialog = () => {
-    if(props.onClose){
+    if (props.onClose) {
       props.onClose();
     }
-  }
+  };
 
   const handleDialogState = (event: React.MouseEvent) => {
     // clicked container not wrap
-    if(event.target === event.currentTarget){
+    if (event.target === event.currentTarget) {
       closeDialog();
     }
-  }
+  };
 
-  return <GlobalPortal>
-    <div className="dialog-container"
-      onClick={handleDialogState}
-    >
-      <div 
-        className="dialog-wrap"
-        style={{width: props.width, height: props.height}}
-        ref={dialogRef}
-      >
-        <div className="dialog-header">
-          <h3>{props.title}</h3>
-          <IconButton onClick={closeDialog} data='icon-close' name='close-dialog' />
+  return (
+    <GlobalPortal>
+      <div className="dialog-container" onClick={handleDialogState}>
+        <div
+          className="dialog-wrap"
+          style={{ width: props.width, height: props.height }}
+          ref={dialogRef}
+        >
+          <div className="dialog-header">
+            <h3>{props.title}</h3>
+            <IconButton
+              onClick={closeDialog}
+              data="icon-close"
+              name="close-dialog"
+            />
+          </div>
+          {props.children}
         </div>
-        {props.children}
       </div>
-    </div>
-  </GlobalPortal>
+    </GlobalPortal>
+  );
 };
 
 Dialog.defaultProps = {
-  title: "",
+  title: '',
   width: 690,
   height: 300,
-  onClose: () => {}
-}
+  onClose: () => {},
+};
 
 interface Props {
   children: React.ReactNode;
 }
 
-Dialog.Content = ({children}: Props) => {
-  return <div className="dialog-content">
-    {children}
-  </div>
-}
+Dialog.Content = ({ children }: Props) => {
+  return <div className="dialog-content">{children}</div>;
+};
 
-Dialog.Footer = ({children}: Props) => {
-  return <div className="dialog-footer">
-    {children}
-  </div>
-}
+Dialog.Footer = ({ children }: Props) => {
+  return <div className="dialog-footer">{children}</div>;
+};
 
 export default Dialog;

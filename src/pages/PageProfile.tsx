@@ -1,60 +1,37 @@
 import React from 'react';
 
-import ProfileData from 'components/layout/ProfileData';
 import { SortList, SortItem } from 'components/layout/SortList';
+
+import DashboardWrap from 'view/dashboard/dashboard_wrap';
+import DashboardTree from 'view/dashboard/dashboard_tree';
+import DashboardDiagram from 'view/dashboard/dashboard_diagram';
 
 const PageProfile = () => {
   return (
     <main className="profile">
       <section className="dashboard-container">
         <div className="dashboard-wrap">
-          <div
-            dashboard-index={0}
-            id="dashboard_category"
-            className="dashboard-content"
-          >
+          <DashboardWrap index={0} content="sort-category">
             <SortList>
               <SortItem>UI_develop</SortItem>
               <SortItem>UI_test</SortItem>
-              <SortItem>communication</SortItem>
-              <SortItem>prototyping</SortItem>
               <SortItem>UI_maintainence</SortItem>
             </SortList>
-          </div>
-
-          <div
-            dashboard-index={1}
-            id="dashboard_tree"
-            className="dashboard-content"
+          </DashboardWrap>
+          <DashboardWrap
+            index={1}
+            content="tree"
+            role="menu"
+            className="dashboard-tree"
           >
-            <h2>UX Engineer</h2>
-            <ul className="tree-depth-1">
-              <li className="depth-1-item">
-                <button className="btn">Develop</button>
-                <ul className="tree-depth-2">
-                  <li className="depth-2-item">
-                    <button className="btn"></button>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-
-          <div
-            dashboard-index={2}
-            id="dashboard_visualization"
-            className="dashboard-content"
-          >
-            <ProfileData />
-          </div>
-
-          <div
-            dashboard-index={3}
-            id="dashboard_explanation"
-            className="dashboard-content"
-          >
+            <DashboardTree />
+          </DashboardWrap>
+          <DashboardWrap index={2} content="diagram">
+            <DashboardDiagram />
+          </DashboardWrap>
+          <DashboardWrap index={3} content="explain">
             <p>ux engineer is...</p>
-          </div>
+          </DashboardWrap>
         </div>
       </section>
     </main>
@@ -62,18 +39,3 @@ const PageProfile = () => {
 };
 
 export default PageProfile;
-
-interface CategoryProps {
-  children: React.ReactElement;
-}
-const Categorys = ({ children }: CategoryProps) => {
-  return <ul className="category-list">{children}</ul>;
-};
-
-Categorys.Button = ({ children }: CategoryProps) => {
-  return (
-    <li className="category-item">
-      <button className="btn btn-category"></button>
-    </li>
-  );
-};

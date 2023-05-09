@@ -1,17 +1,17 @@
-// <UI /> dropdown 
+// <UI /> dropdown
 .dropdown-container {
   position: relative;
   display: inline-flex;
   max-width: 260px;
 
   // state
-  &[aria-disabled=true] {
-    &>.btn-dropdown {
+  &[aria-disabled='true'] {
+    & > .btn-dropdown {
       opacity: 0.4;
       @include prevent-event;
     }
 
-    &>.dropdown-list-wrap{
+    & > .dropdown-list-wrap {
       display: none;
     }
   }
@@ -25,7 +25,7 @@
   }
 
   &[aria-expanded] {
-    .dropdown-list-wrap{
+    .dropdown-list-wrap {
       visibility: visible;
     }
 
@@ -57,9 +57,9 @@
   border: 1px solid $gray;
   border-radius: 5px;
 
-  transition: border-color 0.1s, background-color 0.1s ;
+  transition: border-color 0.1s, background-color 0.1s;
 
-  &>.label-dropdown {
+  & > .label-dropdown {
     @include text-ellipsis;
     @include prevent-event;
     width: 100%;

@@ -1,5 +1,5 @@
-// <UI /> dialog 
-.dialog-container { 
+// <UI /> dialog
+.dialog-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -24,13 +24,13 @@
   justify-content: space-between;
 
   row-gap: 2rem;
-  
+
   border-radius: 32px;
   border: 2px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
   overflow: hidden;
 
-  @include animation_fadein(dialog-fade-in)
+  @include animation_fadein(dialog-fade-in);
 }
 
 // ----------------------------------------------------------------------------------------
@@ -52,7 +52,7 @@
     height: 28px;
   }
 
-  // interaction 
+  // interaction
   .btn-icon {
     border-radius: 50%;
     width: 32px;

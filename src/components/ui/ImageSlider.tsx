@@ -1,30 +1,33 @@
 // import { useState } from "react";
 
-import { ImgHTMLAttributes } from "react";
-import IconButton from "./IconButton";
+import { ImgHTMLAttributes } from 'react';
+import IconButton from './IconButton';
 
 // interface Props extends ImgHTMLAttributes
-// interface Props extends 
+// interface Props extends
 
 const ImageSlider = () => {
   // const [sliderIndex, setSliderIndex] = useState(0);
   // const sliderLength = arrImages.length;
 
-  return <div className="image-slider">
-    {/* <ImageSlider.ImageContainer /> */}
-    {/* {
+  return (
+    <div className="image-slider">
+      {/* <ImageSlider.ImageContainer /> */}
+      {/* {
       sliderLength > 1 && <>
         <SliderController />
         <SliderPagination />
       </> 
     } */}
-  </div>
-}
+    </div>
+  );
+};
 
 const Image = () => {
-  return <div className="image-slider-container">
-    <ul className="image-items-list">
-      {/* {
+  return (
+    <div className="image-slider-container">
+      <ul className="image-items-list">
+        {/* {
         arrImages.map((image, index) => {
           return <li 
             key={index}
@@ -41,22 +44,39 @@ const Image = () => {
           </li> 
         })
       } */}
-    </ul>
-  </div> 
-}
+      </ul>
+    </div>
+  );
+};
 
 const SliderController = () => {
-  return <div className="slider-controller">
-    <IconButton data="icon-arrow-left" name="왼쪽으로 이동" onClick={() => {}} />
-    <IconButton data="icon-arrow-right" name="오른쪽으로 이동" onClick={() => {}} />
-  </div>
-}
+  return (
+    <div className="slider-controller">
+      <IconButton
+        data="icon-arrow-left"
+        name="왼쪽으로 이동"
+        onClick={() => {}}
+      />
+      <IconButton
+        data="icon-arrow-right"
+        name="오른쪽으로 이동"
+        onClick={() => {}}
+      />
+    </div>
+  );
+};
 
 const SliderPagination = () => {
-  return <ul className="slider-pagination">
-    <li className="item-dot"><i className="icon">dot</i></li>
-    <li className="item-dot"><i className="icon">dot</i></li>
-  </ul>
-}
+  return (
+    <ul className="slider-pagination">
+      <li className="item-dot">
+        <i className="icon">dot</i>
+      </li>
+      <li className="item-dot">
+        <i className="icon">dot</i>
+      </li>
+    </ul>
+  );
+};
 
 export default ImageSlider;

@@ -1,42 +1,40 @@
-import React from "react";
+import React from 'react';
 
-import GlobalPortal from "components/container/Portals";
+import GlobalPortal from 'components/container/Portals';
 
 interface Props {
   width?: number;
-  height?: number; 
+  height?: number;
   children: React.ReactNode;
 }
 
 const Popup = (props: Props) => {
-  return <GlobalPortal>
-    <div className="popup-container">
-      <div 
-        style={{width: props.width, height: props.height}}
-        className="popup-wrap"
-      >
-        {props.children}
+  return (
+    <GlobalPortal>
+      <div className="popup-container">
+        <div
+          style={{ width: props.width, height: props.height }}
+          className="popup-wrap"
+        >
+          {props.children}
+        </div>
       </div>
-    </div>
-  </GlobalPortal>
-}
+    </GlobalPortal>
+  );
+};
 
 export default Popup;
 
 Popup.defaultProps = {
   width: 400,
   height: 300,
-  onClose: () => {}
-}
+  onClose: () => {},
+};
 
 Popup.Content = ({ children }: Props) => {
-  return <div className="popup-content">
-    {children}
-  </div>
-}
+  return <div className="popup-content">{children}</div>;
+};
 
 Popup.Footer = ({ children }: Props) => {
-  return <div className="popup-footer">
-    {children}
-  </div>
-}
+  return <div className="popup-footer">{children}</div>;
+};

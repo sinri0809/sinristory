@@ -2,15 +2,17 @@ import React, { ButtonHTMLAttributes, forwardRef } from 'react';
 
 import Icon, { IconProps } from 'components/icons/Icon';
 
-interface IconButtonProps extends IconProps, ButtonHTMLAttributes<HTMLButtonElement> {
+interface IconButtonProps
+  extends IconProps,
+    ButtonHTMLAttributes<HTMLButtonElement> {
   name: string;
   toggle?: boolean;
 }
 
 const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
   (props: IconButtonProps, ref) => {
-    const { toggle = false, ...rest} = props;
-    
+    const { toggle = false, ...rest } = props;
+
     return (
       <button
         ref={ref}
@@ -28,4 +30,3 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
 );
 
 export default IconButton;
-
