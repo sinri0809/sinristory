@@ -16,54 +16,54 @@ const DashboardTree = () => {
       <h2 data-depth={0} className="tree-title">
         UX Engineer
       </h2>
-      <TreeContainer depth={1} id='list-depth-1-uxe'>
+      <TreeContainer depth={1} id="list-depth-1-uxe">
         <TreeItem>
-          <TreeItem.ToggleButton 
-            id='list-depth-2-develop'
-            category='Develop'  
+          <TreeItem.ToggleButton
+            id="list-depth-2-develop"
+            category="Develop"
             aria-expanded={test}
             onClick={onClickTest}
           />
-          <TreeContainer depth={2} id='list-depth-2-develop'>
-            {
-              skillsList[0].list[0].list.map(item => <TreeItem>
-                <TreeItem.ToggleButton 
+          <TreeContainer depth={2} id="list-depth-2-develop">
+            {skillsList[0].list[0].list.map((item) => (
+              <TreeItem>
+                <TreeItem.ToggleButton
                   category={item.name}
                   // onClick={onClickTest}
-                />  
-              </TreeItem>)
-            }
+                />
+              </TreeItem>
+            ))}
           </TreeContainer>
         </TreeItem>
 
         <TreeItem>
-          <TreeItem.ToggleButton 
-            id='list-depth-2'
-            category={skillsList[0].list[1].name}  
+          <TreeItem.ToggleButton
+            id="list-depth-2"
+            category={skillsList[0].list[1].name}
             aria-expanded={false}
           />
         </TreeItem>
 
         <TreeItem>
-          <TreeItem.ToggleButton 
-            id='list-depth-2'
-            category={skillsList[0].list[2].name}  
+          <TreeItem.ToggleButton
+            id="list-depth-2"
+            category={skillsList[0].list[2].name}
             aria-expanded={false}
           />
         </TreeItem>
 
         <TreeItem>
-          <TreeItem.ToggleButton 
-            id='list-depth-2'
-            category={skillsList[0].list[3].name}  
+          <TreeItem.ToggleButton
+            id="list-depth-2"
+            category={skillsList[0].list[3].name}
             aria-expanded={false}
           />
         </TreeItem>
 
         <TreeItem>
-          <TreeItem.ToggleButton 
-            id='list-depth-2'
-            category={skillsList[0].list[4].name}  
+          <TreeItem.ToggleButton
+            id="list-depth-2"
+            category={skillsList[0].list[4].name}
             aria-expanded={true}
           />
         </TreeItem>

@@ -15,7 +15,7 @@ const DiagramContainer = (props: ContainerProps) => {
       id={props.id}
       data-depth={props.depth}
       aria-expanded={props['aria-expanded']}
-      className={`diagrma-container ${props.className ?? ""}`}
+      className={`diagrma-container ${props.className ?? ''}`}
     >
       {props.children}
     </div>
@@ -36,15 +36,17 @@ const DiagramComponent = (props: Props) => {
 export { DiagramComponent, DiagramContainer };
 
 const TreeContainer = (props: ContainerProps) => {
-  return <ul
-    role='group'
-    data-depth={props.depth}
-    id={props.id}
-    className={`tree-list ${props.className ?? ""}`}
-  >
-    {props.children}
-  </ul>
-}
+  return (
+    <ul
+      role="group"
+      data-depth={props.depth}
+      id={props.id}
+      className={`tree-list ${props.className ?? ''}`}
+    >
+      {props.children}
+    </ul>
+  );
+};
 
 interface TreeItemProps extends Props {
   // id: string;
@@ -53,8 +55,9 @@ interface TreeItemProps extends Props {
 
 const TreeItem = (props: Props) => {
   // TODO: id props - button owns & container id와 동일하게 구성
-  return <li role='menuitem'>
-    {/* <button
+  return (
+    <li role="menuitem">
+      {/* <button
       aria-owns={props.id}
       aria-expanded={props['aria-expanded']}
       className={`btn btn-toggle-tree`}
@@ -63,22 +66,25 @@ const TreeItem = (props: Props) => {
       <Icon data="icon-tree-index" name="toggle" />
       <span>{props.category}</span>
     </button> */}
-    {/* <TreeContainer id={props.id} depth={props.depth}> */}
+      {/* <TreeContainer id={props.id} depth={props.depth}> */}
       {props.children}
-    {/* </TreeContainer> */}
-  </li>
-}
+      {/* </TreeContainer> */}
+    </li>
+  );
+};
 
 TreeItem.ToggleButton = (props: TreeItemProps) => {
-  return <button
-    aria-owns={props.id}
-    aria-expanded={props['aria-expanded']}
-    className={`btn btn-toggle-tree`}
-    onClick={props.onClick}
-  >
-    <Icon data="icon-tree-index" name="toggle" />
-    <span>{props.category}</span>
-  </button>
-}
+  return (
+    <button
+      aria-owns={props.id}
+      aria-expanded={props['aria-expanded']}
+      className={`btn btn-toggle-tree`}
+      onClick={props.onClick}
+    >
+      <Icon data="icon-tree-index" name="toggle" />
+      <span>{props.category}</span>
+    </button>
+  );
+};
 
 export { TreeContainer, TreeItem };

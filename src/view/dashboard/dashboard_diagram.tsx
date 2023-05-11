@@ -32,16 +32,29 @@ const DashboardDiagram = () => {
       <DiagramContainer depth={0} aria-expanded={true}>
         <DiagramComponent className="tree-0-uxe">UX Engineer</DiagramComponent>
         <DiagramContainer depth={1} aria-expanded={true} id="diagram-1-dev">
-          <DiagramComponent className="tree-1-dev" onClick={()=>setTest(!test)} >Develop</DiagramComponent>
+          <DiagramComponent
+            className="tree-1-dev"
+            onClick={() => setTest(!test)}
+          >
+            Develop
+          </DiagramComponent>
           <DiagramContainer depth={2} aria-expanded={test}>
-            {skillsList[0].list[0].list.map(item => <DiagramComponent className={`tree-2-${item.key}`}>{item.name}</DiagramComponent>)}
+            {skillsList[0].list[0].list.map((item) => (
+              <DiagramComponent className={`tree-2-${item.key}`}>
+                {item.name}
+              </DiagramComponent>
+            ))}
           </DiagramContainer>
         </DiagramContainer>
 
         <DiagramContainer depth={1} aria-expanded={true}>
           <DiagramComponent className="tree-1-des">Design</DiagramComponent>
           <DiagramContainer depth={2} aria-expanded={true}>
-            {skillsList[0].list[1].list.map(item => <DiagramComponent className={`tree-2-${item.key}`}>{item.name}</DiagramComponent>)}
+            {skillsList[0].list[1].list.map((item) => (
+              <DiagramComponent className={`tree-2-${item.key}`}>
+                {item.name}
+              </DiagramComponent>
+            ))}
           </DiagramContainer>
         </DiagramContainer>
 
@@ -50,13 +63,25 @@ const DashboardDiagram = () => {
         </DiagramContainer>
 
         <DiagramContainer depth={1} aria-expanded={true}>
-          <DiagramComponent className="tree-1-ds">Design<br />System</DiagramComponent>
+          <DiagramComponent className="tree-1-ds">
+            Design
+            <br />
+            System
+          </DiagramComponent>
         </DiagramContainer>
 
         <DiagramContainer depth={1} aria-expanded={true}>
-          <DiagramComponent className="tree-1-uxi">UX<br />Improving</DiagramComponent>
+          <DiagramComponent className="tree-1-uxi">
+            UX
+            <br />
+            Improving
+          </DiagramComponent>
           <DiagramContainer depth={2} aria-expanded={true}>
-            {skillsList[0].list[4].list.map(item => <DiagramComponent className={`tree-2-${item.key}`}>{item.name}</DiagramComponent>)}
+            {skillsList[0].list[4].list.map((item) => (
+              <DiagramComponent className={`tree-2-${item.key}`}>
+                {item.name}
+              </DiagramComponent>
+            ))}
           </DiagramContainer>
         </DiagramContainer>
       </DiagramContainer>

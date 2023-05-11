@@ -36,7 +36,7 @@ const PopupWelcome = () => {
             </p>
           </Popup.Content>
           <Popup.Footer>
-            <Button color='accent' onClick={onClickAccept} text="accept" />
+            <Button color="accent" onClick={onClickAccept} text="accept" />
           </Popup.Footer>
         </div>
       </Popup>
