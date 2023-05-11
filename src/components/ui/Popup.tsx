@@ -3,8 +3,8 @@ import React from 'react';
 import GlobalPortal from 'components/container/Portals';
 
 interface Props {
-  width?: number;
-  height?: number;
+  width?: number | string;
+  height?: number | string;
   children: React.ReactNode;
 }
 
@@ -26,8 +26,8 @@ const Popup = (props: Props) => {
 export default Popup;
 
 Popup.defaultProps = {
-  width: 400,
-  height: 300,
+  width: 'auto',
+  height: 'auto',
   onClose: () => {},
 };
 

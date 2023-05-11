@@ -2,18 +2,19 @@
 .popup-home-welcome {
   width: 65.8rem;
   padding-left: 4rem;
-  padding-top: 63px;
   padding-bottom: 28px;
   padding-right: 32px;
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 16px;
-
   color: $black;
+  
+  .popup-content {
+    padding-top: 63px;
+    align-items: flex-start;
+    row-gap: 16px;
+    flex-direction: column;
+  }
 
   .popup-footer {
-    align-self: flex-end;
+    justify-content: flex-end;
   }
 
   .emoji {

@@ -25,7 +25,7 @@ const PopupWelcome = () => {
 
   if (popupOpen) {
     return (
-      <Popup width={800}>
+      <Popup>
         <div className="popup-home-welcome">
           <Popup.Content>
             <strong className="emoji">️🏄‍♀️</strong>
@@ -36,7 +36,7 @@ const PopupWelcome = () => {
             </p>
           </Popup.Content>
           <Popup.Footer>
-            <Button onClick={onClickAccept} text="accept" />
+            <Button color='accent' onClick={onClickAccept} text="accept" />
           </Popup.Footer>
         </div>
       </Popup>

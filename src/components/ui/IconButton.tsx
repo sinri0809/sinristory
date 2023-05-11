@@ -20,7 +20,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
         data-toggle={toggle}
         value={props.value}
         onClick={props.onClick}
-        className={`btn-icon ${props.className}`}
+        className={`btn ${props.className}`}
         {...rest}
       >
         <Icon data={props.data} name={props.name} />

@@ -31,7 +31,7 @@
 }
 
 @mixin btn-state($state) {
-  @at-root [#{$state}] {
+  @at-root .btn[#{$state}] & {
     @content;
   }
 }
@@ -93,6 +93,12 @@
 .icon-like {
   path {
     fill: transparent;
+  }
+
+  @include btn-hover {
+    path { 
+      fill: $white101;
+    }
   }
 
   @include btn-active {

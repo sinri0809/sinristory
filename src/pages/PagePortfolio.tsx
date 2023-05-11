@@ -313,7 +313,7 @@ const PagePortfolio = () => {
                 onClick={() => setPopup(!popup)}
               />
               {popup && (
-                <Popup>
+                <Popup width={300} height={200}>
                   <Popup.Content>내용입니다</Popup.Content>
                   <Popup.Footer>
                     <Button
