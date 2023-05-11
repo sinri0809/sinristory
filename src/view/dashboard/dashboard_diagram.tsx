@@ -1,74 +1,65 @@
+import React, { useState } from 'react';
+
+import { skillsList } from 'store/dashboard.store';
+
+import { DiagramComponent, DiagramContainer } from './diagam_wrap';
+
 const DashboardDiagram = () => {
+  const [test, setTest] = useState(false);
+  // TODO: rendering way ideanation
+
+  // type Skill = {
+  //   name: string;
+  //   key: string;
+  //   list?: Array<Skill>;
+  // };
+
+  // const skillNodes: Array<React.ReactNode> = [];
+  // // let depth: number = 0;
+
+  // const printSubSkill = (list: Array<Skill>) => {
+  //   list.forEach((item, index) => {
+  //     if (item.list && item.list?.length !== 0) {
+  //       printSubSkill(item.list);
+  //     }
+  //     skillNodes.push(<DiagramComponent className={`tree-2-${item.key}`}>{item.name}</DiagramComponent>)
+  //   });
+  // };
+
+  // printSubSkill(skillsList);
   return (
-    <div className="profile-diagram">
-      <div data-depth={0} className="tree-0-uxe tree-diagram">
-        <span>UX Engineer</span>
-      </div>
+    <div className="dashboard-diagram">
+      <DiagramContainer depth={0} aria-expanded={true}>
+        <DiagramComponent className="tree-0-uxe">UX Engineer</DiagramComponent>
+        <DiagramContainer depth={1} aria-expanded={true} id="diagram-1-dev">
+          <DiagramComponent className="tree-1-dev" onClick={()=>setTest(!test)} >Develop</DiagramComponent>
+          <DiagramContainer depth={2} aria-expanded={test}>
+            {skillsList[0].list[0].list.map(item => <DiagramComponent className={`tree-2-${item.key}`}>{item.name}</DiagramComponent>)}
+          </DiagramContainer>
+        </DiagramContainer>
 
-      <div
-        data-depth={1}
-        id="diagram-1-develop"
-        className="tree-1-dev tree-diagram"
-      >
-        <span>Develop</span>
-      </div>
-      <div data-depth={1} className="tree-1-des tree-diagram">
-        <span>Design</span>
-      </div>
-      <div data-depth={1} className="tree-1-hmi tree-diagram">
-        <span>HMI</span>
-      </div>
-      <div data-depth={1} className="tree-1-ds tree-diagram">
-        <span>
-          Design
-          <br />
-          System
-        </span>
-      </div>
-      {/* <div className="tree-1-uxi tree-diagram">
-      <span>Improving</span>
-    </div> */}
-      <div
-        data-depth={2}
-        aria-describedby=""
-        className="tree-2-ele tree-diagram"
-      >
-        <span>Electronics</span>
-      </div>
-      <div data-depth={2} className="tree-2-db tree-diagram">
-        <span>DB</span>
-      </div>
-      <div data-depth={2} className="tree-2-htm tree-diagram">
-        <span>HTML</span>
-      </div>
-      <div data-depth={2} className="tree-2-css tree-diagram">
-        <span>CSS</span>
-      </div>
-      <div data-depth={2} className="tree-2-js tree-diagram">
-        <span>js</span>
-      </div>
-      <div data-depth={2} className="tree-2-react tree-diagram">
-        <span>React</span>
-      </div>
-      <div data-depth={2} className="tree-2-ts tree-diagram">
-        <span>typesciprt</span>
-      </div>
-      <div data-depth={2} className="tree-2-wbp tree-diagram">
-        <span>webpack</span>
-      </div>
-      <div data-depth={2} className="tree-2-stb tree-diagram">
-        <span>Storybook</span>
-      </div>
+        <DiagramContainer depth={1} aria-expanded={true}>
+          <DiagramComponent className="tree-1-des">Design</DiagramComponent>
+          <DiagramContainer depth={2} aria-expanded={true}>
+            {skillsList[0].list[1].list.map(item => <DiagramComponent className={`tree-2-${item.key}`}>{item.name}</DiagramComponent>)}
+          </DiagramContainer>
+        </DiagramContainer>
 
-      <div data-depth={2} className="tree-2-adobe tree-diagram">
-        <span>Adobe</span>
-      </div>
-      <div data-depth={2} className="tree-2-figma tree-diagram">
-        <span>Figma</span>
-      </div>
-      <div data-depth={2} className="tree-2-test tree-diagram">
-        <span>test</span>
-      </div>
+        <DiagramContainer depth={1} aria-expanded={true}>
+          <DiagramComponent className="tree-1-hmi">HMI</DiagramComponent>
+        </DiagramContainer>
+
+        <DiagramContainer depth={1} aria-expanded={true}>
+          <DiagramComponent className="tree-1-ds">Design<br />System</DiagramComponent>
+        </DiagramContainer>
+
+        <DiagramContainer depth={1} aria-expanded={true}>
+          <DiagramComponent className="tree-1-uxi">UX<br />Improving</DiagramComponent>
+          <DiagramContainer depth={2} aria-expanded={true}>
+            {skillsList[0].list[4].list.map(item => <DiagramComponent className={`tree-2-${item.key}`}>{item.name}</DiagramComponent>)}
+          </DiagramContainer>
+        </DiagramContainer>
+      </DiagramContainer>
     </div>
   );
 };

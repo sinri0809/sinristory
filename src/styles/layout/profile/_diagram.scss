@@ -1,0 +1,40 @@
+//
+.dashboard-diagram {
+  position: relative;
+  // temp size
+  width: 1028px;
+  height: 716px;
+  // ? area
+  // background-color: rgba(255, 0, 0, 0.452);
+}
+
+.tree-diagram {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background-color: black;
+  color: $white;
+}
+
+// ----------------------------------------------------------------------------------------
+
+// state
+.dashboard-diagram {
+  [aria-expanded='true'] {
+    .tree-diagram {
+      visibility: visible;
+    }
+  }
+
+  [aria-expanded='false'] {
+    // 상단이 접히면 아래가 모두 접히도록
+    .tree-diagram {
+      visibility: hidden;
+    }
+  }
+}

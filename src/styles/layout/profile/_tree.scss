@@ -33,9 +33,11 @@
 
 // for example
 .btn-toggle-tree[aria-expanded='false'] + .tree-list {
-  display: none;
+  // display: none;
+  visibility: hidden;
 }
 
 .btn-toggle-tree[aria-expanded='true'] + .tree-list {
-  display: block;
+  // display: block;
+  visibility: visible;
 }

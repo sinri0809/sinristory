@@ -40,10 +40,12 @@
 @import './layout/header';
 @import './layout/sort';
 @import './layout/slider.image';
+@import './layout/profile/diagram.coordinate';
+@import './layout/profile/diagram';
+@import './layout/profile/tree';
 
 // page
 @import './pages/home';
 @import './pages/gallery';
 @import './pages/profile';
 @import './pages/portfolio';
-@import './pages/profile.tree';
