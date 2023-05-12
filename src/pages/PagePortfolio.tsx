@@ -15,6 +15,7 @@ import Tab, { TabList, TabContent } from 'components/ui/Tab';
 import Tooltip, { TooltipDefault, TooltipMouse } from 'components/ui/Tooltip';
 import Radio from 'components/ui/Radio';
 import Checkbox from 'components/ui/Checkbox';
+import BottomSheet from 'components/ui/Sheet.Bottom';
 
 import Sort, { SortList, SortItem } from 'components/layout/SortList';
 
@@ -43,9 +44,12 @@ const PagePortfolio = () => {
   const [inputValue1, setInputValue1] = useState('');
   const [inputValue2, setInputValue2] = useState('');
   const [inputValue3, setInputValue3] = useState('');
+  const [inputValue4, setInputValue4] = useState('');
 
   const [dialog, setDialog] = useState(false);
   const [popup, setPopup] = useState(false);
+  const [bottomSheet, setBottomSheet] = useState(false);
+  const [bottomSheetSlider, setBottomSheetSlider] = useState(false);
 
   const progressTotal = 100;
   const [progress, setProgress] = useState(0);
@@ -55,7 +59,7 @@ const PagePortfolio = () => {
   const [tabFocus, setTabFocus] = useState(0);
   const tabList = Array.from([1, 2, 3], (x) => `tab${x}`);
 
-  const [sliderValue, setSliderValue] = useState(0);
+  const [sliderValue, setSliderValue] = useState(15);
 
   // TODO: 보장하는 typescript
   const radioCategory: string = 'radio-category';
@@ -91,6 +95,19 @@ const PagePortfolio = () => {
       <section className="portfolio-container">
         <div className="portfolio-wrap">
           <ul className="portfolio-list">
+            <ItemUIComponent title="BottomSheet">
+              <TextField
+                value={inputValue4}
+                onChange={(e) => {
+                  setInputValue4(e.target.value);
+                }}
+              />
+              <Button text='BottomSheet 호출' onClick={()=>setBottomSheet(!bottomSheet)} />
+              {bottomSheet && <BottomSheet onClose={()=> setBottomSheet(false)} />}
+              <Button text='BottomSheet slider 호출' onClick={()=>setBottomSheetSlider(!bottomSheetSlider)} color='accent' />
+              {bottomSheetSlider && <BottomSheet control='dnd' onClose={()=> setBottomSheetSlider(false)} />}
+
+            </ItemUIComponent>
             <ItemUIComponent title="Slider">
               <div className="slider-container temperature">
                 <label htmlFor="temperature" className="slider-title">
@@ -123,6 +140,7 @@ const PagePortfolio = () => {
                     aria-valuemin={15.0}
                     aria-valuemax={25.0}
                     aria-valuenow={sliderValue}
+                    defaultValue={0}
                     min={15}
                     max={25}
                     value={sliderValue}
@@ -335,11 +353,9 @@ const PagePortfolio = () => {
             <ItemUIComponent title="Flag/Toast">
               Flag/Toast component
             </ItemUIComponent>
-            <ItemUIComponent title="Date">Tooltip component</ItemUIComponent>
-            <ItemUIComponent title="Drawer">Tooltip component</ItemUIComponent>
-            <ItemUIComponent title="BottomSheet">
-              BottomSheet DnD component
-            </ItemUIComponent>
+            <ItemUIComponent title="Date">Date component</ItemUIComponent>
+            <ItemUIComponent title="Drawer">Drawer component</ItemUIComponent>
+            <ItemUIComponent title="Alert">Alert component</ItemUIComponent>
           </ul>
         </div>
       </section>
