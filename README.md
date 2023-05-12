@@ -4,6 +4,8 @@
 > 주석이 필요없는 그날까지...  
 
 <img src="./README.png" />
+
+[GoogleAnalytics](https://analytics.google.com/analytics/web/#/p331290866/reports/intelligenthome)
 ---
 
 ### Environment
