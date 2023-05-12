@@ -1,39 +1,15 @@
-# reference/typescript/cra
-> 주석이 필요없어지는 그날까지...  
+# 🐧️SINRI story🐧️
+## v2.0.0
 
-### ready
-```
-# yarn -v : 1.22.19
-yarn
-# test web server
-```
-[check express work](https://github.com/sinri0809/express)
-### develop
-```
-yarn start
-```
+> 주석이 필요없는 그날까지...  
 
-### deploy
-```
-yarn build
-```
-
+<img src="./README.png" />
 ---
 
-### env
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-IDE Extensions
-```
-Better Comments
-Imoprt Cost
-Prettier - Code formatter
-```
-
-### main packages information
-- CRA  
+### Environment
+> This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) with typescript.
 - [sass](https://www.npmjs.com/package/sass)  
 - [react-router-dom](https://www.npmjs.com/package/react-router-dom)  
 - [storybook](https://storybook.js.org/)  
-- redux || recoil  
-  test - firebase
+- [Recoil]()  
+- test - firebase
