@@ -161,10 +161,10 @@ const PagePortfolio = () => {
                 title="맛있는 것을 선택해주세요"
                 category={radioCategory}
               >
-                <Checkbox.Item name={radioCategory} value="탄탄멘" />
-                <Checkbox.Item name={radioCategory} value="마라탕" />
-                <Checkbox.Item name={radioCategory} value="비빔밥" />
-                <Checkbox.Item name={radioCategory} disabled value="마우스" />
+                <Checkbox.Item name={radioCategory} label="탄탄멘" />
+                <Checkbox.Item name={radioCategory} label="마라탕" />
+                <Checkbox.Item name={radioCategory} label="비빔밥" />
+                <Checkbox.Item name={radioCategory} disabled label="마우스" />
               </Checkbox>
             </ItemUIComponent>
             <ItemUIComponent title="Radio">

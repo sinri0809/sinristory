@@ -8,7 +8,7 @@ interface Props extends AllHTMLAttributes<HTMLDivElement> {
 }
 
 interface CheckboxItemProps extends InputHTMLAttributes<HTMLInputElement> {
-  value: string;
+  label?: string;
 }
 
 const Checkbox = (props: Props) => {
@@ -26,7 +26,7 @@ Checkbox.Title = ({ title }: { title: string }) => {
 
 Checkbox.Item = (props: CheckboxItemProps) => {
   return (
-    <label htmlFor={props.value} className="checkbox-item">
+    <label htmlFor={props.label} className="checkbox-item">
       <input
         id={props.id}
         type="checkbox"
@@ -35,9 +35,10 @@ Checkbox.Item = (props: CheckboxItemProps) => {
         disabled={props.disabled}
         checked={props.checked}
         // aria-checked
+        onChange={props.onChange}
       />
       <Icon data="icon-checkbox" name="checkbox" />
-      <span className="checkbox-value">{props.value}</span>
+      <span className="checkbox-value">{props.label}</span>
     </label>
   );
 };
