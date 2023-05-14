@@ -1,9 +1,13 @@
+// base: 초기화 & 기본 요소
 @import './base/reset';
 @import './base/font';
 
+// ----------------------------------------------------------------------------------------
+// module: 코드 작성시 필요
 @import './module/mixin';
 @import './module/crossbrowse';
 @import './module/responsive';
+
 @import './module/svg';
 @import './module/text';
 @import './module/variables';
@@ -11,6 +15,8 @@
 @import './module/theme';
 @import './module/keyframes';
 @import './module/animation';
+
+// ----------------------------------------------------------------------------------------
 
 @import './base/base';
 

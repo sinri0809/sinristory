@@ -1,6 +1,6 @@
 .profile {
   // FIXME: this property is same with home
-  height: calc(100% - 80px);
+  height: calc(100% - $HEADER_height);
 
   display: flex;
   align-items: center;

@@ -1,12 +1,22 @@
 // * responsive example
-@mixin mobile {
-  @media screen and (min-width: #{$mobile-min}) and (max-width: #{$mobile-max}) {
-    @content;
-  }
-}
+// @mixin mobile {
+//   @media screen and (min-width: #{$mobile-min}) and (max-width: #{$mobile-max}) {
+//     @content;
+//   }
+// }
 
-@mixin mobile-horizontal {
-  @media screen and (portrait: landscape) {
+// @mixin mobile-horizontal {
+//   @media screen and (portrait: landscape) {
+//     @content;
+//   }
+// }
+
+$mobile-max: 430px;
+$mobile-max-dev: 830px;
+$mobile-min: 0px;
+
+@mixin 모바일 {
+  @media screen and (min-width: #{$mobile-min}) and (max-width: #{$mobile-max-dev}) {
     @content;
   }
 }

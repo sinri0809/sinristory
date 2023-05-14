@@ -1,5 +1,5 @@
 .portfolio {
-  height: calc(100% - 80px);
+  height: calc(100% - $HEADER_height);
   overflow: scroll;
 }
 
@@ -16,6 +16,9 @@
 
   .sort-list-wrap {
     width: $PCContentMaxWidth;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
   }
 }
 

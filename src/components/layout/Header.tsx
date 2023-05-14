@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 import Icon from 'components/icons/Icon';
 import HeaderDrawer from 'view/header/header_drawer';
@@ -20,7 +21,7 @@ const Header = () => {
     <header className="header">
       <div className="header-wrap">
         <div className="header-title">
-          <h1 className="title">hello sinri!</h1>
+          <h1 className="title"><Link to={"/"}>hello sinri!</Link></h1>
         </div>
         <div className="header-theme">
           <button

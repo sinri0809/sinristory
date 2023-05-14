@@ -1,8 +1,14 @@
 // * fix layout
-$header_height: 80 * 1px;
+:root {
+  --header-height: 80px; 
+  @include 모바일 {
+    --header-height: 64px; 
+  }
+}
+
+$HEADER_height: var(--header-height);
 
 // * responsive
-$mobile_max: 0px;
 :root {
   --pc-max-content-width: 1320px;
 }
@@ -11,6 +17,7 @@ $PCContentMaxWidth: var(--pc-max-content-width);
 // $img_path: 'assets/iamges';
 // $icons_path: 'assets/icons';
 
+// ----------------------------------------------------------------------------------------
 // * zIndex
 :root {
   --zIndex-layer: 0;
@@ -29,9 +36,11 @@ $layerTop: var(--zIndex-max);
 
 $layerBackground: var(--zIndex-back);
 
+// ----------------------------------------------------------------------------------------
+
 // * responsive rule
 :root {
-  --header-height: 8rem; // max
+  font-size: 10px;
 
   --emoji-size-h1: 54px;
 
@@ -51,6 +60,25 @@ $layerBackground: var(--zIndex-back);
   --font-weight-medium: 500;
   --font-weight-bold: 700;
   --font-weight-black: 900;
+
+  @include 모바일 {
+    font-size: 8px;
+
+    --emoji-size-h1: 44px;
+
+    --font-size-h1: 28px;
+    --font-size-h2: 20px;
+    --font-size-h3: 18px;
+
+    // --font-size-20: 2rem;
+    // --font-height-20: 2.4rem;
+    // --font-size-18: 1.8rem;
+    // --font-size-16: 1.6rem;
+    // --font-size-14: 1.4rem;
+    // --font-height-14: 2rem;
+    // --font-size-12: 1.2rem;
+  
+  }
 }
 
 $emojiH1: var(--emoji-size-h1);
@@ -71,3 +99,5 @@ $fontRegular: var(--font-weight-regular);
 $fontMedium: var(--font-weight-medium);
 $fontBold: var(--font-weight-bold);
 $fontBlack: var(--font-weight-black);
+
+// ----------------------------------------------------------------------------------------

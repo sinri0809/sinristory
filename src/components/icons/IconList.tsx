@@ -1,3 +1,11 @@
+const IconPortfolio = () => {
+  return <div className="icon-portfolio-wrap">
+    <div className="icon-portfolio-1" />
+    <div className="icon-portfolio-2" />
+    <div className="icon-portfolio-3" />
+  </div>
+}
+
 const IconDropdownMore = () => {
   return (
     <svg
@@ -408,6 +416,7 @@ const IconList = {
   'icon-checkbox': <IconCheckbox />,
   'icon-tree-index': <IconTreeIndex />,
   'icon-mouse-hint': <IconMouseHint />,
+  'icon-portfolio': <IconPortfolio />
 };
 
 export default IconList;

@@ -38,10 +38,10 @@
 // ----------------------------------------------------------------------------------------
 
 .home {
-  height: calc(100% - 80px);
+  height: calc(100% - $HEADER_height);
 }
 
-.home-site-index {
+.home-site-map {
   position: relative;
   display: flex;
   justify-content: center;
@@ -52,87 +52,31 @@
   overflow-y: scroll;
 }
 
-.site-index-list {
-  // flex: 1 1 auto;
+// ----------------------------------------------------------------------------------------
+
+.site-map-list {
   display: flex;
   flex-direction: column;
   row-gap: 3.2rem;
+  max-width: $PCContentMaxWidth;
+  width: 100%;
+  padding: 32.8rem 1rem;
 
-  padding: 32.8rem 0;
-
-  & > .site-index-item {
+  & > .site-map-item {
     position: relative;
     flex: 1 1 auto;
     width: 100%;
-    max-width: $PCContentMaxWidth;
-    height: 45rem;
-
-    & > .btn {
-      width: 100%;
-      height: inherit;
-    }
+    // max-height: 45rem;
 
     .box-wrap {
       align-items: center;
       justify-content: space-between;
-      padding: 0 10.4rem 0 70px;
 
       & > .box-content {
-        @mixin box-common-text {
-          font-size: $fontSize-20;
-          line-height: $fontHeight-20;
-          font-weight: $fontRegular;
-        }
         flex: 2 2 auto;
         text-align: left;
-        display: flex;
         flex-direction: column;
         row-gap: 7rem;
-        margin-right: 5rem;
-
-        & > .box-top {
-          h2 {
-            position: relative;
-            width: max-content;
-            margin-bottom: 2.2rem;
-
-            color: $black;
-            font-weight: $fontBold;
-            font-size: $fontSizeH1;
-
-            .emoji {
-              margin-left: 1.6rem;
-            }
-          }
-
-          p {
-            @include box-common-text;
-          }
-        }
-
-        & > .box-bottom {
-          strong {
-            @include box-common-text;
-          }
-          ul {
-            margin-top: 2rem;
-
-            li {
-              display: inline-flex;
-              align-items: center;
-              margin-bottom: 1rem;
-              font-size: 28px;
-              font-weight: $fontMedium;
-
-              &::before {
-                content: '\25CF';
-                margin: 0 1.4rem 0 1rem;
-                display: inline-block;
-                font-size: 8px;
-              }
-            }
-          }
-        }
       }
 
       & > .box-img {
@@ -143,7 +87,7 @@
     }
   }
 
-  & > .site-index-item.disabled {
+  & > .site-map-item.disabled {
     opacity: 0.5;
     user-select: none;
     pointer-events: none;
@@ -169,27 +113,36 @@
   }
 }
 
-.site-index-item {
-  .btn {
-    .box-top {
-      h2::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: $layerBackground;
+// ----------------------------------------------------------------------------------------
 
-        background-color: $blue;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.2s;
-      }
+// animation 
+.btn-site-map-item {
+  width: 100%;
+  height: 100%;
+  max-height: inherit;
+
+  .box-wrap {
+    padding: 2em 10.4rem 2em 70px;
+  }
+
+  .box-top {
+    h2::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: $layerBackground;
+
+      background-color: $blue;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s;
     }
   }
 
-  .btn:hover {
+  &:hover {
     .box-top {
       h2::before {
         transform: scale(1);
@@ -198,151 +151,4 @@
   }
 }
 
-// TODO: Split - Graphic Component
-.icon-portfolio-wrap {
-  position: relative;
-  width: 300px;
-  height: 300px;
-}
-
-@keyframes icon-portfolio-1 {
-  0% {
-    transform: scale(1);
-    background-color: $day;
-    border-radius: 54% 46% 70% 30% / 52% 39% 61% 48%;
-  }
-  25% {
-    transform: scale(0.8);
-    background-color: $blue;
-    border-radius: 61% 39% 27% 73% / 36% 65% 35% 64%;
-  }
-  50% {
-    transform: scale(0.9);
-    background-color: $night;
-    border-radius: 64% 36% 61% 39% / 70% 26% 74% 30%;
-  }
-  75% {
-    transform: scale(0.95);
-    background-color: $orange;
-  }
-  100% {
-    transform: scale(1);
-    background-color: $day;
-    border-radius: 54% 46% 70% 30% / 52% 39% 61% 48%;
-  }
-}
-.icon-portfolio-1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  width: 300px;
-  height: 300px;
-
-  animation-name: icon-portfolio-1;
-  animation-duration: 12s;
-  animation-iteration-count: infinite;
-
-  transition: all 0.2s ease;
-}
-
-@keyframes icon-portfolio-2 {
-  0% {
-    top: 40%;
-    left: 30%;
-
-    transform: scale(1);
-    background-color: $white;
-    border-radius: 48% 52% 61% 39% / 41% 28% 72% 59%;
-  }
-  40% {
-    top: 42%;
-    left: 35%;
-    // transform: scale(0.8);
-    background-color: $orange;
-    border-radius: 64% 36% 32% 68% / 54% 65% 35% 46%;
-  }
-  60% {
-    top: 50%;
-    left: 30%;
-
-    border-radius: 54% 46% 70% 30% / 52% 39% 61% 48%;
-    transform: scale(0.9);
-    background-color: $day;
-  }
-  80% {
-    top: 48%;
-    left: 32%;
-    border-radius: 44% 56% 65% 35% / 35% 81% 19% 65%;
-    background-color: $black;
-  }
-  100% {
-    top: 45%;
-    left: 30%;
-
-    transform: scale(1);
-    background-color: $blue;
-    border-radius: 48% 52% 61% 39% / 41% 28% 72% 59%;
-  }
-}
-.icon-portfolio-2 {
-  position: absolute;
-
-  width: 120px;
-  height: 100px;
-
-  animation-name: icon-portfolio-2;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-
-  filter: hue-rotate(45deg);
-  transition: all 0.2s ease;
-}
-
-@keyframes icon-portfolio-3 {
-  0% {
-    top: 20%;
-    left: 40%;
-
-    transform: scale(1);
-    border-radius: 48% 52% 61% 39% / 41% 28% 72% 59%;
-    background-color: $orange;
-  }
-  30% {
-    top: 22%;
-    left: 45%;
-    // transform: scale(0.8);
-    background-color: $white;
-    border-radius: 64% 36% 32% 68% / 54% 65% 35% 46%;
-  }
-  60% {
-    top: 20%;
-    left: 40%;
-
-    border-radius: 54% 46% 70% 30% / 52% 39% 61% 48%;
-    transform: scale(0.9);
-    background-color: $day;
-  }
-  100% {
-    top: 25%;
-    left: 40%;
-
-    transform: scale(1);
-    background-color: $blue;
-    border-radius: 48% 52% 61% 39% / 41% 28% 72% 59%;
-  }
-}
-.icon-portfolio-3 {
-  position: absolute;
-  top: 15%;
-
-  width: 200px;
-  height: 230px;
-
-  animation-name: icon-portfolio-3;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-
-  filter: opacity(0.6);
-  transition: all 0.2s ease;
-}
+// ----------------------------------------------------------------------------------------
