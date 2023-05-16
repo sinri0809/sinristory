@@ -6,13 +6,16 @@
 // ----------------------------------------------------------------------------------------
 
 .slider-title {
+  display: flex;
+  font-size: $fontSize-14;
 }
 
 // ----------------------------------------------------------------------------------------
 
 .slider-output-wrap {
   display: flex;
-  padding: 1em 0;
+  padding: 1rem 0;
+  justify-content: center;
 }
 
 .slider-output {
@@ -33,9 +36,8 @@
   position: relative;
   display: flex;
   width: 100%;
-  height: 12px;
-
-  // background-color: black;
+  height: 20px;
+  padding: 4px 0;
 }
 
 // ----------------------------------------------------------------------------------------
@@ -44,19 +46,22 @@
   position: relative;
   width: 100%;
   padding: 4px;
+  border-radius: 6px;
   background-color: $white102;
+
+  user-select: none;
+  pointer-events: none;
 }
 
 .slider-input-value {
   position: relative;
   display: block;
-  width: 100%;
-  width: 0;
   height: 100%;
   border-radius: 4px;
   background-color: $blue;
 
-  transition: width 0.2s;
+  transition: width 0.12s;
+  pointer-events: none;
 }
 
 .icon-thumb {
@@ -67,27 +72,17 @@
   right: -4px;
   top: -4px;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.415);
-}
-
-.slider-input-thumb {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 12px;
-  height: 100%;
-
-  background-color: rgba(255, 0, 0, 0.512);
-  transition: left 0.2s;
+  background-color: $blue;
+  border: 2px solid transparent;
+  outline: 4px solid transparent;
+  transition: all 0.12s;
 }
 
 // ----------------------------------------------------------------------------------------
 
 .slider-input {
-  position: relative;
   position: absolute;
-  top: 0;
+  top: 4px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -95,7 +90,48 @@
   width: 100%;
   height: 12px;
 
-  // background-color: rgba(0, 255, 255, 0.335);
+  background-color: transparent;
 }
 
 // ----------------------------------------------------------------------------------------
+
+// interaction
+.slider-input:hover + .slider-input-value-wrap {
+  .icon-thumb {
+    outline-color: $white105;
+  }
+}
+
+.slider-input:active + .slider-input-value-wrap {
+  .icon-thumb {
+    outline-color: $blue205;
+    border-color: $blue200;
+  }
+}
+
+.slider-input:disabled + .slider-input-value-wrap {
+
+  .slider-input-value {
+    color: $gray200;
+  }
+  .icon-thumb {
+    background-color: $gray200;
+    outline-color: transparent;
+    border-color: $gray;
+  }
+}
+
+// ----------------------------------------------------------------------------------------
+
+.slider-min-max {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem;
+  font-size: $fontSize-12;
+  color: $darkgray100;
+  opacity: 0.4;
+
+  span {
+    line-height: 1em;
+  }
+}

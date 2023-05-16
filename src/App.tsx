@@ -16,15 +16,11 @@ function App() {
   }, []);
 
   return (
-    <div
-      css={css`
-        display: block;
-      `}
-    >
+    <>
       <Header />
       <MainRouter />
       <BackgroundSea />
-    </div>
+    </>
   );
 }
 

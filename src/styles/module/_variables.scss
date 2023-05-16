@@ -42,7 +42,7 @@ $layerBackground: var(--zIndex-back);
 :root {
   font-size: 10px;
 
-  --emoji-size-h1: 54px;
+  --emoji-size-h1: 44px;
 
   --font-size-h1: 36px;
   --font-size-h2: 28px;
@@ -64,7 +64,7 @@ $layerBackground: var(--zIndex-back);
   @include 모바일 {
     font-size: 8px;
 
-    --emoji-size-h1: 44px;
+    --emoji-size-h1: 30px;
 
     --font-size-h1: 28px;
     --font-size-h2: 20px;

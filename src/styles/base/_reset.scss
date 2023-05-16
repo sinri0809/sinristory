@@ -133,6 +133,8 @@ input {
       appearance: none;
       width: 20px;
       height: 20px;
+      color: transparent; // 아이폰에서 하얀 박스가 보임
+
       // transition: background 0.2s;
 
       // ::-webkit-slider-thumb:hover
@@ -184,10 +186,10 @@ progress {
   border: none;
 
   &::-webkit-progress-bar {
-    background-color: white;
+    background-color: transparent;
   }
 
   &::-webkit-progress-value {
-    background-color: red;
+    background-color: transparent;
   }
 }

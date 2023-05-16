@@ -16,8 +16,9 @@ import Tooltip, { TooltipDefault, TooltipMouse } from 'components/ui/Tooltip';
 import Radio from 'components/ui/Radio';
 import Checkbox from 'components/ui/Checkbox';
 import BottomSheet from 'components/ui/Sheet.Bottom';
+import Slider from 'components/ui/Slider';
 
-import Sort, { SortList, SortItem } from 'components/layout/SortList';
+import SortPortfolio from 'view/portfolio/sort_portfolio';
 
 interface ItemUIComponentProps {
   title: string;
@@ -59,7 +60,7 @@ const PagePortfolio = () => {
   const [tabFocus, setTabFocus] = useState(0);
   const tabList = Array.from([1, 2, 3], (x) => `tab${x}`);
 
-  const [sliderValue, setSliderValue] = useState(15);
+  const [sliderValue, setSliderValue] = useState(20);
 
   // TODO: 보장하는 typescript
   const radioCategory: string = 'radio-category';
@@ -72,28 +73,11 @@ const PagePortfolio = () => {
     setDropdown(index);
   };
 
-  useEffect(() => {
-    const temperatureValue = document.getElementById('temperature-value');
-    temperatureValue?.classList.add('blink');
-    setTimeout(() => {
-      temperatureValue?.classList.remove('blink');
-    }, 100);
-  }, [sliderValue]);
-
   return (
     <main className="portfolio">
-      <Sort>
-        <h2>️🏄‍♀️</h2>
-        <SortList>
-          <SortItem>Switch</SortItem>
-          <SortItem>Dropdown</SortItem>
-          <SortItem>Button</SortItem>
-          <SortItem>InputField</SortItem>
-          <SortItem>Icon</SortItem>
-        </SortList>
-      </Sort>
       <section className="portfolio-container">
         <div className="portfolio-wrap">
+          <SortPortfolio />
           <ul className="portfolio-list">
             <ItemUIComponent title="BottomSheet">
               <TextField
@@ -109,52 +93,17 @@ const PagePortfolio = () => {
 
             </ItemUIComponent>
             <ItemUIComponent title="Slider">
-              <div className="slider-container temperature">
-                <label htmlFor="temperature" className="slider-title">
-                  Temperature
-                </label>
-                <div className="slider-output-wrap">
-                  <output id="temperature-value" className="slider-output">
-                    {sliderValue}
-                  </output>
-                </div>
-                <div className="slider-input-container">
-                  <div className="slider-input-value-wrap">
-                    <span
-                      className="slider-input-value"
-                      style={{
-                        width: `${((sliderValue - 15) / (25 - 15)) * 100}%`,
-                      }}
-                    >
-                      <i className="icon-thumb"></i>
-                    </span>
-                  </div>
-                  <input
-                    type="range"
-                    id="range-temperature"
-                    className="slider-input"
-                    aria-labelledby="temperatureLabel"
-                    aria-orientation="vertical"
-                    tabIndex={0}
-                    aria-valuetext="value sub text "
-                    aria-valuemin={15.0}
-                    aria-valuemax={25.0}
-                    aria-valuenow={sliderValue}
-                    defaultValue={0}
-                    min={15}
-                    max={25}
-                    value={sliderValue}
-                    step={0.5}
-                    onChange={(e) => {
-                      setSliderValue(Number(e.target.value));
-                      console.log(e.target.value);
-                    }}
-                  />
-                </div>
-              </div>
+              <Slider 
+                label='temperture'
+                value={sliderValue}
+                onChange={(e)=>setSliderValue(Number(e.currentTarget.value))}
+                min={20}
+                max={40}
+                // defaultValue={sliderValue}
+              />
             </ItemUIComponent>
             <ItemUIComponent title="ImageSlider">
-              ImageSlider component
+              to be continued
             </ItemUIComponent>
             <ItemUIComponent title="Checkbox">
               <Checkbox
@@ -228,12 +177,19 @@ const PagePortfolio = () => {
               </Tab>
             </ItemUIComponent>
             <ItemUIComponent title="Icon">
-              <IconButton
-                toggle={buttonFocus}
-                data="icon-like"
-                name="like"
-                onClick={() => setButtonFocus(!buttonFocus)}
-              />
+              <div>
+                <IconButton
+                  toggle={buttonFocus}
+                  data="icon-like"
+                  name="like"
+                  onClick={() => setButtonFocus(!buttonFocus)}
+                />
+                <IconButton
+                  data='icon-drawer'
+                  name='example icon'
+                />
+
+              </div>
             </ItemUIComponent>
             <ItemUIComponent title="Progressbar">
               <Button
@@ -347,15 +303,15 @@ const PagePortfolio = () => {
               )}
             </ItemUIComponent>
             <ItemUIComponent title="FullScreen">
-              FullScreen component
+            to be continued
             </ItemUIComponent>
-            <ItemUIComponent title="Loading">Loading component</ItemUIComponent>
+            <ItemUIComponent title="Loading">to be continued</ItemUIComponent>
             <ItemUIComponent title="Flag/Toast">
-              Flag/Toast component
+              to be continued
             </ItemUIComponent>
-            <ItemUIComponent title="Date">Date component</ItemUIComponent>
-            <ItemUIComponent title="Drawer">Drawer component</ItemUIComponent>
-            <ItemUIComponent title="Alert">Alert component</ItemUIComponent>
+            <ItemUIComponent title="Date">to be continued</ItemUIComponent>
+            <ItemUIComponent title="Drawer">to be continued</ItemUIComponent>
+            <ItemUIComponent title="Alert">to be continued</ItemUIComponent>
           </ul>
         </div>
       </section>
