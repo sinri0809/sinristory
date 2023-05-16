@@ -6,7 +6,7 @@ import Header from 'components/layout/Header';
 import BackgroundSea from 'components/common/BackgroundSea';
 
 import { isPhone } from 'tools/devices';
-
+import { css } from '@emotion/react';
 import './styles/index.scss';
 
 function App() {
@@ -16,11 +16,15 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div
+      css={css`
+        display: block;
+      `}
+    >
       <Header />
       <MainRouter />
       <BackgroundSea />
-    </>
+    </div>
   );
 }
 
