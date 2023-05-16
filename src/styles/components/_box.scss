@@ -29,6 +29,7 @@
       rgba(244, 248, 255, 0) 100%
     );
     backdrop-filter: blur(6px);
+    overflow: hidden;
   }
 
   &:hover {

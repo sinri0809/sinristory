@@ -21,7 +21,7 @@ const Header = () => {
     <header className="header">
       <div className="header-wrap">
         <div className="header-title">
-          <h1 className="title"><Link to={"/"}>hello sinri!</Link></h1>
+          <h1 className="title"><Link to={"/"} title='home'>hello sinri!</Link></h1>
         </div>
         <div className="header-theme">
           <button
@@ -32,7 +32,7 @@ const Header = () => {
             <Icon data="icon-theme" />
           </button>
         </div>
-        <div className="header-drawer">
+        <div className="header-drawer-container">
           <HeaderDrawer />
         </div>
       </div>

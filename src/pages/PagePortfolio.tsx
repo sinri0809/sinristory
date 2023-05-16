@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import Switch from 'components/ui/Switch';
 import { Dropdown, DropdownItem } from 'components/ui/Dropdown';
@@ -17,6 +17,8 @@ import Radio from 'components/ui/Radio';
 import Checkbox from 'components/ui/Checkbox';
 import BottomSheet from 'components/ui/Sheet.Bottom';
 import Slider from 'components/ui/Slider';
+import GlobalPortal from 'components/container/Portals';
+import Drawer from 'components/ui/Drawer';
 
 import SortPortfolio from 'view/portfolio/sort_portfolio';
 
@@ -37,6 +39,7 @@ const ItemUIComponent = ({ children, title }: ItemUIComponentProps) => {
 };
 
 const PagePortfolio = () => {
+  const ref = useRef<HTMLDivElement>(null);
   const [checked, setChecked] = useState(false);
 
   const exampleList = Array.from([1, 2, 3, 4, 5], (x) => `item${x}`);
@@ -62,6 +65,8 @@ const PagePortfolio = () => {
 
   const [sliderValue, setSliderValue] = useState(20);
 
+  const [hideDrawer, setHideDrawer] = useState(true);
+
   // TODO: 보장하는 typescript
   const radioCategory: string = 'radio-category';
 
@@ -74,11 +79,32 @@ const PagePortfolio = () => {
   };
 
   return (
-    <main className="portfolio">
+    <main ref={ref} className="portfolio">
       <section className="portfolio-container">
-        <div className="portfolio-wrap">
+        <button className="btn btn-go-top"
+          onClick={() => {
+            if(ref.current){
+              ref.current.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+              })
+            }
+          }}
+        >
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 17L18 9M18 9L26 17M18 9V30" stroke="#F4F8FF"/>
+          </svg>
+        </button>
+        <div 
+          className="portfolio-wrap">
           <SortPortfolio />
           <ul className="portfolio-list">
+            <ItemUIComponent title="Drawer">
+              <Button text='open Drawer' onClick={()=>setHideDrawer(!hideDrawer)} />
+              <Drawer hide={hideDrawer} setHide={()=>setHideDrawer(true)}>
+                what you want inside 
+              </Drawer>
+            </ItemUIComponent>
             <ItemUIComponent title="BottomSheet">
               <TextField
                 value={inputValue4}
@@ -99,7 +125,6 @@ const PagePortfolio = () => {
                 onChange={(e)=>setSliderValue(Number(e.currentTarget.value))}
                 min={20}
                 max={40}
-                // defaultValue={sliderValue}
               />
             </ItemUIComponent>
             <ItemUIComponent title="ImageSlider">
@@ -310,7 +335,6 @@ const PagePortfolio = () => {
               to be continued
             </ItemUIComponent>
             <ItemUIComponent title="Date">to be continued</ItemUIComponent>
-            <ItemUIComponent title="Drawer">to be continued</ItemUIComponent>
             <ItemUIComponent title="Alert">to be continued</ItemUIComponent>
           </ul>
         </div>

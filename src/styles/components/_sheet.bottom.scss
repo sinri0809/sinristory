@@ -16,9 +16,9 @@
 }
 
 .sheet-wrap {
-  font-size: 24px;
+  font-size: 2.4rem;
 
-  background-color: $white;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.8) 100%);
   width: 100%;
   border-radius: 1em 1em 0px 0px;
 }
@@ -27,6 +27,9 @@
   padding: 0.5em;
 }
 
+.sheet-content {
+  padding-bottom: 10rem; // 모바일 브라우자 아래 툴바 영역이 넓음
+}
 // ----------------------------------------------------------------------------------------
 // animation - slide up 
 

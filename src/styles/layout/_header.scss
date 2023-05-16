@@ -38,7 +38,7 @@
 // icon
 // ----------------------------------------------------------------------------------------
 
-.header-drawer {
+.header-drawer-container {
   width: 40%;
   position: relative;
   text-align: right;
@@ -47,7 +47,7 @@
 // ----------------------------------------------------------------------------------------
 
 // state
-.drawer {
+.header-drawer {
   .drawer-container {
     position: relative;
     visibility: hidden;

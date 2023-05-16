@@ -13,6 +13,10 @@ function App() {
   useEffect(() => {
     document.body.classList.add('light');
     console.log(`isPhone? ${isPhone}`);
+    window.scrollTo({
+      top: 0,
+      // behavior: 'instant',
+    });
   }, []);
 
   return (

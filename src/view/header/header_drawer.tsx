@@ -33,7 +33,7 @@ const HeaderDrawer = () => {
   return (
     <div
       ref={refDrawer}
-      className="drawer"
+      className="header-drawer"
       onBlur={closeDrawer}
       aria-expanded={expanded}
     >

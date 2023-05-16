@@ -1,6 +1,7 @@
 /* reset user agent style */
 
 /* -webkit-appearance - Chrome, Safari, Opera */
+/* -moz-appearance - Mozilla Firefox */
 /* appearance - Modern Browsers */
 
 ::-webkit-scrollbar {
@@ -87,8 +88,13 @@ select {
 }
 
 input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
   border: 0;
   background-color: transparent;
+  overflow: hidden;
 
   &:focus {
     outline: none;
@@ -102,18 +108,13 @@ input {
   }
 
   &[type='search'] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
   }
 
   &[type='checkbox'],
   &[type='radio'] {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     border-radius: 3px;
     border: 1px solid transparent;
     background-color: transparent;
@@ -125,7 +126,7 @@ input {
     appearance: none;
     -webkit-appearance: none;
     outline: none;
-    // background: #a32121;
+    background-color: transparent;
 
     /* thumb */
     &::-webkit-slider-thumb {
@@ -134,12 +135,15 @@ input {
       width: 20px;
       height: 20px;
       color: transparent; // 아이폰에서 하얀 박스가 보임
-
+      background-color: transparent;
       // transition: background 0.2s;
-
-      // ::-webkit-slider-thumb:hover
-      // ::-webkit-slider-thumb:active
-      // :focus::-webkit-slider-thumb
+    }
+    
+    &::-webkit-slider-thumb:hover,
+    &::-webkit-slider-thumb:active,
+    &:focus::-webkit-slider-thumb {
+      color: transparent; 
+      background-color: transparent;
     }
   }
 }

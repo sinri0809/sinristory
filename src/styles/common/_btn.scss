@@ -54,16 +54,20 @@
 
     .btn-text {
       color: $white;
+      transition: color 0.1s;
     }
 
     &:hover {
-      // background-color: $white108;
+      .btn-text {
+        color: $white108;
+      }
+  
       border-color: $day105;
     }
 
     &:active {
       .btn-text {
-        color: $white105;
+        color: $white;
       }
       // background-color: $day105;
       border-color: $day;
