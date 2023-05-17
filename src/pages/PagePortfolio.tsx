@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { Ref, useState, useEffect, useRef } from 'react';
 
 import Switch from 'components/ui/Switch';
 import { Dropdown, DropdownItem } from 'components/ui/Dropdown';
@@ -17,10 +17,10 @@ import Radio from 'components/ui/Radio';
 import Checkbox from 'components/ui/Checkbox';
 import BottomSheet from 'components/ui/Sheet.Bottom';
 import Slider from 'components/ui/Slider';
-import GlobalPortal from 'components/container/Portals';
 import Drawer from 'components/ui/Drawer';
 
 import SortPortfolio from 'view/portfolio/sort_portfolio';
+import ButtonGoTop from 'components/common/ButtonGoTop';
 
 interface ItemUIComponentProps {
   title: string;
@@ -39,7 +39,7 @@ const ItemUIComponent = ({ children, title }: ItemUIComponentProps) => {
 };
 
 const PagePortfolio = () => {
-  const ref = useRef<HTMLDivElement>(null);
+  const elementScrollRef = useRef<HTMLDivElement>(null);
   const [checked, setChecked] = useState(false);
 
   const exampleList = Array.from([1, 2, 3, 4, 5], (x) => `item${x}`);
@@ -79,26 +79,16 @@ const PagePortfolio = () => {
   };
 
   return (
-    <main ref={ref} className="portfolio">
+    <main ref={elementScrollRef} className="portfolio">
       <section className="portfolio-container">
-        <button className="btn btn-go-top"
-          onClick={() => {
-            if(ref.current){
-              ref.current.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-              })
-            }
-          }}
-        >
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 17L18 9M18 9L26 17M18 9V30" stroke="#F4F8FF"/>
-          </svg>
-        </button>
+        <ButtonGoTop scrollElement={elementScrollRef} />
         <div 
           className="portfolio-wrap">
           <SortPortfolio />
           <ul className="portfolio-list">
+            <ItemUIComponent title="ImageSlider">
+              to be continued
+            </ItemUIComponent>
             <ItemUIComponent title="Drawer">
               <Button text='open Drawer' onClick={()=>setHideDrawer(!hideDrawer)} />
               <Drawer hide={hideDrawer} setHide={()=>setHideDrawer(true)}>
@@ -126,9 +116,6 @@ const PagePortfolio = () => {
                 min={20}
                 max={40}
               />
-            </ItemUIComponent>
-            <ItemUIComponent title="ImageSlider">
-              to be continued
             </ItemUIComponent>
             <ItemUIComponent title="Checkbox">
               <Checkbox
