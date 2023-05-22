@@ -18,6 +18,7 @@ import Checkbox from 'components/ui/Checkbox';
 import BottomSheet from 'components/ui/Sheet.Bottom';
 import Slider from 'components/ui/Slider';
 import Drawer from 'components/ui/Drawer';
+import ImageSlider, {ImageList} from 'components/ui/ImageSlider';
 
 import SortPortfolio from 'view/portfolio/sort_portfolio';
 import ButtonGoTop from 'components/common/ButtonGoTop';
@@ -67,6 +68,10 @@ const PagePortfolio = () => {
 
   const [hideDrawer, setHideDrawer] = useState(true);
 
+  const imageList =  Array
+    .from({length: 10}, (_, index) => `assets/imgs/sample/1-${index+1}.png`)
+    .map((item, index) => ({src: item, alt: `sample 1-${index}`}))
+
   // TODO: 보장하는 typescript
   const radioCategory: string = 'radio-category';
 
@@ -87,7 +92,7 @@ const PagePortfolio = () => {
           <SortPortfolio />
           <ul className="portfolio-list">
             <ItemUIComponent title="ImageSlider">
-              to be continued
+              <ImageSlider imageList={imageList} />
             </ItemUIComponent>
             <ItemUIComponent title="Drawer">
               <Button text='open Drawer' onClick={()=>setHideDrawer(!hideDrawer)} />
@@ -133,12 +138,6 @@ const PagePortfolio = () => {
                 <Radio.Item name={radioCategory} value="value1" />
                 <Radio.Item name={radioCategory} value="value2" />
               </Radio>
-            </ItemUIComponent>
-            <ItemUIComponent title="DetailBox">
-              <details>
-                <summary>Details</summary>
-                hihi
-              </details>
             </ItemUIComponent>
             <ItemUIComponent title="Tooltip">
               <Tooltip index={0}>
@@ -314,8 +313,15 @@ const PagePortfolio = () => {
                 </Popup>
               )}
             </ItemUIComponent>
+            <ItemUIComponent title="DetailBox">
+              to be continued
+              {/* <details>
+                <summary>Details</summary>
+                hihi
+              </details> */}
+            </ItemUIComponent>
             <ItemUIComponent title="FullScreen">
-            to be continued
+              to be continued
             </ItemUIComponent>
             <ItemUIComponent title="Loading">to be continued</ItemUIComponent>
             <ItemUIComponent title="Flag/Toast">

@@ -99,6 +99,7 @@ input {
   &:focus {
     outline: none;
     border: none;
+    touch-action: manipulation;
   }
 
   &::placeholder {

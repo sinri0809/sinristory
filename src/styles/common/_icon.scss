@@ -327,3 +327,12 @@
     }
   }
 }
+
+.icon-arrow-left,
+.icon-arrow-right {
+  opacity: 0.5;
+
+  @include btn-hover {
+    opacity: 1;
+  }
+}
