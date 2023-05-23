@@ -95,11 +95,11 @@ input {
   border: 0;
   background-color: transparent;
   overflow: hidden;
+  touch-action: none; // (모바일) 확대/축소 기능 비활성화 관련
 
   &:focus {
     outline: none;
     border: none;
-    touch-action: manipulation;
   }
 
   &::placeholder {
