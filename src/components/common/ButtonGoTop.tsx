@@ -9,6 +9,7 @@ const ButtonGoTop = forwardRef<HTMLDivElement, ButtonProps>((props, ref)=>{
 
   return <button
     className="btn btn-go-top"
+    aria-hidden={false} // TODO: 스크롤 내림시 UI보임 처리
     onClick={()=>{
       if(scrollElement.current){
         scrollElement.current.scrollTo({
