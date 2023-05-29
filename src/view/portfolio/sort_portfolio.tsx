@@ -1,5 +1,5 @@
 import React from "react";
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { portfolioUI, sortUI } from 'store/portfolio.store';
 
 import Sort, { SortItem, SortList } from "components/layout/SortList";
@@ -10,7 +10,7 @@ interface Props {
 
 const SortPortfolio = (props: Props) => {
   const [sortIndex, setSortIndex] = useRecoilState(sortUI);
-  const [portfolioList, setPortfolioList] = useRecoilState(portfolioUI);
+  const portfolioList = useRecoilValue(portfolioUI);
 
   return <>
     <Sort>

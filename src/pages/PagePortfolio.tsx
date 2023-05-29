@@ -25,6 +25,7 @@ import ImageSlider from 'components/ui/ImageSlider';
 
 import SortPortfolio from 'view/portfolio/sort_portfolio';
 import ButtonGoTop from 'components/common/ButtonGoTop';
+import Icon from 'components/icons/Icon';
 
 interface ItemUIComponentProps {
   title?: string;
@@ -337,7 +338,37 @@ const PagePortfolio = () => {
                   </Popup>
                 )}
               </ItemUIComponent>
-              <ItemUIComponent title="DetailBox">to be continued</ItemUIComponent>
+              <ItemUIComponent index={16}>
+                <div className="bar-container"
+                  onFocus={(event) => {
+                    event.currentTarget.toggleAttribute('focused', true)
+                  }}
+                  onBlur={(event) => {
+                    event.currentTarget.toggleAttribute('focused', false)
+                  }}
+                >
+                  <div
+                    className="bar-wrap"
+                  >
+                    <div className="bar-drawer">
+                      <IconButton data='icon-hamburger' name='app bar' />
+                    </div>
+                    <div className="search-input">
+                      <div className="search-input-wrap">
+                        <input
+                          type="text"
+                          value={""}
+                          placeholder='검색어 입력'
+                        />
+                      </div>
+                    </div>
+                    <div className="user-profile">
+                      <IconButton data='icon-user-profile' name='app bar' />
+                    </div>
+                  </div>
+                </div>
+              </ItemUIComponent>
+              <ItemUIComponent title="Accordion">to be continued</ItemUIComponent>
               <ItemUIComponent title="FullScreen">to be continued</ItemUIComponent>
               <ItemUIComponent title="Loading">to be continued</ItemUIComponent>
               <ItemUIComponent title="Flag/Toast">to be continued</ItemUIComponent>

@@ -1,4 +1,4 @@
-import {atom, selector} from 'recoil';
+import { atom } from 'recoil';
 
 const portfolioUI = atom({
   key: 'ui',
@@ -19,6 +19,7 @@ const portfolioUI = atom({
     "TextField",
     "Dialog",
     "Popup",
+    "Bar",
   ]
 });
 
@@ -26,16 +27,6 @@ const sortUI = atom({
   key: "sortUI",
   default: 0,
 });
-
-const setSortIndex = selector({
-  key: "setSortIndex",
-  get: ({get}) => {
-
-  },
-  set: (opts, newValue) => {
-    
-  },
-})
 
 export {
   portfolioUI,

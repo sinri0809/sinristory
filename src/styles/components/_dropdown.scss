@@ -24,9 +24,17 @@
     }
   }
 
+  &:not([aria-expanded]){
+    .dropdown-list-wrap {
+      visibility: hidden;
+      transform: translateY(-1rem);
+    }
+  }
+
   &[aria-expanded] {
     .dropdown-list-wrap {
       visibility: visible;
+      transform: translateY(0);
     }
 
     .btn-dropdown {
@@ -74,8 +82,6 @@
 // ----------------------------------------------------------------------------------------
 
 .dropdown-list-wrap {
-  visibility: hidden;
-
   position: absolute;
   top: calc(100% + 6px);
 
@@ -84,6 +90,7 @@
   border-radius: 5px;
   border: 1px solid $gray;
   z-index: $layerFloating;
+  transition: transform 0.2s;
 
   @include webkit-scrollbar(4px);
 }

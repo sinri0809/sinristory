@@ -1,0 +1,48 @@
+// <UI /> bar
+.bar-container {
+  display: flex;
+  justify-content: center;
+  padding: 0 8px;
+
+  width: 100%;
+  transition: all 0.12s;
+}
+
+.bar-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // margin: 8px;
+  background-color: $white102;
+  border: 1px solid $white105;
+  border-radius: 8px;
+
+  transition: all 0.12s;
+
+  .bar-drawer {
+    display: flex;
+  }
+
+  .search-input {
+    flex: 1 1 auto;
+  }
+
+  .user-profile {
+    display: flex;
+  }
+}
+
+// ----------------------------------------------------------------------------------------
+
+.bar-container {
+  &[focused]{
+    padding: 0;
+
+    .bar-wrap{
+      border-radius: 0;
+      border-color: transparent;
+      background-color: $white103;
+    }
+  }
+}

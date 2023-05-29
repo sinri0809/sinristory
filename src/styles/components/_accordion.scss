@@ -1,0 +1,5 @@
+// height를 조절하는 건 맞는데, 
+/*
+  height 0 -> auto 는 transition이 안먹기 때문에 
+  height 0 -> number -> auto 로 가도록 만들어야 interaction이 들어감
+*/

@@ -6,6 +6,15 @@ const IconPortfolio = () => {
   </div>
 }
 
+const IconHamburger = () => {
+  return <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <title>Icon/App/Hamburger</title>
+    <path d="M7 12H29" stroke="#F4F8FF" />
+    <path d="M7 18H29" stroke="#F4F8FF" />
+    <path d="M7 24H29" stroke="#F4F8FF" />
+  </svg>
+}
+
 const IconDropdownMore = () => {
   return (
     <svg
@@ -380,6 +389,13 @@ const IconMouseHint = () => {
   );
 };
 
+const IconUserProfile = () => {
+  return <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <title>Icon/User/Profile/Default</title>
+    <circle cx="18" cy="18" r="12" fill="#F4F8FF" />
+  </svg>
+}
+
 const IconList = {
   'icon-close': <IconClose />,
   'icon-theme': <IconDayNight />,
@@ -392,7 +408,9 @@ const IconList = {
   'icon-checkbox': <IconCheckbox />,
   'icon-tree-index': <IconTreeIndex />,
   'icon-mouse-hint': <IconMouseHint />,
-  'icon-portfolio': <IconPortfolio />
+  'icon-portfolio': <IconPortfolio />,
+  'icon-hamburger': <IconHamburger />,
+  'icon-user-profile': <IconUserProfile />
 };
 
 export default IconList;
