@@ -15,29 +15,44 @@
 
 .tree-list {
   &[data-depth='1'] {
-    // padding-left: 1em;
+    padding-left: 0.2em;
   }
 
   &[data-depth='2'] {
     padding-left: 1.2em;
+    overflow: hidden;
   }
+
+  transition: opacity 0.2s;
+}
+
+.tree-item {
+  font-size: $fontSize-16;
 }
 
 // ----------------------------------------------------------------------------------------
 
 .btn-toggle-tree {
-  font-size: $fontSize-16;
+  font-size: inherit;
   font-weight: $fontMedium;
   color: $black;
 }
 
-// for example
 .btn-toggle-tree[aria-expanded='false'] + .tree-list {
-  // display: none;
   visibility: hidden;
+  opacity: 0;
+
+  .tree-item {
+    height: 0;
+  }
 }
 
 .btn-toggle-tree[aria-expanded='true'] + .tree-list {
-  // display: block;
   visibility: visible;
+  opacity: 1;
+
+  .tree-item {
+    animation-name: accordion-expanded;
+    animation-duration: 0.16s;
+  }
 }

@@ -17,24 +17,34 @@
 
   text-align: center;
 
-  background-color: black;
+  background-color: $black;
   color: $white;
+
+  transition: background-color 0.2s, transform 0.2s;
 }
 
 // ----------------------------------------------------------------------------------------
 
 // state
 .dashboard-diagram {
-  [aria-expanded='true'] {
-    .tree-diagram {
-      visibility: visible;
+  // 상단이 접히면 아래가 모두 접히도록
+  [aria-expanded='false'] + .diagram-container {
+    visibility: hidden;
+
+    & > .tree-diagram {
+      transform: translateY(1rem);
+    }
+  }
+  
+  [aria-expanded='true'] + .diagram-container {
+    visibility: visible;
+
+    & > .tree-diagram {
+      transform: translateY(0);
     }
   }
 
-  [aria-expanded='false'] {
-    // 상단이 접히면 아래가 모두 접히도록
-    .tree-diagram {
-      visibility: hidden;
-    }
+  .tree-diagram[focused] {
+    background-color: $day;
   }
 }

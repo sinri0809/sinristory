@@ -102,3 +102,22 @@
     transform: translateX(0);
   }
 }
+
+// accordion
+/* * accordion animation apply
+  height를 조절하는 건 맞는데, 
+  height 0 -> auto 는 transition이 안먹기 때문에 
+  height 0 -> number -> auto 로 가도록 만들어야 interaction이 들어감
+*/
+
+@keyframes accordion-expanded {
+  from {
+    height: 0;
+  }
+  99% {
+    height: 1em;
+  }
+  to {
+    height: auto;
+  }
+}

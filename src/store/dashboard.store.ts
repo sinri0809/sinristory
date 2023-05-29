@@ -1,29 +1,30 @@
-import { atom, selector } from "recoil";
+import { atom } from "recoil";
 
-const textState = atom({
-  key: 'textState',
-  default: 'ssssaa'
-});
+export type Skill = {
+  name: string;
+  key: string; // related diagram의 위치 scss
+  expanded: boolean;
+  list?: Array<Skill>;
+}
 
-
-const charCountState = selector({
-  key: 'charCountState', // unique ID (with respect to other atoms/selectors)
-  get: ({get}) => {
-    return 4
-    // const text = get(textState);
-
-    // return text.length;
-  },
-});
+// not using yet
+const skillItem = ({ name, key, expanded = false, list = [] }: Skill) => {
+  return {
+    name, key, expanded,
+    list
+  }
+};
 
 const skillsList = [
   {
     name: "UX Engineer",
     key: 'uxe',
+    expanded: true,
     list: [
       {
         name: "Develop",
         key: 'dev',
+        expanded: false,
         list: [
           {
             name: 'Electronics',
@@ -66,6 +67,7 @@ const skillsList = [
       {
         name: 'Design',
         key: 'des',
+        expanded: false,
         list: [
           {
             name: 'Adobe',
@@ -80,16 +82,19 @@ const skillsList = [
       {
         name: 'HMI',
         key: 'hmi',
+        expanded: false,
         list: []
       },
       {
         name: 'Design\nSystem',
         key: 'ds',
+        expanded: false,
         list: []
       },
       {
         name: 'UX\nImproving',
         key: 'uxi',
+        expanded: false,
         list: [
           {
             name: 'test',
@@ -101,14 +106,22 @@ const skillsList = [
   }
 ];
 
-type Skill = {
-  name: string;
-  key: string;
-  list?: Array<Skill>;
-};
+// ----------------------------------------------------------------------------------------
+
+// TODO: update data from firebase
+// const skillList =  
+
+// ----------------------------------------------------------------------------------------
+
+const skillListState = atom({
+  key: 'skillListState',
+  default: [...skillsList]
+  // default: [...skillList]
+})
+
 
 export {
-  textState,
-  charCountState,
   skillsList,
-}
+
+  skillListState
+};

@@ -7,6 +7,7 @@
 
 @mixin webkit-scrollbar($thick: 4px, $color_scroll: $gray) {
   // look role="scrollbar"
+  padding-top: $thick;
   padding-right: $thick;
 
   ::-webkit-scrollbar {

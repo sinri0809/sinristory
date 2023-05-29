@@ -1,89 +1,67 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useRecoilState } from 'recoil';
+import { skillListState } from 'store/dashboard.store';
 
-import { skillsList } from 'store/dashboard.store';
-
-import { DiagramComponent, DiagramContainer } from './diagam_wrap';
+import { DiagramComponent, DiagramContainer } from './diagram_wrap';
 
 const DashboardDiagram = () => {
-  const [test, setTest] = useState(false);
-  // TODO: rendering way ideanation
+  const [skillList, setSkillList] = useRecoilState(skillListState);
+  const depth1 = skillList[0].list;
 
-  // type Skill = {
-  //   name: string;
-  //   key: string;
-  //   list?: Array<Skill>;
-  // };
+  const onClickDiagramToggle = (item: any, index = -1) => {
+    // FIXME: same with tree func
+    if (index === -1) {
+      console.log("something error")
+      return;
+    }
 
-  // const skillNodes: Array<React.ReactNode> = [];
-  // // let depth: number = 0;
+    const toggleItemExpanded = {
+      ...item,
+      expanded: !(item.expanded)
+    };
 
-  // const printSubSkill = (list: Array<Skill>) => {
-  //   list.forEach((item, index) => {
-  //     if (item.list && item.list?.length !== 0) {
-  //       printSubSkill(item.list);
-  //     }
-  //     skillNodes.push(<DiagramComponent className={`tree-2-${item.key}`}>{item.name}</DiagramComponent>)
-  //   });
-  // };
+    let updateDepth1 = [...depth1];
+    updateDepth1[index] = toggleItemExpanded;
 
-  // printSubSkill(skillsList);
+    let swapSkillList = [
+      {
+        ...skillList[0],
+        list: [...updateDepth1]
+      }
+    ]
+
+    setSkillList({
+      ...swapSkillList,
+    })
+  };
+
+  const renderDepth2Diagram = (list: Array<{ name: string, key: string }>) => {
+    return <DiagramContainer depth={2}>
+      {list.map(item => {
+        return <React.Fragment key={item.key}>
+          <DiagramComponent className={`tree-2-${item.key}`}>
+            {item.name}
+          </DiagramComponent>
+        </React.Fragment>
+      })}
+    </DiagramContainer>
+  }
+
   return (
     <div className="dashboard-diagram">
-      <DiagramContainer depth={0} aria-expanded={true}>
-        <DiagramComponent className="tree-0-uxe">UX Engineer</DiagramComponent>
-        <DiagramContainer depth={1} aria-expanded={true} id="diagram-1-dev">
-          <DiagramComponent
-            className="tree-1-dev"
-            onClick={() => setTest(!test)}
-          >
-            Develop
-          </DiagramComponent>
-          <DiagramContainer depth={2} aria-expanded={test}>
-            {skillsList[0].list[0].list.map((item) => (
-              <DiagramComponent className={`tree-2-${item.key}`}>
-                {item.name}
-              </DiagramComponent>
-            ))}
-          </DiagramContainer>
-        </DiagramContainer>
-
-        <DiagramContainer depth={1} aria-expanded={true}>
-          <DiagramComponent className="tree-1-des">Design</DiagramComponent>
-          <DiagramContainer depth={2} aria-expanded={true}>
-            {skillsList[0].list[1].list.map((item) => (
-              <DiagramComponent className={`tree-2-${item.key}`}>
-                {item.name}
-              </DiagramComponent>
-            ))}
-          </DiagramContainer>
-        </DiagramContainer>
-
-        <DiagramContainer depth={1} aria-expanded={true}>
-          <DiagramComponent className="tree-1-hmi">HMI</DiagramComponent>
-        </DiagramContainer>
-
-        <DiagramContainer depth={1} aria-expanded={true}>
-          <DiagramComponent className="tree-1-ds">
-            Design
-            <br />
-            System
-          </DiagramComponent>
-        </DiagramContainer>
-
-        <DiagramContainer depth={1} aria-expanded={true}>
-          <DiagramComponent className="tree-1-uxi">
-            UX
-            <br />
-            Improving
-          </DiagramComponent>
-          <DiagramContainer depth={2} aria-expanded={true}>
-            {skillsList[0].list[4].list.map((item) => (
-              <DiagramComponent className={`tree-2-${item.key}`}>
-                {item.name}
-              </DiagramComponent>
-            ))}
-          </DiagramContainer>
-        </DiagramContainer>
+      <DiagramContainer depth={0}>
+        <DiagramComponent aria-expanded className="tree-0-uxe">{skillList[0].name}</DiagramComponent>
+        {depth1.map((item, index) => {
+          return <React.Fragment key={index}>
+            <DiagramContainer depth={1} id={`diagram-depth-1-${item.key}`}>
+              <DiagramComponent
+                aria-expanded={item.expanded}
+                className={`tree-1-${item.key}`}
+                onClick={() => onClickDiagramToggle(item, index)}>{item.name}</DiagramComponent>
+              {item.list.length !== 0 && renderDepth2Diagram(item.list)}
+            </DiagramContainer>
+          </React.Fragment>
+        })}
       </DiagramContainer>
     </div>
   );
