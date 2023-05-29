@@ -13,25 +13,14 @@
   @include prevent-event;
 }
 
-svg.sea {
+svg.waves {
   position: absolute;
-
-  // min-width: 1920px;
-  // min-height: 1100px;
-  object-fit: cover;
-  // max-width: 100%;
-  // max-height: 50vw;
 }
 
-.background-sea.test {
-  // background-image: url(./../../assets/imgs/Background.svg);
-  // background-repeat: no-repeat;
-  // background-size: cover;
-}
 
 $sea_delay: 0s;
 // ! on in Production mode
-$sea_animation: 0s;
+$sea_animation: 12s;
 
 @keyframes move_wave_1 {
   0% {
@@ -93,21 +82,19 @@ $sea_animation: 0s;
 @keyframes move_wave_3 {
   0% {
     transform: translate(0px, 0px);
-    fill-opacity: 0.2;
+    fill-opacity: 0.9;
   }
   30% {
     transform: translate(-360px, 0px);
-    fill-opacity: 0.1;
-    stroke-opacity: 0.1;
+    fill-opacity: 0.8;
   }
   80% {
     transform: translate(-40px, 0px);
-    fill-opacity: 0.15;
+    fill-opacity: 0.75;
   }
   100% {
     transform: translate(0px, 0px);
-    fill-opacity: 0.2;
-    stroke-opacity: 0.2;
+    fill-opacity: 0.9;
   }
 }
 
@@ -123,19 +110,19 @@ $sea_animation: 0s;
 @keyframes move_wave_4 {
   0% {
     transform: translate(0px, 0px);
-    fill-opacity: 0.2;
+    fill-opacity: 0.8;
   }
   40% {
     transform: translate(-300px, 0px);
-    fill-opacity: 0.1;
+    fill-opacity: 0.7;
   }
   80% {
     transform: translate(-40px, 0px);
-    fill-opacity: 0.15;
+    fill-opacity: 0.75;
   }
   100% {
     transform: translate(0px, 0px);
-    fill-opacity: 0.2;
+    fill-opacity: 0.9;
   }
 }
 
