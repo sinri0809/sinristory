@@ -12,7 +12,12 @@ import './styles/index.scss';
 function App() {
   useEffect(() => {
     document.body.classList.add('light');
-    console.debug(`${isPhone ? "mobile" : "pc"}`);
+    console.debug(`${isPhone ? "mobile" : "desktop"}`);
+    if (isPhone) {
+      document.body.classList.add('mobile')
+    } else {
+      document.body.classList.add('desktop')
+    }
     // window.scrollTo({
     //   top: 0,
     //   // behavior: 'instant',

@@ -10,6 +10,8 @@
 //     @content;
 //   }
 // }
+// ----------------------------------------------------------------------------------------
+// * Responsive
 
 $mobile-max: 430px;
 $mobile-max-dev: 830px;
@@ -17,6 +19,15 @@ $mobile-min: 0px;
 
 @mixin 모바일 {
   @media screen and (min-width: #{$mobile-min}) and (max-width: #{$mobile-max-dev}) {
+    @content;
+  }
+}
+
+// ----------------------------------------------------------------------------------------
+// * Adaptive
+// device: "mobile" | "desktop" 
+@mixin device ($device) {
+  @at-root .#{$device} {
     @content;
   }
 }

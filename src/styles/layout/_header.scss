@@ -58,9 +58,6 @@
 // ----------------------------------------------------------------------------------------
 
 .header-drawer {
-//   width: 40%;
-//   position: relative;
-//   text-align: right;
 }
 
 // ----------------------------------------------------------------------------------------
@@ -87,22 +84,42 @@
   position: absolute;
   right: 0;
   top: 22px;
+}
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  row-gap: 3.4rem;
+@include device("desktop") {
+  .drawer-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 3.4rem;
+  
+    width: 22rem;
+    padding: 2.4rem 1.7rem;
+    text-align: left;
+  
+    background-color: $white102;
+    border: 1px solid $white105;
+    border-radius: 4px;
+  
+    backdrop-filter: blur(2px);
+    color: $white;
+  }
+}
 
-  width: 22rem;
-  padding: 2.4rem 1.7rem;
-  text-align: left;
-
-  background-color: $white102;
-  border: 1px solid $white105;
-  border-radius: 4px;
-
-  backdrop-filter: blur(2px);
-  color: $white;
+@include device("mobile") {
+  .drawer-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: max-content;
+    background-color: $white;
+    z-index: -1;
+    margin-top: $HEADER_height;
+    padding: 1em;
+  }
 }
 
 // ----------------------------------------------------------------------------------------
@@ -121,40 +138,39 @@
 
 // ----------------------------------------------------------------------------------------
 
-.nav-pages {
-  display: flex;
-  flex-direction: column;
-  row-gap: 2.4rem;
+@include device("desktop") {
+  .nav-pages {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
 
-  h3 {
-    font-size: $fontSize-16;
-    color: $white;
-  }
-}
-
-.pages-list {
-  padding-left: 1rem;
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.2rem;
-
-  li {
-    display: inline-flex;
+    h3 {
+      font-size: $fontSize-16;
+      color: $white;
+    }
   }
 
-  .btn {
+  .pages-list {
+    padding-left: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.2rem;
+
+    li {
+      display: inline-flex;
+    }
+
+    .btn {
+      @include navBtnStyle;
+    }
+  }
+
+  .btn-language {
     @include navBtnStyle;
   }
-}
-// ----------------------------------------------------------------------------------------
 
-.btn-language {
-  @include navBtnStyle;
-}
-
-// ----------------------------------------------------------------------------------------
-
-.more-links-wrap {
-  width: 100%;
+  .more-links-wrap {
+    width: 100%;
+  }
 }
