@@ -1,27 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { links } from 'routes/links';
+import React, { useRef, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import IconButton from 'components/ui/IconButton';
+import { LinkButton, LinkButtonHref } from 'view/header/header_nav_button';
 
-/**
- * TODO: refactor: 형태가 Dropdown과 비슷함
- */
-
-interface LinkButtonProps {
-  name: keyof typeof links;
-  disabled?: boolean;
-  onClick?: () => void;
-};
-
-const LinkButton = ({ name, disabled, onClick }: LinkButtonProps ) => {
-  return <Link className='btn' to={links[name]} onClick={onClick} aria-disabled={disabled}>
-    {name}
-  </Link>
-}
-
+// TODO: refactor: 형태가 Dropdown과 비슷함
 const HeaderDrawer = () => {
-  // const refDrawer = useRef<HTMLDivElement>(null);
+  const refDrawer = useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = useState(false);
   const location = useLocation();
 
@@ -35,11 +20,23 @@ const HeaderDrawer = () => {
 
   useEffect(() => {
     onCloseDrawer();
-  }, [location.pathname])
+  }, [location.pathname]);
+  
+  useEffect(() =>{
+    document.addEventListener('click', (event) => {
+      if (!refDrawer.current?.contains(event.target as Node)) {
+        onCloseDrawer();
+      }
+    });
+
+    return () => {
+      document.removeEventListener('click', ()=>{});
+    }
+  },[])
 
   return (
     <div
-      // ref={refDrawer}
+      ref={refDrawer}
       className="header-drawer"
       aria-expanded={expanded}
     >
@@ -57,7 +54,7 @@ const HeaderDrawer = () => {
           </nav>
           <button className='btn btn-language'>en/ko</button>
           <nav className="nav-more">
-            <a href={links.github} rel='noreferrer' onClick={onCloseDrawer} target="_blank" className="btn">github</a>
+            <LinkButtonHref name='github' onClick={onCloseDrawer} />
           </nav>
         </div>
       </div>
