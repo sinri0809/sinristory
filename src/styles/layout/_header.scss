@@ -11,20 +11,18 @@
 
   width: 100%;
   height: inherit;
+  padding: 0 3.6rem;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: $layerFix;
-
-  padding-left: 3.6rem;
-  padding-right: 3.6rem;
 }
 
 // ----------------------------------------------------------------------------------------
 
 .header-title {
-  width: 40%;
+  // width: 40%;
 
   .title {
     font-family: 'Courier New', Courier, monospace;
@@ -33,15 +31,36 @@
   }
 }
 
-// ----------------------------------------------------------------------------------------
-// header theme
-// icon
+@include 모바일 {
+  .header-title .title {
+    width: 100px;
+  }
+}
+
 // ----------------------------------------------------------------------------------------
 
-.header-drawer-container {
-  width: 40%;
-  position: relative;
-  text-align: right;
+.header-theme {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+  pointer-events: none;
+
+ .btn-switch-theme{
+    pointer-events: visible;
+ } 
+}
+
+// ----------------------------------------------------------------------------------------
+
+.header-drawer {
+//   width: 40%;
+//   position: relative;
+//   text-align: right;
 }
 
 // ----------------------------------------------------------------------------------------
@@ -88,11 +107,6 @@
 
 // ----------------------------------------------------------------------------------------
 
-@mixin navCategoryStyle {
-  font-size: $fontSize-16;
-  color: $white;
-}
-
 @mixin navBtnStyle {
   text-decoration: underline;
   font-size: $fontSize-14;
@@ -113,7 +127,8 @@
   row-gap: 2.4rem;
 
   h3 {
-    @include navCategoryStyle;
+    font-size: $fontSize-16;
+    color: $white;
   }
 }
 
@@ -142,31 +157,4 @@
 
 .more-links-wrap {
   width: 100%;
-
-  details {
-    width: 100%;
-
-    summary {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      @include navCategoryStyle;
-    }
-  }
-}
-
-.more-links-list {
-  padding-left: 1rem;
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.2rem;
-
-  li {
-    display: inline-flex;
-  }
-
-  .btn {
-    @include navBtnStyle;
-  }
 }

@@ -24,8 +24,16 @@
     display: flex;
   }
 
-  .search-input {
+  .search-input-container {
     flex: 1 1 auto;
+
+    .search-input-wrap {
+      margin-left: 1rem;
+    }
+    
+    .search-input {
+      color: $darkgray100;
+    }
   }
 
   .user-profile {

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import MainRouter from 'routes/Router';
 
-import Header from 'components/layout/Header';
+import Header from 'view/header/header';
 import BackgroundSea from 'components/common/BackgroundSea';
 
 import { isPhone } from 'tools/devices';

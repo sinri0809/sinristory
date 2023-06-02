@@ -149,6 +149,13 @@ input {
   }
 }
 
+details, summary {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  
+}
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,

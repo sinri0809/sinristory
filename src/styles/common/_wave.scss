@@ -20,7 +20,7 @@ svg.waves {
 
 $sea_delay: 0s;
 // ! on in Production mode
-$sea_animation: 12s;
+$sea_animation: 0s;
 
 @keyframes move_wave_1 {
   0% {

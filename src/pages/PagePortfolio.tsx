@@ -353,11 +353,13 @@ const PagePortfolio = () => {
                     <div className="bar-drawer">
                       <IconButton data='icon-hamburger' name='app bar' />
                     </div>
-                    <div className="search-input">
+                    <div className="search-input-container">
                       <div className="search-input-wrap">
                         <input
+                          className='search-input'
                           type="text"
                           value={""}
+                          readOnly
                           placeholder='검색어 입력'
                         />
                       </div>
@@ -368,12 +370,13 @@ const PagePortfolio = () => {
                   </div>
                 </div>
               </ItemUIComponent>
-              <ItemUIComponent title="Accordion">to be continued</ItemUIComponent>
+              {/* <ItemUIComponent title="Accordion">to be continued</ItemUIComponent>
               <ItemUIComponent title="FullScreen">to be continued</ItemUIComponent>
               <ItemUIComponent title="Loading">to be continued</ItemUIComponent>
               <ItemUIComponent title="Flag/Toast">to be continued</ItemUIComponent>
               <ItemUIComponent title="Date">to be continued</ItemUIComponent>
               <ItemUIComponent title="Alert">to be continued</ItemUIComponent>
+              <ItemUIComponent title="Pagination">to be continued</ItemUIComponent> */}
             </ul>
           </div>
         </div>
