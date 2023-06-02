@@ -16,10 +16,10 @@ const MainRouter = () => {
         <Route path={links.home} element={<PageHome />} />
         <Route path={links.profile} element={<PageProfile />} />
         <Route path={links.portfolio} element={<PagePortfolio />}>
-          <Route
+          {/* <Route
             path="portfolio_detail"
             element={<div>포트폴리오 상세페이지</div>}
-          />
+          /> */}
         </Route>
         <Route path={links.gallery} element={<PageGallery />} />
       </Routes>

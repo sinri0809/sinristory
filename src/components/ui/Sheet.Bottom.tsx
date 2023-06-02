@@ -4,11 +4,18 @@ import GlobalPortal from "components/container/Portals";
 
 import { List, Item } from "components/layout/List";
 
+/**
+ * 1. Standard 고정
+ * 2. Modal 
+ * 3. Expanding
+ */
+
 interface Props extends DialogHTMLAttributes<HTMLDialogElement> {
   onClose?: () => void;
   control?: "basic" | "dnd";
 }
 
+// modal
 const BottomSheet = (props: Props) => {
   const { control = "basic"} = {...props};
   const bottomSheetRef = useRef<HTMLDivElement>(null);
