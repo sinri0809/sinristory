@@ -1,98 +1,64 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { links } from 'routes/links';
 
-import Icon from 'components/icons/Icon';
+import IconButton from 'components/ui/IconButton';
 
 /**
  * TODO: refactor: 형태가 Dropdown과 비슷함
  */
 
-const HeaderDrawer = () => {
-  const refDrawer = useRef<HTMLDivElement>(null);
-  const [expanded, setExpanded] = useState(false);
+interface LinkButtonProps {
+  name: keyof typeof links;
+  disabled?: boolean;
+  onClick?: () => void;
+};
 
-  const closeDrawer = (event: any) => {
-    if (event.relatedTarget) {
-      // FIXME: item 누를 때 닫혀서 임시로 막아둠
-      console.debug(event.relatedTarget);
-      return;
-    } else {
-      setExpanded(false);
-    }
+const LinkButton = ({ name, disabled, onClick }: LinkButtonProps ) => {
+  return <Link className='btn' to={links[name]} onClick={onClick} aria-disabled={disabled}>
+    {name}
+  </Link>
+}
+
+const HeaderDrawer = () => {
+  // const refDrawer = useRef<HTMLDivElement>(null);
+  const [expanded, setExpanded] = useState(false);
+  const location = useLocation();
+
+  const onCloseDrawer = () => {
+    setExpanded(false)
   };
 
-  const toggleDrawer = () => {
+  const onToggleDrawer = () => {
     setExpanded(!expanded);
   };
 
   useEffect(() => {
-    setExpanded(false);
-  }, []);
+    onCloseDrawer();
+  }, [location.pathname])
 
   return (
     <div
-      ref={refDrawer}
+      // ref={refDrawer}
       className="header-drawer"
-      onBlur={closeDrawer}
       aria-expanded={expanded}
     >
-      <button className="btn btn-drawer-trigger" onClick={toggleDrawer}>
-        <Icon data="icon-drawer" />
-      </button>
+      <IconButton data='icon-drawer' name='페이지' className='btn-drawer-trigger' onClick={onToggleDrawer} />
       <div className="drawer-container">
         <div className="drawer-wrap">
           <nav className="nav-pages">
             <h3 className="font-bold">Pages</h3>
             <ul className="pages-list">
-              <li>
-                <Link className="btn" to={links.home}>
-                  home
-                </Link>
-              </li>
-              <li>
-                <Link className="btn" to={links.profile}>
-                  profile
-                </Link>
-              </li>
-              <li>
-                <Link className="btn" to={links.portfolio}>
-                  portfolio
-                </Link>
-              </li>
-              <li>
-                <Link className="btn" aria-disabled to={links.gallery}>
-                  gallery
-                </Link>
-              </li>
+              <li><LinkButton name="home" /></li>
+              <li><LinkButton name="profile" /></li>
+              <li><LinkButton name="portfolio" /></li>
+              <li><LinkButton name="gallery" disabled /></li>
             </ul>
           </nav>
-          {/* <button className='btn btn-language'>en/ko</button> */}
-          <div className="more-links-wrap">
-            <details>
-              <summary>
-                <span>more</span>
-                <Icon data="icon-arrow-down" />
-              </summary>
-              <ul className="more-links-list">
-                <li>
-                  <a href="#0" target="_blank" className="btn">
-                    velog
-                  </a>
-                </li>
-                <li>
-                  <a href="#0" target="_blank" className="btn">
-                    github
-                  </a>
-                </li>
-                <li>
-                  <a href="#0" target="_blank" className="btn">
-                    notion
-                  </a>
-                </li>
-              </ul>
-            </details>
-          </div>
+          <button className='btn btn-language'>en/ko</button>
+          <nav className="nav-more">
+            <a href={links.github} rel='noreferrer' onClick={onCloseDrawer} target="_blank" className="btn">github</a>
+          </nav>
         </div>
       </div>
     </div>

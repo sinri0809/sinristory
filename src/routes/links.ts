@@ -3,4 +3,6 @@ export const links = {
   profile: "/profile",
   portfolio: "/portfolio",
   gallery: "/rest",
+
+  github: 'https://github.com/sinri0809',
 }

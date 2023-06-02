@@ -17,8 +17,7 @@
   align-items: center;
   z-index: $layerFix;
 
-  padding-left: 3.6rem;
-  padding-right: 3.6rem;
+  padding: 0 3.6rem;
 }
 
 // ----------------------------------------------------------------------------------------
@@ -30,6 +29,12 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: $fontSize-20;
     color: $white;
+  }
+}
+
+@include 모바일 {
+  .header-title .title {
+    display: none;
   }
 }
 
@@ -88,11 +93,6 @@
 
 // ----------------------------------------------------------------------------------------
 
-@mixin navCategoryStyle {
-  font-size: $fontSize-16;
-  color: $white;
-}
-
 @mixin navBtnStyle {
   text-decoration: underline;
   font-size: $fontSize-14;
@@ -113,7 +113,8 @@
   row-gap: 2.4rem;
 
   h3 {
-    @include navCategoryStyle;
+    font-size: $fontSize-16;
+    color: $white;
   }
 }
 
@@ -142,31 +143,4 @@
 
 .more-links-wrap {
   width: 100%;
-
-  details {
-    width: 100%;
-
-    summary {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      @include navCategoryStyle;
-    }
-  }
-}
-
-.more-links-list {
-  padding-left: 1rem;
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.2rem;
-
-  li {
-    display: inline-flex;
-  }
-
-  .btn {
-    @include navBtnStyle;
-  }
 }
