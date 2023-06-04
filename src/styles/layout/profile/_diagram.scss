@@ -4,8 +4,10 @@
   // temp size
   width: 1028px;
   height: 716px;
-  // ? area
-  // background-color: rgba(255, 0, 0, 0.452);
+
+  @include 모바일 {
+    width: 100%;
+  }
 }
 
 .tree-diagram {
@@ -20,7 +22,7 @@
   background-color: $black;
   color: $white;
 
-  transition: background-color 0.2s, transform 0.2s;
+  transition: all 0.2s;
 }
 
 // ----------------------------------------------------------------------------------------

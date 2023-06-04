@@ -5,13 +5,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  overflow: scroll;
+  padding: 1rem;
+
+  @include 모바일 {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }
 
 .dashboard-container {
   border: 2px solid $white102;
   background-color: $white101;
-  border-radius: 32px;
+  border-radius: 3.2rem;
   overflow: hidden;
+  width: 100%;
+  max-width: $PCContentMaxWidth;
+
+
 }
 
 .dashboard-wrap {
@@ -27,28 +39,46 @@
 }
 
 .dashboard-wrap {
-  padding: 24px;
+  padding: 2.4rem;
   display: grid;
   grid-template-areas:
     'R00 R01'
     'R10 R01'
     'R10 R11';
-  grid-template-columns: 1028px 240px;
-  gap: 24px;
+  grid-template-columns: auto 24rem;
+  gap: 2.4rem;
 
   .dashboard-content[dashboard-index='0'] {
     grid-area: R00;
   }
   .dashboard-content[dashboard-index='1'] {
     grid-area: R01;
-    height: 460px;
+    height: 46rem;
   }
   .dashboard-content[dashboard-index='2'] {
     grid-area: R10;
   }
   .dashboard-content[dashboard-index='3'] {
     grid-area: R11;
-    height: 310px;
+    height: 31rem;
+  }
+
+  @include 모바일 {
+    grid-template-areas:
+      'R00' 
+      'R10' 
+      'R01' 
+      'R11' 
+    ;
+    grid-template-columns: 100%;
+
+    .dashboard-content[dashboard-index='1'] {
+      height: 20vh;
+    }
+
+    .dashboard-content[dashboard-index='2'] {
+      height: 50vh;
+    }
   }
 }
 
@@ -57,6 +87,8 @@
   border: 2px solid rgba(244, 248, 255, 0.2);
   border-radius: 20px;
   overflow: scroll;
+
+  @include webkit-scrollbar;
 }
 
 // ----------------------------------------------------------------------------------------
@@ -64,6 +96,3 @@
 .dashboard-content[dashboard-index='0'] {
   padding: 1.6rem;
 }
-
-// .dashboard-content[dashboard-index='2'] {
-// }
