@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import IconButton from 'components/ui/IconButton';
+import IconButton from 'components/icons/IconButton';
 import { LinkButton, LinkButtonHref } from 'view/header/header_nav_button';
 
 // TODO: refactor: 형태가 Dropdown과 비슷함

@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 
 import GlobalPortal from 'components/container/Portals';
 
-import IconButton from './IconButton';
+import IconButton from 'components/icons/IconButton';
 
 interface DialogProps {
   title?: string;

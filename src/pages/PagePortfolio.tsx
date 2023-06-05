@@ -13,7 +13,7 @@ import Progress, {
   ProgressBar,
   ProgressInformation,
 } from 'components/ui/Progress';
-import IconButton from 'components/ui/IconButton';
+import IconButton from 'components/icons/IconButton';
 import Tab, { TabList, TabContent } from 'components/ui/Tab';
 import Tooltip, { TooltipDefault, TooltipMouse } from 'components/ui/Tooltip';
 import Radio from 'components/ui/Radio';

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-import IconButton from 'components/ui/IconButton';
+import IconButton from 'components/icons/IconButton';
 
 import { LinkButton } from 'view/header/header_nav_button';
 import HeaderDrawer from 'view/header/header_drawer';
