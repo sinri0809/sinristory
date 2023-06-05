@@ -14,19 +14,25 @@ interface Props extends TooltipContainer {
   tooltipMessage: string;
 }
 
-const TooltipDefault = (props: Props) => {
+interface DefaultProps extends Props {
+  // TODO: 방향별 애니메이션 추가 
+  direction?: 'up' | "down" | "left" | "right";
+}
+
+const TooltipDefault = (props: DefaultProps) => {
   return (
     <>
       <div
         className="tooltip-target"
         aria-describedby={`tooltip-${props.index}`}
-      >
+        >
         {props.children}
       </div>
       <div
         role="tooltip"
         id={`tooltip-${props.index}`}
         itemType="default"
+        data-direct={props.direction ?? "down"}
         className="tooltip-wrap"
       >
         <span className="tooltip-message">{props.tooltipMessage}</span>

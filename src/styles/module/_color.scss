@@ -45,11 +45,11 @@
   --red: #ff0700;
 
   .light {
-    --ui-presenter-bg: var(--white100);
+    --font-color-plain: var(--black100);
   }
 
   .dark {
-    --ui-presenter-bg: var(--night100);
+    --font-color-plain: var(--white100);
 
     // accent colors
     --day100: var(--night100);
@@ -89,5 +89,6 @@ $blue205: var(--blue205);
 $orange: var(--orange);
 $red: var(--red);
 
-// button color
-$ui_presenter_background: var(--ui-presenter-bg); // not used now
+// ----------------------------------------------------------------------------------------
+
+$fontColorPlain: var(--font-color-plain);

@@ -25,7 +25,14 @@
   .title {
     font-family: 'Courier New', Courier, monospace;
     font-size: $fontSize-20;
+    font-weight: $fontBold;
     color: $white;
+
+    @include device_desktop {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
 
     @include device_mobile {
       width: 100px;
@@ -149,18 +156,6 @@
 
 // ----------------------------------------------------------------------------------------
 
-.more-links-wrap {
-  @include device_desktop {
-    width: 100%;
-  }
-}
-
-.btn-language {
-  @include device_mobile {
-    margin: 5.6rem 0;
-  }
-}
-
 .nav-pages {
   @include device_desktop {
     display: flex;
@@ -197,5 +192,34 @@
     display: flex;
     flex-direction: column;
     row-gap: 1.6rem;
+    align-items: flex-end;
+
+    li {
+      width: 100%;
+      // transition: width 0.1s;
+      // width: 50%;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------------------
+
+.nav-control {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .font-bold {
+    font-size: $fontSize-16;
+    opacity: 0.8;
+  }
+
+  @include device_mobile {
+    font-size: $fontSize-14;
+    margin: 5.6rem 0;
+    padding: 0 5.2rem;
+    flex-direction: row-reverse;
+    color: $white;
   }
 }
