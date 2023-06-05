@@ -40,7 +40,7 @@ const HeaderDrawer = () => {
       className="header-drawer"
       aria-expanded={expanded}
     >
-      <IconButton data='icon-drawer' name='페이지' className='btn-drawer-trigger' onClick={onToggleDrawer} />
+      <IconButton toggle={expanded} data='icon-drawer' name='페이지' className='btn-drawer-trigger' onClick={onToggleDrawer} />
       <div className="drawer-container">
         <div className="drawer-wrap">
           <nav className="nav-pages">
