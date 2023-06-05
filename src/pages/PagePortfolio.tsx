@@ -59,7 +59,6 @@ const PagePortfolio = () => {
   const [inputValue1, setInputValue1] = useState('');
   const [inputValue2, setInputValue2] = useState('');
   const [inputValue3, setInputValue3] = useState('');
-  const [inputValue4, setInputValue4] = useState('');
 
   const [dialog, setDialog] = useState(false);
   const [popup, setPopup] = useState(false);
@@ -126,17 +125,10 @@ const PagePortfolio = () => {
                 </Drawer>
               </ItemUIComponent>
               <ItemUIComponent index={2} >
-                <TextField
-                  value={inputValue4}
-                  onChange={(e) => {
-                    setInputValue4(e.target.value);
-                  }}
-                />
                 <Button text='BottomSheet 호출' onClick={()=>setBottomSheet(!bottomSheet)} />
                 {bottomSheet && <BottomSheet onClose={()=> setBottomSheet(false)} />}
                 <Button text='BottomSheet slider 호출' onClick={()=>setBottomSheetSlider(!bottomSheetSlider)} color='accent' />
                 {bottomSheetSlider && <BottomSheet control='dnd' onClose={()=> setBottomSheetSlider(false)} />}
-
               </ItemUIComponent>
               <ItemUIComponent index={3} >
                 <Slider 
@@ -224,7 +216,6 @@ const PagePortfolio = () => {
                     data='icon-drawer'
                     name='example icon'
                   />
-
                 </div>
               </ItemUIComponent>
               <ItemUIComponent index={9} >
@@ -249,6 +240,12 @@ const PagePortfolio = () => {
                   size="large"
                   checked={checked}
                   onChange={onChangeSwitch}
+                />
+                 <Switch
+                  size="large"
+                  disabled
+                  checked={false}
+                  onChange={()=>{}}
                 />
               </ItemUIComponent>
               <ItemUIComponent index={11} >
