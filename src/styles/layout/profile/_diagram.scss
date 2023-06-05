@@ -23,6 +23,10 @@
   color: $white;
 
   transition: all 0.2s;
+
+  &[aria-expanded='true'] {
+    background-color: $day;
+  }
 }
 
 // ----------------------------------------------------------------------------------------

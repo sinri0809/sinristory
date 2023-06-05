@@ -1,69 +1,66 @@
 .profile {
   // FIXME: this property is same with home
-  height: calc(100% - $HEADER_height);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  overflow: scroll;
-  padding: 1rem;
-
-  @include 모바일 {
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
+  // height: calc(100vh - $HEADER_height);
+  position: relative;
+  // overflow: scroll;
+  // padding: 1rem;
 }
 
 .dashboard-container {
+  position: relative;
+
   border: 2px solid $white102;
   background-color: $white101;
   border-radius: 3.2rem;
   overflow: hidden;
+
   width: 100%;
   max-width: $PCContentMaxWidth;
+  margin: 0 auto;
 
-
+  @include 모바일 {
+    border: none;
+  }
 }
 
 .dashboard-wrap {
   color: $white;
-
   background: linear-gradient(
     180deg,
     rgba(244, 248, 255, 0.4) 0%,
     rgba(244, 248, 255, 0) 100%
   );
   backdrop-filter: blur(6px);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
-}
 
-.dashboard-wrap {
-  padding: 2.4rem;
+  padding: 2rem;
+  height: calc(100vh - $HEADER_height);
+  max-height: 84.2rem;
+  
   display: grid;
   grid-template-areas:
     'R00 R01'
     'R10 R01'
     'R10 R11';
   grid-template-columns: auto 24rem;
-  gap: 2.4rem;
+  grid-template-rows: 5.4rem auto;
+  gap: 2rem;
 
   .dashboard-content[dashboard-index='0'] {
     grid-area: R00;
   }
   .dashboard-content[dashboard-index='1'] {
     grid-area: R01;
-    height: 46rem;
   }
   .dashboard-content[dashboard-index='2'] {
     grid-area: R10;
   }
   .dashboard-content[dashboard-index='3'] {
     grid-area: R11;
-    height: 31rem;
   }
 
   @include 모바일 {
+    max-height: initial;
+    
     grid-template-areas:
       'R00' 
       'R10' 
@@ -71,28 +68,36 @@
       'R11' 
     ;
     grid-template-columns: 100%;
+    gap: 1rem;
+    grid-template-rows: 5.4rem 50vh auto;
 
-    .dashboard-content[dashboard-index='1'] {
-      height: 20vh;
-    }
-
-    .dashboard-content[dashboard-index='2'] {
-      height: 50vh;
+    .dashboard-content {
     }
   }
 }
+
+// ----------------------------------------------------------------------------------------
 
 .dashboard-content {
   background: rgba(244, 248, 255, 0.12);
   border: 2px solid rgba(244, 248, 255, 0.2);
   border-radius: 20px;
   overflow: scroll;
-
-  @include webkit-scrollbar;
+  // @include webkit-scrollbar;
 }
 
-// ----------------------------------------------------------------------------------------
-
 .dashboard-content[dashboard-index='0'] {
+  display: flex;
+  padding-left: 1.6rem;
+  overflow: scroll;
+
+  .sort-list {
+    flex-wrap: nowrap;
+  }
+}
+
+
+.dashboard-content[dashboard-index='3'] {
   padding: 1.6rem;
+
 }

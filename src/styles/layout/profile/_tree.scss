@@ -1,16 +1,22 @@
 // #dashboard_tree
 .dashboard-tree {
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
 .tree-title {
-  margin-top: 2.4rem;
-  margin-bottom: 2.4rem;
+  margin: 2.4rem 0;
 
+  width: fit-content;
   font-size: $fontSizeH2;
   font-weight: $fontMedium;
   color: $white;
   background-color: $day;
+}
+
+.tree-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.2rem;
 }
 
 .tree-list {
@@ -22,21 +28,40 @@
     padding-left: 1.2em;
     overflow: hidden;
   }
-
-  transition: opacity 0.2s;
 }
 
 .tree-item {
   font-size: $fontSize-16;
+  height: 1em;
+
+  &:has(.btn-toggle-tree[aria-expanded='true']) {
+    height: auto;
+  }
 }
 
 // ----------------------------------------------------------------------------------------
 
 .btn-toggle-tree {
-  font-size: inherit;
+  width: 100%;
+  justify-content: flex-start;
   font-weight: $fontMedium;
-  color: $black;
+  height: 1em;
+  color: $fontColorPlain;
+
+  &:hover {
+    background-color: $white101;
+  }
+
+  &:active {
+    background-color: $white103;
+  }
+
+  &[aria-expanded='true'] {
+    background-color: $day;
+  }
 }
+
+// ----------------------------------------------------------------------------------------
 
 .btn-toggle-tree[aria-expanded='false'] + .tree-list {
   visibility: hidden;
@@ -50,9 +75,12 @@
 .btn-toggle-tree[aria-expanded='true'] + .tree-list {
   visibility: visible;
   opacity: 1;
+  margin: 1.2rem 0;
 
   .tree-item {
     animation-name: accordion-expanded;
     animation-duration: 0.16s;
   }
 }
+
+// ----------------------------------------------------------------------------------------
