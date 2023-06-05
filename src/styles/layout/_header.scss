@@ -11,12 +11,19 @@
 
   width: 100%;
   height: inherit;
-  padding: 0 3.6rem;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: $layerFix;
+
+  @include device_desktop {
+    padding: 0 3.6rem;
+  }
+
+  @include device_mobile {
+    padding: 0 2rem;
+  }
 }
 
 // ----------------------------------------------------------------------------------------
