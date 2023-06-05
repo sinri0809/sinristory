@@ -6,7 +6,6 @@
 
 .portfolio {
   .sort-container {
-
     justify-content: center;
     align-items: center;
     margin-top: 6rem;
@@ -163,5 +162,13 @@
 
   &:hover {
     border-color: $white105;
+  }
+}
+
+// ----------------------------------------------------------------------------------------
+
+.portfolio-item {
+  .tooltip-container {
+    margin: 24px;
   }
 }

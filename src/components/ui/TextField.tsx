@@ -1,6 +1,6 @@
 import React, { InputHTMLAttributes, forwardRef, Ref } from 'react';
 
-import IconButton from './IconButton';
+import IconButton from 'components/icons/IconButton';
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   requiredMessage?: string;

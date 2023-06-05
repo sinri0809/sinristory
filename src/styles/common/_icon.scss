@@ -31,7 +31,7 @@
 }
 
 @mixin btn-state($state) {
-  @at-root [#{$state}] & {
+  @at-root .btn[#{$state}] & {
     @content;
   }
 }
@@ -200,7 +200,9 @@
   }
 
   @include btn-hover {
-    background-color: $white102;
+    @include device_desktop {
+      background-color: $white102;
+    }
   }
 
   @include btn-active {
@@ -208,8 +210,7 @@
     border-color: $white103;
   }
 
-  @include btn-state('aria-expanded=true') {
-    background-color: transparent;
+  @include btn-state('data-toggle=true') {
     .rect00 {
       transform: translate(-2px, -2px);
     }
@@ -236,6 +237,14 @@
     }
     .rect22 {
       transform: translate(2px, 2px);
+    }
+
+    @include device_desktop {
+      background-color: transparent;
+    }
+
+    @include device_mobile {
+      background-color: $white101;
     }
   }
 }
@@ -316,17 +325,19 @@
 
 .icon-tree-index {
   .rect {
-    // transition: height 0.1s;
+    opacity: 0.9;
+    fill: $fontColorPlain;
+    transition: height 0.1s;
   }
 
   // spread
-  @include btn-state('aria-expanded=true') {
+  @include btn-state('aria-expanded=false') {
     .rect {
       height: 10px;
     }
   }
   // folded
-  @include btn-state('aria-expanded=false') {
+  @include btn-state('aria-expanded=true') {
     .rect {
       transform: translateY(4px);
       height: 2px;

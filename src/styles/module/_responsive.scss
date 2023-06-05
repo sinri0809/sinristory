@@ -26,8 +26,20 @@ $mobile-min: 0px;
 // ----------------------------------------------------------------------------------------
 // * Adaptive
 // device: "mobile" | "desktop" 
-@mixin device ($device) {
-  @at-root .#{$device} {
+// @mixin device ($device) {
+//   @at-root .#{$device} {
+//     @content;
+//   }
+// }
+
+@mixin device_mobile {
+  @at-root .mobile & {
+    @content;
+  }
+}
+
+@mixin device_desktop {
+  @at-root .desktop & {
     @content;
   }
 }

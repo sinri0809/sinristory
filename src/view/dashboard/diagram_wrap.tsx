@@ -28,7 +28,7 @@ const DiagramComponent = (props: Props) => {
   let expanded = props['aria-expanded'] ?? false;
 
   const toggleFocus = (focus?: boolean) => {
-    console.debug(expanded);
+    // console.debug(expanded);
     const element = document.querySelector(`.${props.className}`);
 
     if (expanded) {

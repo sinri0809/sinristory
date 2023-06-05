@@ -85,4 +85,14 @@
       transform: translateX(100%);
     }
   }
+
+  input:disabled + .slider {
+    opacity: 0.5;
+    background-color: $gray200;
+    cursor: not-allowed;
+
+    &::before {
+      background-color: $gray;
+    }
+  }
 }

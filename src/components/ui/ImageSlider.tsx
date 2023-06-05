@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 import { AreaHTMLAttributes, ImgHTMLAttributes } from 'react';
-import IconButton from './IconButton';
+import IconButton from 'components/icons/IconButton';
 import ImageLoader from 'components/container/ImageLoader';
 import styled from '@emotion/styled';
 

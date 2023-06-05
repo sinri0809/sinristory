@@ -22,18 +22,21 @@
 // ----------------------------------------------------------------------------------------
 
 .header-title {
-  // width: 40%;
-
   .title {
     font-family: 'Courier New', Courier, monospace;
     font-size: $fontSize-20;
+    font-weight: $fontBold;
     color: $white;
-  }
-}
 
-@include 모바일 {
-  .header-title .title {
-    width: 100px;
+    @include device_desktop {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    @include device_mobile {
+      width: 100px;
+    }
   }
 }
 
@@ -57,37 +60,26 @@
 
 // ----------------------------------------------------------------------------------------
 
-.header-drawer {
-}
-
-// ----------------------------------------------------------------------------------------
-
-// state
-.header-drawer {
-  .drawer-container {
-    position: relative;
-    visibility: hidden;
-  }
-
-  &[aria-expanded='true'] {
-    .drawer-container {
-      visibility: visible;
-    }
-  }
-}
-
 .btn-drawer-trigger {
   position: relative;
 }
 
-.drawer-wrap {
-  position: absolute;
-  right: 0;
-  top: 22px;
+.drawer-container {
+  position: relative;
+  visibility: hidden;
+
+  @at-root [aria-expanded='true'] & {
+    visibility: visible;
+  }
 }
 
-@include device("desktop") {
-  .drawer-wrap {
+.drawer-wrap {
+
+  @include device_desktop {
+    position: absolute;
+    right: 0;
+    top: 22px;
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -104,42 +96,68 @@
     backdrop-filter: blur(2px);
     color: $white;
   }
-}
 
-@include device("mobile") {
-  .drawer-wrap {
+  @include device_mobile {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    
     width: 100vw;
-    height: max-content;
-    background-color: $white;
+    height: 100vh;
+    padding-top: $HEADER_height;
+    padding:  $HEADER_height 1rem 1.6rem 1rem;
+    
     z-index: -1;
-    margin-top: $HEADER_height;
-    padding: 1em;
+    
+    background-color: rgba(46, 50, 56, 0.8);
+    backdrop-filter: blur(6px);
   }
 }
 
 // ----------------------------------------------------------------------------------------
 
-@mixin navBtnStyle {
-  text-decoration: underline;
-  font-size: $fontSize-14;
+.drawer-container .btn {
   color: $white;
-  font-weight: $fontRegular;
+  
+  @include device_desktop {
+    font-size: $fontSize-14;
+    font-weight: $fontRegular;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+    
+    &[aria-disabled] {
+      opacity: 0.5;
+      cursor: initial;
+      pointer-events: none;
+      user-select: none;
+    }
+  }
 
-  &[aria-disabled] {
-    opacity: 0.5;
-    cursor: initial;
+  @include device_mobile {
+    font-size: $fontSize-18;
+
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 5.2rem;
+    height: 7.2rem;
+    background: linear-gradient(270deg, rgba(244, 248, 255, 0.2) 0%, rgba(244, 248, 255, 0) 100%);
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    
+    &:active {
+      border-color:rgba(244, 248, 255, 0.3);     
+    }
   }
 }
 
 // ----------------------------------------------------------------------------------------
 
-@include device("desktop") {
-  .nav-pages {
+.nav-pages {
+  @include device_desktop {
     display: flex;
     flex-direction: column;
     row-gap: 2.4rem;
@@ -150,7 +168,15 @@
     }
   }
 
-  .pages-list {
+  @include device_mobile {
+    h3 {
+      display: none;
+    }
+  }
+}
+
+.pages-list {
+  @include device_desktop {
     padding-left: 1rem;
 
     display: flex;
@@ -160,17 +186,40 @@
     li {
       display: inline-flex;
     }
+  }
 
-    .btn {
-      @include navBtnStyle;
+  @include device_mobile {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.6rem;
+    align-items: flex-end;
+
+    li {
+      width: 100%;
+      // transition: width 0.1s;
+      // width: 50%;
     }
   }
+}
 
-  .btn-language {
-    @include navBtnStyle;
+// ----------------------------------------------------------------------------------------
+
+.nav-control {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .font-bold {
+    font-size: $fontSize-16;
+    opacity: 0.8;
   }
 
-  .more-links-wrap {
-    width: 100%;
+  @include device_mobile {
+    font-size: $fontSize-14;
+    margin: 5.6rem 0;
+    padding: 0 5.2rem;
+    flex-direction: row-reverse;
+    color: $white;
   }
 }
