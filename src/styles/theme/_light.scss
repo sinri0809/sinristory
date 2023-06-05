@@ -4,7 +4,6 @@
     color: $black;
   }
 
-  svg.sea {
     .stars {
       visibility: hidden;
     }
@@ -12,5 +11,4 @@
     .theme-sea {
       fill: url(#theme_light);
     }
-  }
 }

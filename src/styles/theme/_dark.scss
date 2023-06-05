@@ -6,13 +6,11 @@
 
   .background-sea {
     background: $night_sunset;
-    svg.sea {
-      .stars {
-        visibility: visible;
-        animation-name: twinkle;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-      }
+    .stars {
+      visibility: visible;
+      animation-name: twinkle;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
     }
   }
 }

@@ -25,3 +25,5 @@ src/index.ts
 
 src/reportWebVitals.ts
 src/setupTest.ts
+
+src/components/common/BackgroundSea.tsx
