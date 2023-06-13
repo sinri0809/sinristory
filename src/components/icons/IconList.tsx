@@ -319,73 +319,13 @@ const IconTreeIndex = () => {
   );
 };
 
-const IconMouseHint = () => {
-  return (
-    <svg
-      width="48"
-      height="64"
-      viewBox="0 0 48 64"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g filter="url(#filter0_d_20_1456)">
-        <rect
-          x="4"
-          y="4"
-          width="32"
-          height="48"
-          rx="16"
-          fill="#F4F8FF"
-          fill-opacity="0.2"
-          shape-rendering="crispEdges"
-        />
-      </g>
-      <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M34 20V36C34 43.732 27.732 50 20 50C12.268 50 6 43.732 6 36V20C6 12.6042 11.7347 6.54791 19 6.03516L19 30C19 30.5523 19.4477 31 20 31C20.5523 31 21 30.5523 21 30L21 6.03516C28.2653 6.54791 34 12.6042 34 20ZM4 20C4 11.1634 11.1634 4 20 4C28.8366 4 36 11.1634 36 20V36C36 44.8366 28.8366 52 20 52C11.1634 52 4 44.8366 4 36V20Z"
-        fill="#F4F8FF"
-        fill-opacity="0.8"
-      />
-      <rect x="16" y="21" width="8" height="12" rx="4" fill="#FF0700" />
-      <defs>
-        <filter
-          id="filter0_d_20_1456"
-          x="0"
-          y="0"
-          width="48"
-          height="64"
-          filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
-        >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            type="matrix"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-            result="hardAlpha"
-          />
-          <feOffset dx="4" dy="4" />
-          <feGaussianBlur stdDeviation="4" />
-          <feComposite in2="hardAlpha" operator="out" />
-          <feColorMatrix
-            type="matrix"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.16 0"
-          />
-          <feBlend
-            mode="normal"
-            in2="BackgroundImageFix"
-            result="effect1_dropShadow_20_1456"
-          />
-          <feBlend
-            mode="normal"
-            in="SourceGraphic"
-            in2="effect1_dropShadow_20_1456"
-            result="shape"
-          />
-        </filter>
-      </defs>
-    </svg>
+const IconMouseInstructions = () => {
+  return (<svg width="32" height="48" viewBox="0 0 32 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <title>Icon/Mouse Hover Here</title>
+    <rect className="rect-mouse" width="32" height="48" rx="16" fill="#F4F8FF" fillOpacity="0.6"/>
+    <path fillRule="evenodd" clipRule="evenodd" d="M30 16V32C30 39.732 23.732 46 16 46C8.26801 46 2 39.732 2 32V16C2 8.60425 7.73472 2.54791 15 2.03516L15 26C15 26.5523 15.4477 27 16 27C16.5523 27 17 26.5523 17 26L17 2.03516C24.2653 2.54791 30 8.60425 30 16ZM0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16V32C32 40.8366 24.8366 48 16 48C7.16344 48 0 40.8366 0 32V16Z" fill="#F4F8FF" fill-opacity="0.8"/>
+    <rect x="12" y="17" width="8" height="12" rx="4" fill="#FF0700"/>
+  </svg>
   );
 };
 
@@ -407,7 +347,7 @@ const IconList = {
   'icon-radio': <IconRadio />,
   'icon-checkbox': <IconCheckbox />,
   'icon-tree-index': <IconTreeIndex />,
-  'icon-mouse-hint': <IconMouseHint />,
+  'icon-mouse-instructions': <IconMouseInstructions />,
   'icon-portfolio': <IconPortfolio />,
   'icon-hamburger': <IconHamburger />,
   'icon-user-profile': <IconUserProfile />

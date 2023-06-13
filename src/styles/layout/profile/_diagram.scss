@@ -30,11 +30,10 @@
 }
 
 // ----------------------------------------------------------------------------------------
-
 // state
 .dashboard-diagram {
   // 상단이 접히면 아래가 모두 접히도록
-  [aria-expanded='false'] + .diagram-container {
+  [aria-expanded='false'] ~ .diagram-container {
     visibility: hidden;
 
     & > .tree-diagram {
@@ -42,7 +41,7 @@
     }
   }
   
-  [aria-expanded='true'] + .diagram-container {
+  [aria-expanded='true'] ~ .diagram-container {
     visibility: visible;
 
     & > .tree-diagram {
@@ -53,4 +52,60 @@
   .tree-diagram[focused] {
     background-color: $day;
   }
+}
+
+// ----------------------------------------------------------------------------------------
+// help/instructions
+.dashboard-help { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 1rem;
+}
+
+.dashboard-help-wrap {
+  position: relative;
+}
+
+.help-text {
+  position: absolute;
+  top: -50%;
+  width: max-content;
+  left: -50%;
+  color: $red;
+
+  font-size: $fontSize-14;
+}
+
+$mouse_animation: 2s;
+
+.icon-mouse-instructions {
+  z-index: 9;
+  transform: translateY(150%);
+  
+  animation-name: mouse-move;
+  animation-duration: $mouse_animation;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+
+  .rect-mouse {
+    animation-name: mouse-hover;
+    animation-duration: $mouse_animation;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+  
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.16);
+  }
+}
+
+.icon-dasharray {
+  position: absolute;
+  left: calc(50% - 2px);
+  bottom: -80%;
 }

@@ -18,18 +18,15 @@ const PageProfile = () => {
               <SortItem>UI_maintainence</SortItem>
             </SortList>
           </DashboardWrap>
-
           <DashboardWrap index={1} content="tree"
             role="menu"
             className="dashboard-tree"
           >
             <DashboardTree />
           </DashboardWrap>
-
           <DashboardWrap index={2} content="diagram">
             <DashboardDiagram />
           </DashboardWrap>
-
           <DashboardWrap index={3} content="explain">
             <p>ux engineer is...</p>
           </DashboardWrap>
