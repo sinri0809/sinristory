@@ -52,7 +52,7 @@ const PageHome = () => {
                   <div className="box-top">
                     <h2>
                       /Portfolios<span className="emoji">🎧</span>
-                    </h2>
+                    </h2> 
                     <p>
                       This page, I prepare UI components based on my careers
                     </p>
@@ -61,7 +61,7 @@ const PageHome = () => {
                     <strong>You can find</strong>
                     <ul>
                       <li>
-                        <p>How I organize UI components in Web</p>
+                        <p>How I organize UI components</p>
                       </li>
                     </ul>
                   </div>

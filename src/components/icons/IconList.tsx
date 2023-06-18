@@ -323,7 +323,7 @@ const IconMouseInstructions = () => {
   return (<svg width="32" height="48" viewBox="0 0 32 48" fill="none" xmlns="http://www.w3.org/2000/svg">
     <title>Icon/Mouse Hover Here</title>
     <rect className="rect-mouse" width="32" height="48" rx="16" fill="#F4F8FF" fillOpacity="0.6"/>
-    <path fillRule="evenodd" clipRule="evenodd" d="M30 16V32C30 39.732 23.732 46 16 46C8.26801 46 2 39.732 2 32V16C2 8.60425 7.73472 2.54791 15 2.03516L15 26C15 26.5523 15.4477 27 16 27C16.5523 27 17 26.5523 17 26L17 2.03516C24.2653 2.54791 30 8.60425 30 16ZM0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16V32C32 40.8366 24.8366 48 16 48C7.16344 48 0 40.8366 0 32V16Z" fill="#F4F8FF" fill-opacity="0.8"/>
+    <path fillRule="evenodd" clipRule="evenodd" d="M30 16V32C30 39.732 23.732 46 16 46C8.26801 46 2 39.732 2 32V16C2 8.60425 7.73472 2.54791 15 2.03516L15 26C15 26.5523 15.4477 27 16 27C16.5523 27 17 26.5523 17 26L17 2.03516C24.2653 2.54791 30 8.60425 30 16ZM0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16V32C32 40.8366 24.8366 48 16 48C7.16344 48 0 40.8366 0 32V16Z" fill="#F4F8FF" fillOpacity="0.8" />
     <rect x="12" y="17" width="8" height="12" rx="4" fill="#FF0700"/>
   </svg>
   );

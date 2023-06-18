@@ -41,6 +41,7 @@ const DiagramComponent = (props: Props) => {
   return (
     <button
       role='menuitem'
+      id={props.id}
       className={className}
       aria-expanded={expanded ?? undefined}
       onClick={props.onClick}

@@ -6,16 +6,16 @@ import Popup from 'components/ui/Popup';
 import Button from 'components/ui/Button';
 import Checkbox from 'components/ui/Checkbox';
 
-const PopupWelcome = () => {
-  const popupCookieName = 'sinri_popup_welcome';
+const POPUP_WELCOME_COOKIE = 'sinri_popup_welcome';
 
+const PopupWelcome = () => {
   const [popupOpen, setPopupOpen] = useState(false);
   const [todayUnchecked, setTodayUnchecked] = useState(false);
 
   const onClickAccept = () => {
     setPopupOpen(false);
     if (todayUnchecked) {
-      setCookie(popupCookieName, 1);
+      setCookie(POPUP_WELCOME_COOKIE, 1);
     }
   };
 
@@ -24,7 +24,7 @@ const PopupWelcome = () => {
   }
 
   useEffect(() => {
-    if (hasCookie(popupCookieName)) {
+    if (hasCookie(POPUP_WELCOME_COOKIE)) {
       setPopupOpen(false);
     } else {
       setPopupOpen(true);

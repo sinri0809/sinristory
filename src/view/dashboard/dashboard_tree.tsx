@@ -1,49 +1,38 @@
 import React from 'react';
-import { useRecoilState } from 'recoil';
 
+import { useRecoilValue } from 'recoil';
 import { skillListState } from 'store/dashboard.store';
 
-import { TreeContainer, TreeItem } from './diagram_wrap';
+import { TreeContainer, TreeItem } from 'view/dashboard/diagram_wrap';
 
-const DashboardTree = () => {
-  const [skillList, setSkillList] = useRecoilState(skillListState);
+interface Props {
+  updateExplain: (text: string) => void;
+  updateSkill: (item: any, index: number) => void;
+}
+
+const DashboardTree = ({
+  updateExplain,
+  updateSkill
+}: Props) => {
+  const skillList = useRecoilValue(skillListState);
+
   const depth1 = skillList[0].list;
 
   const onClickTreeToggle = (item: any, index = -1) => {
-    if (index === -1) {
-      console.log("something error")
-      return;
-    }
-
-    const toggleItemExpanded = {
-      ...item,
-      expanded: !(item.expanded)
-    };
-
-    let updateDepth1 = [...depth1];
-    updateDepth1[index] = toggleItemExpanded;
-
-    let swapSkillList = [
-      {
-        ...skillList[0],
-        list: [...updateDepth1]
-      }
-    ]
-
-    setSkillList({
-      ...swapSkillList,
-    })
+    updateExplain(item.explain);
+    updateSkill(item, index);
   };
 
-  const renderDepth2Tree = (list: Array<{ name: string, key: string }>) => {
+  const renderDepth2Tree = (list: Array<{ name: string, key: string, explain: string }>) => {
     return <TreeContainer id={""} depth={2}>
       {
         list.map((item, index) => {
-          return <React.Fragment key={index}>
-            <TreeItem>
-              <TreeItem.ToggleButton category={item.name} />
-            </TreeItem>
-          </React.Fragment>
+          return <TreeItem key={index}>
+            <TreeItem.ToggleButton
+              category={item.name}
+              onClick={() => updateExplain(item.explain)}
+            />
+          </TreeItem>
         })
       }
     </TreeContainer>
@@ -56,17 +45,15 @@ const DashboardTree = () => {
     <TreeContainer id={`list-depth-1-${skillList[0].key}`} depth={1} >
       {
         depth1.map((item, index) => {
-          return <React.Fragment key={index}>
-            <TreeItem>
-              <TreeItem.ToggleButton
-                id={`list-depth-2-${item.key}`}
-                aria-expanded={item.expanded}
-                onClick={() => onClickTreeToggle(item, index)}
-                category={item.name}
-              />
-              {item.list.length !== 0 && renderDepth2Tree(item.list)}
-            </TreeItem>
-          </React.Fragment>
+          return <TreeItem key={index}>
+            <TreeItem.ToggleButton
+              id={`list-depth-2-${item.key}`}
+              aria-expanded={item.expanded}
+              onClick={() => onClickTreeToggle(item, index)}
+              category={item.name}
+            />
+            {item.list.length !== 0 && renderDepth2Tree(item.list)}
+          </TreeItem>
         })
       }
     </TreeContainer>

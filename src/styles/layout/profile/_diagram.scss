@@ -31,11 +31,16 @@
 
 // ----------------------------------------------------------------------------------------
 // state
+
 .dashboard-diagram {
   // 상단이 접히면 아래가 모두 접히도록
   [aria-expanded='false'] ~ .diagram-container {
     visibility: hidden;
 
+    .diagram-container {
+      visibility: inherit;
+    }
+    
     & > .tree-diagram {
       transform: translateY(1rem);
     }
@@ -49,8 +54,17 @@
     }
   }
 
-  .tree-diagram[focused] {
-    background-color: $day;
+  .tree-diagram {
+    border: 3px solid transparent;
+    
+    &:hover {
+      border-color: $white105;
+    }
+
+    &[focused] {
+      border-color: $white103;
+      background-color: $day;
+    }
   }
 }
 
@@ -78,11 +92,20 @@
   top: -50%;
   width: max-content;
   left: -50%;
-  color: $red;
 
+  color: $red;
+  text-align: center;
   font-size: $fontSize-14;
+  font-weight: $fontRegular;
+  transition: font-weight 0.12s;
+  
+  @at-root .tree-diagram:hover & {
+    font-weight: $fontBold;
+  }
 }
 
+// ----------------------------------------------------------------------------------------
+// help instruction animation
 $mouse_animation: 2s;
 
 .icon-mouse-instructions {

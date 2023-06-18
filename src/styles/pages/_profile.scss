@@ -1,9 +1,8 @@
 .profile {
-  // FIXME: this property is same with home
-  // height: calc(100vh - $HEADER_height);
-  position: relative;
-  // overflow: scroll;
-  // padding: 1rem;
+  position: fixed;
+  top: $HEADER_height;
+  padding: 1rem;
+  width: 100%;
 }
 
 .dashboard-container {
@@ -42,7 +41,7 @@
     'R10 R01'
     'R10 R11';
   grid-template-columns: auto 24rem;
-  grid-template-rows: 5.4rem auto;
+  grid-template-rows: 5.4rem auto 30%;
   gap: 2rem;
 
   .dashboard-content[dashboard-index='0'] {
@@ -69,10 +68,7 @@
     ;
     grid-template-columns: 100%;
     gap: 1rem;
-    grid-template-rows: 5.4rem 50vh auto;
-
-    .dashboard-content {
-    }
+    grid-template-rows: 5.4rem 50vh auto 10vh;
   }
 }
 
@@ -83,7 +79,6 @@
   border: 2px solid rgba(244, 248, 255, 0.2);
   border-radius: 20px;
   overflow: scroll;
-  // @include webkit-scrollbar;
 }
 
 .dashboard-content[dashboard-index='0'] {
@@ -99,5 +94,16 @@
 
 .dashboard-content[dashboard-index='3'] {
   padding: 1.6rem;
+}
 
+.dashboard-explain {
+  font-size: $fontSize-16;
+  font-weight: $fontLight;
+  color: $fontColorPlain;
+  line-height: 1.4em;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
 }

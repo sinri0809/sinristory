@@ -56,6 +56,8 @@ $layerBackground: var(--zIndex-back);
   --font-height-14: 2rem;
   --font-size-12: 1.2rem;
 
+  --font-weight-thin: 100;
+  --font-weight-light: 200;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
@@ -95,6 +97,8 @@ $fontSize-14: var(--font-size-14);
 $fontHeight-14: var(--font-height-14);
 $fontSize-12: var(--font-size-12);
 
+$fontThin: var(--font-weight-thin);
+$fontLight: var(--font-weight-light);
 $fontRegular: var(--font-weight-regular);
 $fontMedium: var(--font-weight-medium);
 $fontBold: var(--font-weight-bold);
