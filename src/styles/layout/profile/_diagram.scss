@@ -4,8 +4,10 @@
   // temp size
   width: 1028px;
   height: 716px;
-  // ? area
-  // background-color: rgba(255, 0, 0, 0.452);
+
+  @include 모바일 {
+    width: 100%;
+  }
 }
 
 .tree-diagram {
@@ -17,24 +19,116 @@
 
   text-align: center;
 
-  background-color: black;
+  background-color: $black;
   color: $white;
+
+  transition: all 0.2s;
+
+  &[aria-expanded='true'] {
+    background-color: $day;
+  }
 }
 
 // ----------------------------------------------------------------------------------------
-
 // state
+
 .dashboard-diagram {
-  [aria-expanded='true'] {
-    .tree-diagram {
-      visibility: visible;
+  // 상단이 접히면 아래가 모두 접히도록
+  [aria-expanded='false'] ~ .diagram-container {
+    visibility: hidden;
+
+    .diagram-container {
+      visibility: inherit;
+    }
+    
+    & > .tree-diagram {
+      transform: translateY(1rem);
+    }
+  }
+  
+  [aria-expanded='true'] ~ .diagram-container {
+    visibility: visible;
+
+    & > .tree-diagram {
+      transform: translateY(0);
     }
   }
 
-  [aria-expanded='false'] {
-    // 상단이 접히면 아래가 모두 접히도록
-    .tree-diagram {
-      visibility: hidden;
+  .tree-diagram {
+    border: 3px solid transparent;
+    
+    &:hover {
+      border-color: $white105;
+    }
+
+    &[focused] {
+      border-color: $white103;
+      background-color: $day;
     }
   }
+}
+
+// ----------------------------------------------------------------------------------------
+// help/instructions
+.dashboard-help { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 1rem;
+}
+
+.dashboard-help-wrap {
+  position: relative;
+}
+
+.help-text {
+  position: absolute;
+  top: -50%;
+  width: max-content;
+  left: -50%;
+
+  color: $red;
+  text-align: center;
+  font-size: $fontSize-14;
+  font-weight: $fontRegular;
+  transition: font-weight 0.12s;
+  
+  @at-root .tree-diagram:hover & {
+    font-weight: $fontBold;
+  }
+}
+
+// ----------------------------------------------------------------------------------------
+// help instruction animation
+$mouse_animation: 2s;
+
+.icon-mouse-instructions {
+  z-index: 9;
+  transform: translateY(150%);
+  
+  animation-name: mouse-move;
+  animation-duration: $mouse_animation;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+
+  .rect-mouse {
+    animation-name: mouse-hover;
+    animation-duration: $mouse_animation;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+  
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.16);
+  }
+}
+
+.icon-dasharray {
+  position: absolute;
+  left: calc(50% - 2px);
+  bottom: -80%;
 }

@@ -2,151 +2,98 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
+  bottom: 0;
+  right: 0;
   background: $day_sunrise;
-
   overflow: hidden;
   z-index: $layerBackground;
-
   @include prevent-event;
 }
 
-svg.sea {
-  position: absolute;
+.background-wrap {
+  position: relative;
+  width: 100%;
 
-  // min-width: 1920px;
-  // min-height: 1100px;
-  object-fit: cover;
-  // max-width: 100%;
-  // max-height: 50vw;
+  .waves {
+    width: 100%;
+    min-width: 700px;
+    max-width: 1578px;
+  }
 }
 
-.background-sea.test {
-  // background-image: url(./../../assets/imgs/Background.svg);
-  // background-repeat: no-repeat;
-  // background-size: cover;
-}
-
-$sea_delay: 0s;
-// ! on in Production mode
-$sea_animation: 0s;
+// ----------------------------------------------------------------------------------------
 
 @keyframes move_wave_1 {
-  0% {
-    transform: translate(0px, 0px);
-    fill-opacity: 0.2;
-    stroke-opacity: 0.1;
-  }
   40% {
-    transform: translate(-60px, -10px);
-    fill-opacity: 0.1;
-  }
-  100% {
-    transform: translate(0px, 0px);
-    fill-opacity: 0.2;
-    stroke-opacity: 0.2;
+    transform: translate(-6rem, -1rem);
   }
 }
 
-.wave-path-1 {
-  stroke-opacity: 0.1;
-  fill-opacity: 0.2;
+@keyframes move_wave_2 {
+  50% {
+    transform: translate(-5vw, 0);
+    fill-opacity: 0.1;
+  }
+  80% {
+    transform: translate(-2vw, 0);
+  }
+}
 
-  animation-name: move_wave_1;
+@keyframes move_wave_3 {
+  30% {
+    transform: translate(-20vw, 0);
+    fill-opacity: 0.4;
+  }
+  80% {
+    transform: translate(-4vw, 0);
+  }
+}
+
+@keyframes move_wave_4 {
+  40% {
+    transform: translate(-10vw, 0);
+    fill-opacity: 0.2;
+  }
+  80% {
+    transform: translate(-4vw, 0);
+  }
+}
+
+// ----------------------------------------------------------------------------------------
+
+$sea_delay: 2s;
+$sea_animation: 10s;
+
+.wave {
   animation-timing-function: ease-in-out;
   animation-delay: $sea_delay;
   animation-duration: $sea_animation;
   animation-iteration-count: infinite;
 }
 
-@keyframes move_wave_2 {
-  0% {
-    transform: translate(0px, 0px);
-    fill-opacity: 0.2;
-    // stroke-opacity: 0.1;
-  }
-  50% {
-    transform: translate(-200px, 0px);
-    fill-opacity: 0.1;
-  }
-  80% {
-    transform: translate(-20px, 0px);
-    fill-opacity: 0.15;
-  }
-  100% {
-    transform: translate(0px, 0px);
-    fill-opacity: 0.2;
-    // stroke-opacity: 0.2;
-  }
-}
-.wave-path-2 {
+// ----------------------------------------------------------------------------------------
+
+.wave-path-1 {
+  stroke-opacity: 0.2;
   fill-opacity: 0.2;
-  animation-delay: $sea_delay;
+  stroke-width: 1px;
+  stroke: $white;
 
-  animation-name: move_wave_2;
-  animation-duration: $sea_animation;
-  animation-iteration-count: infinite;
+  animation-name: move_wave_1;
 }
 
-@keyframes move_wave_3 {
-  0% {
-    transform: translate(0px, 0px);
-    fill-opacity: 0.2;
-  }
-  30% {
-    transform: translate(-360px, 0px);
-    fill-opacity: 0.1;
-    stroke-opacity: 0.1;
-  }
-  80% {
-    transform: translate(-40px, 0px);
-    fill-opacity: 0.15;
-  }
-  100% {
-    transform: translate(0px, 0px);
-    fill-opacity: 0.2;
-    stroke-opacity: 0.2;
-  }
+.wave-path-2 {
+  animation-name: move_wave_2;
 }
 
 .wave-path-3 {
-  fill-opacity: 0.2;
-
-  animation-delay: $sea_delay;
   animation-name: move_wave_3;
-  animation-duration: $sea_animation;
-  animation-iteration-count: infinite;
-}
-
-@keyframes move_wave_4 {
-  0% {
-    transform: translate(0px, 0px);
-    fill-opacity: 0.2;
-  }
-  40% {
-    transform: translate(-300px, 0px);
-    fill-opacity: 0.1;
-  }
-  80% {
-    transform: translate(-40px, 0px);
-    fill-opacity: 0.15;
-  }
-  100% {
-    transform: translate(0px, 0px);
-    fill-opacity: 0.2;
-  }
 }
 
 .wave-path-4 {
-  fill-opacity: 0.2;
   stroke-opacity: 0.1;
-  stroke: white;
+  stroke: $white;
   stroke-width: 2px;
 
-  animation-delay: $sea_delay;
   animation-name: move_wave_4;
-  animation-duration: $sea_animation;
-  animation-iteration-count: infinite;
 }

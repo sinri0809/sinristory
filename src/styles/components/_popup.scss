@@ -10,6 +10,8 @@
   justify-content: center;
   align-items: center;
 
+  padding: 0 1rem;
+
   z-index: $layerTop;
 
   backdrop-filter: blur(2px);
@@ -62,6 +64,7 @@
 .popup-footer {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
   column-gap: 1rem;
   padding: 2rem;

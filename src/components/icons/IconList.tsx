@@ -1,3 +1,20 @@
+const IconPortfolio = () => {
+  return <div className="icon-portfolio-wrap">
+    <div className="icon-portfolio-1" />
+    <div className="icon-portfolio-2" />
+    <div className="icon-portfolio-3" />
+  </div>
+}
+
+const IconHamburger = () => {
+  return <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <title>Icon/App/Hamburger</title>
+    <path d="M7 12H29" stroke="#F4F8FF" />
+    <path d="M7 18H29" stroke="#F4F8FF" />
+    <path d="M7 24H29" stroke="#F4F8FF" />
+  </svg>
+}
+
 const IconDropdownMore = () => {
   return (
     <svg
@@ -17,40 +34,16 @@ const IconDropdownMore = () => {
 };
 
 const IconArrowLeft = () => {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M14.7105 6.70998C14.3205 6.31998 13.6905 6.31998 13.3005 6.70998L8.71047 11.3C8.32047 11.69 8.32047 12.32 8.71047 12.71L13.3005 17.3C13.6905 17.69 14.3205 17.69 14.7105 17.3C15.1005 16.91 15.1005 16.28 14.7105 15.89L10.8305 12L14.7105 8.11998C15.1005 7.72998 15.0905 7.08998 14.7105 6.70998Z"
-        fill="#C0C0C0"
-      />
-    </svg>
+  return (<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fillRule="evenodd" clipRule="evenodd" d="M12.7335 14.7383C12.3781 15.0872 11.8041 15.0872 11.4487 14.7383L7.26651 10.6309C6.91116 10.2819 6.91116 9.71812 7.26651 9.36913L11.4487 5.26174C11.8041 4.91275 12.3781 4.91275 12.7335 5.26174C13.0888 5.61074 13.0888 6.17449 12.7335 6.52349L9.19816 10.0045L12.7335 13.4765C13.0888 13.8255 13.0797 14.3982 12.7335 14.7383Z" fill="#F4F8FF"/>
+  </svg>
   );
 };
 
 const IconArrowRight = () => {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M9.29246 17.2998C9.68246 17.6898 10.3125 17.6898 10.7025 17.2998L15.2925 12.7098C15.6825 12.3198 15.6825 11.6898 15.2925 11.2998L10.7025 6.70979C10.3125 6.31979 9.68246 6.31979 9.29246 6.70979C8.90246 7.09979 8.90246 7.72978 9.29246 8.11979L13.1725 12.0098L9.29246 15.8898C8.90246 16.2798 8.91246 16.9198 9.29246 17.2998Z"
-        fill="#C0C0C0"
-      />
-    </svg>
+  return (<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fillRule="evenodd" clipRule="evenodd" d="M7.26651 14.7383C7.62186 15.0872 8.19593 15.0872 8.55128 14.7383L12.7335 10.6309C13.0888 10.2819 13.0888 9.71812 12.7335 9.36913L8.55128 5.26174C8.19593 4.91275 7.62186 4.91275 7.26651 5.26174C6.91116 5.61074 6.91116 6.17449 7.26651 6.52349L10.8018 10.0045L7.26651 13.4765C6.91116 13.8255 6.92027 14.3982 7.26651 14.7383Z" fill="#F4F8FF"/>
+  </svg>
   );
 };
 
@@ -326,75 +319,22 @@ const IconTreeIndex = () => {
   );
 };
 
-const IconMouseHint = () => {
-  return (
-    <svg
-      width="48"
-      height="64"
-      viewBox="0 0 48 64"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g filter="url(#filter0_d_20_1456)">
-        <rect
-          x="4"
-          y="4"
-          width="32"
-          height="48"
-          rx="16"
-          fill="#F4F8FF"
-          fill-opacity="0.2"
-          shape-rendering="crispEdges"
-        />
-      </g>
-      <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M34 20V36C34 43.732 27.732 50 20 50C12.268 50 6 43.732 6 36V20C6 12.6042 11.7347 6.54791 19 6.03516L19 30C19 30.5523 19.4477 31 20 31C20.5523 31 21 30.5523 21 30L21 6.03516C28.2653 6.54791 34 12.6042 34 20ZM4 20C4 11.1634 11.1634 4 20 4C28.8366 4 36 11.1634 36 20V36C36 44.8366 28.8366 52 20 52C11.1634 52 4 44.8366 4 36V20Z"
-        fill="#F4F8FF"
-        fill-opacity="0.8"
-      />
-      <rect x="16" y="21" width="8" height="12" rx="4" fill="#FF0700" />
-      <defs>
-        <filter
-          id="filter0_d_20_1456"
-          x="0"
-          y="0"
-          width="48"
-          height="64"
-          filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
-        >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            type="matrix"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-            result="hardAlpha"
-          />
-          <feOffset dx="4" dy="4" />
-          <feGaussianBlur stdDeviation="4" />
-          <feComposite in2="hardAlpha" operator="out" />
-          <feColorMatrix
-            type="matrix"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.16 0"
-          />
-          <feBlend
-            mode="normal"
-            in2="BackgroundImageFix"
-            result="effect1_dropShadow_20_1456"
-          />
-          <feBlend
-            mode="normal"
-            in="SourceGraphic"
-            in2="effect1_dropShadow_20_1456"
-            result="shape"
-          />
-        </filter>
-      </defs>
-    </svg>
+const IconMouseInstructions = () => {
+  return (<svg width="32" height="48" viewBox="0 0 32 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <title>Icon/Mouse Hover Here</title>
+    <rect className="rect-mouse" width="32" height="48" rx="16" fill="#F4F8FF" fillOpacity="0.6"/>
+    <path fillRule="evenodd" clipRule="evenodd" d="M30 16V32C30 39.732 23.732 46 16 46C8.26801 46 2 39.732 2 32V16C2 8.60425 7.73472 2.54791 15 2.03516L15 26C15 26.5523 15.4477 27 16 27C16.5523 27 17 26.5523 17 26L17 2.03516C24.2653 2.54791 30 8.60425 30 16ZM0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16V32C32 40.8366 24.8366 48 16 48C7.16344 48 0 40.8366 0 32V16Z" fill="#F4F8FF" fillOpacity="0.8" />
+    <rect x="12" y="17" width="8" height="12" rx="4" fill="#FF0700"/>
+  </svg>
   );
 };
+
+const IconUserProfile = () => {
+  return <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <title>Icon/User/Profile/Default</title>
+    <circle cx="18" cy="18" r="12" fill="#F4F8FF" />
+  </svg>
+}
 
 const IconList = {
   'icon-close': <IconClose />,
@@ -407,7 +347,10 @@ const IconList = {
   'icon-radio': <IconRadio />,
   'icon-checkbox': <IconCheckbox />,
   'icon-tree-index': <IconTreeIndex />,
-  'icon-mouse-hint': <IconMouseHint />,
+  'icon-mouse-instructions': <IconMouseInstructions />,
+  'icon-portfolio': <IconPortfolio />,
+  'icon-hamburger': <IconHamburger />,
+  'icon-user-profile': <IconUserProfile />
 };
 
 export default IconList;

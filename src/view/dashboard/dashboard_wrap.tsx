@@ -5,17 +5,17 @@ interface Props extends AreaHTMLAttributes<HTMLDivElement> {
   content: string;
 }
 
-const DashboardWrap = (props: Props) => {
+const DashboardItem = (props: Props) => {
   return (
     <div
       id={`dashboard_${props.content}`}
       dashboard-index={props.index}
       role={props.role}
-      className={`dashboard-content ${props.className}`}
+      className={`dashboard-content ${props.className ?? ""}`}
     >
       {props.children}
     </div>
   );
 };
 
-export default DashboardWrap;
+export default DashboardItem;

@@ -17,156 +17,216 @@
   align-items: center;
   z-index: $layerFix;
 
-  padding-left: 3.6rem;
-  padding-right: 3.6rem;
+  @include device_desktop {
+    padding: 0 3.6rem;
+  }
+
+  @include device_mobile {
+    padding: 0 2rem;
+  }
 }
 
 // ----------------------------------------------------------------------------------------
 
 .header-title {
-  width: 40%;
-
   .title {
     font-family: 'Courier New', Courier, monospace;
     font-size: $fontSize-20;
+    font-weight: $fontBold;
     color: $white;
-  }
-}
 
-// ----------------------------------------------------------------------------------------
-// header theme
-// icon
-// ----------------------------------------------------------------------------------------
+    @include device_desktop {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
 
-.header-drawer {
-  width: 40%;
-  position: relative;
-  text-align: right;
-}
-
-// ----------------------------------------------------------------------------------------
-
-// state
-.drawer {
-  .drawer-container {
-    position: relative;
-    visibility: hidden;
-  }
-
-  &[aria-expanded='true'] {
-    .drawer-container {
-      visibility: visible;
+    @include device_mobile {
+      width: 100px;
     }
   }
 }
+
+// ----------------------------------------------------------------------------------------
+
+.header-theme {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+  pointer-events: none;
+
+ .btn-switch-theme{
+    pointer-events: visible;
+ } 
+}
+
+// ----------------------------------------------------------------------------------------
 
 .btn-drawer-trigger {
   position: relative;
 }
 
+.drawer-container {
+  position: relative;
+  visibility: hidden;
+
+  @at-root [aria-expanded='true'] & {
+    visibility: visible;
+  }
+}
+
 .drawer-wrap {
-  position: absolute;
-  right: 0;
-  top: 22px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  row-gap: 3.4rem;
+  @include device_desktop {
+    position: absolute;
+    right: 0;
+    top: 22px;
 
-  width: 22rem;
-  padding: 2.4rem 1.7rem;
-  text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 3.4rem;
+  
+    width: 22rem;
+    padding: 2.4rem 1.7rem;
+    text-align: left;
+  
+    background-color: $white102;
+    border: 1px solid $white105;
+    border-radius: 4px;
+  
+    backdrop-filter: blur(2px);
+    color: $white;
+  }
 
-  background-color: $white102;
-  border: 1px solid $white105;
-  border-radius: 4px;
-
-  backdrop-filter: blur(2px);
-  color: $white;
+  @include device_mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    width: 100vw;
+    height: 100vh;
+    padding-top: $HEADER_height;
+    padding:  $HEADER_height 1rem 1.6rem 1rem;
+    
+    z-index: -1;
+    
+    background-color: rgba(46, 50, 56, 0.8);
+    backdrop-filter: blur(6px);
+  }
 }
 
 // ----------------------------------------------------------------------------------------
 
-@mixin navCategoryStyle {
-  font-size: $fontSize-16;
+.drawer-container .btn {
   color: $white;
-}
+  
+  @include device_desktop {
+    font-size: $fontSize-14;
+    font-weight: $fontRegular;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+    
+    &[aria-disabled] {
+      opacity: 0.5;
+      cursor: initial;
+      pointer-events: none;
+      user-select: none;
+    }
+  }
 
-@mixin navBtnStyle {
-  text-decoration: underline;
-  font-size: $fontSize-14;
-  color: $white;
-  font-weight: $fontRegular;
+  @include device_mobile {
+    font-size: $fontSize-18;
 
-  &[aria-disabled] {
-    opacity: 0.5;
-    cursor: initial;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 5.2rem;
+    height: 7.2rem;
+    background: linear-gradient(270deg, rgba(244, 248, 255, 0.2) 0%, rgba(244, 248, 255, 0) 100%);
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    
+    &:active {
+      border-color:rgba(244, 248, 255, 0.3);     
+    }
   }
 }
 
 // ----------------------------------------------------------------------------------------
 
 .nav-pages {
-  display: flex;
-  flex-direction: column;
-  row-gap: 2.4rem;
+  @include device_desktop {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
 
-  h3 {
-    @include navCategoryStyle;
-  }
-}
-
-.pages-list {
-  padding-left: 1rem;
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.2rem;
-
-  li {
-    display: inline-flex;
+    h3 {
+      font-size: $fontSize-16;
+      color: $white;
+    }
   }
 
-  .btn {
-    @include navBtnStyle;
-  }
-}
-// ----------------------------------------------------------------------------------------
-
-.btn-language {
-  @include navBtnStyle;
-}
-
-// ----------------------------------------------------------------------------------------
-
-.more-links-wrap {
-  width: 100%;
-
-  details {
-    width: 100%;
-
-    summary {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      @include navCategoryStyle;
+  @include device_mobile {
+    h3 {
+      display: none;
     }
   }
 }
 
-.more-links-list {
-  padding-left: 1rem;
+.pages-list {
+  @include device_desktop {
+    padding-left: 1rem;
 
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.2rem;
 
-  li {
-    display: inline-flex;
+    li {
+      display: inline-flex;
+    }
   }
 
-  .btn {
-    @include navBtnStyle;
+  @include device_mobile {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.6rem;
+    align-items: flex-end;
+
+    li {
+      width: 100%;
+      // transition: width 0.1s;
+      // width: 50%;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------------------
+
+.nav-control {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .font-bold {
+    font-size: $fontSize-16;
+    opacity: 0.8;
+  }
+
+  @include device_mobile {
+    font-size: $fontSize-14;
+    margin: 5.6rem 0;
+    padding: 0 5.2rem;
+    flex-direction: row-reverse;
+    color: $white;
   }
 }

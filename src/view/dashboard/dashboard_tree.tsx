@@ -1,75 +1,63 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { skillsList } from 'store/dashboard.store';
+import { useRecoilValue } from 'recoil';
+import { skillListState } from 'store/dashboard.store';
 
-import Icon from 'components/icons/Icon';
-import { TreeContainer, TreeItem } from './diagam_wrap';
+import { TreeContainer, TreeItem } from 'view/dashboard/diagram_wrap';
 
-const DashboardTree = () => {
-  const [test, setTest] = useState(false);
+interface Props {
+  updateExplain: (text: string) => void;
+  updateSkill: (item: any, index: number) => void;
+}
 
-  const onClickTest = () => {
-    setTest(!test);
+const DashboardTree = ({
+  updateExplain,
+  updateSkill
+}: Props) => {
+  const skillList = useRecoilValue(skillListState);
+
+  const depth1 = skillList[0].list;
+
+  const onClickTreeToggle = (item: any, index = -1) => {
+    updateExplain(item.explain);
+    updateSkill(item, index);
   };
-  return (
-    <>
-      <h2 data-depth={0} className="tree-title">
-        UX Engineer
-      </h2>
-      <TreeContainer depth={1} id="list-depth-1-uxe">
-        <TreeItem>
-          <TreeItem.ToggleButton
-            id="list-depth-2-develop"
-            category="Develop"
-            aria-expanded={test}
-            onClick={onClickTest}
-          />
-          <TreeContainer depth={2} id="list-depth-2-develop">
-            {skillsList[0].list[0].list.map((item) => (
-              <TreeItem>
-                <TreeItem.ToggleButton
-                  category={item.name}
-                  // onClick={onClickTest}
-                />
-              </TreeItem>
-            ))}
-          </TreeContainer>
-        </TreeItem>
 
-        <TreeItem>
-          <TreeItem.ToggleButton
-            id="list-depth-2"
-            category={skillsList[0].list[1].name}
-            aria-expanded={false}
-          />
-        </TreeItem>
+  const renderDepth2Tree = (list: Array<{ name: string, key: string, explain: string }>) => {
+    return <TreeContainer id={""} depth={2}>
+      {
+        list.map((item, index) => {
+          return <TreeItem key={index}>
+            <TreeItem.ToggleButton
+              category={item.name}
+              onClick={() => updateExplain(item.explain)}
+            />
+          </TreeItem>
+        })
+      }
+    </TreeContainer>
+  }
 
-        <TreeItem>
-          <TreeItem.ToggleButton
-            id="list-depth-2"
-            category={skillsList[0].list[2].name}
-            aria-expanded={false}
-          />
-        </TreeItem>
-
-        <TreeItem>
-          <TreeItem.ToggleButton
-            id="list-depth-2"
-            category={skillsList[0].list[3].name}
-            aria-expanded={false}
-          />
-        </TreeItem>
-
-        <TreeItem>
-          <TreeItem.ToggleButton
-            id="list-depth-2"
-            category={skillsList[0].list[4].name}
-            aria-expanded={true}
-          />
-        </TreeItem>
-      </TreeContainer>
-    </>
-  );
+  return <>
+    <h2 data-depth={0} className="tree-title">
+      {skillList[0].name}
+    </h2>
+    <TreeContainer id={`list-depth-1-${skillList[0].key}`} depth={1} >
+      {
+        depth1.map((item, index) => {
+          return <TreeItem key={index}>
+            <TreeItem.ToggleButton
+              id={`list-depth-2-${item.key}`}
+              aria-expanded={item.expanded}
+              onClick={() => onClickTreeToggle(item, index)}
+              category={item.name}
+            />
+            {item.list.length !== 0 && renderDepth2Tree(item.list)}
+          </TreeItem>
+        })
+      }
+    </TreeContainer>
+  </>
 };
 
 export default DashboardTree;

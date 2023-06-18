@@ -38,6 +38,158 @@
 
 // ----------------------------------------------------------------------------------------
 
+// TODO: refactor 
+.icon-portfolio-wrap {
+  position: relative;
+  width: 30rem;
+  height: 30rem;
+}
+
+@keyframes icon-portfolio-1 {
+  0% {
+    transform: scale(1);
+    background-color: $day;
+    border-radius: 54% 46% 70% 30% / 52% 39% 61% 48%;
+  }
+  25% {
+    transform: scale(0.8);
+    background-color: $blue;
+    border-radius: 61% 39% 27% 73% / 36% 65% 35% 64%;
+  }
+  50% {
+    transform: scale(0.9);
+    background-color: $night;
+    border-radius: 64% 36% 61% 39% / 70% 26% 74% 30%;
+  }
+  75% {
+    transform: scale(0.95);
+    background-color: $orange;
+  }
+  100% {
+    transform: scale(1);
+    background-color: $day;
+    border-radius: 54% 46% 70% 30% / 52% 39% 61% 48%;
+  }
+}
+.icon-portfolio-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 30rem;
+  height: 30rem;
+
+  animation-name: icon-portfolio-1;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+
+  transition: all 0.2s ease;
+}
+
+@keyframes icon-portfolio-2 {
+  0% {
+    top: 40%;
+    left: 30%;
+
+    transform: scale(1);
+    background-color: $white;
+    border-radius: 48% 52% 61% 39% / 41% 28% 72% 59%;
+  }
+  40% {
+    top: 42%;
+    left: 35%;
+    // transform: scale(0.8);
+    background-color: $orange;
+    border-radius: 64% 36% 32% 68% / 54% 65% 35% 46%;
+  }
+  60% {
+    top: 50%;
+    left: 30%;
+
+    border-radius: 54% 46% 70% 30% / 52% 39% 61% 48%;
+    transform: scale(0.9);
+    background-color: $day;
+  }
+  80% {
+    top: 48%;
+    left: 32%;
+    border-radius: 44% 56% 65% 35% / 35% 81% 19% 65%;
+    background-color: $black;
+  }
+  100% {
+    top: 45%;
+    left: 30%;
+
+    transform: scale(1);
+    background-color: $blue;
+    border-radius: 48% 52% 61% 39% / 41% 28% 72% 59%;
+  }
+}
+.icon-portfolio-2 {
+  position: absolute;
+
+  width: 12rem;
+  height: 10rem;
+
+  animation-name: icon-portfolio-2;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+
+  filter: hue-rotate(45deg);
+  transition: all 0.2s ease;
+}
+
+@keyframes icon-portfolio-3 {
+  0% {
+    top: 20%;
+    left: 40%;
+
+    transform: scale(1);
+    border-radius: 48% 52% 61% 39% / 41% 28% 72% 59%;
+    background-color: $orange;
+  }
+  30% {
+    top: 22%;
+    left: 45%;
+    // transform: scale(0.8);
+    background-color: $white;
+    border-radius: 64% 36% 32% 68% / 54% 65% 35% 46%;
+  }
+  60% {
+    top: 20%;
+    left: 40%;
+
+    border-radius: 54% 46% 70% 30% / 52% 39% 61% 48%;
+    transform: scale(0.9);
+    background-color: $day;
+  }
+  100% {
+    top: 25%;
+    left: 40%;
+
+    transform: scale(1);
+    background-color: $blue;
+    border-radius: 48% 52% 61% 39% / 41% 28% 72% 59%;
+  }
+}
+
+.icon-portfolio-3 {
+  position: absolute;
+  top: 15%;
+
+  width: 20rem;
+  height: 23rem;
+
+  animation-name: icon-portfolio-3;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+
+  filter: opacity(0.6);
+  transition: all 0.2s ease;
+}
+
+// ----------------------------------------------------------------------------------------
+
 .icon-drawer {
   background-color: transparent;
   border-radius: 1rem;
@@ -48,7 +200,9 @@
   }
 
   @include btn-hover {
-    background-color: $white102;
+    @include device_desktop {
+      background-color: $white102;
+    }
   }
 
   @include btn-active {
@@ -56,39 +210,46 @@
     border-color: $white103;
   }
 
-  @include btn-state('aria-expanded="true"') {
-    background-color: transparent;
-    .icon-drawer {
-      .rect00 {
-        transform: translate(-2px, -2px);
-      }
-      .rect10 {
-        transform: translate(-2px, 0px);
-      }
-      .rect20 {
-        transform: translate(-2px, 2px);
-      }
-      .rect01 {
-        transform: translate(0, -2px);
-      }
-      .rect11 {
-        transform: translate(0, 0px);
-      }
-      .rect21 {
-        transform: translate(0, 2px);
-      }
-      .rect02 {
-        transform: translate(2px, -2px);
-      }
-      .rect12 {
-        transform: translate(2px, 0);
-      }
-      .rect22 {
-        transform: translate(2px, 2px);
-      }
+  @include btn-state('data-toggle=true') {
+    .rect00 {
+      transform: translate(-2px, -2px);
+    }
+    .rect10 {
+      transform: translate(-2px, 0px);
+    }
+    .rect20 {
+      transform: translate(-2px, 2px);
+    }
+    .rect01 {
+      transform: translate(0, -2px);
+    }
+    .rect11 {
+      transform: translate(0, 0px);
+    }
+    .rect21 {
+      transform: translate(0, 2px);
+    }
+    .rect02 {
+      transform: translate(2px, -2px);
+    }
+    .rect12 {
+      transform: translate(2px, 0);
+    }
+    .rect22 {
+      transform: translate(2px, 2px);
+    }
+
+    @include device_desktop {
+      background-color: transparent;
+    }
+
+    @include device_mobile {
+      background-color: $white101;
     }
   }
 }
+
+// ----------------------------------------------------------------------------------------
 
 .icon-like {
   path {
@@ -122,19 +283,23 @@
   }
 }
 
+// ----------------------------------------------------------------------------------------
+
 .icon-theme {
   .svg-day-night {
     * {
       transition: all 0.6s;
     }
-    .sun-light {
-      transform-origin: center;
-      transition: all 0.4s;
-    }
-    .bg-light {
-      stroke: $white;
-      stroke-width: 1px;
-    }
+  }
+  
+  .sun-light {
+    transform-origin: center;
+    transition: all 0.4s;
+  }
+  .bg-light {
+    stroke: $white;
+    stroke-width: 1px;
+    stroke-opacity: 0;
   }
 
   @include theme-light {
@@ -156,22 +321,35 @@
   }
 }
 
+// ----------------------------------------------------------------------------------------
+
 .icon-tree-index {
   .rect {
-    // transition: height 0.1s;
+    opacity: 0.9;
+    fill: $fontColorPlain;
+    transition: all 0.1s;
   }
 
   // spread
-  @include btn-state('aria-expanded=true') {
+  @include btn-state('aria-expanded=false') {
     .rect {
       height: 10px;
     }
   }
   // folded
-  @include btn-state('aria-expanded=false') {
+  @include btn-state('aria-expanded=true') {
     .rect {
       transform: translateY(4px);
       height: 2px;
     }
+  }
+}
+
+.icon-arrow-left,
+.icon-arrow-right {
+  opacity: 0.5;
+
+  @include btn-hover {
+    opacity: 1;
   }
 }

@@ -1,0 +1,29 @@
+.drawer {
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  width: 200px;
+  height: 100vh;
+
+  background-color: $white;
+
+  z-index: 9999;
+  transition: transform 0.12s;
+  transform: translateX(-100%);
+  
+  @include 모바일 {
+    width: 100vw;
+  }
+}
+
+// ----------------------------------------------------------------------------------------
+
+
+.drawer[aria-hidden="true"]{
+  transform: translateX(-100%);
+}
+
+.drawer[aria-hidden="false"]{
+  transform: translateX(0%);
+}

@@ -1,19 +1,19 @@
 .sort-container {
   display: flex;
-  // align-items: center;
-  // justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .sort-list-wrap {
   display: flex;
-  column-gap: 18px;
+  column-gap: 1.8rem;
   align-items: center;
 }
 
 .sort-list {
   display: flex;
-  column-gap: 12px;
-  // padding: 20px 0;
+  gap: 1.2rem;
+  flex-wrap: wrap;
 }
 
 // ----------------------------------------------------------------------------------------

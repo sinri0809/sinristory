@@ -1,8 +1,6 @@
 // <UI /> tooltip
 .tooltip-container {
   position: relative;
-  margin: 24px;
-  // width: 100%;
 }
 
 .tooltip-target {
@@ -35,20 +33,39 @@
   visibility: hidden;
 }
 
-.tooltip-target:hover + .tooltip-wrap {
-  .tooltip-message {
-    visibility: visible;
+.tooltip-target {
+  &:hover + .tooltip-wrap {
+    @include device_desktop {
+      .tooltip-message {
+        visibility: visible;
+        animation-name: tooltip-fade-in-down;
+        animation-duration: 0.2s;
+      }  
+    }
+  }
 
-    animation-name: tooltip-fade-in;
-    animation-duration: 0.2s;
+  &:hover + .tooltip-wrap {
+    @include device_mobile {
+      .tooltip-message {
+        visibility: visible;
+        animation-name: tooltip-fade-in-down;
+        animation-duration: 0.2s;
+      }  
+    }
   }
 }
 
 // ----------------------------------------------------------------------------------------
 
 .tooltip-wrap[itemtype='default'] {
-  padding-top: 4px;
-  top: 100%;
+  
+  &[data-direct='down'] {
+    padding-top: 4px;
+    top: 100%;
+    
+    .tooltip-message {
+    }
+  }
 }
 
 // ----------------------------------------------------------------------------------------

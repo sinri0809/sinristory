@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 
 import GlobalPortal from 'components/container/Portals';
 
-import IconButton from './IconButton';
+import IconButton from 'components/icons/IconButton';
 
 interface DialogProps {
   title?: string;
@@ -21,7 +21,7 @@ const Dialog = (props: DialogProps) => {
     }
   };
 
-  const handleDialogState = (event: React.MouseEvent) => {
+  const onClickBackdrop = (event: React.MouseEvent) => {
     // clicked container not wrap
     if (event.target === event.currentTarget) {
       closeDialog();
@@ -30,7 +30,7 @@ const Dialog = (props: DialogProps) => {
 
   return (
     <GlobalPortal>
-      <div className="dialog-container" onClick={handleDialogState}>
+      <div className="dialog-container" onClick={onClickBackdrop}>
         <div
           className="dialog-wrap"
           style={{ width: props.width, height: props.height }}

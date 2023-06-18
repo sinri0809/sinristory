@@ -39,16 +39,17 @@
 
   --blue: #2f78e3;
   --blue200: rgba(155, 196, 255, 1);
+  --blue205: rgba(155, 196, 255, 0.5);
 
   --orange: #ff9929;
   --red: #ff0700;
 
   .light {
-    --ui-presenter-bg: var(--white100);
+    --font-color-plain: var(--black100);
   }
 
   .dark {
-    --ui-presenter-bg: var(--night100);
+    --font-color-plain: var(--white100);
 
     // accent colors
     --day100: var(--night100);
@@ -83,9 +84,11 @@ $darkgray107: var(--darkgray107);
 
 $blue: var(--blue);
 $blue200: var(--blue200);
+$blue205: var(--blue205);
 
 $orange: var(--orange);
 $red: var(--red);
 
-// button color
-$ui_presenter_background: var(--ui-presenter-bg); // not used now
+// ----------------------------------------------------------------------------------------
+
+$fontColorPlain: var(--font-color-plain);

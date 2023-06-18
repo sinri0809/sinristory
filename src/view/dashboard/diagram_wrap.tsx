@@ -1,21 +1,22 @@
-import React, { AreaHTMLAttributes, ButtonHTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 
 import Icon from 'components/icons/Icon';
 
-interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {}
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> { }
 
 interface ContainerProps extends Props {
   depth: number;
 }
 
+// ----------------------------------------------------------------------------------------
+
 const DiagramContainer = (props: ContainerProps) => {
   return (
     <div
-      role={props.role}
+      role="group"
       id={props.id}
       data-depth={props.depth}
-      aria-expanded={props['aria-expanded']}
-      className={`diagrma-container ${props.className ?? ''}`}
+      className={`diagram-container ${props.className ?? ''}`}
     >
       {props.children}
     </div>
@@ -23,10 +24,29 @@ const DiagramContainer = (props: ContainerProps) => {
 };
 
 const DiagramComponent = (props: Props) => {
+  const className = `tree-diagram ${props.className}`;
+  let expanded = props['aria-expanded'] ?? false;
+
+  const toggleFocus = (focus?: boolean) => {
+    // console.debug(expanded);
+    const element = document.querySelector(`.${props.className}`);
+
+    if (expanded) {
+      element?.toggleAttribute('focused', !expanded);
+    } else {
+      element?.toggleAttribute('focused', focus);
+    }
+  }
+
   return (
     <button
+      role='menuitem'
+      id={props.id}
+      className={className}
+      aria-expanded={expanded ?? undefined}
       onClick={props.onClick}
-      className={`tree-diagram ${props.className}`}
+      onMouseDown={() => toggleFocus()}
+      onBlur={() => toggleFocus(false)}
     >
       <span>{props.children}</span>
     </button>
@@ -34,6 +54,8 @@ const DiagramComponent = (props: Props) => {
 };
 
 export { DiagramComponent, DiagramContainer };
+
+// ----------------------------------------------------------------------------------------
 
 const TreeContainer = (props: ContainerProps) => {
   return (
@@ -50,25 +72,14 @@ const TreeContainer = (props: ContainerProps) => {
 
 interface TreeItemProps extends Props {
   // id: string;
-  category: string;
+  category?: string;
 }
 
 const TreeItem = (props: Props) => {
   // TODO: id props - button owns & container id와 동일하게 구성
   return (
-    <li role="menuitem">
-      {/* <button
-      aria-owns={props.id}
-      aria-expanded={props['aria-expanded']}
-      className={`btn btn-toggle-tree`}
-      onClick={props.onClick}
-    >
-      <Icon data="icon-tree-index" name="toggle" />
-      <span>{props.category}</span>
-    </button> */}
-      {/* <TreeContainer id={props.id} depth={props.depth}> */}
+    <li role="menuitem" className='tree-item'>
       {props.children}
-      {/* </TreeContainer> */}
     </li>
   );
 };

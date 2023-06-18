@@ -4,6 +4,7 @@ import { links } from 'routes/links';
 
 import Box from 'components/layout/Box';
 import PopupWelcome from 'view/home/popup_welcome';
+import Icon from 'components/icons/Icon';
 
 import IMG_MAIN_PROFILE from 'assets/imgs/img_page-profile.png';
 
@@ -11,11 +12,10 @@ const PageHome = () => {
   return (
     <main className="home">
       <PopupWelcome />
-
-      <section className="home-site-index">
-        <ol className="site-index-list">
-          <li className="site-index-item">
-            <Link to={links.profile} className="btn btn-link-profile">
+      <section className="home-site-map">
+        <ol className="site-map-list">
+          <li className="site-map-item">
+            <Link to={links.profile} className="btn btn-site-map-item">
               <Box>
                 <Box.Element element="content">
                   <div className="box-top">
@@ -45,14 +45,14 @@ const PageHome = () => {
               </Box>
             </Link>
           </li>
-          <li className="site-index-item">
-            <Link to={links.portfolio} className="btn btn-link-portfolio">
+          <li className="site-map-item">
+            <Link to={links.portfolio} className="btn btn-site-map-item">
               <Box>
                 <Box.Element element="content">
                   <div className="box-top">
                     <h2>
                       /Portfolios<span className="emoji">🎧</span>
-                    </h2>
+                    </h2> 
                     <p>
                       This page, I prepare UI components based on my careers
                     </p>
@@ -61,23 +61,19 @@ const PageHome = () => {
                     <strong>You can find</strong>
                     <ul>
                       <li>
-                        <p>How I organize UI components in Web</p>
+                        <p>How I organize UI components</p>
                       </li>
                     </ul>
                   </div>
                 </Box.Element>
                 <Box.Element element="img">
-                  <div className="icon-portfolio-wrap">
-                    <div className="icon-portfolio-1" />
-                    <div className="icon-portfolio-2" />
-                    <div className="icon-portfolio-3" />
-                  </div>
+                  <Icon data='icon-portfolio' name='포트폴리오 이미지' />
                 </Box.Element>
               </Box>
             </Link>
           </li>
-          <li className="site-index-item disabled">
-            <Link to={links.gallery} className="btn btn-link-gallery">
+          <li className="site-map-item disabled">
+            <Link to={links.gallery} className="btn btn-site-map-item">
               <Box>
                 <Box.Element element="content">
                   <div className="box-top">

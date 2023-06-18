@@ -1,11 +1,14 @@
 import React, { useRef } from 'react';
 
-import Icon from 'components/icons/Icon';
+import IconButton from 'components/icons/IconButton';
+
+import { LinkButton } from 'view/header/header_nav_button';
 import HeaderDrawer from 'view/header/header_drawer';
 
 const Header = () => {
   const refButtonSwitchTheme = useRef<HTMLButtonElement>(null);
 
+  // TODO: switch -> classList.toggle()
   const onClickButtonSwitchTheme = () => {
     if (document.body.classList.contains('light')) {
       document.body.classList.remove('light');
@@ -20,20 +23,18 @@ const Header = () => {
     <header className="header">
       <div className="header-wrap">
         <div className="header-title">
-          <h1 className="title">hello sinri!</h1>
+          <h1 className="title"><LinkButton name='home' title='hello sinri' /></h1>
         </div>
         <div className="header-theme">
-          <button
+          <IconButton 
+            data='icon-theme'
+            name='테마 전환 버튼'
             ref={refButtonSwitchTheme}
-            className="btn btn-switch-theme"
+            className='btn-switch-theme'
             onClick={onClickButtonSwitchTheme}
-          >
-            <Icon data="icon-theme" />
-          </button>
+          />
         </div>
-        <div className="header-drawer">
-          <HeaderDrawer />
-        </div>
+        <HeaderDrawer />
       </div>
     </header>
   );

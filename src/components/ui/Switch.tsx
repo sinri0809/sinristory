@@ -3,13 +3,14 @@ interface Props {
   checked: boolean;
   tabIndex?: number;
   onChange: () => void;
+  disabled?: boolean;
 }
 
-const Switch = ({ size, checked, onChange, tabIndex }: Props) => {
+const Switch = ({ size, checked, onChange, tabIndex, disabled=false }: Props) => {
   return (
-    <span data-size={size} className={'switch-wrap'}>
+    <span data-size={size} className={'switch-wrap'} aria-disabled={disabled}>
       <label className={`switch`}>
-        <input type="checkbox" onChange={onChange} checked={checked} />
+        <input type="checkbox" onChange={onChange} checked={checked} disabled={disabled} />
         <span className="slider" />
       </label>
     </span>

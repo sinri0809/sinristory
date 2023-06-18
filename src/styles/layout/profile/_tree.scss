@@ -1,12 +1,13 @@
 // #dashboard_tree
 .dashboard-tree {
-  padding: 0 1rem;
+  padding: 0 2rem;
+  padding-bottom: 4rem;
 }
 
 .tree-title {
-  margin-top: 2.4rem;
-  margin-bottom: 2.4rem;
+  margin: 2.4rem 0;
 
+  width: fit-content;
   font-size: $fontSizeH2;
   font-weight: $fontMedium;
   color: $white;
@@ -14,30 +15,75 @@
 }
 
 .tree-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.tree-list {
   &[data-depth='1'] {
-    // padding-left: 1em;
+    padding-left: 0.2em;
   }
 
   &[data-depth='2'] {
     padding-left: 1.2em;
+    overflow: hidden;
+  }
+}
+
+.tree-item {
+  font-size: $fontSize-16;
+  height: 1.2em;
+
+  &:has(.btn-toggle-tree[aria-expanded='true']) {
+    height: auto;
   }
 }
 
 // ----------------------------------------------------------------------------------------
 
 .btn-toggle-tree {
-  font-size: $fontSize-16;
+  position: relative;
+  width: 100%;
+  height: 1.2em;
+  column-gap: 4px;
+  justify-content: flex-start;
   font-weight: $fontMedium;
-  color: $black;
+  color: $fontColorPlain;
+
+  &:hover {
+    background-color: $white101;
+  }
+
+  &:active {
+    background-color: $white103;
+  }
+
+  &[aria-expanded='true'] {
+    background-color: $day;
+  }
 }
 
-// for example
+// ----------------------------------------------------------------------------------------
+
 .btn-toggle-tree[aria-expanded='false'] + .tree-list {
-  // display: none;
   visibility: hidden;
+  opacity: 0;
+
+  .tree-item {
+    height: 0;
+  }
 }
 
 .btn-toggle-tree[aria-expanded='true'] + .tree-list {
-  // display: block;
   visibility: visible;
+  opacity: 1;
+  margin: 1.2rem 0;
+
+  .tree-item {
+    animation-name: accordion-expanded;
+    animation-duration: 0.16s;
+  }
 }
+
+// ----------------------------------------------------------------------------------------

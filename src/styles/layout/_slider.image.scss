@@ -1,49 +1,82 @@
+// <UI /> ImageSlider
 .image-slider {
   position: relative;
-  margin: 10rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
-  .image-slider-container {
-    // @include squre(500px, 500px);
-    overflow: hidden;
-    z-index: 99;
+  background-color: $day;
+  border-radius: 1em;
+}
 
-    .image-items-list {
-      display: flex;
-      height: 100%;
-      column-gap: 0;
+// ----------------------------------------------------------------------------------------
 
-      .image-item {
-        min-width: 100%;
-        height: 100%;
-        overflow: hidden;
-        background-color: rgba($color: #000000, $alpha: 0.2);
+.image-slider-container {
+  overflow: hidden;
+  margin: 3rem;
+  // z-index: 99;
+}
 
-        .image {
-          object-fit: fill;
-        }
-      }
-    }
+.image-list {
+  display: flex;
+  height: 100%;
+  column-gap: 0;
+}
+
+.image-item {
+  min-width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: $gray200;
+  transition: transform 0.12s;
+
+  img.image {
+    object-fit: fill;
   }
+}
 
-  .slider-controller {
-    position: absolute;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+// ----------------------------------------------------------------------------------------
+
+.slider-controller {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  pointer-events: none;
+
+  .btn {
+    pointer-events: fill;
   }
+}
 
-  .slider-pagination {
-    position: absolute;
-    bottom: -5rem;
-    display: flex;
-    column-gap: 1rem;
-    justify-content: center;
+// ----------------------------------------------------------------------------------------
 
-    .item-dot {
-      background-color: aliceblue;
-    }
+.slider-pagination {
+  position: absolute;
+  // bottom: -1em;
+  bottom: 0;
+
+  padding: 0.6rem;
+
+  display: flex;
+  column-gap: 0.5rem;
+  justify-content: center;
+}
+
+.btn-pagination {
+  padding: 0.4rem; // user select button area 
+
+  opacity: 0.5;
+  transition: opacity 0.1s;
+
+  &:hover {
+    opacity: 1;
   }
 }

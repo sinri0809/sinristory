@@ -23,10 +23,11 @@ const SortItem = (props: SortItemProps) => {
   return (
     <li className="sort-item">
       <button
-        role="checkbox"
-        aria-checked={false}
-        defaultChecked={false}
         type="button"
+        role="checkbox"
+        aria-checked={props['aria-checked']}
+        defaultChecked={false}
+        onClick={props.onClick}
         className={`btn btn-sort ${props.textType}`}
       >
         {props.children}

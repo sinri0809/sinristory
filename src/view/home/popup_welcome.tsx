@@ -4,19 +4,27 @@ import { hasCookie, setCookie } from 'tools/cookie';
 
 import Popup from 'components/ui/Popup';
 import Button from 'components/ui/Button';
+import Checkbox from 'components/ui/Checkbox';
+
+const POPUP_WELCOME_COOKIE = 'sinri_popup_welcome';
 
 const PopupWelcome = () => {
-  const popupCookieName = 'sinri_popup_welcome';
-
   const [popupOpen, setPopupOpen] = useState(false);
+  const [todayUnchecked, setTodayUnchecked] = useState(false);
 
   const onClickAccept = () => {
-    setCookie(popupCookieName, 1);
     setPopupOpen(false);
+    if (todayUnchecked) {
+      setCookie(POPUP_WELCOME_COOKIE, 1);
+    }
   };
 
+  const onClickCheckbox = () => {
+    setTodayUnchecked(!todayUnchecked)
+  }
+
   useEffect(() => {
-    if (hasCookie(popupCookieName)) {
+    if (hasCookie(POPUP_WELCOME_COOKIE)) {
       setPopupOpen(false);
     } else {
       setPopupOpen(true);
@@ -36,6 +44,9 @@ const PopupWelcome = () => {
             </p>
           </Popup.Content>
           <Popup.Footer>
+            <Checkbox category='오늘까지'>
+              <Checkbox.Item checked={todayUnchecked} onChange={onClickCheckbox} name='오늘까지' label='하루 동안 안보기' />
+            </Checkbox>
             <Button color="accent" onClick={onClickAccept} text="accept" />
           </Popup.Footer>
         </div>

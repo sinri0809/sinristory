@@ -1,12 +1,45 @@
 // * responsive example
-@mixin mobile {
-  @media screen and (min-width: #{$mobile-min}) and (max-width: #{$mobile-max}) {
+// @mixin mobile {
+//   @media screen and (min-width: #{$mobile-min}) and (max-width: #{$mobile-max}) {
+//     @content;
+//   }
+// }
+
+// @mixin mobile-horizontal {
+//   @media screen and (portrait: landscape) {
+//     @content;
+//   }
+// }
+// ----------------------------------------------------------------------------------------
+// * Responsive
+
+$mobile-max: 430px;
+$mobile-max-dev: 830px;
+$mobile-min: 0px;
+
+@mixin 모바일 {
+  @media screen and (min-width: #{$mobile-min}) and (max-width: #{$mobile-max-dev}) {
     @content;
   }
 }
 
-@mixin mobile-horizontal {
-  @media screen and (portrait: landscape) {
+// ----------------------------------------------------------------------------------------
+// * Adaptive
+// device: "mobile" | "desktop" 
+// @mixin device ($device) {
+//   @at-root .#{$device} {
+//     @content;
+//   }
+// }
+
+@mixin device_mobile {
+  @at-root .mobile & {
+    @content;
+  }
+}
+
+@mixin device_desktop {
+  @at-root .desktop & {
     @content;
   }
 }

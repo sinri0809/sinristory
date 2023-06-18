@@ -1,0 +1,71 @@
+// <UI /> BottomSheet
+.sheet-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: flex-end;
+
+  background-color: $black101;
+  z-index: $layerTop;
+}
+
+.sheet-wrap {
+  position: fixed; // 이게 중요
+  bottom: 0; 
+
+  font-size: 2.4rem;
+
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.8) 100%);
+  width: 100%;
+  border-radius: 1em 1em 0px 0px;
+}
+
+.sheet-top {
+  padding: 0.5em;
+}
+
+.sheet-content {
+  padding-bottom: 10rem; // 모바일 브라우저 탭 아래 영역이 넓음
+}
+
+// ----------------------------------------------------------------------------------------
+// animation - slide up 
+
+.sheet-wrap {
+  transform: translateY(100%);
+  animation-name: slide-up;
+  animation-delay: 0.1s;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+// ----------------------------------------------------------------------------------------
+
+// control="dnd"
+.btn-sheet-tab {
+  
+  width: 100%;
+  height: 2em;
+  border-radius: 1em;
+  background-color: transparent;
+  transition: background-color 0.1s;
+
+  .slider-tip {
+    opacity: 0.5;
+  }
+
+  &:active {
+    background-color: $gray;
+    .slider-tip {
+      opacity: 1;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------------------
